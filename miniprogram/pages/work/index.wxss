@@ -92,7 +92,6 @@
 .tab_list_view {
   display: flex;
   width: 90%;
-
   flex-wrap: wrap;
   overflow: hidden;
 }
@@ -111,17 +110,16 @@
 
 .main {
   background: #f8f8f8;
-
   height: 99.5%;
   width: 100%;
   animation: fadeIn 1s;
   min-height: 99.5vh;
-
 }
 
 .se {
   background: #3963BC
 }
+
 .home-gg {
   margin: 10px;
   display: flex;
@@ -131,10 +129,10 @@
   padding: 12px;
 
 }
+
 .home-gg2 {
   display: flex;
   padding-left: 5px;
-
 }
 
 .home-gg2>view:nth-child(1) {
@@ -163,10 +161,10 @@
   display: inline-block;
   transform: skewX(30deg);
 }
+
 .servic_top {
   padding-top: 14px;
   background: linear-gradient(to top, #1e4761, #3963BC);
-
   display: flex;
   color: #Fff;
   padding: 15px 15px;
@@ -183,14 +181,12 @@
 .servic_top_Wz1 {
   font-size: 16px;
   margin-bottom: 5px;
-
 }
 
 .study_list {
-
   margin: 10px;
   margin-top: 20rpx;
-border-radius: 6px;
+  border-radius: 6px;
   padding-top: 10rpx;
   background-color: #fff;
   margin-bottom: 120rpx;
@@ -224,9 +220,7 @@ border-radius: 6px;
   height: 197rpx;
   overflow: hidden;
   padding: 20rpx;
-
   white-space: nowrap;
-
 }
 
 .scroll_box scroll-view {
@@ -244,13 +238,12 @@ border-radius: 6px;
   margin-left: 10px;
   background-color: #fff;
   border-radius: 7px;
-
-
-
 }
+
 .item-hover {
-  background: rgb(230, 230, 230)!important;
+  background: rgb(230, 230, 230) !important;
 }
+
 .item_list_ds {
   display: flex;
   justify-content: space-between;
@@ -265,7 +258,6 @@ border-radius: 6px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-
   width: calc(100% - 27px);
 }
 
@@ -311,13 +303,13 @@ border-radius: 6px;
 .item_list_ds>view {
   width: 100%;
 }
+
 .item_list_ds {
   display: flex;
   justify-content: space-between;
 }
 
 .home-list-bottom>view:nth-child(1) {
-
   color: rgba(153, 153, 153, 1);
   text-align: center;
   margin: 6px;

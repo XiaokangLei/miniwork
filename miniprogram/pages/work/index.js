@@ -133,13 +133,9 @@ Component({
       })
     },
     tz: function (e) {
-
       wx.navigateTo({
         url: "../../pages/" + e.currentTarget.dataset.url + "?id=" + e.currentTarget.dataset.id
       })
     },
   },
-
-
-
 })

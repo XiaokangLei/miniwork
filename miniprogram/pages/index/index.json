@@ -16,7 +16,7 @@
     "van-notify": "@vant/weapp/notify/index",
     "home": "../home",
     "user": "../user",
-    "warehouse":"../warehouse",
+    "review":"../review",
     "dictionaries":"../answer",
     "work":"../work"
   }

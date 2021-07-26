@@ -1,6 +1,6 @@
-<cu-custom bgColor="se" isBack="{{true}}">
+<!-- <cu-custom bgColor="se" isBack="{{true}}">
 	<view slot="content">前端问答</view>
-</cu-custom>
+</cu-custom> -->
 
 <!-- <van-notice-bar left-icon="volume-o" text="请规范提问的问题，提问后会在24小时内解答，请耐心等待" /> -->
 <view class="as_dlf">

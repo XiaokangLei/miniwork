@@ -2,7 +2,7 @@
   <view class="ans_bst">
     <view class="cu-bar bg-white solid-bottom">
       <view class="action sub-title">
-        <text class="text-xl text-bold  text-tree">笔试题 105题</text>
+        <text class="text-xl text-bold  text-tree">员工内推</text>
         <text class="bg-tree"></text>
       </view>
       <navigator class="ntp" url="/pages/answer/fl_problem/index">查看更多

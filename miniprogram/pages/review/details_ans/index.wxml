@@ -1,12 +1,6 @@
-<!-- <cu-custom bgColor="bg-gradual-tree" isCustom="{{true}}">
-  <view slot="backText">返回</view>
-  <view slot="content">题库</view>
-</cu-custom> -->
 <view class="contaier">
-
   <view class="padding" wx:if="{{cd<=1}}">
     <view class="mainBox radius shadow-warp bg-white margin-top relative">
-
       <view>
         <view class="animation-reverse shadow"  data-class="slide-rights">
           <view class="mentalTitle text-xl text-black text-bold">
@@ -29,7 +23,6 @@
         <view wx:if="{{da_show}}" class="explainMain">
           正确答案{{xw_list.affirm==0?"A":xw_list.affirm==1?"B":xw_list.affirm==2?"C":"D"}}</view>
       </view>
-   
       <view wx:if="{{da_show}}">
         <view class=" text-bold text-black text-xxl margin-tb-xl">解析</view>
         <mp-html wx:if="{{xw_list.problem!='<p>欢迎使用富文本编辑器</p>'}}"  showLanguageName="{{true}}" content="{{xw_list.answer}}" selectable="{{true}}" />
@@ -45,16 +38,13 @@
     </view>
   </view> -->
  
-
   <view class="db_but" bindtap="xz_post" wx:if="{{cd<=1}}">
     <view wx:if="{{cd<1}}">下一题</view>
     <view wx:if="{{cd==1}}">完成答题</view>
   </view>
 
-
   <view class="warp" wx:if="{{cd>1}}">
     <view class="rect">
-
       <view class="closeImg  ">
         <image mode="aspectFit" src="http://cdn.zhoukaiwen.com/answerTrophy.png" />
       </view>
@@ -63,11 +53,7 @@
       <view class=" dis_but">
         <view class="cu-btn round bg-blue shadow " style="width:48%;" bindtap="backpage">返回</view>
         <button class="cu-btn round bg-blue shadow     " style="width:48%;" open-type="share">分享您的成果</button>
-
-
       </view>
-
     </view>
   </view>
-
 </view>

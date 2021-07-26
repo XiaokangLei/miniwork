@@ -140,6 +140,7 @@ Page({
         top: app.globalData.CustomBar
       });
       setTimeout(funcName, 2000);
+
       function funcName() {
         that.setData({
           id: 3

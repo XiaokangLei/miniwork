@@ -1,10 +1,6 @@
-<!-- <cu-custom bgColor="bg-gradual-blue">
-	<view slot="content">小贝校招</view>
-</cu-custom> -->
 <view class="main">
 	<!-- <view class="home-top">
 	</view> -->
-
 	<swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
 		duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
 		<swiper-item wx:for="{{swiperList}}" wx:key="ids" class="{{cardCur==index?'cur':''}}" id="{{item.goto}}"
@@ -96,6 +92,13 @@
 				<list list="{{rb_list}}" phb="{{true}}" loding="{{loding}}"></list>
 			</view>
 		</van-tab>
+		<van-tab title="倒计时">
+			<val></val>
+		</van-tab>
+		<!-- 专栏 -->
+		<!-- <van-tab title="专栏">
+			<val></val>
+		</van-tab> -->
 		<!-- 宣讲会 -->
 		<van-tab title="宣讲会">
 			<view class="cu-timeline">
@@ -114,16 +117,9 @@
 							<view class="bg-gradual-tree" data-id="{{items._id}}" bindtap="tz" data-url="details/details_ls/index"
 								type="primary" size="small">了解详情</view>
 						</view>
-
 					</view>
 				</view>
-
 			</view>
-
-		</van-tab>
-		<!-- 专栏 -->
-		<van-tab title="专栏">
-			<val></val>
 		</van-tab>
 	</van-tabs>
 </view>

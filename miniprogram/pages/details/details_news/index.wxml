@@ -1,23 +1,9 @@
-<cu-custom bgColor="bg-gradual-tree" isCustom="{{true}}" wx:if="{{fx_show}}">
-	<view slot="backText">返回</view>
-	<view slot="content">文章</view>
-</cu-custom>
-<view class="loding_bg" wx:if="{{loding}}">
-	<view>
-		<image class="loding_img" src="cloud://test-4gn9gu0ucc6657ba.7472-test-4gn9gu0ucc6657ba-1259429368/loding.gif">
-		</image>
-	</view>
-	<view class="mt10"> 数据加载中...</view>
-</view>
+<view class="cu-load bg-blue {{!isLoad?'loading':'over'}}" wx:if="{{loding}}"></view>
 <view style="background-color: #fff;padding: 20px;" wx:if="{{loding}}">
 	<van-skeleton title row="3" wx:if="{{loding}}" wx:for="{{5}}" wx:key="this" />
 </view>
-
 <view class="de-main" wx:if="{{!loding}}">
 	<view class="detail_bg">
-		<view wx:if="{{xw_list.img}}" class="de_Img">
-			<image src="{{xw_list.img}}" alt="" />
-		</view>
 		<view class="detail-tl">
 			{{ xw_list.tille}}
 		</view>
@@ -27,7 +13,6 @@
 				<view>{{xw_list.type}}</view>
 			</view>
 		</view>
-
 	</view>
 
 	<view class="home-jcly">
@@ -36,10 +21,9 @@
 				数据来源
 			</view>
 			<view class="cu-tag line-tree">
-				{{xw_list.ly||'掘金'}}
+				{{xw_list.ly||'未知'}}
 			</view>
 		</view>
-
 	</view>
 
 	<view class="detil">

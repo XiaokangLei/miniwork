@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "wemark": "/pages/warehouse/wemark/wemark"
-  },
-  "navigationStyle": "default",
-  "navigationBarTitleText": "仓库详情",
-  "enablePullDownRefresh": true
-}

@@ -46,7 +46,7 @@
 		<home popr="{{ hd_op}}" wx:if="{{id==1}}" />
 		<dictionaries wx:if="{{id==2}}" />
 		<work wx:if="{{id==3}}" list="{{list}}" bind:tab_xz="post" loding="{{loding}}" />
-		<warehouse wx:if="{{id==4}}" />
+		<review wx:if="{{id==4}}" />
 		<user wx:if="{{id==5}}" />
 	</view>
 
@@ -60,7 +60,7 @@
 		<view bindtap="tab_tz" data-id="2" class="action jk text-gray {{id==2?'xzcg':''}}" hover-class="item-hover"
 			hover-stay-time="100">
 			<span class=" tab_icon iconfont  icon-ziliao "></span>
-			笔试
+			复习
 		</view>
 		<view class="action  add-action  text-gray {{id==3?'xzcg':''}}" bindtap="tab_tz" data-id="3">
 			<view class="cu-btn cuIcon-shuye tab_color shadow">
@@ -70,7 +70,7 @@
 		<view class="action text-gray jk {{id==4?'xzcg':''}}" bindtap="tab_tz" data-id="4" hover-class="item-hover"
 			hover-stay-time="100">
 			<span class="tab_icon iconfont  icon-yunchucun"></span>
-			面试
+			内推
 		</view>
 		<view class="action text-gray jk {{id==5?'xzcg':''}}" bindtap="tab_tz" data-id="5" hover-class="item-hover"
 			hover-stay-time="100">

@@ -8,7 +8,7 @@
 			src="cloud://test-4gn9gu0ucc6657ba.7472-test-4gn9gu0ucc6657ba-1259429368/loding.gif"></image>
 	</view>
 	<view class="mt10"> 数据加载中</view> -->
-<!-- <view class="cu-load bg-blue {{!isLoad?'loading':'over'}}" wx:if="{{loding}}"></view> -->
+<view class="cu-load bg-blue {{!isLoad?'loading':'over'}}" wx:if="{{loding}}"></view>
 <!-- <view class='cu-load load-modal' wx:if="{{loding}}"> -->
 	<!-- <view class='cuIcon-emojifill text-orange'></view> -->
 	<!-- <image src='/images/logo.png' class='png' mode='aspectFit'></image> -->
@@ -21,9 +21,6 @@
 
 <view class="de-main" wx:if="{{!loding}}">
 	<view class="detail_bg">
-		<!-- <view wx:if="{{xw_list.img}}" class="de_Img">
-			<image src="{{xw_list.img}}" alt="" />
-		</view> -->
 		<view class="detail-tl">
 			{{ xw_list.tille}}
 		</view>
@@ -33,7 +30,6 @@
 				<view>{{xw_list.type}}</view>
 			</view>
 		</view>
-
 	</view>
 
 	<view class="home-jcly">
@@ -45,7 +41,6 @@
 				{{xw_list.ly||'掘金'}}
 			</view>
 		</view>
-
 	</view>
 
 	<view class="detil">

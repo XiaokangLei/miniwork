@@ -1,57 +1,56 @@
-.note_list{
+.note_list {
   margin: 10px;
   border-radius: 4px;
   padding: 10px;
   background-color: #fff;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
-position: relative;
-
-
+  position: relative;
 }
-.note_time{
-  background: linear-gradient(to top right, #f4c998 , #d69c63);
+
+.note_time {
+  background: linear-gradient(to top right, #f4c998, #d69c63);
   padding: 3px 6px;
   margin-left: -10px;
   margin-top: -10px;
-  color:#Fff;
+  color: #Fff;
   display: block;
   width: 150px;
   border-radius: 0px 0px 4px 0px;
 }
-.note_tille{
+
+.note_tille {
   padding: 7px 0px;
   font-size: 14px;
-  color:#303133;
-  border-bottom:1px dashed #DCDFE6
+  color: #303133;
+  border-bottom: 1px dashed #DCDFE6
 }
+
 .note_top {
   height: 60px;
   position: fixed;
-top: 0px;
-width: 100%;
-z-index: 10;
-    background: linear-gradient(to top, #1D4259, #3963BC);
-
+  top: 0px;
+  width: 100%;
+  z-index: 10;
+  background: linear-gradient(to top, #1D4259, #3963BC);
 }
-.note_ly{
+
+.note_ly {
   margin-top: 5px;
-  color:#606266;
+  color: #606266;
   font-size: 12px;
 }
-.note_add{
+
+.note_add {
   background: linear-gradient(to top, #1D4259, #3963BC);
-
-
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
   position: fixed;
   right: 20px;
   bottom: 90px;
-  color:#fff;
+  color: #fff;
   z-index: 100;
   padding-left: 23rpx;
-padding-top: 16rpx;
-font-size: 30px;
+  padding-top: 16rpx;
+  font-size: 30px;
 }

@@ -11,8 +11,11 @@ Component({
   data: {
 
   },
-  created(){
+  created() {
     this.Load_list()
+    wx.setNavigationBarTitle({
+      title: "我的笔记"
+    })
   },
   methods: {
     tz: function (e) {
@@ -21,18 +24,15 @@ Component({
         url: "../../../pages/" + e.currentTarget.dataset.url + "?id=" + e.currentTarget.dataset.id
       })
     },
-    Load_list(){
+    Load_list() {
       let openid = wx.getStorageSync("openid")
       db.collection('note').where({
-        _openid:openid
-      }).get().then(res=>{
-      this.setData({
-        note_list:res.data
+        _openid: openid
+      }).get().then(res => {
+        this.setData({
+          note_list: res.data
+        })
       })
-      })
-  
     },
   },
-  
-  
 })

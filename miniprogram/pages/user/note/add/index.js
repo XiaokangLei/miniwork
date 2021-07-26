@@ -5,18 +5,13 @@ const db = wx.cloud.database({
 })
 const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
     time: "",
     html: "",
     tille: "",
-
-
-
   },
   add() {
     db.collection('note').add({
@@ -24,8 +19,8 @@ Page({
         time: this.data.time,
         html: this.data.html,
         tille: this.data.tille,
-        press_id: this.data.press_id||null,
-        ly:this.data.ly||null
+        press_id: this.data.press_id || null,
+        ly: this.data.ly || null
       },
       success: function (res) {
         wx.showToast({
@@ -34,12 +29,13 @@ Page({
           duration: 2000,
           mask: true
         })
-        wx.navigateBack({delta: 1 })
-
+        wx.navigateBack({
+          delta: 1
+        })
       }
     })
   },
-  onClickIcon(){
+  onClickIcon() {
     wx.navigateTo({
       url: "../../../pages/details/details_html/index" + "?id=" + this.data.press_id
     })
@@ -54,7 +50,7 @@ Page({
         time: res.data[0].time,
         html: res.data[0].html,
         ly: res.data[0].ly,
-        press_id:res.data[0].press_id
+        press_id: res.data[0].press_id
       })
     })
   },
@@ -62,6 +58,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: "添加笔记"
+    })
     if (options.id) {
       this.initial(options.id)
     }
@@ -69,20 +68,18 @@ Page({
       this.setData({
         press_id: options.wzid
       })
-      db.collection('press').doc(options.wzid).get().then(res=>{
+      db.collection('press').doc(options.wzid).get().then(res => {
         console.log(res.data)
         this.setData({
-          ly:res.data.tille
+          ly: res.data.tille
         })
       })
       console.log(this.data.press_id)
     }
-
     this.setData({
       time: time.formatTime(new Date()),
     })
     console.log(this.data.time)
-
   },
 
   /**
