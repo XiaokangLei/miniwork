@@ -3,6 +3,7 @@ import api from "../../utils/api.js"
 
 Component({
   data: {
+    cardCur: 0,
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
@@ -44,6 +45,9 @@ Component({
   },
   created() {
     this.list()
+    wx.setNavigationBarTitle({
+      title: "小贝校招"
+    })
   },
   properties: {
     list: {
@@ -108,9 +112,28 @@ Component({
           tz_list: res
         })
       })
+      api.GET_swiper.then(res => {
+        this.setData({
+          swiperList: res
+        })
+      })
 
     },
+    tz_swiper(e) {
+      console.log(this.data.swiperList)
+      console.log(e.currentTarget.dataset.url)
+      wx.navigateTo({
+        url: "../../pages/details/details_html/index?id=" + e.currentTarget.dataset.url
+      })
+    },
+    // cardSwiper
+    cardSwiper(e) {
+      this.setData({
+        cardCur: e.detail.current
+      })
+    },
     tz: function (e) {
+
       wx.navigateTo({
         url: "../../pages/" + e.currentTarget.dataset.url + "?id=" + e.currentTarget.dataset.id
       })

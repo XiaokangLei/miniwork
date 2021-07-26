@@ -6,7 +6,7 @@
     "pages/details/details_news/index",
     "pages/details/details_pro/index",
     "pages/home/fl_answer/index",
-    "pages/study/index",
+    "pages/work/index",
     "pages/home/index",
     "pages/user/index",
     "pages/answer/fl_problem/index",
@@ -26,7 +26,7 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3963BC",
     "navigationBarTitleText": "小贝校招",
-    "navigationStyle": "custom",
+ 
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {

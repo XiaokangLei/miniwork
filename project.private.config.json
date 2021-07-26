@@ -25,14 +25,14 @@
           "scene": null
         },
         {
-          "name": "pages/study/fl_css/index",
-          "pathName": "pages/study/fl_css/index",
+          "name": "pages/work/fl_css/index",
+          "pathName": "pages/work/fl_css/index",
           "query": "id=79550af2606be2880d7ea0ba76e30e0a",
           "scene": null
         },
         {
-          "name": "pages/study/problem/index",
-          "pathName": "pages/study/problem/index",
+          "name": "pages/work/problem/index",
+          "pathName": "pages/work/problem/index",
           "query": "",
           "scene": null
         },
@@ -55,14 +55,14 @@
           "scene": null
         },
         {
-          "name": "pages/study/fl_basics/index",
-          "pathName": "pages/study/fl_basics/index",
+          "name": "pages/work/fl_basics/index",
+          "pathName": "pages/work/fl_basics/index",
           "query": "id=79550af2606be2880d7ea0ba76e30e0a",
           "scene": null
         },
         {
-          "name": "pages/study/fl_css/index",
-          "pathName": "pages/study/fl_css/index",
+          "name": "pages/work/fl_css/index",
+          "pathName": "pages/work/fl_css/index",
           "query": "id=79550af2606be2880d7ea0ba76e30e0a",
           "scene": null
         },
@@ -145,8 +145,8 @@
           "scene": null
         },
         {
-          "name": "pages/study/fl_problem/index",
-          "pathName": "pages/study/fl_problem/index",
+          "name": "pages/work/fl_problem/index",
+          "pathName": "pages/work/fl_problem/index",
           "query": "id=28ee4e3e606e751d0e846f3e4f2903b4&limt=2",
           "scene": null
         },
@@ -205,8 +205,8 @@
           "scene": null
         },
         {
-          "name": "pages/study/warehouse/index",
-          "pathName": "pages/study/warehouse/index",
+          "name": "pages/work/warehouse/index",
+          "pathName": "pages/work/warehouse/index",
           "query": "",
           "scene": null
         },

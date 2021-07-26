@@ -1,6 +1,6 @@
-<cu-custom bgColor="se">
+<!-- <cu-custom bgColor="se">
 	<view slot="content">我的</view>
-</cu-custom>
+</cu-custom> -->
 
 <view class="user">
 	<view class="cu-modal show" wx:if="{{show}}">

@@ -59,6 +59,9 @@ Component({
   created() {
     this.sq()
     console.log(wx.getStorageSync('userid'))
+    wx.setNavigationBarTitle({
+      title: "我的"
+    })
   },
   methods: {
     sz() {

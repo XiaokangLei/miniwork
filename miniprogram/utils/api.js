@@ -18,6 +18,8 @@ module.exports = {
   GET_press_top: task.Tree_get(db.collection('press').where({
     Top: true
   })),
+  GET_swiper: task.Tree_get(db.collection('mini_swiperList')),
+  GET_news_swiper: task.Tree_get(db.collection('news_swiperList')),
   GET_answer: task.Tree_get(db.collection('answer').orderBy('_createTime', 'desc')),
   GET_Book: task.Tree_get(db.collection('Book')),
   GET_history: task.Tree_get(db.collection('history').orderBy('_createTime', 'desc')),

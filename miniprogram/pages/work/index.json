@@ -18,7 +18,6 @@
     "van-skeleton": "@vant/weapp/skeleton/index",
     "van-calendar": "@vant/weapp/calendar/index",
     "val": "./warehouse/index",
-    "van-steps": "@vant/weapp/steps/index",
-    "tree_swiper":"/components/swiper/swiper"
+    "van-steps": "@vant/weapp/steps/index"
   }
 }

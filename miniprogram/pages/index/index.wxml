@@ -45,7 +45,7 @@
 	<view>
 		<home popr="{{ hd_op}}" wx:if="{{id==1}}" />
 		<dictionaries wx:if="{{id==2}}" />
-		<study wx:if="{{id==3}}" list="{{list}}" bind:tab_xz="post" loding="{{loding}}" />
+		<work wx:if="{{id==3}}" list="{{list}}" bind:tab_xz="post" loding="{{loding}}" />
 		<warehouse wx:if="{{id==4}}" />
 		<user wx:if="{{id==5}}" />
 	</view>

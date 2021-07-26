@@ -41,7 +41,7 @@ Component({
 
   methods: {
     tz(e) {
-      console.log(e.currentTarget.dataset.id)
+      console.log("+++"+e.currentTarget.dataset.id)
       wx.navigateTo({
         url: "../../pages/" + e.currentTarget.dataset.url + "?id=" + e.currentTarget.dataset.id
       })

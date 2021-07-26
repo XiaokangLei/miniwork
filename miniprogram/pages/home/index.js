@@ -12,6 +12,7 @@ Component({
     },
   },
   data: {
+    cardCur: 0,
     tz_list: [],
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
@@ -20,6 +21,9 @@ Component({
   created() {
     console.log(api)
     this.initial()
+    wx.setNavigationBarTitle({
+      title: "校招资讯"
+    })
   },
   methods: {
     initial() {
@@ -57,12 +61,29 @@ Component({
         this.setData({
           userlist: res.data
         })
-
       })
       task.Tree_cloud('user_browse').then(res => {
         this.setData({
           t_data_rs: res.total + 5
         })
+      }),
+      api.GET_news_swiper.then(res => {
+        this.setData({
+          swiperList: res
+        })
+      })
+    },
+    tz_swiper(e) {
+      console.log(this.data.swiperList)
+      console.log(e.currentTarget.dataset.url)
+      wx.navigateTo({
+        url: "../../pages/details/details_html/index?id=" + e.currentTarget.dataset.url
+      })
+    },
+    // cardSwiper
+    cardSwiper(e) {
+      this.setData({
+        cardCur: e.detail.current
       })
     },
     tz(e) {

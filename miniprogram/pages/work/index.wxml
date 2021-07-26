@@ -1,10 +1,21 @@
-<cu-custom bgColor="se">
+<!-- <cu-custom bgColor="bg-gradual-blue">
 	<view slot="content">小贝校招</view>
-</cu-custom>
+</cu-custom> -->
 <view class="main">
-	<view class="home-top">
-	</view>
-	<tree_swiper></tree_swiper>
+	<!-- <view class="home-top">
+	</view> -->
+
+	<swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
+		duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+		<swiper-item wx:for="{{swiperList}}" wx:key="ids" class="{{cardCur==index?'cur':''}}" id="{{item.goto}}"
+			bindtap="tz_swiper" data-url="{{item.navigateTo}}">
+			<view class="swiper-item">
+				<image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+				<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+					wx:if="{{item.type=='video'}}"></video>
+			</view>
+		</swiper-item>
+	</swiper>
 	<!-- <swiper class='home-gg' autoplay="true" vertical='true' circular='true' interval='8000'>
 		<block wx:for="{{tz_list}}" wx:key="this" wx:for-item="items">
 			<swiper-item class="home-gg2">

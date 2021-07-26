@@ -1,16 +1,16 @@
-<view class="cu-custom" style="height:{{CustomBar}}px">
+<!-- <view class="cu-custom" style="height:{{CustomBar}}px">
 	<view class="cu-bar fixed index_tb" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
-		<!-- 资讯页 签到 -->
+
 		<view class="action">
 			<navigator class="kl" url="/pages/user/sign/index" hover-class="none">
 				<text class=" iconfont  icon-qiandao" bindtap="BackPage"></text>
 			</navigator>
 		</view>
-		<!-- 校招资讯顶部标题 -->
+
 		<view class="content" style="top:{{StatusBar}}px;{{('opacity:'+(1- popr)+';')}}" wx:if="{{popr<0.5}}">
 			校招资讯
 		</view>
-		<!-- 下滑后，显示搜索 -->
+
 		<view class="content"
 			style="top:{{StatusBar}}px;width: calc(100% - 340rpx);margin-left: 40px; {{('opacity:'+  popr+';')}}">
 			<view class="search-form search-round search-index ">
@@ -20,13 +20,24 @@
 			</view>
 		</view>
 	</view>
-</view>
-
+</view> -->
+<!-- <test_page></test_page> -->
 <view class="home">
 	<view class="home-top">
 	</view>
-	<tree_swiper></tree_swiper>
-	<swiper class='home-gg' autoplay="true" vertical='true' circular='true' interval='8000'>
+	<swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
+		duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+		<swiper-item wx:for="{{swiperList}}" wx:key="ids" class="{{cardCur==index?'cur':''}}" id="{{item.goto}}"
+			bindtap="tz_swiper" data-url="{{item.navigateTo}}">
+			<view class="swiper-item">
+				<image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+				<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
+					wx:if="{{item.type=='video'}}"></video>
+			</view>
+		</swiper-item>
+	</swiper>
+	<!-- <tree_swiper></tree_swiper> -->
+	<!-- <swiper class='home-gg' autoplay="true" vertical='true' circular='true' interval='8000'>
 		<block wx:for="{{tz_list}}" wx:key="this" wx:for-item="items">
 			<swiper-item class="home-gg2">
 				<view>
@@ -35,7 +46,7 @@
 				<view data-id="{{items._id}}" bindtap="tz" data-a="details/press/index">{{items.tille}}</view>
 			</swiper-item>
 		</block>
-	</swiper>
+	</swiper> -->
 
 	<view class="home_sign">
 		<van-cell url="/pages/user/sign/index">

@@ -18,8 +18,11 @@ Page({
     ],
   },
   onLoad() {
-    this.towerSwiper('swiperList');
+    console.log("0000000000000000000000000000000000000000000000")
+    let that = this
+    this.towerSwiper('swiperList')
     // 初始化towerSwiper 传已有的数组名即可
+    this.getSwiper()
   },
   DotStyle(e) {
     this.setData({
@@ -85,5 +88,16 @@ Page({
         swiperList: list
       })
     }
-  }
+  },
+  getSwiper: async function () {
+    let that = this
+    console.log("------------------------------------------")
+    let result = db.collection('mini_swiperList')
+    .orderBy('id', 'desc')
+    .limit(10)
+    .get()
+    that.setData({
+      swiperList: that.data.posts.concat(result.data),
+    })
+  },
 })

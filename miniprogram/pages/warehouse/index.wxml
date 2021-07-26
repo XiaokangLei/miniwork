@@ -1,6 +1,6 @@
-<cu-custom bgColor="se" >
+<!-- <cu-custom bgColor="se" >
   <view slot="content">仓库</view>
-</cu-custom>
+</cu-custom> -->
 <wxs src="../../utils/timeHelper.wxs" module="timeHelper" />
 <view class="page">
   <view class="page__bd">
