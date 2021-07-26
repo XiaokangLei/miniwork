@@ -1,12 +1,5 @@
 # treeworld_Applets 新技术栈云开发
 
-![image](https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-%E4%BA%91%E5%BC%80%E5%8F%91-red) ![image](https://img.shields.io/badge/TAG-%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F-blue) ![image](https://img.shields.io/badge/LICENSE-MulanPSL--2.0-blue)
-![image](https://img.shields.io/badge/%E4%B8%96%E6%A0%91%E5%89%8D%E7%AB%AF-%E6%9D%BE%E9%98%B3-yellow) 
-
-![image](https://img.shields.io/badge/TAG-%E5%B8%A6%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F-blue)![image](https://img.shields.io/badge/UI-vant-blue) ![image](https://img.shields.io/badge/UI-vant-blue) ![image](https://img.shields.io/badge/gitee-OAuth2-yellow)
-[![star](https://gitee.com/KyotoKing_tree/treeworld_Applets/badge/star.svg?theme=dark)](https://gitee.com/KyotoKing_tree/treeworld_Applets/stargazers)
-
-<img width="400"    align="middle" src="https://treeworld-1258962601.cos.ap-guangzhou.myqcloud.com/md/%E4%B8%96%E6%A0%91%E5%89%8D%E7%AB%AF.gif">
 
 ## 项目更新月度计划安排（希望有更多大佬加入我们，一起开发项目，人多力量大）
 
@@ -35,20 +28,18 @@
 ### 小程序
 **预览地址**  
 
-<img width="500" alt="vue3-admin" src="https://treeworld-1258962601.cos.ap-guangzhou.myqcloud.com/md/xctp">
+
 
 ### 后台cms系统
 
-**预览地址：**  https://test-4gn9gu0ucc6657ba-1259429368.tcloudbaseapp.com/wx-cms/#/login  
-账号：treeworld  （该账号只有初级权限只可查看，不开放编辑等功能）
-密码：a1234567
+
 
 关注小程序：**小贝校招**，
 
 
 **代码不易，您如果觉得项目不错的话可以给项目一个 Star 嘛，也是对我一直更新代码的一种鼓励啦，谢谢各位的支持。**
 
-![newbee-mall-info](https://treeworld-1258962601.cos.ap-guangzhou.myqcloud.com/md/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210526104300.png)
+
 
 ## 开发及部署文档
 ### 后端云部署
@@ -104,10 +95,10 @@
 
 > 大家有任何问题或者建议都可以在 [issues](https://gitee.com/KyotoKing_tree/treeworld_Applets/issues) 中反馈给我，我逐渐慢慢完善项目。
 
-- QQ：996666908
-- QQ交流群：866619421
-- 我的微信：hstd528
-<img  align="middle" width="120"   src="https://treeworld-1258962601.cos.ap-guangzhou.myqcloud.com/md/6b9cb2156c5a151803ec6078ba71c6a.jpg">  
+- QQ：
+- QQ交流群：
+- 我的微信：
+
 2021.6.4更新
 
 
@@ -116,14 +107,9 @@
 
 以下为小贝校招小程序的部分页面预览图：
 
-![preview](https://treeworld-1258962601.cos.ap-guangzhou.myqcloud.com/md/105203.jpg)
-![preview](https://treeworld-1258962601.cos.ap-guangzhou.myqcloud.com/md/105741.jpg)
-![preview](https://treeworld-1258962601.cos.ap-guangzhou.myqcloud.com/md/62822.jpg)
+
 
 ## 感谢
 
-- [vant](https://vue3js.cn/docs/zh/)
-- [color-ui](https://www.kancloud.cn/als24/color/)
-- [腾讯云开发](https://console.cloud.tencent.com//)
 
 
