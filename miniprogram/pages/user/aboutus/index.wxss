@@ -1,0 +1,5 @@
+/* miniprogram/pages/user/aboutus/index.wxss */
+.main>image{
+  width: 100%;
+
+}

@@ -1,0 +1,23 @@
+var parse = function (time) {
+  var date = '';
+  var d = getDate(time);
+  var _month = d.getMonth() + 1;
+  date += (_month < 10 ? ("0" + _month) : _month) + "-";
+  date += (d.getDate() < 10 ? ("0" + d.getDate()) : d.getDate()) + " ";
+  date += (d.getHours() < 10 ? ("0" + d.getHours()) : d.getHours()) + ":";
+  date += (d.getMinutes() < 10 ? ("0" + d.getMinutes()) : d.getMinutes());
+  return date;
+}
+var replace = function (str, find = '', replace = '') {
+  return str.replace(find, replace);
+};
+var html2Text = function (str) {
+  str = str.replace(getRegExp('<\/?[^>]*>','g'), ''); //去除HTML tag
+  str = str.replace(getRegExp('[ | ]*\n','g'), '\n'); //去除行尾空白
+  str = str.replace(getRegExp('&nbsp;','ig'), ''); //去掉&nbsp;
+  str = str.replace(getRegExp('\s','g'), ''); //将空格去掉
+  return str;
+};
+module.exports.parse = parse;
+module.exports.html2Text = html2Text;
+module.exports.replace = replace;

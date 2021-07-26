@@ -1,0 +1,73 @@
+<cu-custom bgColor="bg-gradual-tree" isCustom="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">题库</view>
+</cu-custom>
+<view class="contaier">
+
+  <view class="padding" wx:if="{{cd<=1}}">
+    <view class="mainBox radius shadow-warp bg-white margin-top relative">
+
+      <view>
+        <view class="animation-reverse shadow"  data-class="slide-rights">
+          <view class="mentalTitle text-xl text-black text-bold">
+            <text>{{page || '' }}</text>
+            <text>、</text>
+            <text>{{  xw_list.problem|| '' }}</text>
+          </view>
+          <mp-html wx:if="{{xw_list.problem2!='<p>欢迎使用富文本编辑器</p>'}}" showLanguageName="{{true}}"
+            content="{{xw_list.problem2}}" selectable="{{true}}" />
+          <view bindtap="xz" data-id="{{index}}" wx:for="{{xw_list.question}}" wx:for-index="index"
+          wx:key="index"
+            class="{{xz_color==index?xw_list.affirm!=xz_color?'red':'mentalListActive':''}} mentalList">
+            <view class="indexBox text-shadow">{{index==0?"A":index==1?"B":index==2?"C":"D"}}</view>
+            {{ item|| '' }}{{xw_list.affirm}}
+          </view>
+        </view>
+        <view class="cu-progress radius striped active">
+          <view class="bg-tree" style="width:{{cd*100}}%">{{cd*100}}%</view>
+        </view>
+        <view wx:if="{{da_show}}" class="explainMain">
+          正确答案{{xw_list.affirm==0?"A":xw_list.affirm==1?"B":xw_list.affirm==2?"C":"D"}}</view>
+      </view>
+   
+      <view wx:if="{{da_show}}">
+        <view class=" text-bold text-black text-xxl margin-tb-xl">解析</view>
+        <mp-html wx:if="{{xw_list.problem!='<p>欢迎使用富文本编辑器</p>'}}"  showLanguageName="{{true}}" content="{{xw_list.answer}}" selectable="{{true}}" />
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="explain     ">
+    <view class="integral     ">{{"您当前积分："+currentPoints+"分"}}</view>
+    <view data-event-opts="{{[['tap',[['goExplain',['$event']]]]]}}" bindtap="__e" class="    ">
+      <u-icon vue-id="489f0c5a-3" name="question-circle-fill" size="30" class="    " bind:__l="__l"></u-icon>
+      答题规则说明
+    </view>
+  </view> -->
+ 
+
+  <view class="db_but" bindtap="xz_post" wx:if="{{cd<=1}}">
+    <view wx:if="{{cd<1}}">下一题</view>
+    <view wx:if="{{cd==1}}">完成答题</view>
+  </view>
+
+
+  <view class="warp" wx:if="{{cd>1}}">
+    <view class="rect">
+
+      <view class="closeImg  ">
+        <image mode="aspectFit" src="http://cdn.zhoukaiwen.com/answerTrophy.png" />
+      </view>
+      <view class="text-black text-bold text-center     ">恭喜您！完成答题！</view>
+      <view class="text-center margin-tb-lg text-gray     ">您答对了{{da_zq}}题</view>
+      <view class=" dis_but">
+        <view class="cu-btn round bg-blue shadow " style="width:48%;" bindtap="backpage">返回</view>
+        <button class="cu-btn round bg-blue shadow     " style="width:48%;" open-type="share">分享您的成果</button>
+
+
+      </view>
+
+    </view>
+  </view>
+
+</view>

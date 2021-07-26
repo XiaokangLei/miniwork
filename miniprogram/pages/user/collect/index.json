@@ -1,0 +1,14 @@
+{
+  "usingComponents": {  "van-icon": "@vant/weapp/icon/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-loading": "@vant/weapp/loading/index",
+  "van-tabs": "@vant/weapp/tabs/index",
+  "van-empty": "@vant/weapp/empty/index",
+  "van-transition": "@vant/weapp/transition/index"
+  }
+}

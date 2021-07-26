@@ -1,0 +1,17 @@
+
+
+@import "../../style/main.wxss";
+@import '/style/icon2.wxss';
+@import '/app.wxss';
+.page{
+  padding-bottom: 50px;
+}
+.tree-panel{
+  animation: fadeIn .9s;
+}
+.searchbox {
+  margin: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+

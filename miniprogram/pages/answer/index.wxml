@@ -1,0 +1,133 @@
+<cu-custom bgColor="se">
+  <view slot="content">世树书库</view>
+</cu-custom>
+<view class="page-box">
+  <view class="ans_bst">
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="action sub-title">
+        <text class="text-xl text-bold  text-tree">笔试题 105题</text>
+        <text class="bg-tree"></text>
+      </view>
+      <navigator class="ntp" url="/pages/answer/fl_problem/index">查看更多
+        <van-icon name="arrow" />
+      </navigator>
+    </view>
+    <view class="scroll_box">
+      <scroll-view scroll-x>
+        <navigator hover-class="item-hover" url="/pages/details/details_pro/index?id={{items._id}}" class="item_list"
+          wx:for="{{ xw_list}}" wx:key="this" wx:for-item="items">
+          <view class="item_list_ds">
+
+            <view class="dis2">
+              <view class="item_top_Wz">热</view>
+              <view class="item_top_Wz2"> {{items.problem}}</view>
+            </view>
+
+
+          </view>
+
+        </navigator>
+
+
+      </scroll-view>
+    </view>
+  </view>
+  <view class="ans_xzt">
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="action sub-title">
+        <text class="text-xl text-bold  text-tree">选择题</text>
+        <text class="bg-tree"></text>
+        <!-- last-child选择器-->
+      </view>
+
+    </view>
+    <view class="order">
+      <view class="top">
+        <view class="left">
+          <view class="cuIcon-titles text-blue"></view>
+          <view class="store">JavaScript</view>
+        </view>
+        <view class="right">
+          <text class="text-blue"></text>
+          <view class="progressBox">
+            <view class="cu-progress radius striped active">
+              <view class="bg-tree" style="width:{{loading?'25%':''}};">25%</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
+        <view class="left">
+          <image
+            src="cloud://test-4gn9gu0ucc6657ba.7472-test-4gn9gu0ucc6657ba-1259429368/263b1249013bbd23267d8beacf256d19.jpeg"
+            mode="aspectFill"></image>
+        </view>
+        <view class="content">
+          <view class="type">JavaScript是一种属于网络的高级脚本语言,已经被广泛用于Web应用开发,常用来为网页添加各式各样的动态功能,为用户提供更流畅美观的浏览效果</view>
+        </view>
+      </view>
+      <view class="fgx" color="#f1f1f1" margin="24rpx 0 15rpx 0"></view>
+      <view class="bottom">
+        <view>
+          <text class="text-tree">题库题目{{ js_L}}道</text>
+        </view>
+        <navigator class="btnBox" url="/pages/answer/details_ans/index?id=Js">
+          <view bindtap="goClass" class="evaluate btn">开始答题</view>
+        </navigator>
+      </view>
+    </view>
+    <view class="order">
+      <view class="top">
+        <view class="left">
+          <view class="cuIcon-titles text-blue"></view>
+          <view class="store">HTML+CSS</view>
+        </view>
+        <view class="right">
+          <text class="text-blue"></text>
+          <view class="progressBox">
+            <view class="cu-progress radius striped active">
+              <view class="bg-tree" style="width:{{loading?'30%':''}};">30%</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
+        <view class="left">
+          <image
+            src="cloud://test-4gn9gu0ucc6657ba.7472-test-4gn9gu0ucc6657ba-1259429368/c83d70cf3bc79f3ddd3c5e18b7a1cd11728b293c.png"
+            mode="aspectFill"></image>
+        </view>
+        <view class="content">
+          <view class="type">HTML称为超文本标签语言，是一种标识性的语言。它包括一系列标签．通过这些标签可以将网络上的文档格式统一，使分散的Internet资源连接为一个逻辑整体</view>
+        </view>
+      </view>
+      <view class="fgx" color="#f1f1f1" margin="24rpx 0 15rpx 0"></view>
+      <view class="bottom">
+        <view>
+          <text class="text-tree">题库题目{{ CS_L}}道</text>
+        </view>
+        <navigator class="btnBox" url="/pages/answer/details_ans/index?id=CSS">
+          <view bindtap="goClass" class="evaluate btn">开始答题</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="study_list">
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="action sub-title">
+        <text class="text-xl text-bold  text-tree">面试精讲</text>
+        <text class="bg-tree"></text>
+        <!-- last-child选择器-->
+      </view>
+
+    </view>
+    <list list="{{  wz_list}}"></list>
+  </view>
+</view>
+<wxs module="m1">
+  function format(ts) {
+  var d = getDate(ts)
+  return [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-')
+  }
+  module.exports.format = format
+</wxs>

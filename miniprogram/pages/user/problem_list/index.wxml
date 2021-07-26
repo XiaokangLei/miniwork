@@ -1,0 +1,24 @@
+
+<cu-custom bgColor="se"  isBack="{{true}}">
+	<view slot="content">小贝校招</view>
+</cu-custom>
+<view class="main">
+	<view class="pro_list" data-id="{{items.press_id}}" data-limt="{{index}}" wx:for="{{xw_list}}" wx:key="this"
+			wx:for-item="items"
+			bindtap="tz" data-a="details/details_pro/index">
+		<view class="pro_list_wz">第{{index+1}}题</view>
+		<view class="pro_list_wz_mc">{{items.problem}}</view>
+		<view  class="pro_list_wz_rs">
+			{{items.statr||m1.format()}}人面试遇见
+		</view>
+		<view class="clean"></view>
+	</view>
+	<view>
+	</view>
+</view>
+<wxs module="m1">
+	function format(ts) {
+		return 		Math.floor((Math.random() * 100))
+	}
+	module.exports.format = format
+</wxs>

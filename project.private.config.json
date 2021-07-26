@@ -1,0 +1,228 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "name": "pages/details/details_html/index",
+          "pathName": "pages/details/details_html/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/study/fl_css/index",
+          "pathName": "pages/study/fl_css/index",
+          "query": "id=79550af2606be2880d7ea0ba76e30e0a",
+          "scene": null
+        },
+        {
+          "name": "pages/study/problem/index",
+          "pathName": "pages/study/problem/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/details_pro/index",
+          "pathName": "pages/details_pro/index",
+          "query": "id=28ee4e3e606e751d0e846f3e4f2903b4",
+          "scene": null
+        },
+        {
+          "name": "pages/user/daka/index",
+          "pathName": "pages/user/daka/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/note/add/index",
+          "pathName": "pages/note/add/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/study/fl_basics/index",
+          "pathName": "pages/study/fl_basics/index",
+          "query": "id=79550af2606be2880d7ea0ba76e30e0a",
+          "scene": null
+        },
+        {
+          "name": "pages/study/fl_css/index",
+          "pathName": "pages/study/fl_css/index",
+          "query": "id=79550af2606be2880d7ea0ba76e30e0a",
+          "scene": null
+        },
+        {
+          "name": "pages/user/daka/index",
+          "pathName": "pages/user/daka/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/collect/index",
+          "pathName": "pages/user/collect/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/gitee_login/index",
+          "pathName": "pages/user/gitee_login/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/repos/index",
+          "pathName": "pages/repos/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/home/ranking/index",
+          "pathName": "pages/home/ranking/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/servic/index",
+          "pathName": "pages/servic/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/user/sign/index",
+          "pathName": "pages/user/sign/index",
+          "query": "id=b00064a76072ab7c0df82d355c97b187",
+          "scene": null
+        },
+        {
+          "name": "pages/repos/detail/index",
+          "pathName": "pages/repos/detail/index",
+          "query": "namespace=KyotoKing_tree&path=treeworld_Applet",
+          "scene": null
+        },
+        {
+          "name": "pages/repos/detail/index",
+          "pathName": "pages/repos/detail/index",
+          "query": "namespace=KyotoKing_tree&path=treeworld_Applets",
+          "scene": null
+        },
+        {
+          "name": "pages/home/history/index",
+          "pathName": "pages/home/history/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/gitee_login/index",
+          "pathName": "pages/user/gitee_login/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/details/details_dicz/index",
+          "pathName": "pages/details/details_dicz/index",
+          "query": "id=28ee4e3e60861a5b125beeb134f4d83e",
+          "scene": null
+        },
+        {
+          "name": "pages/details/details_pro/index",
+          "pathName": "pages/details/details_pro/index",
+          "query": "id=17453ede6094995207e7a20f04bd2385&limt=2",
+          "scene": null
+        },
+        {
+          "name": "pages/study/fl_problem/index",
+          "pathName": "pages/study/fl_problem/index",
+          "query": "id=28ee4e3e606e751d0e846f3e4f2903b4&limt=2",
+          "scene": null
+        },
+        {
+          "name": "pages/user/problem_list/index",
+          "pathName": "pages/user/problem_list/index",
+          "query": "id=17453ede6094995207e7a20f04bd2385&limt=2",
+          "scene": null
+        },
+        {
+          "name": "pages/home/history/index",
+          "pathName": "pages/home/history/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home/history/add/index",
+          "pathName": "pages/home/history/add/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "sign=true",
+          "scene": null
+        },
+        {
+          "name": "pages/s",
+          "pathName": "pages/servic/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home/fl_answer/index",
+          "pathName": "pages/home/fl_answer/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/inde",
+          "pathName": "pages/user/message/message",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/answer/index",
+          "pathName": "pages/answer/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/answer/details_ans/index",
+          "pathName": "pages/answer/details_ans/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/study/warehouse/index",
+          "pathName": "pages/study/warehouse/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "id_index=2",
+          "scene": null
+        },
+        {
+          "name": "pages/answer/fl_problem/index",
+          "pathName": "pages/answer/fl_problem/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

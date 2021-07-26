@@ -1,0 +1,47 @@
+<cu-custom bgColor="bg-gradual-tree"   isBack="{{true}}" ><view slot="content">前端教程</view></cu-custom>
+
+<view style="background-color: #fff;padding: 20px;"  wx:if="{{loding}}">
+	<van-skeleton title row="3" wx:for="{{5}}" wx:key="this" />
+</view>
+
+
+<view class="VerticalBox "  wx:if="{{!loding}}">
+  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" >
+    <view class="cu-item {{index==TabCur?'.text-tree cur':''}}" wx:for="{{list}}" wx:key="index" bindtap='tabSelect' data-id="{{index}}">
+     {{item.name}}
+    </view>
+  </scroll-view>
+
+
+  
+  <scroll-view  class="VerticalMain" scroll-y scroll-with-animation scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+    <view class="padding-top padding-lr" wx:for="{{list}}"  wx:key="index" id="main-{{index}}">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='cuIcon-title text-green'></text> {{item.name}} </view>
+      </view>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item" bindtap="tz" data-id="{{items._id}}"  wx:key="index" 
+        data-a="details/details_dicz/index"  wx:for="{{list2}}"  wx:if="{{item.name==items.type}}" wx:for-index="index" wx:for-item="items">
+          <view class="cu-avatar   {{item.color}}" >{{ spl.format(items.type)}}</view>
+          <view class="content">
+            <view class="text-grey">{{items.tille}}</view>   
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">浏览</view>
+            <view class="cu-tag round bg-grey sm">{{items. browse}}</view>
+          </view>
+        </view>
+  
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<wxs module="spl">
+	function format(ts) {
+	
+		return ts.substring(0,1);
+	}
+	module.exports.format = format
+</wxs>

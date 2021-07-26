@@ -1,0 +1,42 @@
+
+<cu-custom bgColor="se" isBack="{{true}}">
+  <view slot="content">提交列表</view>
+</cu-custom>
+<wxs src="../../../utils/timeHelper.wxs" module="timeHelper" />
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__bd">
+      <view class="tree-cells__title">
+        当前分支：
+        <span style="color:#333;">{{branch}}</span>
+        <span style="float:right;color:#d69c63;" bindtap="changeBranch">切换分支</span>
+      </view>
+      <block wx:if="{{commitList.length>0}}">
+        <view class="tree-panel tree-panel_access">
+          <view class="tree-panel__bd">
+            <navigator wx:for="{{commitList}}" wx:key="item" hover-class="navigator-hover" url="../commits/detail?path={{path}}&namespace={{namespace}}&hash={{item.sha}}">
+              <view class="tree-media-box tree-media-box_appmsg">
+                <view class="tree-media-box__bd">
+                  <h4 style="word-wrap: break-word;word-break: break-all;">{{item.commit.message}}</h4>
+                  <p class="tree-media-box__desc">
+                    <view>
+                      <span style="font-size:14px;color:#999;margin-right:5px;">
+                        {{timeHelper.parse(item.commit.committer.date)}}
+                      </span>
+                      <span style="color:#3963BC;margin-left:5px;">+{{item.stats.additions}}</span>
+                      <span style="color:#d69c63;margin-left:5px;">-{{item.stats.deletions}}</span>
+                    </view>
+                    <view> 由 {{item.author.name}} ({{item.commit.committer.email}}) 提交</view>
+                  </p>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{commitList.length==0}}">
+        <view style="text-align:center;font-size:14px;color:#999;padding:20px 0px;">
+          最近无Commit记录
+        </view>
+      </block>
+  </view>
+</view>

@@ -1,0 +1,273 @@
+/* pages/signin/signin.wxss */
+/* 日历 */
+@import "../../../style/icon.wxss";
+@import "../../../style/animated.wxss";
+
+.contant {
+  padding-bottom: 30rpx;
+  margin-top: 10px;
+}
+
+.flex_center {
+
+  margin: 0 auto;
+}
+
+.iconfont {
+  position: absolute;
+  margin: 0 auto;
+  color: #3963BC;
+  font-size: 30px;
+  left: 20rpx;
+  animation: rubberBand 1s;
+}
+
+.sign_top {
+  padding: 10px 30rpx;
+  width: 100%;
+  color: white;
+  background-size: cover;
+  background-position: center;
+
+
+  
+}
+.main2{
+  padding: 1px;
+  color: white;
+  background-image:url('https://7472-test-4gn9gu0ucc6657ba-1259429368.tcb.qcloud.la/sin_bg.png?sign=de9d6ea379af989cbf4891d10462b909&t=1619749513');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  animation: fadeIn .8s;
+  background-color:  #3963BC
+}
+.sign_wz {
+  font-size: 46rpx;
+}
+
+.sign_wz2 {
+  font-size: 14px;
+}
+
+.sign_wz3 {
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 30px;
+  
+}
+.dis{
+  display: flex;
+}
+.sign_wz4 {
+  margin-top: 10px;
+
+  font-weight: 500;
+  font-size: 20px;
+  
+}
+.sign_wz5{
+  margin-top: 10px;
+  margin-left: 5px;
+
+  font-weight: 500;
+  font-size: 16px;
+  
+}
+.calendar_title {
+  color: #fff;
+  padding: 0rpx 200rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar_title .icon {
+  width: 60rpx;
+  height: 60rpx;
+  font-size: 0;
+}
+
+.icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.nowDtae {
+  color: rgba(233, 213, 172, 1);
+  margin: 0 20rpx;
+  font-size: 30rpx;
+}
+
+.icon_xz {
+  font-size: 38rpx;
+  color: rgba(233, 213, 172, 1);
+}
+
+/* 日历 */
+.calendar {
+  background: linear-gradient(94deg, rgba(192, 160, 105, 1), rgba(233, 213, 172, 1));
+  box-shadow: 0px 3px 12px 0px rgba(195, 164, 110, 0.23);
+  border-radius: 20rpx;
+  padding: 0 0 20rpx;
+  margin: 20px;
+  margin-bottom: 50rpx;
+}
+
+.header {
+  font-size: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header>view {
+  display: inline-block;
+  width: 14.285%;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  border-bottom: 1px solid #D0D0D0;
+  padding: 20rpx 0;
+}
+
+.weekMark {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.weekMark view {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid #1d1f24;
+}
+
+.date-box {
+  font-size: 0;
+  padding: 10rpx 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.date-box>view {
+  position: relative;
+  display: inline-block;
+  width: 14.285%;
+  color: #666;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.date-head {
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+}
+
+.nowDay .date-head {
+  width: 60rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to top, #1D4259, #3963BC);
+  margin: 0 auto;
+}
+.nowDay .date-head span {
+  color: #fff;
+}
+.userlist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_dix {
+  display: flex;
+}
+
+.tille-1 {
+  font-size: 14px;
+  display: inline-block;
+  padding-left: 10px;
+  color: #ffffff;
+  padding: 4px 8px;
+  margin-top: 20px;
+  border-radius: 0px 6px 0px 0px;
+  background: linear-gradient(to top right, #f4c998, #d69c63);
+}
+
+.user_phb {
+  margin: 10px;
+  border-radius: 12px;
+
+  overflow-y: scroll;
+  animation:bounceInLeft 1s
+}
+
+.user_img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  margin: 0px 20px;
+}
+
+.nowsDay .date-head {
+  width: 60rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to top, #1D4259, #3963BC);
+
+
+  margin: 0 auto;
+}
+
+/* 签到 */
+.center {
+  background: #fff;
+  padding: 40rpx 0;
+  box-sizing: border-box;
+  margin: 20rpx 0;
+}
+
+.center_text {
+  margin-top: 20rpx;
+
+
+  box-sizing: border-box;
+  padding-top: 12px;
+  text-align: center;
+  color: #fff !important;
+  background: linear-gradient(to top right, #f4c998, #d69c63);
+  /* border: 4px solid #FEE6C3; */
+
+position: fixed;
+bottom: 0;
+  font-size: 16px !important;
+width: 100%;
+  margin-bottom: 10px;
+  padding: 20rpx 30rpx;
+
+  margin: 0 auto;
+}
+
+.center_texts {
+  color: #999999;
+}
+
+.bottom_text {
+  font-weight: normal;
+  line-height: 60rpx;
+}
+
+.bottom_text text {
+  color: #66afff;
+}
+
+.bottom {
+  background: #fff;
+  padding: 60rpx 0;
+  box-sizing: border-box;
+}

@@ -1,0 +1,19 @@
+/* miniprogram/pages/note/add/index.wxss */
+.main{
+  padding: 10px;
+}
+.van-field__page--textare{
+  min-height: 300px!important;
+}
+.mtheig textarea{
+  height: 300px!important;
+}
+.ck_buttom{
+  background: linear-gradient(to top left , #f7ce9e , #d69c63 );
+  
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  margin: 10px;
+  color:white
+}

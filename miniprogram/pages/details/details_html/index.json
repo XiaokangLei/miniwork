@@ -1,0 +1,19 @@
+{
+  "navigationBarTitleText": "详情内容",
+  "navigationBarTextStyle": "white",
+
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+
+    "mp-html": "mp-weixin",
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-uploader": "@vant/weapp/uploader/index"
+  }
+
+}

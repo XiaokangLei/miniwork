@@ -1,0 +1,68 @@
+<cu-custom bgColor="bg-gradual-tree" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">面试问答</view>
+</cu-custom>
+<view class="de-main">
+	<view class="home-jcly">
+		<view class="cu-item grayscale">
+			<view class="cu-avatar radius ">
+				<text>面</text>
+			</view>
+			<view class="content2">
+				<view>
+					<text class="text-cut">面试官</text>
+					<view class="cu-tag round bg-orange sm">问答率43%</view>
+				</view>
+				<view class="text-gray text-sm flex">
+					<text class="text-cut"></text>
+				</view>
+			</view>
+
+		</view>
+
+		<view class="detail-tl">
+			{{ xw_list.problem}}
+		</view>
+		<!-- <view class="padding">
+			<view class="cu-avatar-group">
+				<view class="cu-avatar round " wx:for="{{4}}" wx:key
+					style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big1000{{index+1}}.jpg);">
+				</view>
+			</view>
+			等用户碰见此题
+		</view> -->
+		<van-count-down use-slot time="{{ time }}" bind:change="onChange">
+			<view class="dl">
+				<text class="item">{{ timeData.minutes }}分</text>
+				<text class="item">{{ timeData.seconds }}秒</text>
+				<!-- <text class="count_til">计时结束</text> -->
+			</view>
+		</van-count-down>
+	</view>
+	<view class="m3">
+		<view class="tille-1">
+			面试题解答
+		</view>
+		<view class="detil">
+			<rich-text nodes="{{xw_list.answer}}"></rich-text>
+		</view>
+	</view>
+</view>
+
+
+<view class="dbu">
+
+	<view class="but_" bindtap="fy">
+		下一道题
+	</view>
+
+	<view bindtap="statr_sc" data-id="collect" class="dbu_lk {{sc_show?'cg_sp':''}}">
+		<van-icon name="star-o" size="20px" />
+		<view class="dbu_wz ">收藏 {{xw_list.collect||0}}</view>
+	</view>
+	<view bindtap="statr_sc" data-id="start" class=" dbu_lk {{dz_show?'cg_sp':''}}">
+		<van-icon name="good-job-o" size="20px" />
+		<view class="dbu_wz ">遇见 {{xw_list.statr}}</view>
+	</view>
+
+</view>

@@ -1,0 +1,52 @@
+
+<view class="main" >
+  <view class="carousel">
+    <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{8000}}" circular="{{true}}">
+      <block wx:for="{{carousels}}" wx:for-item="x" wx:for-index="xi" wx:key="xi">
+        <swiper-item class="swiper-item">
+          <view class="carousel-item">
+            <image class="img" src="{{x.img}}"></image>
+            <view class="show">
+              <view class="word">
+                <view class="w1">{{x.tille}}</view>
+                <view class="w2">{{x.html}}</view>
+              </view>
+              <view class="enter"><van-icon name="arrow" /></view>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+
+  <block >
+    <view class="ex-mall-panel column">
+      <view class="{{['ex-mall-panel-content',$root.m12]}}">
+        <scroll-view scroll-x="{{true}}">
+          <view class="column-list">
+            <block wx:for="{{columns}}"   wx:for-item="xx" wx:for-index="xxi" wx:key="xxi">
+              <view  class="item"    data-id="{{xx._id}}" bindtap="tz"   	data-a="details/details_html/index" >
+                <view class="thumbnail">
+                  <image class="img" src="{{xx.img}}" mode="aspectFill"></image>
+                  <view class="btn favorite">
+                    <van-icon name="label-o" />
+                  </view>
+                </view>
+                <view class="{{['info',x.m13]}}">
+                  <view class="title">{{xx.tille}}</view>
+                  <!-- <view class="price">{{xx.statr}}</view> -->
+                </view>
+              </view>
+            </block>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </block>
+
+
+
+
+
+</view>

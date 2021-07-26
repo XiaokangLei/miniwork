@@ -1,0 +1,83 @@
+<view class="main">
+
+	<!-- <view class='page-cont' wx:if="{{isTiptrue}}">
+		<view class='top'>
+			<image src='../../images/jt.png'></image>
+			<view class='p_one'>添加小贝校招，随时获取校招资讯</view>
+		</view>
+		<view class='cont'>
+			<view class='cont-p'>
+				<view class='text'><text>1</text></view>
+				<view>点击右上角</view>
+				<image src='../../images/dian.png'></image>
+			</view>
+			<view class='cont-p'>
+				<view class='text'><text>2</text></view>
+				<view>点击“添加我的小程序”</view>
+			</view>
+			<view class='cont-p'>
+				<view class='text'><text>3</text></view>
+				<view>回到微信首页下拉聊天列表，</view>
+			</view>
+			<view class='cont-p-lib'>
+				<view class='text' style='opacity:0;'><text>3</text></view>
+				<view>从“我的小程序”里打开“小贝校招”</view>
+			</view>
+			<view class='cont-p-three'>
+				<view class='right'>
+					<view class='left-p'>
+						<view class='title'>我的小程序</view>
+						小贝校招
+					</view>
+					<view class='left-p'>
+						<view class='title' style='opacity:0;'>我的小程序</view>
+						<view
+							style='color:#4C4C4E;width:27px;height:27px; margin-top: 5px; margin-bottom: 5px;border-radius:50%;background:#4C4C4E;'>
+						</view>小程序
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class='bottom' bindtap='closeThis'>记住了 我去试试</view>
+	</view> -->
+	<van-notify id="van-notify" top="{{180}}" />
+	<!-- 底部五个分类，资讯，笔试，校招，面试，我的，id分别为12345 -->
+	<view>
+		<home popr="{{ hd_op}}" wx:if="{{id==1}}" />
+		<dictionaries wx:if="{{id==2}}" />
+		<study wx:if="{{id==3}}" list="{{list}}" bind:tab_xz="post" loding="{{loding}}" />
+		<warehouse wx:if="{{id==4}}" />
+		<user wx:if="{{id==5}}" />
+	</view>
+
+	<view class="cu-bar tabbar  bg-white">
+		<view bindtap="tab_tz" data-id="1" class="action jk  text-gray {{id==1?'xzcg ':''}}" hover-class="item-hover"
+			hover-stay-time="100">
+			<view class="">
+				<span class="tab_icon iconfont icon-shouye shadow"></span>
+			</view> 资讯
+		</view>
+		<view bindtap="tab_tz" data-id="2" class="action jk text-gray {{id==2?'xzcg':''}}" hover-class="item-hover"
+			hover-stay-time="100">
+			<span class=" tab_icon iconfont  icon-ziliao "></span>
+			笔试
+		</view>
+		<view class="action  add-action  text-gray {{id==3?'xzcg':''}}" bindtap="tab_tz" data-id="3">
+			<view class="cu-btn cuIcon-shuye tab_color shadow">
+			</view>
+			校招
+		</view>
+		<view class="action text-gray jk {{id==4?'xzcg':''}}" bindtap="tab_tz" data-id="4" hover-class="item-hover"
+			hover-stay-time="100">
+			<span class="tab_icon iconfont  icon-yunchucun"></span>
+			面试
+		</view>
+		<view class="action text-gray jk {{id==5?'xzcg':''}}" bindtap="tab_tz" data-id="5" hover-class="item-hover"
+			hover-stay-time="100">
+			<view class="cuIcon-my">
+			</view>
+			我的
+		</view>
+	</view>
+
+</view>

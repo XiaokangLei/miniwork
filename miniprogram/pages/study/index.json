@@ -1,0 +1,24 @@
+{
+  "usingComponents": {
+    "van-button": "@vant/weapp/button",
+    "van-row": "@vant/weapp/row/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "list": "/components/tree_list/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-field": "@vant/weapp/field/index",
+    "CardSwiper": "/components/card/index",
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-calendar": "@vant/weapp/calendar/index",
+    "val": "./warehouse/index",
+    "van-steps": "@vant/weapp/steps/index",
+    "tree_swiper":"/components/swiper/swiper"
+  }
+}

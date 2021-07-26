@@ -1,0 +1,37 @@
+<!--pages/index/index.wxml-->
+<view class='page-box box'>
+  <view class="m-box">
+    <movable-area class="m-area">
+      <movable-view class='m-item' wx:for="{{list}}" wx:key="item" wx:index="index" x="{{item.x}}" y="{{item.y}}"
+        damping="52" direction="all" bindchange="onChange" data-index="{{index}}" catchtouchend="touchEnd"
+        catchtouchstart="touchStart" catchtouchmove="touchMove" out-of-bounds="true" data-index="{{index}}">
+        <!-- 根据自己的需求替换此区域 start -->
+        <view class='m-item-box item{{(index == 0 || index == list.length -1) ? 0 : 1}} '>
+          <view class="image">
+            <image src="{{item.image}}"></image>
+          </view>
+          <view class="auth-box" wx:if="{{item.auth == 1}}">大厂</view>
+          <view class="item-right">
+            <view class="itme_tille">{{item.tille}}</view>
+            <view class="item_time">2021.1.4</view>
+            <view>
+              <text class="item_zhaop">平均薪资</text>
+              <text class="item_zhaop_s">{{item.gz}}</text>
+              <text class="item_zhaop">￥</text>
+            </view>
+            <view>
+              <view class="tille_1">入厂需求</view>
+              <view class="tille_1">{{item.mc}}</view>
+            </view>
+            <view class="item_btn">
+              我要入厂
+            </view>
+          </view>
+        </view>
+        
+        <!-- 根据自己的需求替换此区域 end -->
+      </movable-view>
+    </movable-area>
+  </view>
+
+</view>

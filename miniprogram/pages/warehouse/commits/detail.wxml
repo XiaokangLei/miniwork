@@ -1,0 +1,78 @@
+<cu-custom bgColor="se" isBack="{{true}}">
+  <view slot="content">Commit</view>
+</cu-custom>
+<wxs src="../../../utils/timeHelper.wxs" module="timeHelper" />
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__bd">
+    <block wx:if="{{commit}}">
+      <view class="tree-panel tree-panel_access">
+        <view class="tree-panel__bd">
+      <navigator url="../user/detail?login={{commit.author.login}}">
+          <view class="tree-media-box tree-media-box_appmsg">
+            <view class="tree-media-box__bd">
+              <h4 style="word-wrap: break-word;word-break: break-all;">{{commit.commit.message}}</h4>
+              <p class="tree-media-box__desc">
+                <view>
+                  <span style="font-size:14px;color:#999;margin-right:5px;">
+                    {{timeHelper.parse(commit.commit.committer.date)}}
+                  </span>
+                  <span style="color:#3963BC;margin-left:5px;">+{{commit.stats.additions}}</span>
+                  <span style="color:#d69c63;margin-left:5px;">-{{commit.stats.deletions}}</span>
+                </view>
+                <view>由 {{commit.author.name}} ({{commit.commit.committer.email}}) 提交</view>
+              </p>
+            </view>
+          </view>
+          </navigator>
+        </view>
+
+      </view>
+      <view class="tree-cells__title">修改文件列表</view>
+      <block wx:for="{{commit.files}}" wx:key="item">
+        <view class="tree-panel tree-panel_access">
+          <view class="tree-panel__bd">
+            <view class="tree-media-box tree-media-box_appmsg">
+              <view class="tree-media-box__bd">
+                <h4 class="tree-media-box__title">
+                  <font wx:if="{{item.status=='added'}}" class="badge-full-green">添加</font>
+                  <font wx:if="{{item.status=='modified'}}" class="badge-full-normal">更新</font>
+                  <font wx:if="{{item.status=='removed'}}" class="badge-full-danger">删除</font>
+                  {{item.filename}}
+                </h4>
+                <view>
+                  <view style="font-size:14px;">
+                    变更数量：
+                    <span style="color:#3963BC;margin-left:5px;">+{{item.additions}}</span>
+                    <span style="color:#d69c63;margin-left:5px;">-{{item.deletions}}</span>
+                  </view>
+                  <text style="font-size:14px;color:#999;">{{item.patch}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+   
+        </view>
+      </block>
+      <view style="text-align:center;font-size:14px;color:#999;padding:10px;">更多文件变更请在网站上查看</view>
+    </block>
+    <view class="addCommentBox" wx:if="{{commentFormShow}}" bindtap="hideAddForm">
+      <view class="addCommentForm">
+        <view class="tree-cells__title" style="margin-left:10px;font-size:16px;"></view>
+        <form bindsubmit="doCommentFormSubmit" bindreset="formReset">
+          <view class="tree-cells tree-cells_form">
+            <view class="tree-cell">
+              <view class="tree-cell__bd">
+                <textarea catchtap="nothing" name="body" class="tree-textarea" placeholder="请填写对{{filename}}文件变更的评论" rows="2" value=""></textarea>
+              </view>
+            </view>
+          </view>
+          <view class="demos-content-padded" style="padding:0px 10px;">
+            <button form-type="submit" class="tree-btn tree-btn_primary" type="primary">
+              发布评论
+            </button>
+          </view>
+        </form>
+      </view>
+    </view>
+  </view>
+</view>

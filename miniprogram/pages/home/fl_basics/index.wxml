@@ -1,0 +1,78 @@
+<cu-custom bgColor="se"  isBack="{{true}}">
+	<view slot="content">小贝校招</view>
+</cu-custom>
+<view class="main">
+  <van-dialog id="van-dialog" />
+
+  <view wx:if="{{loding}}" class="loding">
+    <van-loading />
+    <view>树树正在加急，请耐心等待 </view>
+  </view>
+  <van-transition show="{{!loding }}" name="slide-left" custom-class="block">
+
+    <view class="bascs" wx:for="{{xw_list}}" wx:key="this" wx:for-item="items" data-id="{{items._id}}" bindtap="tz"
+      data-a="details/details_htms/index">
+      <view wx:if="{{items.img}}" class="bascs-left" data-a="details/index">
+        <view>
+          <image src="{{items.img}}"></image>
+        </view>
+        <view>{{items.tille}}</view>
+      </view>
+      <view class="bascs-right" wx:if="{{items.img}}">
+        <view class="bascs-right_mc">
+          {{items.mec}}
+        </view>
+        <view class="bascs-bottom">
+          <view class="dis">
+            <view>
+              <van-icon name="good-job-o" />
+              <view class="icon_wz">{{items.collect}}</view>
+            </view>
+            <view>
+              <van-icon name="star-o" />
+              <view class="icon_wz">{{items.statr}}</view>
+            </view>
+            <view>
+              <van-icon name="clock-o" />
+              <view class="icon_wz">{{m1.format(items.add_time)}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="bascs-dlimg" wx:if="{{!items.img}}">
+        <view class="bascs-dlimg_tl">
+          {{items.tille}}
+        </view>
+        <view class="bascs-dlimg_mc">
+          {{items.mec}}
+        </view>
+        <view class="bascs-bottom">
+          <view class="dis">
+            <view>
+              <van-icon name="good-job-o" />
+              <view class="icon_wz">3</view>
+            </view>
+            <view>
+              <van-icon name="star-o" />
+              <view class="icon_wz">3</view>
+            </view>
+            <view>
+              <van-icon name="clock-o" />
+              <view class="icon_wz">{{m1.format(items.add_time)}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="bascs-type " wx:if="{{items.img}}">{{items.type}}</view>
+      <view class="bascs-type2 " wx:if="{{!items.img}}">{{items.type}}</view>
+    </view>
+
+  </van-transition>
+</view>
+<wxs module="m1">
+  function format(ts) {
+    var d = getDate(ts)
+    return [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-')
+  }
+  module.exports.format = format
+</wxs>

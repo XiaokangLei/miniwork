@@ -1,0 +1,25 @@
+<!-- <cu-custom bgColor="se"  isBack="{{true}}">
+	<view slot="content">提问</view>
+</cu-custom> -->
+<van-notify class="" id="van-notify" />
+<view class="main">
+
+  <van-cell-group>
+
+  <van-field
+  model:value="{{html }}"
+    label="问题"
+    class="mtheig"
+    type="textarea"
+    placeholder="请输入问题内容"
+    autosize
+  />
+  <van-field
+    model:value="{{time}}"
+    label="添加时间"
+    placeholder="时间"
+  />
+
+</van-cell-group>
+<view class="ck_buttom" bindtap="add">提问 </view>
+</view>

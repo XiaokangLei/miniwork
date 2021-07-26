@@ -1,0 +1,65 @@
+<!--pages/signin/signin.wxml-->
+<cu-custom bgColor="se" isBack="{{true}}">
+  <view slot="content">小贝校招</view>
+</cu-custom>
+
+<view class="main">
+  <view class="sign_top" style="padding-top:{{StatusBar}}px">
+    <view class="contant">
+      <!-- 日历年月 -->
+      <view class='calendar_title layer_center'>
+        <view bindtap='lastMonth'>
+          <van-icon class="icon_xz" name="arrow-left" />
+        </view>
+        <view class="nowDtae ">{{year}}年{{month}}月</view>
+        <view bindtap='nextMonth'>
+          <van-icon class="icon_xz" name="arrow" />
+        </view>
+      </view>
+      <!-- 日历主体 -->
+      <view class='calendar'>
+        <view class='header'>
+          <view wx:for='{{date}}' wx:key='index' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}} '>
+            {{item}}
+            <view></view>
+          </view>
+        </view>
+        <view class='date-box'>
+          <block wx:for='{{dateArr}}' wx:key='index'>
+            <view class='{{ isToday == item.isToday ? "nowDay" :item.choose?"nowsDay":""  }}'>
+
+              <view class='date-head font28' data-year='{{year}}' bindtap="data_time" data-month='{{month}}'
+                data-datenum='{{year+""+(month<10?"0"+month:month) +""+item.dateNum}}'>
+                <view>{{item.dateNum}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+
+
+      </view>
+
+    </view>
+
+
+  </view>
+
+  <!-- <view class="cu-list">
+    <view class="cu-item show">
+      <view class="content">
+        <view class="text-grey">学习vue</view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">
+            <text class="cuIcon-infofill text-red  margin-right-xs"></text> 学习vue底层原理，架构和函数方法
+          </text>
+        </view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">22:20</view>
+        <view class="cu-tag round bg-grey sm">5</view>
+      </view>
+    </view>
+
+  </view> -->
+
+</view>

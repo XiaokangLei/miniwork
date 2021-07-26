@@ -1,0 +1,40 @@
+<cu-custom bgColor="se"  isBack="{{true}}">
+	<view slot="content">添加笔记</view>
+</cu-custom>
+<view class="main">
+
+  <van-cell-group>
+  <van-field
+  model:value="{{  tille }}"
+    label="笔记名称"
+    placeholder="请输入笔记名称"
+
+  />
+  <van-field
+  model:value="{{html }}"
+    label="内容"
+    class="mtheig"
+    type="textarea"
+    placeholder="请输入笔记内容"
+    autosize
+
+  />
+  <van-field
+    model:value="{{time}}"
+    label="添加时间"
+    placeholder="时间"
+
+  />
+  <van-field
+  wx:if="{{press_id}}"
+    model:value="{{ly}}"
+    label="来源"
+
+    type="textarea"
+    icon="share"
+    autosize
+    bind:click-icon="onClickIcon"
+  />
+</van-cell-group>
+<view class="ck_buttom" bindtap="add">添加笔记 </view>
+</view>

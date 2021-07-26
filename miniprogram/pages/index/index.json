@@ -1,0 +1,23 @@
+{
+  "navigationBarBackgroundColor": "#3963BC",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#fff",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-transition": "@vant/weapp/transition/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "home": "../home",
+    "user": "../user",
+    "warehouse":"../warehouse",
+    "dictionaries":"../answer",
+    "study":"../study"
+  }
+}

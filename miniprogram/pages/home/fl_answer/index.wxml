@@ -1,0 +1,54 @@
+<cu-custom bgColor="se" isBack="{{true}}">
+	<view slot="content">前端问答</view>
+</cu-custom>
+
+<!-- <van-notice-bar left-icon="volume-o" text="请规范提问的问题，提问后会在24小时内解答，请耐心等待" /> -->
+<view class="as_dlf">
+	<button   open-type="contact"  style="width: 48%;" class="nav-li bg-purple">
+		<view class="nav-title">我要提问</view>
+	</button >
+	<button   open-type="contact"  style="width: 48%;" class="nav-li bg-purple">
+		<view class="nav-title">我要回答</view>
+	</button >
+	<!-- <button class="cu-btn content" open-type="contact" >
+					<text class="cuIcon-safe  text-tree"></text>
+					<text class="text-grey">加入群聊</text>
+				</button> -->
+</view>
+
+<view>
+	<van-collapse border="{{false}}" value="{{ activeNames }}" bind:change="onChange" >
+		<van-collapse-item border="false"  class="as_list" name="{{index}}" wx:index="{{index}}" wx:for="{{as_list}}"
+			wx:key="this" wx:for-item="items">
+			<view slot="title" >
+				<view class="text-grey">提问者（匿名）</view>
+				<view class="text-gray text-content text-df">
+					{{items.ask}}
+				</view>
+				<view class="margin-top-sm flex justify-between">
+					<view class="text-gray text-df">提问时间：{{m1.format(items._createTime)}}</view>
+			
+				</view>
+				<view class="text_lk ">
+						{{items.reply?"以回答":"未回答"}}
+					</view>
+					<!-- <navigator hover-class='none' url="/pages/home/history/add/index?id={{items._id}}"  wx:if="{{!items.reply}}" class="tex">回答问题</navigator> -->
+			</view>
+			<view class="bg-grey padding-sm radius margin-top-sm  text-sm">
+				<view class="flex">
+					<view>树树：</view>
+					<view class="flex-sub">{{items.reply}}</view>
+				</view>
+			</view>
+
+		</van-collapse-item>
+	</van-collapse>
+</view>
+
+<wxs module="m1">
+	function format(ts) {
+		var d = getDate(ts)
+		return [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-')
+	}
+	module.exports.format = format
+</wxs>

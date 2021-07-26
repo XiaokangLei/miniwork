@@ -1,0 +1,218 @@
+/* pages/signin/signin.wxss */
+@import "../../../style/main.wxss";
+/* 日历 */
+.contant {
+
+  padding-bottom: 30rpx;
+}
+.cu-item{
+  display: flex;
+
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+margin: 10rpx;
+  border-left: 4px solid #d69c63;
+}
+.flex_center{
+
+
+  margin: 0 auto;
+}
+.sign_top{
+  height: 300px;
+
+  color:white;
+  background: linear-gradient(to top, #1D4259, #3963BC);
+}
+.sign_wz{
+  font-size: 42rpx;
+}
+.sign_wz2{
+  font-size: 14px;
+}
+.sign_wz3{
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 30px;
+}
+.calendar_title {
+  color: #fff;
+  padding: 30rpx 200rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+
+
+
+
+}
+
+.calendar_title .icon {
+  width: 60rpx;
+  height: 60rpx;
+  font-size: 0;
+}
+
+.icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.nowDtae {
+  color: rgba(233,213,172,1);
+  margin: 0 20rpx;
+  font-size: 30rpx;
+}
+.icon_xz{
+  font-size: 38rpx;
+  color: rgba(233,213,172,1);
+}
+
+/* 日历 */
+.calendar {
+
+
+}
+
+.header {
+  font-size: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header>view {
+  display: inline-block;
+  width: 14.285%;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  border-bottom: 1px solid #D0D0D0;
+  padding: 20rpx 0;
+}
+
+.weekMark {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.weekMark view {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid #d69c63
+}
+
+.date-box {
+  font-size: 0;
+  padding: 10rpx 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.date-box>view {
+  position: relative;
+  display: inline-block;
+  width: 14.285%;
+  color: #666;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.date-head {
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+}
+
+.nowDay .date-head {
+  width: 60rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  background: red;
+  margin: 0 auto;
+}
+.userlist{
+  display: flex;
+  justify-content: space-between;
+}
+.user_dix{
+  display: flex;
+}
+.tille-1 {
+  font-size: 14px;
+  display: inline-block;
+  padding-left: 10px;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 0px 6px 0px 0px;
+  background: linear-gradient(to top right, #f4c998, #d69c63);
+}
+.user_phb{
+  margin: 10px;
+  border-radius: 12px;
+}
+.user_img{
+  border-radius: 50%;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+margin: 0px 20px;
+}
+.nowsDay .date-head{
+  width: 60rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to top right, #f4c998 , #d69c63);
+
+
+  margin: 0 auto;
+}
+/* 签到 */
+.center {
+  background: #fff;
+  padding: 80rpx 0;
+  box-sizing: border-box;
+  margin: 20rpx 0;
+}
+
+.center_text {
+  margin-top: 20rpx;
+  width: 80px !important;
+  height: 80px !important;
+  box-sizing: border-box;
+  padding-top: 12px;
+  text-align: center;
+  color: #fff !important;
+  background: linear-gradient(to top right, #f4c998 ,  #d69c63);
+  /* border: 4px solid #FEE6C3; */
+    border: 6px solid #fff;
+  border-radius: 50%;
+  font-size: 16px !important;
+  margin-top: -40px !important;
+  margin-bottom: 10px;
+  padding: 0px 30rpx;
+  padding-top: 20rpx;
+  margin: 0 auto;
+}
+.center_texts{
+  color: #999999;
+}
+.bottom_text {
+  font-weight: normal;
+  line-height: 60rpx;
+}
+
+.bottom_text text {
+  color: #66afff;
+}
+
+.bottom {
+  background: #fff;
+  padding: 60rpx 0;
+  box-sizing: border-box;
+}

@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "签到",
+
+  "navigationStyle":"default",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-calendar": "@vant/weapp/calendar/index"
+  }
+}

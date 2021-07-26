@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/problem_list/index",
+    "pages/details/details_html/index",
+    "pages/details/details_news/index",
+    "pages/details/details_pro/index",
+    "pages/home/fl_answer/index",
+    "pages/study/index",
+    "pages/home/index",
+    "pages/user/index",
+    "pages/answer/fl_problem/index",
+    "pages/home/fl_basics/index",
+    "pages/user/aboutus/index",
+    "pages/user/sign/index",
+    "pages/warehouse/index",
+    "pages/user/collect/index",
+    "pages/home/dictionaries/index",
+    "pages/details/details_ls/index",
+    "pages/answer/index",
+
+    "pages/answer/details_ans/index"
+  ],
+  "window": {
+    "backgroundColor": "#f7f7f7",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3963BC",
+    "navigationBarTitleText": "小贝校招",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/components/cu-custom/index"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "定位以获取当前位置天气信息"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

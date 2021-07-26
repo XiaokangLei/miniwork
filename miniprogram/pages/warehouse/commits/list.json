@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationStyle": "default",
+  "navigationBarTitleText": "历史提交记录",
+  "enablePullDownRefresh": true
+}

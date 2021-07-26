@@ -1,0 +1,16 @@
+{
+  "navigationBarBackgroundColor": "#649cd5",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#fff",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-transition": "@vant/weapp/transition/index",
+    "list":"/components/news_list/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-search": "@vant/weapp/search/index",
+    "tree_swiper":"/components/swiper/swiper",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-tag": "@vant/weapp/tag/index"
+  }
+}
