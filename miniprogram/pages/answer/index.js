@@ -19,6 +19,9 @@ Component({
   },
   created(){
     this.post()
+    wx.setNavigationBarTitle({
+      title: "内推"
+    })
   },
 
   /**

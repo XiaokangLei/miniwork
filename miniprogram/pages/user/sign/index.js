@@ -5,7 +5,6 @@ const db = wx.cloud.database({
 const _ = db.command
 var util = require('../../../utils/time.js');
 
-
 let app = getApp()
 const key = app.globalData.key
 Page({
@@ -50,7 +49,6 @@ Page({
           console.log(nowdate)
           if (Number(dateArr[i].isToday) == Number(nowdate)) {
             dateArr[i].choose = true;
-
             if (wx.getStorageSync("userid")) {
               console.log("asd")
               db.collection('user').doc(wx.getStorageSync("userid")).update({
@@ -78,7 +76,6 @@ Page({
                       date = Y + '.' + M + '.' + D + ' ' + hours + ':' + minutes + ':' + seconds
                       return date
                     }
-
                     console.log(res.data)
                     wx.cloud.callFunction({
                       name: 'answer',
@@ -110,11 +107,8 @@ Page({
         t.setData({
           dateArr: dateArr
         })
-
       }
     })
-
-
   },
   // 签到过
 
@@ -150,7 +144,6 @@ Page({
             }
           });
         }
-
         for (var i = 0; i < dateArr.length; i++) {
           for (var j = 0; j < yesdate.length; j++) {
             if (dateArr[i].isToday == yesdate[j]) {
@@ -161,13 +154,8 @@ Page({
         t.setData({
           dateArr: dateArr
         })
-
       })
-
     }
-
-
-
   },
   // 日历
   dateInit: function (setYear, setMonth) {
@@ -349,8 +337,6 @@ Page({
     t.yesdate()
     this.userlist()
     this.getLocation();
-
-
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -367,10 +353,6 @@ Page({
       date = Y + '.' + M + '.' + D + ' ' + hours + ':' + minutes + ':' + seconds
       return date
     }
-
   },
-
-
-
 
 })

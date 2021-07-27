@@ -1,7 +1,6 @@
 {
   "navigationBarTitleText": "签到",
-
-  "navigationStyle":"default",
+  "navigationStyle": "default",
   "usingComponents": {
     "van-icon": "@vant/weapp/icon/index",
     "van-cell": "@vant/weapp/cell/index",

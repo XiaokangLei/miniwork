@@ -9,7 +9,6 @@
 }
 
 .flex_center {
-
   margin: 0 auto;
 }
 
@@ -28,20 +27,19 @@
   color: white;
   background-size: cover;
   background-position: center;
-
-
-  
 }
-.main2{
+
+.main2 {
   padding: 1px;
   color: white;
-  background-image:url('https://7472-test-4gn9gu0ucc6657ba-1259429368.tcb.qcloud.la/sin_bg.png?sign=de9d6ea379af989cbf4891d10462b909&t=1619749513');
+  background-image: url('https://7472-test-4gn9gu0ucc6657ba-1259429368.tcb.qcloud.la/sin_bg.png?sign=de9d6ea379af989cbf4891d10462b909&t=1619749513');
   background-size: cover;
   background-position: center;
   position: relative;
   animation: fadeIn .8s;
-  background-color:  #3963BC
+  background-color: #3963BC
 }
+
 .sign_wz {
   font-size: 46rpx;
 }
@@ -54,26 +52,25 @@
   margin-top: 30px;
   font-weight: 500;
   font-size: 30px;
-  
 }
-.dis{
+
+.dis {
   display: flex;
 }
+
 .sign_wz4 {
   margin-top: 10px;
-
   font-weight: 500;
   font-size: 20px;
-  
 }
-.sign_wz5{
+
+.sign_wz5 {
   margin-top: 10px;
   margin-left: 5px;
-
   font-weight: 500;
   font-size: 16px;
-  
 }
+
 .calendar_title {
   color: #fff;
   padding: 0rpx 200rpx;
@@ -174,9 +171,11 @@
   background: linear-gradient(to top, #1D4259, #3963BC);
   margin: 0 auto;
 }
+
 .nowDay .date-head span {
   color: #fff;
 }
+
 .userlist {
   display: flex;
   justify-content: space-between;
@@ -200,9 +199,8 @@
 .user_phb {
   margin: 10px;
   border-radius: 12px;
-
   overflow-y: scroll;
-  animation:bounceInLeft 1s
+  animation: bounceInLeft 1s
 }
 
 .user_img {
@@ -219,8 +217,6 @@
   text-align: center;
   color: #fff;
   background: linear-gradient(to top, #1D4259, #3963BC);
-
-
   margin: 0 auto;
 }
 
@@ -234,22 +230,18 @@
 
 .center_text {
   margin-top: 20rpx;
-
-
   box-sizing: border-box;
   padding-top: 12px;
   text-align: center;
   color: #fff !important;
   background: linear-gradient(to top right, #f4c998, #d69c63);
   /* border: 4px solid #FEE6C3; */
-
-position: fixed;
-bottom: 0;
+  position: fixed;
+  bottom: 0;
   font-size: 16px !important;
-width: 100%;
+  width: 100%;
   margin-bottom: 10px;
   padding: 20rpx 30rpx;
-
   margin: 0 auto;
 }
 

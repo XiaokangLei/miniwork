@@ -118,9 +118,7 @@ Component({
       uni.navigateTo({
         url: url
       });
-
     },
-
 
     coverTouchstart(e) {
       if (this.data.pageAtTop === false) {
@@ -130,8 +128,6 @@ Component({
         coverTransition: 'transform .1s linear',
         startY: e.touches[0].clientY
       })
-
-
     },
     coverTouchmove(e) {
       moveY = e.touches[0].clientY;
@@ -174,7 +170,6 @@ Component({
         moving: false,
         coverTransition: 'transform 0.3s cubic-bezier(.21,1.93,.53,.64)',
         coverTransform: 'translateY(0px)',
-
       })
 
     },

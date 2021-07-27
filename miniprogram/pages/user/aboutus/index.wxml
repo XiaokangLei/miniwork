@@ -1,8 +1,0 @@
-
-<cu-custom bgColor="se"  isBack="{{true}}">
-	<view slot="content">团队介绍</view>
-</cu-custom>
-<view class="main">
-
-<image mode="widthFix" src="cloud://test-4gn9gu0ucc6657ba.7472-test-4gn9gu0ucc6657ba-1259429368/未命名.jpg"></image>
-</view>

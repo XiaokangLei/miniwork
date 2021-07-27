@@ -1,10 +1,6 @@
 <!--pages/signin/signin.wxml-->
-
-
-
 <view class="main2" style="  height:100vh">
-
-  <view class="sign_top"  wx:if="{{!signinNow}}">
+  <view class="sign_top" wx:if="{{!signinNow}}">
     <view class="sign_wz">{{time}}
       <text class="sign_wz2">{{week}}</text>
     </view>
@@ -18,38 +14,37 @@
       </view>
     </view>
   </view>
-  <view class="contant"  wx:if="{{!signinNow}}">
-      <!-- 日历年月 -->
-      <view class='calendar_title layer_center'>
-        <view bindtap='lastMonth'>
-          <van-icon class="icon_xz" name="arrow-left" />
-        </view>
-        <view class="nowDtae ">{{year}}年{{month}}月</view>
-        <view bindtap='nextMonth'>
-          <van-icon class="icon_xz" name="arrow" />
-        </view>
+  <view class="contant" wx:if="{{!signinNow}}">
+    <!-- 日历年月 -->
+    <view class='calendar_title layer_center'>
+      <view bindtap='lastMonth'>
+        <van-icon class="icon_xz" name="arrow-left" />
       </view>
-      <!-- 日历主体 -->
-      <view class='calendar'>
-        <view class='header'>
-          <view wx:for='{{date}}' wx:key='index' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}} '>
-            {{item}}
-            <view></view>
-          </view>
-        </view>
-        <view class='date-box'>
-          <block wx:for='{{dateArr}}' wx:key='index'>
-            <view class='{{isToday == item.isToday ? "nowDay":""}}'>
-              <view class='date-head font28' data-year='{{year}}' data-month='{{month}}'
-                data-datenum='{{item.dateNum}}'>
-                <span wx:if='{{item.choose?"nowsDay":""}}' class="iconfont  icon-yiqiandao"></span>
-                <view>{{item.dateNum}}</view>
-              </view>
-            </view>
-          </block>
-        </view>
+      <view class="nowDtae ">{{year}}年{{month}}月</view>
+      <view bindtap='nextMonth'>
+        <van-icon class="icon_xz" name="arrow" />
       </view>
     </view>
+    <!-- 日历主体 -->
+    <view class='calendar'>
+      <view class='header'>
+        <view wx:for='{{date}}' wx:key='index' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}} '>
+          {{item}}
+          <view></view>
+        </view>
+      </view>
+      <view class='date-box'>
+        <block wx:for='{{dateArr}}' wx:key='index'>
+          <view class='{{isToday == item.isToday ? "nowDay":""}}'>
+            <view class='date-head font28' data-year='{{year}}' data-month='{{month}}' data-datenum='{{item.dateNum}}'>
+              <span wx:if='{{item.choose?"nowsDay":""}}' class="iconfont  icon-yiqiandao"></span>
+              <view>{{item.dateNum}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
 
   <view class="user_phb" wx:if="{{signinNow}}">
     <!-- <view class="sign_wz5">您已经签到{{userlist.length}}天</view> -->
@@ -70,16 +65,9 @@
         </view>
       </van-cell>
     </van-cell-group>
-
   </view>
-
-
   <view class="flex_center">
     <!-- <view class="center_text font32"   wx:if="{{signinNow}}">完成签到</view> -->
     <view class="center_text font32" bindtap="activeSign" wx:if="{{!signinNow}}">立即签到</view>
   </view>
-
-
-
-
 </view>

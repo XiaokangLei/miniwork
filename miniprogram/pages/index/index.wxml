@@ -44,9 +44,9 @@
 	<!-- 底部五个分类，资讯，笔试，校招，面试，我的，id分别为12345 -->
 	<view>
 		<home popr="{{ hd_op}}" wx:if="{{id==1}}" />
-		<dictionaries wx:if="{{id==2}}" />
+		<review wx:if="{{id==2}}" />
 		<work wx:if="{{id==3}}" list="{{list}}" bind:tab_xz="post" loding="{{loding}}" />
-		<review wx:if="{{id==4}}" />
+		<dictionaries wx:if="{{id==4}}" />
 		<user wx:if="{{id==5}}" />
 	</view>
 

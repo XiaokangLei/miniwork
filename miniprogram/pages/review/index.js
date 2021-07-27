@@ -20,7 +20,7 @@ Component({
   created(){
     this.post()
     wx.setNavigationBarTitle({
-      title: "内推直招"
+      title: "笔试面试"
     })
   },
 

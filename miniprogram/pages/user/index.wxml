@@ -1,7 +1,3 @@
-<!-- <cu-custom bgColor="se">
-	<view slot="content">我的</view>
-</cu-custom> -->
-
 <view class="user">
 	<view class="cu-modal show" wx:if="{{show}}">
 		<view class="cu-dialog">
@@ -41,17 +37,17 @@
 		</view>
 	</view>
 	<view class="cu-list grid col-4 margin-xs no-border" style="background-color: #f8f8f8;">
-			<view class="cu-item" wx:for="{{iconList}}" wx:key="idx">
-				<view bindtap="tz" data-a="{{item.data_page}}">
-					<view class="cuIcon-{{item.icon}} text-{{item.color}}">
-						<view class="cu-tag badge" wx:if="{{item.badge!=0}}">
-							<block wx:if="{{item.badge!=1}}">{{item.badge>99?"99+":item.badge}}</block>
-						</view>
+		<view class="cu-item" wx:for="{{iconList}}" wx:key="idx">
+			<view bindtap="tz" data-a="{{item.data_page}}">
+				<view class="cuIcon-{{item.icon}} text-{{item.color}}">
+					<view class="cu-tag badge" wx:if="{{item.badge!=0}}">
+						<block wx:if="{{item.badge!=1}}">{{item.badge>99?"99+":item.badge}}</block>
 					</view>
-					<text>{{item.name}}</text>
 				</view>
+				<text>{{item.name}}</text>
 			</view>
 		</view>
+	</view>
 	<view class="cu-list menu card-menu_new margin-top-sm shadow-lg radius">
 		<!-- <view class="min_height cu-bar">
 			<view class="action sub-title">

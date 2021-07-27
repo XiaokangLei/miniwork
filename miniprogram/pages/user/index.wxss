@@ -8,61 +8,67 @@
   width: 100%;
   animation: fadeIn .9s;
 }
+
 .header {
   margin: 20rpx 0 20rpx 20rpx;
   border-bottom: 1px solid #ccc;
   text-align: center;
 }
-.cu-dialog{
+
+.cu-dialog {
   width: 500rpx;
 }
-.actic button{
+
+.actic button {
   width: 47%;
 }
+
 .actic {
   display: flex;
   padding: 0px 10px;
   width: 100%;
   justify-content: space-between;
 }
+
 .header image {
   width: 100rpx;
   height: 200rpx;
 }
 
 .content2 {
- 
   margin-bottom: 20rpx;
 }
+
 /* .cu-modal{
   animation:fadeIn 1s ;
 } */
-.logo{
+.logo {
   width: 50px;
   height: 50px;
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 10px;
-  border:2px solid #fff
-}
-.bg_kl3{
-border:1px solid#f2bf80;
-background-color: #fff!important;
-  color:#f2bf80;
-
+  border: 2px solid #fff
 }
 
-.b_kl4{
-  background-color: #f2bf80!important;
-    color:#fff;
-  
-  }
+.bg_kl3 {
+  border: 1px solid#f2bf80;
+  background-color: #fff !important;
+  color: #f2bf80;
+}
+
+.b_kl4 {
+  background-color: #f2bf80 !important;
+  color: #fff;
+}
+
 .content2 text {
   display: block;
   color: #9d9d9d;
   margin-top: 40rpx;
 }
+
 .tj-sction .tj-item,
 .order-section .order-item {
   display: -webkit-box;
@@ -81,7 +87,6 @@ button {
   border-radius: 6px 6px 0px 0px;
   overflow: hidden;
   /* background-color:rgba(255,255,255,0.6); */
-
 }
 
 .tj-sction,
@@ -94,14 +99,11 @@ button {
   justify-content: space-around;
   -webkit-align-content: center;
   align-content: center;
-
-
 }
 
 .user-section {
   padding: 20rpx 30rpx;
   padding-bottom: 0px;
-
   position: relative;
   background-size: cover;
   background-position: center center;
@@ -117,7 +119,6 @@ button {
   top: 0;
   width: 100%;
   height: 200px;
-
 }
 
 .cu-list {
@@ -249,7 +250,6 @@ button {
   position: relative;
   background-color: #fff;
   height: calc(100vh - 680rpx);
-
   padding-bottom: 20rpx;
 }
 
@@ -293,7 +293,6 @@ font-weight: 400!important;
   margin-bottom: 8rpx;
 }
 
-
 /* .vip-card-box {
   display: flex;
   flex-direction: column;
@@ -314,7 +313,6 @@ font-weight: 400!important;
   width: 100%;
   mix-blend-mode: screen;
   height: 86rpx;
-
 }
 
 .user_form_s {
@@ -337,10 +335,6 @@ font-weight: 400!important;
   border-bottom-left-radius: 12px;
 } */
 
-
-
-
-
 .dlo {
   color: #fff;
   background: linear-gradient(to top left, #f7ce9e, #d69c63);
@@ -348,7 +342,7 @@ font-weight: 400!important;
   padding: 0px;
   height: auto;
   padding: 2px 20px;
-  font-size: 13px!important;
+  font-size: 13px !important;
   margin-left: 30px;
   border-radius: 4px;
   width: 100px;
