@@ -1,79 +1,13 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-exports.VantComponent = void 0;
-var basic_1 = require('../mixins/basic');
-var relationFunctions = {
-  ancestor: {
-    linked: function (parent) {
-      this.parent = parent;
-    },
-    unlinked: function () {
-      this.parent = null;
-    },
-  },
-  descendant: {
-    linked: function (child) {
-      this.children = this.children || [];
-      this.children.push(child);
-    },
-    unlinked: function (child) {
-      this.children = (this.children || []).filter(function (it) {
-        return it !== child;
-      });
-    },
-  },
-};
+import { basic } from '../mixins/basic';
 function mapKeys(source, target, map) {
-  Object.keys(map).forEach(function (key) {
+  Object.keys(map).forEach((key) => {
     if (source[key]) {
       target[map[key]] = source[key];
     }
   });
 }
-function makeRelation(options, vantOptions, relation) {
-  var _a;
-  var type = relation.type,
-    name = relation.name,
-    linked = relation.linked,
-    unlinked = relation.unlinked,
-    linkChanged = relation.linkChanged;
-  var beforeCreate = vantOptions.beforeCreate,
-    destroyed = vantOptions.destroyed;
-  if (type === 'descendant') {
-    options.created = function () {
-      beforeCreate && beforeCreate.bind(this)();
-      this.children = this.children || [];
-    };
-    options.detached = function () {
-      this.children = [];
-      destroyed && destroyed.bind(this)();
-    };
-  }
-  options.relations = Object.assign(
-    options.relations || {},
-    ((_a = {}),
-    (_a['../' + name + '/index'] = {
-      type: type,
-      linked: function (node) {
-        relationFunctions[type].linked.bind(this)(node);
-        linked && linked.bind(this)(node);
-      },
-      linkChanged: function (node) {
-        linkChanged && linkChanged.bind(this)(node);
-      },
-      unlinked: function (node) {
-        relationFunctions[type].unlinked.bind(this)(node);
-        unlinked && unlinked.bind(this)(node);
-      },
-    }),
-    _a)
-  );
-}
 function VantComponent(vantOptions) {
-  if (vantOptions === void 0) {
-    vantOptions = {};
-  }
-  var options = {};
+  const options = {};
   mapKeys(vantOptions, options, {
     data: 'data',
     props: 'properties',
@@ -82,31 +16,24 @@ function VantComponent(vantOptions) {
     beforeCreate: 'created',
     created: 'attached',
     mounted: 'ready',
-    relations: 'relations',
     destroyed: 'detached',
     classes: 'externalClasses',
   });
-  var relation = vantOptions.relation;
-  if (relation) {
-    makeRelation(options, vantOptions, relation);
-  }
   // add default externalClasses
   options.externalClasses = options.externalClasses || [];
   options.externalClasses.push('custom-class');
   // add default behaviors
   options.behaviors = options.behaviors || [];
-  options.behaviors.push(basic_1.basic);
+  options.behaviors.push(basic);
+  // add relations
+  const { relation } = vantOptions;
+  if (relation) {
+    options.relations = relation.relations;
+    options.behaviors.push(relation.mixin);
+  }
   // map field to form-field behavior
   if (vantOptions.field) {
     options.behaviors.push('wx://form-field');
-  }
-  if (options.properties) {
-    Object.keys(options.properties).forEach(function (name) {
-      if (Array.isArray(options.properties[name])) {
-        // miniprogram do not allow multi type
-        options.properties[name] = null;
-      }
-    });
   }
   // add default options
   options.options = {
@@ -115,4 +42,4 @@ function VantComponent(vantOptions) {
   };
   Component(options);
 }
-exports.VantComponent = VantComponent;
+export { VantComponent };

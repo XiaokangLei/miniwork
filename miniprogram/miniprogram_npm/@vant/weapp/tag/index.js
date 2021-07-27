@@ -1,7 +1,5 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+VantComponent({
   props: {
     size: String,
     mark: Boolean,
@@ -16,7 +14,7 @@ component_1.VantComponent({
     closeable: Boolean,
   },
   methods: {
-    onClose: function () {
+    onClose() {
       this.$emit('close');
     },
   },

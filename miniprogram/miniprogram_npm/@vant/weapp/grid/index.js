@@ -1,20 +1,14 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var utils_1 = require('../common/utils');
-component_1.VantComponent({
-  relation: {
-    name: 'grid-item',
-    type: 'descendant',
-    current: 'grid',
-  },
+import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
+VantComponent({
+  relation: useChildren('grid-item'),
   props: {
     square: {
       type: Boolean,
       observer: 'updateChildren',
     },
     gutter: {
-      type: [Number, String],
+      type: null,
       value: 0,
       observer: 'updateChildren',
     },
@@ -45,21 +39,15 @@ component_1.VantComponent({
       type: String,
       observer: 'updateChildren',
     },
-  },
-  data: {
-    viewStyle: '',
-  },
-  created: function () {
-    var gutter = this.data.gutter;
-    if (gutter) {
-      this.setData({
-        viewStyle: 'padding-left: ' + utils_1.addUnit(gutter),
-      });
-    }
+    reverse: {
+      type: Boolean,
+      value: false,
+      observer: 'updateChildren',
+    },
   },
   methods: {
-    updateChildren: function () {
-      this.children.forEach(function (child) {
+    updateChildren() {
+      this.children.forEach((child) => {
         child.updateStyle();
       });
     },

@@ -242,18 +242,18 @@ Page({
     t.dateInit(year, month);
     t.yesdate()
   },
-  getLocation: function () {
-    var that = this
-    wx.getLocation({
-      type: 'wgs84',
-      success: function (res) {
-        console.log(res);
-        var latitude = res.latitude || 28.13551;
-        var longitude = res.longitude || 113.03555;
-        that.getWeather(`${latitude},${longitude}`)
-      },
-    })
-  },
+  // getLocation: function () {
+  //   var that = this
+  //   wx.getLocation({
+  //     type: 'wgs84',
+  //     success: function (res) {
+  //       console.log(res);
+  //       var latitude = res.latitude || 28.13551;
+  //       var longitude = res.longitude || 113.03555;
+  //       that.getWeather(`${latitude},${longitude}`)
+  //     },
+  //   })
+  // },
   getWeather(location) {
     wx.request({
       url: `${app.globalData.requestUrl.weather}`,
@@ -336,7 +336,7 @@ Page({
     });
     t.yesdate()
     this.userlist()
-    this.getLocation();
+    // this.getLocation();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

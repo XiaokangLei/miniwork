@@ -32,7 +32,7 @@
 .main2 {
   padding: 1px;
   color: white;
-  background-image: url('https://7472-test-4gn9gu0ucc6657ba-1259429368.tcb.qcloud.la/sin_bg.png?sign=de9d6ea379af989cbf4891d10462b909&t=1619749513');
+  /* background-image: url('https://7472-test-4gn9gu0ucc6657ba-1259429368.tcb.qcloud.la/sin_bg.png?sign=de9d6ea379af989cbf4891d10462b909&t=1619749513'); */
   background-size: cover;
   background-position: center;
   position: relative;

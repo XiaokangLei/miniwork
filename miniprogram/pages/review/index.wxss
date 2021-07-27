@@ -6,16 +6,13 @@
   background-color: #ffffff;
   margin: 20rpx auto;
   margin-top: 0px;
-
   box-sizing: border-box;
   padding: 20rpx;
   font-size: 28rpx;
 }
 
 .order .top {
-
   display: flex;
-
   justify-content: space-between;
 }
 
@@ -27,7 +24,6 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-
   align-items: center;
 }
 
@@ -51,7 +47,6 @@
 
 .order .item .left {
   margin-right: 20rpx;
-
 }
 
 .cuIcon-titles {
@@ -110,11 +105,8 @@
 
 .order .bottom {
   line-height: 70rpx;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
 }
 
@@ -132,8 +124,6 @@
   background-color: #1D4259;
 }
 
-
-
 .fgx {
   margin: 12px 0px 7px;
   border-bottom: 1px solid rgb(241, 241, 241);
@@ -145,7 +135,7 @@
 }
 
 .item_list {
-  width: 63%;
+  width: 56%;
   height: 100%;
   padding: 20rpx;
   margin-right: 23rpx;
@@ -153,9 +143,6 @@
   margin-left: 10px;
   background-color: rgb(240, 240, 240);
   border-radius: 7px;
-
-
-
 }
 
 .scroll_box {
@@ -164,9 +151,7 @@
   overflow: hidden;
   padding: 20rpx;
   margin-top: 20rpx;
-
   white-space: nowrap;
-
 }
 
 .item-hover {
@@ -177,10 +162,6 @@
   display: flex;
   justify-content: space-between;
 }
-
-
-
-
 
 .problem_list {
   background-color: #fff;
@@ -227,15 +208,12 @@
 
 .pro_list_wz {
   background: linear-gradient(to top left, #f7ce9e, #d69c63);
-
   display: flex;
   align-items: center;
   color: #fff;
   border-radius: 4px;
   padding: 0px 10px;
   font-size: 12px;
-
-
 }
 
 .ntp {
@@ -266,14 +244,12 @@
 }
 
 .clean {
-
   clear: both;
 }
 
 .home-wntj {
   margin: 10px;
   padding: 10px;
-
   background: #fff;
   border-radius: 6px;
 }
@@ -297,12 +273,8 @@
 }
 
 .servic_top {
-
   padding-top: 14px;
   background: linear-gradient(to top, #1D4259, #3963BC);
-
-
-
   color: #Fff;
   padding: 15px 15px;
   padding-top: 10px;
@@ -356,10 +328,10 @@
   background: rgb(230, 230, 230) !important;
 }
 
-.item_list_ds {
+/* .item_list_ds {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .item_top_Wz2 {
   margin-left: 10rpx;
@@ -370,14 +342,13 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-
   width: calc(100% - 27px);
 }
 
-.item_list_ds {
+/* .item_list_ds {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .dis>view {
   display: flex;
@@ -393,7 +364,6 @@
 }
 
 .home-list-bottom>view:nth-child(1) {
-
   color: rgba(153, 153, 153, 1);
   text-align: center;
   margin: 6px;
@@ -450,12 +420,10 @@
 
 .header_content {
   display: flex;
-
   flex-direction: row;
 }
 
 .title {
-
   font-size: 42rpx;
   font-weight: bold;
   color: rgba(255, 255, 255, 1);
@@ -463,10 +431,8 @@
 
 .sub_title {
   margin-top: 3px;
-
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
-
   background: linear-gradient(0deg, rgba(120, 255, 224, 1) 0%, rgba(255, 255, 255, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -1,42 +1,90 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-exports.addUnit = exports.getSystemInfoSync = exports.nextTick = exports.range = exports.isNumber = exports.isObj = exports.isDef = void 0;
-function isDef(value) {
-  return value !== undefined && value !== null;
-}
-exports.isDef = isDef;
-function isObj(x) {
-  var type = typeof x;
-  return x !== null && (type === 'object' || type === 'function');
-}
-exports.isObj = isObj;
-function isNumber(value) {
-  return /^\d+(\.\d+)?$/.test(value);
-}
-exports.isNumber = isNumber;
-function range(num, min, max) {
+import { isDef, isNumber, isPlainObject, isPromise } from './validator';
+import { canIUseGroupSetData, canIUseNextTick } from './version';
+export { isDef } from './validator';
+export function range(num, min, max) {
   return Math.min(Math.max(num, min), max);
 }
-exports.range = range;
-function nextTick(fn) {
-  setTimeout(function () {
-    fn();
-  }, 1000 / 30);
+export function nextTick(cb) {
+  if (canIUseNextTick()) {
+    wx.nextTick(cb);
+  } else {
+    setTimeout(() => {
+      cb();
+    }, 1000 / 30);
+  }
 }
-exports.nextTick = nextTick;
-var systemInfo = null;
-function getSystemInfoSync() {
+let systemInfo;
+export function getSystemInfoSync() {
   if (systemInfo == null) {
     systemInfo = wx.getSystemInfoSync();
   }
   return systemInfo;
 }
-exports.getSystemInfoSync = getSystemInfoSync;
-function addUnit(value) {
+export function addUnit(value) {
   if (!isDef(value)) {
     return undefined;
   }
   value = String(value);
-  return isNumber(value) ? value + 'px' : value;
+  return isNumber(value) ? `${value}px` : value;
 }
-exports.addUnit = addUnit;
+export function requestAnimationFrame(cb) {
+  const systemInfo = getSystemInfoSync();
+  if (systemInfo.platform === 'devtools') {
+    return setTimeout(() => {
+      cb();
+    }, 1000 / 30);
+  }
+  return wx
+    .createSelectorQuery()
+    .selectViewport()
+    .boundingClientRect()
+    .exec(() => {
+      cb();
+    });
+}
+export function pickExclude(obj, keys) {
+  if (!isPlainObject(obj)) {
+    return {};
+  }
+  return Object.keys(obj).reduce((prev, key) => {
+    if (!keys.includes(key)) {
+      prev[key] = obj[key];
+    }
+    return prev;
+  }, {});
+}
+export function getRect(context, selector) {
+  return new Promise((resolve) => {
+    wx.createSelectorQuery()
+      .in(context)
+      .select(selector)
+      .boundingClientRect()
+      .exec((rect = []) => resolve(rect[0]));
+  });
+}
+export function getAllRect(context, selector) {
+  return new Promise((resolve) => {
+    wx.createSelectorQuery()
+      .in(context)
+      .selectAll(selector)
+      .boundingClientRect()
+      .exec((rect = []) => resolve(rect[0]));
+  });
+}
+export function groupSetData(context, cb) {
+  if (canIUseGroupSetData()) {
+    context.groupSetData(cb);
+  } else {
+    cb();
+  }
+}
+export function toPromise(promiseLike) {
+  if (isPromise(promiseLike)) {
+    return promiseLike;
+  }
+  return Promise.resolve(promiseLike);
+}
+export function getCurrentPage() {
+  const pages = getCurrentPages();
+  return pages[pages.length - 1];
+}

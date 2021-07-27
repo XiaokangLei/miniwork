@@ -1,41 +1,31 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-exports.isSameSecond = exports.parseFormat = exports.parseTimeData = void 0;
-function padZero(num, targetLength) {
-  if (targetLength === void 0) {
-    targetLength = 2;
-  }
-  var str = num + '';
+function padZero(num, targetLength = 2) {
+  let str = num + '';
   while (str.length < targetLength) {
     str = '0' + str;
   }
   return str;
 }
-var SECOND = 1000;
-var MINUTE = 60 * SECOND;
-var HOUR = 60 * MINUTE;
-var DAY = 24 * HOUR;
-function parseTimeData(time) {
-  var days = Math.floor(time / DAY);
-  var hours = Math.floor((time % DAY) / HOUR);
-  var minutes = Math.floor((time % HOUR) / MINUTE);
-  var seconds = Math.floor((time % MINUTE) / SECOND);
-  var milliseconds = Math.floor(time % SECOND);
+const SECOND = 1000;
+const MINUTE = 60 * SECOND;
+const HOUR = 60 * MINUTE;
+const DAY = 24 * HOUR;
+export function parseTimeData(time) {
+  const days = Math.floor(time / DAY);
+  const hours = Math.floor((time % DAY) / HOUR);
+  const minutes = Math.floor((time % HOUR) / MINUTE);
+  const seconds = Math.floor((time % MINUTE) / SECOND);
+  const milliseconds = Math.floor(time % SECOND);
   return {
-    days: days,
-    hours: hours,
-    minutes: minutes,
-    seconds: seconds,
-    milliseconds: milliseconds,
+    days,
+    hours,
+    minutes,
+    seconds,
+    milliseconds,
   };
 }
-exports.parseTimeData = parseTimeData;
-function parseFormat(format, timeData) {
-  var days = timeData.days;
-  var hours = timeData.hours,
-    minutes = timeData.minutes,
-    seconds = timeData.seconds,
-    milliseconds = timeData.milliseconds;
+export function parseFormat(format, timeData) {
+  const { days } = timeData;
+  let { hours, minutes, seconds, milliseconds } = timeData;
   if (format.indexOf('DD') === -1) {
     hours += days * 24;
   } else {
@@ -58,8 +48,6 @@ function parseFormat(format, timeData) {
   }
   return format.replace('SSS', padZero(milliseconds, 3));
 }
-exports.parseFormat = parseFormat;
-function isSameSecond(time1, time2) {
+export function isSameSecond(time1, time2) {
   return Math.floor(time1 / 1000) === Math.floor(time2 / 1000);
 }
-exports.isSameSecond = isSameSecond;

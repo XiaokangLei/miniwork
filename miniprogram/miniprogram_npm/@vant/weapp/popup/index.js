@@ -1,8 +1,6 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var transition_1 = require('../mixins/transition');
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+import { transition } from '../mixins/transition';
+VantComponent({
   classes: [
     'enter-class',
     'enter-active-class',
@@ -12,7 +10,7 @@ component_1.VantComponent({
     'leave-to-class',
     'close-icon-class',
   ],
-  mixins: [transition_1.transition(false)],
+  mixins: [transition(false)],
   props: {
     round: Boolean,
     closeable: Boolean,
@@ -56,25 +54,22 @@ component_1.VantComponent({
       value: false,
     },
   },
-  created: function () {
+  created() {
     this.observeClass();
   },
   methods: {
-    onClickCloseIcon: function () {
+    onClickCloseIcon() {
       this.$emit('close');
     },
-    onClickOverlay: function () {
+    onClickOverlay() {
       this.$emit('click-overlay');
       if (this.data.closeOnClickOverlay) {
         this.$emit('close');
       }
     },
-    observeClass: function () {
-      var _a = this.data,
-        transition = _a.transition,
-        position = _a.position,
-        duration = _a.duration;
-      var updateData = {
+    observeClass() {
+      const { transition, position, duration } = this.data;
+      const updateData = {
         name: transition || position,
       };
       if (transition === 'none') {

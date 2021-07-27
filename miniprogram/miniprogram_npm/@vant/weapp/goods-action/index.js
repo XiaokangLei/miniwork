@@ -1,35 +1,15 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-component_1.VantComponent({
-  relation: {
-    type: 'descendant',
-    name: 'goods-action-button',
-    current: 'goods-action',
-    linked: function () {
-      this.updateStyle();
-    },
-    unlinked: function () {
-      this.updateStyle();
-    },
-    linkChanged: function () {
-      this.updateStyle();
-    },
-  },
+import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
+VantComponent({
+  relation: useChildren('goods-action-button', function () {
+    this.children.forEach((item) => {
+      item.updateStyle();
+    });
+  }),
   props: {
     safeAreaInsetBottom: {
       type: Boolean,
       value: true,
-    },
-  },
-  methods: {
-    updateStyle: function () {
-      var _this = this;
-      wx.nextTick(function () {
-        _this.children.forEach(function (child) {
-          child.updateStyle();
-        });
-      });
     },
   },
 });

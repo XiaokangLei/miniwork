@@ -1,13 +1,9 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+import { useParent } from '../common/relation';
+import { setContentAnimate } from './animate';
+VantComponent({
   classes: ['title-class', 'content-class'],
-  relation: {
-    name: 'collapse',
-    type: 'ancestor',
-    current: 'collapse-item',
-  },
+  relation: useParent('collapse'),
   props: {
     name: null,
     title: null,
@@ -28,79 +24,35 @@ component_1.VantComponent({
   data: {
     expanded: false,
   },
-  created: function () {
-    this.animation = wx.createAnimation({
-      duration: 0,
-      timingFunction: 'ease-in-out',
-    });
-  },
-  mounted: function () {
+  mounted() {
     this.updateExpanded();
-    this.inited = true;
+    this.mounted = true;
   },
   methods: {
-    updateExpanded: function () {
+    updateExpanded() {
       if (!this.parent) {
-        return Promise.resolve();
+        return;
       }
-      var _a = this.parent.data,
-        value = _a.value,
-        accordion = _a.accordion;
-      var _b = this.parent.children,
-        children = _b === void 0 ? [] : _b;
-      var name = this.data.name;
-      var index = children.indexOf(this);
-      var currentName = name == null ? index : name;
-      var expanded = accordion
+      const { value, accordion } = this.parent.data;
+      const { children = [] } = this.parent;
+      const { name } = this.data;
+      const index = children.indexOf(this);
+      const currentName = name == null ? index : name;
+      const expanded = accordion
         ? value === currentName
-        : (value || []).some(function (name) {
-            return name === currentName;
-          });
+        : (value || []).some((name) => name === currentName);
       if (expanded !== this.data.expanded) {
-        this.updateStyle(expanded);
+        setContentAnimate(this, expanded, this.mounted);
       }
-      this.setData({ index: index, expanded: expanded });
+      this.setData({ index, expanded });
     },
-    updateStyle: function (expanded) {
-      var _this = this;
-      var inited = this.inited;
-      this.getRect('.van-collapse-item__content')
-        .then(function (rect) {
-          return rect.height;
-        })
-        .then(function (height) {
-          var animation = _this.animation;
-          if (expanded) {
-            animation
-              .height(height)
-              .top(1)
-              .step({
-                duration: inited ? 300 : 1,
-              })
-              .height('auto')
-              .step();
-            _this.setData({
-              animation: animation.export(),
-            });
-            return;
-          }
-          animation.height(height).top(0).step({ duration: 1 }).height(0).step({
-            duration: 300,
-          });
-          _this.setData({
-            animation: animation.export(),
-          });
-        });
-    },
-    onClick: function () {
+    onClick() {
       if (this.data.disabled) {
         return;
       }
-      var _a = this.data,
-        name = _a.name,
-        expanded = _a.expanded;
-      var index = this.parent.children.indexOf(this);
-      var currentName = name == null ? index : name;
+      const { name, expanded } = this.data;
+      const index = this.parent.children.indexOf(this);
+      const currentName = name == null ? index : name;
       this.parent.switch(currentName, !expanded);
     },
   },

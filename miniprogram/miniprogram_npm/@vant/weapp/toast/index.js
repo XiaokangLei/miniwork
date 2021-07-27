@@ -1,7 +1,5 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+VantComponent({
   props: {
     show: Boolean,
     mask: Boolean,
@@ -26,6 +24,6 @@ component_1.VantComponent({
   },
   methods: {
     // for prevent touchmove
-    noop: function () {},
+    noop() {},
   },
 });

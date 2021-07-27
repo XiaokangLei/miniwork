@@ -20,13 +20,15 @@ Page({
     }
   },
   post() {
-    db.collection('interview').count().then(res => {
+    db.collection('interview').where({
+      kind:'teach'
+    }).count().then(res => {
       this.setData({
         pro_length: res.total,
       })
     })
     db.collection('interview').where({
-      select: _.neq(true),
+      kind:'teach'
     }).orderBy('_createTime', 'asc').skip((this.data.page-1)*10).limit(10).get().then(res => {
       if(this.data.page>1){
         let data=this.data.xw_list

@@ -1,19 +1,17 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var link_1 = require('../mixins/link');
-var component_1 = require('../common/component');
-var utils_1 = require('../common/utils');
-component_1.VantComponent({
-  relation: {
-    name: 'grid',
-    type: 'ancestor',
-    current: 'grid-item',
-  },
+import { VantComponent } from '../common/component';
+import { useParent } from '../common/relation';
+import { link } from '../mixins/link';
+VantComponent({
+  relation: useParent('grid'),
   classes: ['content-class', 'icon-class', 'text-class'],
-  mixins: [link_1.link],
+  mixins: [link],
   props: {
     icon: String,
     iconColor: String,
+    iconPrefix: {
+      type: String,
+      value: 'van-icon',
+    },
     dot: Boolean,
     info: null,
     badge: null,
@@ -23,62 +21,40 @@ component_1.VantComponent({
   data: {
     viewStyle: '',
   },
-  mounted: function () {
+  mounted() {
     this.updateStyle();
   },
   methods: {
-    updateStyle: function () {
+    updateStyle() {
       if (!this.parent) {
         return;
       }
-      var _a = this.parent,
-        data = _a.data,
-        children = _a.children;
-      var columnNum = data.columnNum,
-        border = data.border,
-        square = data.square,
-        gutter = data.gutter,
-        clickable = data.clickable,
-        center = data.center,
-        direction = data.direction,
-        iconSize = data.iconSize;
-      var width = 100 / columnNum + '%';
-      var styleWrapper = [];
-      styleWrapper.push('width: ' + width);
-      if (square) {
-        styleWrapper.push('padding-top: ' + width);
-      }
-      if (gutter) {
-        var gutterValue = utils_1.addUnit(gutter);
-        styleWrapper.push('padding-right: ' + gutterValue);
-        var index = children.indexOf(this);
-        if (index >= columnNum && !square) {
-          styleWrapper.push('margin-top: ' + gutterValue);
-        }
-      }
-      var contentStyle = '';
-      if (square && gutter) {
-        var gutterValue = utils_1.addUnit(gutter);
-        contentStyle =
-          '\n          right: ' +
-          gutterValue +
-          ';\n          bottom: ' +
-          gutterValue +
-          ';\n          height: auto;\n        ';
-      }
+      const { data, children } = this.parent;
+      const {
+        columnNum,
+        border,
+        square,
+        gutter,
+        clickable,
+        center,
+        direction,
+        reverse,
+        iconSize,
+      } = data;
       this.setData({
-        viewStyle: styleWrapper.join('; '),
-        contentStyle: contentStyle,
-        center: center,
-        border: border,
-        square: square,
-        gutter: gutter,
-        clickable: clickable,
-        direction: direction,
-        iconSize: iconSize,
+        center,
+        border,
+        square,
+        gutter,
+        clickable,
+        direction,
+        reverse,
+        iconSize,
+        index: children.indexOf(this),
+        columnNum,
       });
     },
-    onClick: function () {
+    onClick() {
       this.$emit('click');
       this.jumpLink();
     },

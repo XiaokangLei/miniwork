@@ -1,10 +1,9 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var touch_1 = require('../mixins/touch');
-var version_1 = require('../common/version');
-component_1.VantComponent({
-  mixins: [touch_1.touch],
+import { VantComponent } from '../common/component';
+import { touch } from '../mixins/touch';
+import { canIUseModel } from '../common/version';
+import { getRect } from '../common/utils';
+VantComponent({
+  mixins: [touch],
   props: {
     disabled: Boolean,
     useButtonSlot: Boolean,
@@ -25,88 +24,80 @@ component_1.VantComponent({
     value: {
       type: Number,
       value: 0,
-      observer: 'updateValue',
+      observer(val) {
+        if (val !== this.value) {
+          this.updateValue(val);
+        }
+      },
     },
-    barHeight: {
-      type: null,
-      value: '2px',
-    },
+    barHeight: null,
   },
-  created: function () {
+  created() {
     this.updateValue(this.data.value);
   },
   methods: {
-    onTouchStart: function (event) {
+    onTouchStart(event) {
       if (this.data.disabled) return;
       this.touchStart(event);
-      this.startValue = this.format(this.data.value);
+      this.startValue = this.format(this.value);
       this.dragStatus = 'start';
     },
-    onTouchMove: function (event) {
-      var _this = this;
+    onTouchMove(event) {
       if (this.data.disabled) return;
       if (this.dragStatus === 'start') {
         this.$emit('drag-start');
       }
       this.touchMove(event);
       this.dragStatus = 'draging';
-      this.getRect('.van-slider').then(function (rect) {
-        var diff = (_this.deltaX / rect.width) * 100;
-        _this.newValue = _this.startValue + diff;
-        _this.updateValue(_this.newValue, false, true);
+      getRect(this, '.van-slider').then((rect) => {
+        const diff = (this.deltaX / rect.width) * this.getRange();
+        this.newValue = this.startValue + diff;
+        this.updateValue(this.newValue, false, true);
       });
     },
-    onTouchEnd: function () {
+    onTouchEnd() {
       if (this.data.disabled) return;
       if (this.dragStatus === 'draging') {
         this.updateValue(this.newValue, true);
         this.$emit('drag-end');
       }
     },
-    onClick: function (event) {
-      var _this = this;
+    onClick(event) {
       if (this.data.disabled) return;
-      var min = this.data.min;
-      this.getRect('.van-slider').then(function (rect) {
-        var value =
-          ((event.detail.x - rect.left) / rect.width) * _this.getRange() + min;
-        _this.updateValue(value, true);
+      const { min } = this.data;
+      getRect(this, '.van-slider').then((rect) => {
+        const value =
+          ((event.detail.x - rect.left) / rect.width) * this.getRange() + min;
+        this.updateValue(value, true);
       });
     },
-    updateValue: function (value, end, drag) {
+    updateValue(value, end, drag) {
       value = this.format(value);
-      var min = this.data.min;
-      var width = ((value - min) * 100) / this.getRange() + '%';
+      const { min } = this.data;
+      const width = `${((value - min) * 100) / this.getRange()}%`;
+      this.value = value;
       this.setData({
-        value: value,
-        barStyle:
-          '\n          width: ' +
-          width +
-          ';\n          ' +
-          (drag ? 'transition: none;' : '') +
-          '\n        ',
+        barStyle: `
+          width: ${width};
+          ${drag ? 'transition: none;' : ''}
+        `,
       });
       if (drag) {
-        this.$emit('drag', { value: value });
+        this.$emit('drag', { value });
       }
       if (end) {
         this.$emit('change', value);
       }
-      if ((drag || end) && version_1.canIUseModel()) {
-        this.setData({ value: value });
+      if ((drag || end) && canIUseModel()) {
+        this.setData({ value });
       }
     },
-    getRange: function () {
-      var _a = this.data,
-        max = _a.max,
-        min = _a.min;
+    getRange() {
+      const { max, min } = this.data;
       return max - min;
     },
-    format: function (value) {
-      var _a = this.data,
-        max = _a.max,
-        min = _a.min,
-        step = _a.step;
+    format(value) {
+      const { max, min, step } = this.data;
       return Math.round(Math.max(min, Math.min(value, max)) / step) * step;
     },
   },

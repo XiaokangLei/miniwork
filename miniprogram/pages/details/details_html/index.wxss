@@ -1,6 +1,6 @@
 /* miniprogram/pages/details/index.wxss */
 .detail-tl {
-  font-size: 48rpx;
+  font-size: 20px;
   font-family: PingFang;
   width: 90%;
   margin: 0 auto;

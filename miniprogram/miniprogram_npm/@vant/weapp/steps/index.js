@@ -1,8 +1,6 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var color_1 = require('../common/color');
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+import { GREEN, GRAY_DARK } from '../common/color';
+VantComponent({
   classes: ['desc-class'],
   props: {
     icon: String,
@@ -14,11 +12,11 @@ component_1.VantComponent({
     },
     activeColor: {
       type: String,
-      value: color_1.GREEN,
+      value: GREEN,
     },
     inactiveColor: {
       type: String,
-      value: color_1.GRAY_DARK,
+      value: GRAY_DARK,
     },
     activeIcon: {
       type: String,
@@ -27,8 +25,8 @@ component_1.VantComponent({
     inactiveIcon: String,
   },
   methods: {
-    onClick: function (event) {
-      var index = event.currentTarget.dataset.index;
+    onClick(event) {
+      const { index } = event.currentTarget.dataset;
       this.$emit('click-step', index);
     },
   },

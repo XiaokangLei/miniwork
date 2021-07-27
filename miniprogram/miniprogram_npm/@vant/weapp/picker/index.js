@@ -1,25 +1,8 @@
-'use strict';
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s)
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
-  };
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var shared_1 = require('./shared');
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+import { pickerProps } from './shared';
+VantComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
-  props: __assign(__assign({}, shared_1.pickerProps), {
+  props: Object.assign(Object.assign({}, pickerProps), {
     valueKey: {
       type: String,
       value: 'text',
@@ -35,34 +18,31 @@ component_1.VantComponent({
     columns: {
       type: Array,
       value: [],
-      observer: function (columns) {
-        if (columns === void 0) {
-          columns = [];
-        }
+      observer(columns = []) {
         this.simple = columns.length && !columns[0].values;
-        this.children = this.selectAllComponents('.van-picker__column');
         if (Array.isArray(this.children) && this.children.length) {
-          this.setColumns().catch(function () {});
+          this.setColumns().catch(() => {});
         }
       },
     },
   }),
-  beforeCreate: function () {
-    this.children = [];
+  beforeCreate() {
+    Object.defineProperty(this, 'children', {
+      get: () => this.selectAllComponents('.van-picker__column') || [],
+    });
   },
   methods: {
-    noop: function () {},
-    setColumns: function () {
-      var _this = this;
-      var data = this.data;
-      var columns = this.simple ? [{ values: data.columns }] : data.columns;
-      var stack = columns.map(function (column, index) {
-        return _this.setColumnValues(index, column.values);
-      });
+    noop() {},
+    setColumns() {
+      const { data } = this;
+      const columns = this.simple ? [{ values: data.columns }] : data.columns;
+      const stack = columns.map((column, index) =>
+        this.setColumnValues(index, column.values)
+      );
       return Promise.all(stack);
     },
-    emit: function (event) {
-      var type = event.currentTarget.dataset.type;
+    emit(event) {
+      const { type } = event.currentTarget.dataset;
       if (this.simple) {
         this.$emit(type, {
           value: this.getColumnValue(0),
@@ -75,7 +55,7 @@ component_1.VantComponent({
         });
       }
     },
-    onChange: function (event) {
+    onChange(event) {
       if (this.simple) {
         this.$emit('change', {
           picker: this,
@@ -91,84 +71,75 @@ component_1.VantComponent({
       }
     },
     // get column instance by index
-    getColumn: function (index) {
+    getColumn(index) {
       return this.children[index];
     },
     // get column value by index
-    getColumnValue: function (index) {
-      var column = this.getColumn(index);
+    getColumnValue(index) {
+      const column = this.getColumn(index);
       return column && column.getValue();
     },
     // set column value by index
-    setColumnValue: function (index, value) {
-      var column = this.getColumn(index);
+    setColumnValue(index, value) {
+      const column = this.getColumn(index);
       if (column == null) {
         return Promise.reject(new Error('setColumnValue: 对应列不存在'));
       }
       return column.setValue(value);
     },
     // get column option index by column index
-    getColumnIndex: function (columnIndex) {
+    getColumnIndex(columnIndex) {
       return (this.getColumn(columnIndex) || {}).data.currentIndex;
     },
     // set column option index by column index
-    setColumnIndex: function (columnIndex, optionIndex) {
-      var column = this.getColumn(columnIndex);
+    setColumnIndex(columnIndex, optionIndex) {
+      const column = this.getColumn(columnIndex);
       if (column == null) {
         return Promise.reject(new Error('setColumnIndex: 对应列不存在'));
       }
       return column.setIndex(optionIndex);
     },
     // get options of column by index
-    getColumnValues: function (index) {
+    getColumnValues(index) {
       return (this.children[index] || {}).data.options;
     },
     // set options of column by index
-    setColumnValues: function (index, options, needReset) {
-      if (needReset === void 0) {
-        needReset = true;
-      }
-      var column = this.children[index];
+    setColumnValues(index, options, needReset = true) {
+      const column = this.children[index];
       if (column == null) {
         return Promise.reject(new Error('setColumnValues: 对应列不存在'));
       }
-      var isSame =
+      const isSame =
         JSON.stringify(column.data.options) === JSON.stringify(options);
       if (isSame) {
         return Promise.resolve();
       }
-      return column.set({ options: options }).then(function () {
+      return column.set({ options }).then(() => {
         if (needReset) {
           column.setIndex(0);
         }
       });
     },
     // get values of all columns
-    getValues: function () {
-      return this.children.map(function (child) {
-        return child.getValue();
-      });
+    getValues() {
+      return this.children.map((child) => child.getValue());
     },
     // set values of all columns
-    setValues: function (values) {
-      var _this = this;
-      var stack = values.map(function (value, index) {
-        return _this.setColumnValue(index, value);
-      });
+    setValues(values) {
+      const stack = values.map((value, index) =>
+        this.setColumnValue(index, value)
+      );
       return Promise.all(stack);
     },
     // get indexes of all columns
-    getIndexes: function () {
-      return this.children.map(function (child) {
-        return child.data.currentIndex;
-      });
+    getIndexes() {
+      return this.children.map((child) => child.data.currentIndex);
     },
     // set indexes of all columns
-    setIndexes: function (indexes) {
-      var _this = this;
-      var stack = indexes.map(function (optionIndex, columnIndex) {
-        return _this.setColumnIndex(columnIndex, optionIndex);
-      });
+    setIndexes(indexes) {
+      const stack = indexes.map((optionIndex, columnIndex) =>
+        this.setColumnIndex(columnIndex, optionIndex)
+      );
       return Promise.all(stack);
     },
   },

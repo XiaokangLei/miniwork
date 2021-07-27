@@ -51,14 +51,12 @@
 	</view>
 
 	<view class="cu-bar tabbar  bg-white">
-		<view bindtap="tab_tz" data-id="1" class="action jk  text-gray {{id==1?'xzcg ':''}}" hover-class="item-hover"
-			hover-stay-time="100">
+		<view bindtap="tab_tz" data-id="1" class="action jk  text-gray {{id==1?'xzcg ':''}} " >
 			<view class="">
 				<span class="tab_icon iconfont icon-shouye shadow"></span>
 			</view> 资讯
 		</view>
-		<view bindtap="tab_tz" data-id="2" class="action jk text-gray {{id==2?'xzcg':''}}" hover-class="item-hover"
-			hover-stay-time="100">
+		<view bindtap="tab_tz" data-id="2" class="action jk text-gray {{id==2?'xzcg':''}}" >
 			<span class=" tab_icon iconfont  icon-ziliao "></span>
 			题库
 		</view>
@@ -67,13 +65,11 @@
 			</view>
 			校招
 		</view>
-		<view class="action text-gray jk {{id==4?'xzcg':''}}" bindtap="tab_tz" data-id="4" hover-class="item-hover"
-			hover-stay-time="100">
+		<view class="action text-gray jk {{id==4?'xzcg':''}}" bindtap="tab_tz" data-id="4" >
 			<span class="tab_icon iconfont  icon-yunchucun"></span>
 			内推
 		</view>
-		<view class="action text-gray jk {{id==5?'xzcg':''}}" bindtap="tab_tz" data-id="5" hover-class="item-hover"
-			hover-stay-time="100">
+		<view class="action text-gray jk {{id==5?'xzcg':''}}" bindtap="tab_tz" data-id="5" >
 			<view class="cuIcon-my">
 			</view>
 			我的

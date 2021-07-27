@@ -44,7 +44,7 @@
 		</van-cell>
 	</view>
 
-	<view class='nav-list_df'>
+	<!-- <view class='nav-list_df'>
 		<view class="nav-list-left">
 			<navigator hover-class='none' url="/pages/news/dictionaries/index" style="height:96%;" class="nav-li bg_kl">
 				<view class="nav-title">前端字典</view>
@@ -69,7 +69,7 @@
 				<text class='cuIcon-{{item.icon}}'></text>
 			</navigator>
 		</view>
-	</view>
+	</view> -->
 	<!-- 精选Top -->
 	<view class="main_title">
 		<view class="min_height cu-bar">

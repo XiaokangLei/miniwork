@@ -33,9 +33,9 @@
 		</view>
 	</view> -->
 	<!-- 左右四栏，精选、热招、宣讲会、专栏 -->
-	<van-tabs active="{{active}}" swipeable sticky offset-top="{{CustomBar}}" color="#d69c63" bind:change="onClick">
+	<van-tabs active="{{active}}" animated swipeable sticky offset-top="{{CustomBar}}" color="#d69c63" bind:change="onClick" >
 		<!-- 精选 -->
-		<van-tab title="精选">
+		<van-tab title="精选" title-style="font-size: 16px;">
 			<!-- <van-sticky offset-top="{{ CustomBar+44 }}" wx:if="{{active==0}}">
 				<view class="tab_list shadow">
 					<view class="tab_list_view" style="height:{{  height}}">
@@ -87,22 +87,18 @@
 			</view>
 		</van-tab>
 		<!-- 热招 -->
-		<van-tab title="热招">
+		<van-tab title="热招" title-style="font-size: 16px;">
 			<view class="study_list">
 				<list list="{{rb_list}}" phb="{{true}}" loding="{{loding}}"></list>
 			</view>
 		</van-tab>
-		<van-tab title="倒计时">
+		<van-tab title="倒计时" title-style="font-size: 16px;">
 			<val></val>
 		</van-tab>
-		<!-- 专栏 -->
-		<!-- <van-tab title="专栏">
-			<val></val>
-		</van-tab> -->
+
 		<!-- 宣讲会 -->
-		<van-tab title="宣讲会">
+		<van-tab title="宣讲会" title-style="font-size: 16px;">
 			<view class="cu-timeline">
-				<!-- <view class="cu-time">发展线</view> -->
 				<view class="cu-item text-blue" wx:for="{{ls_list}}" wx:key="this" wx:for-item="items">
 					<view class="content">
 						<view class="cu-capsule radius">

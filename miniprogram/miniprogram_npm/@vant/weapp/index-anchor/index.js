@@ -1,12 +1,8 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-component_1.VantComponent({
-  relation: {
-    name: 'index-bar',
-    type: 'ancestor',
-    current: 'index-anchor',
-  },
+import { getRect } from '../common/utils';
+import { VantComponent } from '../common/component';
+import { useParent } from '../common/relation';
+VantComponent({
+  relation: useParent('index-bar'),
   props: {
     useSlot: Boolean,
     index: null,
@@ -17,17 +13,13 @@ component_1.VantComponent({
     anchorStyle: '',
   },
   methods: {
-    scrollIntoView: function (scrollTop) {
-      var _this = this;
-      this.getBoundingClientRect().then(function (rect) {
+    scrollIntoView(scrollTop) {
+      getRect(this, '.van-index-anchor-wrapper').then((rect) => {
         wx.pageScrollTo({
           duration: 0,
-          scrollTop: scrollTop + rect.top - _this.parent.data.stickyOffsetTop,
+          scrollTop: scrollTop + rect.top - this.parent.data.stickyOffsetTop,
         });
       });
-    },
-    getBoundingClientRect: function () {
-      return this.getRect('.van-index-anchor-wrapper');
     },
   },
 });

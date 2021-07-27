@@ -1,8 +1,5 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-exports.chooseVideoProps = exports.chooseImageProps = void 0;
 // props for choose image
-exports.chooseImageProps = {
+export const chooseImageProps = {
   sizeType: {
     type: Array,
     value: ['original', 'compressed'],
@@ -13,7 +10,7 @@ exports.chooseImageProps = {
   },
 };
 // props for choose video
-exports.chooseVideoProps = {
+export const chooseVideoProps = {
   capture: {
     type: Array,
     value: ['album', 'camera'],

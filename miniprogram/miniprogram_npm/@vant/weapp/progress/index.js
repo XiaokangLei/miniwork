@@ -1,11 +1,13 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var color_1 = require('../common/color');
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+import { BLUE } from '../common/color';
+import { getRect } from '../common/utils';
+VantComponent({
   props: {
     inactive: Boolean,
-    percentage: Number,
+    percentage: {
+      type: Number,
+      observer: 'setLeft',
+    },
     pivotText: String,
     pivotColor: String,
     trackColor: String,
@@ -15,7 +17,7 @@ component_1.VantComponent({
     },
     color: {
       type: String,
-      value: color_1.BLUE,
+      value: BLUE,
     },
     textColor: {
       type: String,
@@ -24,6 +26,26 @@ component_1.VantComponent({
     strokeWidth: {
       type: null,
       value: 4,
+    },
+  },
+  data: {
+    right: 0,
+  },
+  mounted() {
+    this.setLeft();
+  },
+  methods: {
+    setLeft() {
+      Promise.all([
+        getRect(this, '.van-progress'),
+        getRect(this, '.van-progress__pivot'),
+      ]).then(([portion, pivot]) => {
+        if (portion && pivot) {
+          this.setData({
+            right: (pivot.width * (this.data.percentage - 100)) / 100,
+          });
+        }
+      });
     },
   },
 });

@@ -1,13 +1,11 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-component_1.VantComponent({
+import { canIUseModel } from '../common/version';
+import { VantComponent } from '../common/component';
+import { useParent } from '../common/relation';
+VantComponent({
   field: true,
-  relation: {
-    name: 'radio-group',
-    type: 'ancestor',
-    current: 'radio',
-  },
+  relation: useParent('radio-group', function () {
+    this.updateFromParent();
+  }),
   classes: ['icon-class', 'label-class'],
   props: {
     name: null,
@@ -29,23 +27,38 @@ component_1.VantComponent({
       value: 20,
     },
   },
+  data: {
+    direction: '',
+    parentDisabled: false,
+  },
   methods: {
-    emitChange: function (value) {
-      var instance = this.parent || this;
+    updateFromParent() {
+      if (!this.parent) {
+        return;
+      }
+      const { value, disabled: parentDisabled, direction } = this.parent.data;
+      this.setData({
+        value,
+        direction,
+        parentDisabled,
+      });
+    },
+    emitChange(value) {
+      const instance = this.parent || this;
       instance.$emit('input', value);
       instance.$emit('change', value);
+      if (canIUseModel()) {
+        instance.setData({ value });
+      }
     },
-    onChange: function () {
-      if (!this.data.disabled) {
+    onChange() {
+      if (!this.data.disabled && !this.data.parentDisabled) {
         this.emitChange(this.data.name);
       }
     },
-    onClickLabel: function () {
-      var _a = this.data,
-        disabled = _a.disabled,
-        labelDisabled = _a.labelDisabled,
-        name = _a.name;
-      if (!disabled && !labelDisabled) {
+    onClickLabel() {
+      const { disabled, parentDisabled, labelDisabled, name } = this.data;
+      if (!(disabled || parentDisabled) && !labelDisabled) {
         this.emitChange(name);
       }
     },

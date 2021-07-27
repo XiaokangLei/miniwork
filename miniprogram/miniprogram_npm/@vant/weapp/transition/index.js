@@ -1,8 +1,6 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var transition_1 = require('../mixins/transition');
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+import { transition } from '../mixins/transition';
+VantComponent({
   classes: [
     'enter-class',
     'enter-active-class',
@@ -11,5 +9,5 @@ component_1.VantComponent({
     'leave-active-class',
     'leave-to-class',
   ],
-  mixins: [transition_1.transition(true)],
+  mixins: [transition(true)],
 });

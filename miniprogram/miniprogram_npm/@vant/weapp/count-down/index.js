@@ -1,11 +1,9 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var utils_1 = require('./utils');
+import { VantComponent } from '../common/component';
+import { isSameSecond, parseFormat, parseTimeData } from './utils';
 function simpleTick(fn) {
   return setTimeout(fn, 30);
 }
-component_1.VantComponent({
+VantComponent({
   props: {
     useSlot: Boolean,
     millisecond: Boolean,
@@ -23,16 +21,16 @@ component_1.VantComponent({
     },
   },
   data: {
-    timeData: utils_1.parseTimeData(0),
+    timeData: parseTimeData(0),
     formattedTime: '0',
   },
-  destroyed: function () {
+  destroyed() {
     clearTimeout(this.tid);
     this.tid = null;
   },
   methods: {
     // 开始
-    start: function () {
+    start() {
       if (this.counting) {
         return;
       }
@@ -41,12 +39,12 @@ component_1.VantComponent({
       this.tick();
     },
     // 暂停
-    pause: function () {
+    pause() {
       this.counting = false;
       clearTimeout(this.tid);
     },
     // 重置
-    reset: function () {
+    reset() {
       this.pause();
       this.remain = this.data.time;
       this.setRemain(this.remain);
@@ -54,45 +52,43 @@ component_1.VantComponent({
         this.start();
       }
     },
-    tick: function () {
+    tick() {
       if (this.data.millisecond) {
         this.microTick();
       } else {
         this.macroTick();
       }
     },
-    microTick: function () {
-      var _this = this;
-      this.tid = simpleTick(function () {
-        _this.setRemain(_this.getRemain());
-        if (_this.remain !== 0) {
-          _this.microTick();
+    microTick() {
+      this.tid = simpleTick(() => {
+        this.setRemain(this.getRemain());
+        if (this.remain !== 0) {
+          this.microTick();
         }
       });
     },
-    macroTick: function () {
-      var _this = this;
-      this.tid = simpleTick(function () {
-        var remain = _this.getRemain();
-        if (!utils_1.isSameSecond(remain, _this.remain) || remain === 0) {
-          _this.setRemain(remain);
+    macroTick() {
+      this.tid = simpleTick(() => {
+        const remain = this.getRemain();
+        if (!isSameSecond(remain, this.remain) || remain === 0) {
+          this.setRemain(remain);
         }
-        if (_this.remain !== 0) {
-          _this.macroTick();
+        if (this.remain !== 0) {
+          this.macroTick();
         }
       });
     },
-    getRemain: function () {
+    getRemain() {
       return Math.max(this.endTime - Date.now(), 0);
     },
-    setRemain: function (remain) {
+    setRemain(remain) {
       this.remain = remain;
-      var timeData = utils_1.parseTimeData(remain);
+      const timeData = parseTimeData(remain);
       if (this.data.useSlot) {
         this.$emit('change', timeData);
       }
       this.setData({
-        formattedTime: utils_1.parseFormat(this.data.format, timeData),
+        formattedTime: parseFormat(this.data.format, timeData),
       });
       if (remain === 0) {
         this.pause();

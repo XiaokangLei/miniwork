@@ -13,7 +13,7 @@
           <view bindtap="xz" data-id="{{index}}" wx:for="{{xw_list.question}}" wx:for-index="index" wx:key="index"
             class="{{xz_color==index?xw_list.affirm!=xz_color?'red':'mentalListActive':''}} mentalList">
             <view class="indexBox text-shadow">{{index==0?"A":index==1?"B":index==2?"C":"D"}}</view>
-            {{ item|| '' }}{{xw_list.affirm}}
+            {{ item|| '' }}
           </view>
         </view>
         <view class="cu-progress radius striped active">
@@ -42,17 +42,17 @@
     <view wx:if="{{cd<1}}">下一题</view>
     <view wx:if="{{cd==1}}">完成答题</view>
   </view>
-
+  
   <view class="warp" wx:if="{{cd>1}}">
     <view class="rect">
       <view class="closeImg  ">
         <image mode="aspectFit" src="http://cdn.zhoukaiwen.com/answerTrophy.png" />
       </view>
-      <view class="text-black text-bold text-center     ">恭喜您！完成答题！</view>
-      <view class="text-center margin-tb-lg text-gray     ">您答对了{{da_zq}}题</view>
+      <view class="text-black text-bold text-center">恭喜您！完成答题！</view>
+      <view class="text-center margin-tb-lg text-gray">您答对了{{da_zq}}题</view>
       <view class=" dis_but">
-        <view class="cu-btn round bg-blue shadow " style="width:48%;" bindtap="backpage">返回</view>
-        <button class="cu-btn round bg-blue shadow     " style="width:48%;" open-type="share">分享您的成果</button>
+        <view class="cu-btn round bg-blue shadow" style="width:48%;" bindtap="backpage">返回</view>
+        <button class="cu-btn round bg-blue shadow" style="width:48%;" open-type="share">分享您的成果</button>
       </view>
     </view>
   </view>

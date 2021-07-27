@@ -1,38 +1,44 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+import { useParent } from '../common/relation';
+VantComponent({
   props: {
     info: null,
     name: null,
     icon: String,
     dot: Boolean,
+    iconPrefix: {
+      type: String,
+      value: 'van-icon',
+    },
   },
-  relation: {
-    name: 'tabbar',
-    type: 'ancestor',
-    current: 'tabbar-item',
-  },
+  relation: useParent('tabbar'),
   data: {
     active: false,
+    activeColor: '',
+    inactiveColor: '',
   },
   methods: {
-    onClick: function () {
-      if (this.parent) {
-        this.parent.onChange(this);
+    onClick() {
+      const { parent } = this;
+      if (parent) {
+        const index = parent.children.indexOf(this);
+        const active = this.data.name || index;
+        if (active !== this.data.active) {
+          parent.$emit('change', active);
+        }
       }
       this.$emit('click');
     },
-    updateFromParent: function () {
-      var parent = this.parent;
+    updateFromParent() {
+      const { parent } = this;
       if (!parent) {
         return;
       }
-      var index = parent.children.indexOf(this);
-      var parentData = parent.data;
-      var data = this.data;
-      var active = (data.name || index) === parentData.active;
-      var patch = {};
+      const index = parent.children.indexOf(this);
+      const parentData = parent.data;
+      const { data } = this;
+      const active = (data.name || index) === parentData.active;
+      const patch = {};
       if (active !== data.active) {
         patch.active = active;
       }
@@ -42,9 +48,9 @@ component_1.VantComponent({
       if (parentData.inactiveColor !== data.inactiveColor) {
         patch.inactiveColor = parentData.inactiveColor;
       }
-      return Object.keys(patch).length > 0
-        ? this.set(patch)
-        : Promise.resolve();
+      if (Object.keys(patch).length > 0) {
+        this.setData(patch);
+      }
     },
   },
 });

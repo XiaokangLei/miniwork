@@ -1,29 +1,13 @@
-'use strict';
-var __assign =
-  (this && this.__assign) ||
-  function () {
-    __assign =
-      Object.assign ||
-      function (t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s)
-            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-      };
-    return __assign.apply(this, arguments);
-  };
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var props_1 = require('./props');
-component_1.VantComponent({
+import { nextTick } from '../common/utils';
+import { VantComponent } from '../common/component';
+import { commonProps, inputProps, textareaProps } from './props';
+VantComponent({
   field: true,
   classes: ['input-class', 'right-icon-class', 'label-class'],
-  props: __assign(
-    __assign(
-      __assign(__assign({}, props_1.commonProps), props_1.inputProps),
-      props_1.textareaProps
+  props: Object.assign(
+    Object.assign(
+      Object.assign(Object.assign({}, commonProps), inputProps),
+      textareaProps
     ),
     {
       size: String,
@@ -34,7 +18,7 @@ component_1.VantComponent({
       isLink: Boolean,
       leftIcon: String,
       rightIcon: String,
-      autosize: [Boolean, Object],
+      autosize: null,
       required: Boolean,
       iconClass: String,
       clickable: Boolean,
@@ -67,49 +51,49 @@ component_1.VantComponent({
     innerValue: '',
     showClear: false,
   },
-  created: function () {
+  created() {
     this.value = this.data.value;
     this.setData({ innerValue: this.value });
   },
   methods: {
-    onInput: function (event) {
-      var _a = (event.detail || {}).value,
-        value = _a === void 0 ? '' : _a;
+    onInput(event) {
+      const { value = '' } = event.detail || {};
       this.value = value;
       this.setShowClear();
       this.emitChange();
     },
-    onFocus: function (event) {
+    onFocus(event) {
       this.focused = true;
       this.setShowClear();
       this.$emit('focus', event.detail);
     },
-    onBlur: function (event) {
+    onBlur(event) {
       this.focused = false;
       this.setShowClear();
       this.$emit('blur', event.detail);
     },
-    onClickIcon: function () {
+    onClickIcon() {
       this.$emit('click-icon');
     },
-    onClear: function () {
-      var _this = this;
+    onClickInput(event) {
+      this.$emit('click-input', event.detail);
+    },
+    onClear() {
       this.setData({ innerValue: '' });
       this.value = '';
       this.setShowClear();
-      wx.nextTick(function () {
-        _this.emitChange();
-        _this.$emit('clear', '');
+      nextTick(() => {
+        this.emitChange();
+        this.$emit('clear', '');
       });
     },
-    onConfirm: function (event) {
-      var _a = (event.detail || {}).value,
-        value = _a === void 0 ? '' : _a;
+    onConfirm(event) {
+      const { value = '' } = event.detail || {};
       this.value = value;
       this.setShowClear();
       this.$emit('confirm', value);
     },
-    setValue: function (value) {
+    setValue(value) {
       this.value = value;
       this.setShowClear();
       if (value === '') {
@@ -117,31 +101,26 @@ component_1.VantComponent({
       }
       this.emitChange();
     },
-    onLineChange: function (event) {
+    onLineChange(event) {
       this.$emit('linechange', event.detail);
     },
-    onKeyboardHeightChange: function (event) {
+    onKeyboardHeightChange(event) {
       this.$emit('keyboardheightchange', event.detail);
     },
-    emitChange: function () {
-      var _this = this;
+    emitChange() {
       this.setData({ value: this.value });
-      wx.nextTick(function () {
-        _this.$emit('input', _this.value);
-        _this.$emit('change', _this.value);
+      nextTick(() => {
+        this.$emit('input', this.value);
+        this.$emit('change', this.value);
       });
     },
-    setShowClear: function () {
-      var _a = this.data,
-        clearable = _a.clearable,
-        readonly = _a.readonly;
-      var _b = this,
-        focused = _b.focused,
-        value = _b.value;
+    setShowClear() {
+      const { clearable, readonly } = this.data;
+      const { focused, value } = this;
       this.setData({
         showClear: !!clearable && !!focused && !!value && !readonly,
       });
     },
-    noop: function () {},
+    noop() {},
   },
 });

@@ -4,6 +4,7 @@ const db = wx.cloud.database({
 })
 const _ = db.command
 const app = getApp()
+import task from "../../../utils/request.js"
 Page({
 
   /**
@@ -16,7 +17,6 @@ Page({
     time: 180000,
     timeData: {},
     tz_list: []
-
   },
   top() {
     wx.pageScrollTo({
@@ -24,31 +24,32 @@ Page({
       duration: 300
     })
   },
-  tm(){
+  tm() {
     this.setData({
-      tm_show:true
+      tm_show: true
     })
   },
   onChange(e) {
     this.setData({
       timeData: e.detail,
     });
-  },                                
+  },
   statr_sc(e) {
     let openid = wx.getStorageSync("openid")
     if (openid) {
       let that = this
       wx.showToast({
-        title: "树树加载中",
+        title: "小贝加载中",
         icon: 'loading',
         mask: true,
         duration: 2000
       })
       let data = this.data.xw_list
-      data.type=e.currentTarget.dataset.id
+      data.type = e.currentTarget.dataset.id
       data.press_id = data._id
-
-      task.Tree_cloud("'pro_'+e.currentTarget.dataset.id",{press:data}).then(res=>{
+      task.Tree_cloud("'pro_'+e.currentTarget.dataset.id", {
+        press: data
+      }).then(res => {
         wx.showToast({
           title: res.result,
           duration: 1000,
@@ -86,35 +87,30 @@ Page({
       },
     }).then(res => {
       this.setData({
-        sc_show:res.result.collect,
-        dz_show:res.result.statr
+        sc_show: res.result.collect,
+        dz_show: res.result.statr
       })
     })
   },
-  fy(){
-    db.collection('interview').skip(this.data.limt+1).limit(1).get().then(res => {
+  fy() {
+    db.collection('interview').skip(this.data.limt + 1).limit(1).get().then(res => {
       console.log(res.data[0])
       let result = res.data[0]
       this.setData({
-        limt:this.data.limt+1,
+        limt: this.data.limt + 1,
         xw_list: res.data[0]
       })
-    
     })
-
   },
-  sc(){
-    let sc={
-      id:this.data.xw_list._id
+  sc() {
+    let sc = {
+      id: this.data.xw_list._id
     }
-
     db.collection('user').where({
-
     }).add({
-      data:{
+      data: {
         sc_data: sc
       }
-
     }).get().then(res => {
       let result = res.data[0].html
       that.setData({
@@ -125,24 +121,22 @@ Page({
     })
   },
 
-  dz_l(){
-  
+  dz_l() {
     db.collection('press').where({
-      _id:this.data.xw_list._id 
+      _id: this.data.xw_list._id
     }).update({
-      data:{
+      data: {
         statr: 10
       }
     }).then(res => {
       console.log(res)
-     this.xq(this.data.id)
+      this.xq(this.data.id)
     })
   },
   onLoad: function (options) {
-
     this.setData({
       id: options.id,
-      limt:     Number( options.limt)
+      limt: Number(options.limt)
     })
     console.log(options.limt)
     this.xq(options.id)
@@ -158,7 +152,6 @@ Page({
     return {
       title: this.data.deta.title,
       imageUrl: this.data.deta.preimage,
-
     }
   },
   /**

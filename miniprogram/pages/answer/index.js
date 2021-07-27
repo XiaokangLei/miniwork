@@ -44,7 +44,6 @@ Component({
         })
       })
       db.collection('interview').orderBy('_createTime', 'asc').where({
-        select: false,
         kind:'teach'
       }).limit(4).get().then(res => {
         this.setData({

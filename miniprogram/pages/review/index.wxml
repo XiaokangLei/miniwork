@@ -24,7 +24,7 @@
     </view>
   </view>
 
-  <view class="ans_bst">
+  <!-- <view class="ans_bst">
     <view class="cu-bar bg-white solid-bottom">
       <view class="action sub-title">
         <text class="text-xl text-bold  text-tree">笔试资料</text>
@@ -47,7 +47,7 @@
         </navigator>
       </scroll-view>
     </view>
-  </view>
+  </view> -->
 
   <!-- <view class="study_list">
     <view class="cu-bar bg-white solid-bottom">
@@ -64,7 +64,6 @@
       <view class="action sub-title">
         <text class="text-xl text-bold  text-tree">刷题</text>
         <text class="bg-tree"></text>
-        <!-- last-child选择器-->
       </view>
     </view>
     <view class="order">

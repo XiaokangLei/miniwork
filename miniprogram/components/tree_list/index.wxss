@@ -152,16 +152,16 @@ font-size: 12px;
   justify-content:space-between;
 }
 .home-list-right_tille{
-  font-size: 30rpx;
+  font-size: 16px;
   color: #2e3135;
-  font-weight: 600;
+  font-weight: 700;
   overflow: hidden;
   white-space: nowrap;
   padding-bottom: 8rpx;
   text-overflow: ellipsis;
 }
 .home-list-right_mec{
-  font-size: 13px;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

@@ -1,10 +1,7 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var button_1 = require('../mixins/button');
-var open_type_1 = require('../mixins/open-type');
-component_1.VantComponent({
-  mixins: [button_1.button, open_type_1.openType],
+import { VantComponent } from '../common/component';
+import { button } from '../mixins/button';
+VantComponent({
+  mixins: [button],
   props: {
     show: Boolean,
     title: String,
@@ -40,23 +37,32 @@ component_1.VantComponent({
     },
   },
   methods: {
-    onSelect: function (event) {
-      var index = event.currentTarget.dataset.index;
-      var item = this.data.actions[index];
-      if (item && !item.disabled && !item.loading) {
+    onSelect(event) {
+      const { index } = event.currentTarget.dataset;
+      const { actions, closeOnClickAction, canIUseGetUserProfile } = this.data;
+      const item = actions[index];
+      if (item) {
         this.$emit('select', item);
-        if (this.data.closeOnClickAction) {
+        if (closeOnClickAction) {
           this.onClose();
+        }
+        if (item.openType === 'getUserInfo' && canIUseGetUserProfile) {
+          wx.getUserProfile({
+            desc: item.getUserProfileDesc || '  ',
+            complete: (userProfile) => {
+              this.$emit('getuserinfo', userProfile);
+            },
+          });
         }
       }
     },
-    onCancel: function () {
+    onCancel() {
       this.$emit('cancel');
     },
-    onClose: function () {
+    onClose() {
       this.$emit('close');
     },
-    onClickOverlay: function () {
+    onClickOverlay() {
       this.$emit('click-overlay');
       this.onClose();
     },

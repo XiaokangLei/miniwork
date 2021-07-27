@@ -1,8 +1,6 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var version_1 = require('../common/version');
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+import { canIUseModel } from '../common/version';
+VantComponent({
   field: true,
   classes: ['field-class', 'input-class', 'cancel-class'],
   props: {
@@ -45,36 +43,35 @@ component_1.VantComponent({
     },
   },
   methods: {
-    onChange: function (event) {
-      if (version_1.canIUseModel()) {
+    onChange(event) {
+      if (canIUseModel()) {
         this.setData({ value: event.detail });
       }
       this.$emit('change', event.detail);
     },
-    onCancel: function () {
-      var _this = this;
+    onCancel() {
       /**
        * 修复修改输入框值时，输入框失焦和赋值同时触发，赋值失效
        * https://github.com/youzan/@vant/weapp/issues/1768
        */
-      setTimeout(function () {
-        if (version_1.canIUseModel()) {
-          _this.setData({ value: '' });
+      setTimeout(() => {
+        if (canIUseModel()) {
+          this.setData({ value: '' });
         }
-        _this.$emit('cancel');
-        _this.$emit('change', '');
+        this.$emit('cancel');
+        this.$emit('change', '');
       }, 200);
     },
-    onSearch: function (event) {
+    onSearch(event) {
       this.$emit('search', event.detail);
     },
-    onFocus: function (event) {
+    onFocus(event) {
       this.$emit('focus', event.detail);
     },
-    onBlur: function (event) {
+    onBlur(event) {
       this.$emit('blur', event.detail);
     },
-    onClear: function (event) {
+    onClear(event) {
       this.$emit('clear', event.detail);
     },
   },

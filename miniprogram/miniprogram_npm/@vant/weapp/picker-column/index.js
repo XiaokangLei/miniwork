@@ -1,9 +1,8 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var utils_1 = require('../common/utils');
-var DEFAULT_DURATION = 200;
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+import { range } from '../common/utils';
+import { isObj } from '../common/validator';
+const DEFAULT_DURATION = 200;
+VantComponent({
   classes: ['active-class'],
   props: {
     valueKey: String,
@@ -17,7 +16,7 @@ component_1.VantComponent({
     defaultIndex: {
       type: Number,
       value: 0,
-      observer: function (value) {
+      observer(value) {
         this.setIndex(value);
       },
     },
@@ -30,45 +29,42 @@ component_1.VantComponent({
     options: [],
     currentIndex: 0,
   },
-  created: function () {
-    var _this = this;
-    var _a = this.data,
-      defaultIndex = _a.defaultIndex,
-      initialOptions = _a.initialOptions;
+  created() {
+    const { defaultIndex, initialOptions } = this.data;
     this.set({
       currentIndex: defaultIndex,
       options: initialOptions,
-    }).then(function () {
-      _this.setIndex(defaultIndex);
+    }).then(() => {
+      this.setIndex(defaultIndex);
     });
   },
   methods: {
-    getCount: function () {
+    getCount() {
       return this.data.options.length;
     },
-    onTouchStart: function (event) {
+    onTouchStart(event) {
       this.setData({
         startY: event.touches[0].clientY,
         startOffset: this.data.offset,
         duration: 0,
       });
     },
-    onTouchMove: function (event) {
-      var data = this.data;
-      var deltaY = event.touches[0].clientY - data.startY;
+    onTouchMove(event) {
+      const { data } = this;
+      const deltaY = event.touches[0].clientY - data.startY;
       this.setData({
-        offset: utils_1.range(
+        offset: range(
           data.startOffset + deltaY,
           -(this.getCount() * data.itemHeight),
           data.itemHeight
         ),
       });
     },
-    onTouchEnd: function () {
-      var data = this.data;
+    onTouchEnd() {
+      const { data } = this;
       if (data.offset !== data.startOffset) {
         this.setData({ duration: DEFAULT_DURATION });
-        var index = utils_1.range(
+        const index = range(
           Math.round(-data.offset / data.itemHeight),
           0,
           this.getCount() - 1
@@ -76,55 +72,52 @@ component_1.VantComponent({
         this.setIndex(index, true);
       }
     },
-    onClickItem: function (event) {
-      var index = event.currentTarget.dataset.index;
+    onClickItem(event) {
+      const { index } = event.currentTarget.dataset;
       this.setIndex(index, true);
     },
-    adjustIndex: function (index) {
-      var data = this.data;
-      var count = this.getCount();
-      index = utils_1.range(index, 0, count);
-      for (var i = index; i < count; i++) {
+    adjustIndex(index) {
+      const { data } = this;
+      const count = this.getCount();
+      index = range(index, 0, count);
+      for (let i = index; i < count; i++) {
         if (!this.isDisabled(data.options[i])) return i;
       }
-      for (var i = index - 1; i >= 0; i--) {
+      for (let i = index - 1; i >= 0; i--) {
         if (!this.isDisabled(data.options[i])) return i;
       }
     },
-    isDisabled: function (option) {
-      return utils_1.isObj(option) && option.disabled;
+    isDisabled(option) {
+      return isObj(option) && option.disabled;
     },
-    getOptionText: function (option) {
-      var data = this.data;
-      return utils_1.isObj(option) && data.valueKey in option
+    getOptionText(option) {
+      const { data } = this;
+      return isObj(option) && data.valueKey in option
         ? option[data.valueKey]
         : option;
     },
-    setIndex: function (index, userAction) {
-      var _this = this;
-      var data = this.data;
+    setIndex(index, userAction) {
+      const { data } = this;
       index = this.adjustIndex(index) || 0;
-      var offset = -index * data.itemHeight;
+      const offset = -index * data.itemHeight;
       if (index !== data.currentIndex) {
-        return this.set({ offset: offset, currentIndex: index }).then(
-          function () {
-            userAction && _this.$emit('change', index);
-          }
-        );
+        return this.set({ offset, currentIndex: index }).then(() => {
+          userAction && this.$emit('change', index);
+        });
       }
-      return this.set({ offset: offset });
+      return this.set({ offset });
     },
-    setValue: function (value) {
-      var options = this.data.options;
-      for (var i = 0; i < options.length; i++) {
+    setValue(value) {
+      const { options } = this.data;
+      for (let i = 0; i < options.length; i++) {
         if (this.getOptionText(options[i]) === value) {
           return this.setIndex(i);
         }
       }
       return Promise.resolve();
     },
-    getValue: function () {
-      var data = this.data;
+    getValue() {
+      const { data } = this;
       return data.options[data.currentIndex];
     },
   },

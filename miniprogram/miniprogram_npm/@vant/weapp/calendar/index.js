@@ -1,24 +1,29 @@
-'use strict';
-var __spreadArrays =
-  (this && this.__spreadArrays) ||
-  function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++)
-      s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-      for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-        r[k] = a[j];
-    return r;
-  };
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule ? mod : { default: mod };
-  };
-Object.defineProperty(exports, '__esModule', { value: true });
-var component_1 = require('../common/component');
-var utils_1 = require('./utils');
-var toast_1 = __importDefault(require('../toast/toast'));
-component_1.VantComponent({
+import { VantComponent } from '../common/component';
+import {
+  ROW_HEIGHT,
+  getPrevDay,
+  getNextDay,
+  getToday,
+  compareDay,
+  copyDates,
+  calcDateNum,
+  formatMonthTitle,
+  compareMonth,
+  getMonths,
+  getDayByOffset,
+} from './utils';
+import Toast from '../toast/toast';
+import { requestAnimationFrame } from '../common/utils';
+const initialMinDate = getToday().getTime();
+const initialMaxDate = (() => {
+  const now = getToday();
+  return new Date(
+    now.getFullYear(),
+    now.getMonth() + 6,
+    now.getDate()
+  ).getTime();
+})();
+VantComponent({
   props: {
     title: {
       type: String,
@@ -27,7 +32,7 @@ component_1.VantComponent({
     color: String,
     show: {
       type: Boolean,
-      observer: function (val) {
+      observer(val) {
         if (val) {
           this.initRect();
           this.scrollIntoView();
@@ -40,9 +45,13 @@ component_1.VantComponent({
       value: '确定',
     },
     rangePrompt: String,
+    showRangePrompt: {
+      type: Boolean,
+      value: true,
+    },
     defaultDate: {
-      type: [Number, Array],
-      observer: function (val) {
+      type: null,
+      observer(val) {
         this.setData({ currentDate: val });
         this.scrollIntoView();
       },
@@ -56,23 +65,19 @@ component_1.VantComponent({
     },
     minDate: {
       type: null,
-      value: Date.now(),
+      value: initialMinDate,
     },
     maxDate: {
       type: null,
-      value: new Date(
-        new Date().getFullYear(),
-        new Date().getMonth() + 6,
-        new Date().getDate()
-      ).getTime(),
+      value: initialMaxDate,
     },
     position: {
       type: String,
       value: 'bottom',
     },
     rowHeight: {
-      type: [Number, String],
-      value: utils_1.ROW_HEIGHT,
+      type: null,
+      value: ROW_HEIGHT,
     },
     round: {
       type: Boolean,
@@ -107,8 +112,12 @@ component_1.VantComponent({
       value: true,
     },
     maxRange: {
-      type: [Number, String],
+      type: null,
       value: null,
+    },
+    firstDayOfWeek: {
+      type: Number,
+      value: 0,
     },
   },
   data: {
@@ -116,109 +125,126 @@ component_1.VantComponent({
     currentDate: null,
     scrollIntoView: '',
   },
-  created: function () {
+  created() {
     this.setData({
       currentDate: this.getInitialDate(),
     });
   },
-  mounted: function () {
+  mounted() {
     if (this.data.show || !this.data.poppable) {
       this.initRect();
       this.scrollIntoView();
     }
   },
   methods: {
-    reset: function () {
+    reset() {
       this.setData({ currentDate: this.getInitialDate() });
       this.scrollIntoView();
     },
-    initRect: function () {
-      var _this = this;
+    initRect() {
       if (this.contentObserver != null) {
         this.contentObserver.disconnect();
       }
-      var contentObserver = this.createIntersectionObserver({
+      const contentObserver = this.createIntersectionObserver({
         thresholds: [0, 0.1, 0.9, 1],
         observeAll: true,
       });
       this.contentObserver = contentObserver;
       contentObserver.relativeTo('.van-calendar__body');
-      contentObserver.observe('.month', function (res) {
+      contentObserver.observe('.month', (res) => {
         if (res.boundingClientRect.top <= res.relativeRect.top) {
           // @ts-ignore
-          _this.setData({
-            subtitle: utils_1.formatMonthTitle(res.dataset.date),
-          });
+          this.setData({ subtitle: formatMonthTitle(res.dataset.date) });
         }
       });
     },
-    getInitialDate: function () {
-      var _a = this.data,
-        type = _a.type,
-        defaultDate = _a.defaultDate,
-        minDate = _a.minDate;
+    limitDateRange(date, minDate = null, maxDate = null) {
+      minDate = minDate || this.data.minDate;
+      maxDate = maxDate || this.data.maxDate;
+      if (compareDay(date, minDate) === -1) {
+        return minDate;
+      }
+      if (compareDay(date, maxDate) === 1) {
+        return maxDate;
+      }
+      return date;
+    },
+    getInitialDate(defaultDate = null) {
+      const { type, minDate, maxDate } = this.data;
+      const now = getToday().getTime();
       if (type === 'range') {
-        var _b = defaultDate || [],
-          startDay = _b[0],
-          endDay = _b[1];
-        return [
-          startDay || minDate,
-          endDay || utils_1.getNextDay(new Date(minDate)).getTime(),
-        ];
+        if (!Array.isArray(defaultDate)) {
+          defaultDate = [];
+        }
+        const [startDay, endDay] = defaultDate || [];
+        const start = this.limitDateRange(
+          startDay || now,
+          minDate,
+          getPrevDay(maxDate).getTime()
+        );
+        const end = this.limitDateRange(
+          endDay || now,
+          getNextDay(minDate).getTime()
+        );
+        return [start, end];
       }
       if (type === 'multiple') {
-        return defaultDate || [minDate];
+        if (Array.isArray(defaultDate)) {
+          return defaultDate.map((date) => this.limitDateRange(date));
+        }
+        return [this.limitDateRange(now)];
       }
-      return defaultDate || minDate;
+      if (!defaultDate || Array.isArray(defaultDate)) {
+        defaultDate = now;
+      }
+      return this.limitDateRange(defaultDate);
     },
-    scrollIntoView: function () {
-      var _this = this;
-      setTimeout(function () {
-        var _a = _this.data,
-          currentDate = _a.currentDate,
-          type = _a.type,
-          show = _a.show,
-          poppable = _a.poppable,
-          minDate = _a.minDate,
-          maxDate = _a.maxDate;
-        var targetDate = type === 'single' ? currentDate : currentDate[0];
-        var displayed = show || !poppable;
+    scrollIntoView() {
+      requestAnimationFrame(() => {
+        const {
+          currentDate,
+          type,
+          show,
+          poppable,
+          minDate,
+          maxDate,
+        } = this.data;
+        // @ts-ignore
+        const targetDate = type === 'single' ? currentDate : currentDate[0];
+        const displayed = show || !poppable;
         if (!targetDate || !displayed) {
           return;
         }
-        var months = utils_1.getMonths(minDate, maxDate);
-        months.some(function (month, index) {
-          if (utils_1.compareMonth(month, targetDate) === 0) {
-            _this.setData({ scrollIntoView: 'month' + index });
+        const months = getMonths(minDate, maxDate);
+        months.some((month, index) => {
+          if (compareMonth(month, targetDate) === 0) {
+            this.setData({ scrollIntoView: `month${index}` });
             return true;
           }
           return false;
         });
-      }, 100);
+      });
     },
-    onOpen: function () {
+    onOpen() {
       this.$emit('open');
     },
-    onOpened: function () {
+    onOpened() {
       this.$emit('opened');
     },
-    onClose: function () {
+    onClose() {
       this.$emit('close');
     },
-    onClosed: function () {
+    onClosed() {
       this.$emit('closed');
     },
-    onClickDay: function (event) {
-      var date = event.detail.date;
-      var _a = this.data,
-        type = _a.type,
-        currentDate = _a.currentDate,
-        allowSameDay = _a.allowSameDay;
+    onClickDay(event) {
+      const { date } = event.detail;
+      const { type, currentDate, allowSameDay } = this.data;
       if (type === 'range') {
-        var startDay = currentDate[0],
-          endDay = currentDate[1];
+        // @ts-ignore
+        const [startDay, endDay] = currentDate;
         if (startDay && !endDay) {
-          var compareToStart = utils_1.compareDay(date, startDay);
+          const compareToStart = compareDay(date, startDay);
           if (compareToStart === 1) {
             this.select([startDay, date], true);
           } else if (compareToStart === -1) {
@@ -230,40 +256,43 @@ component_1.VantComponent({
           this.select([date, null]);
         }
       } else if (type === 'multiple') {
-        var selectedIndex_1;
-        var selected = currentDate.some(function (dateItem, index) {
-          var equal = utils_1.compareDay(dateItem, date) === 0;
+        let selectedIndex;
+        // @ts-ignore
+        const selected = currentDate.some((dateItem, index) => {
+          const equal = compareDay(dateItem, date) === 0;
           if (equal) {
-            selectedIndex_1 = index;
+            selectedIndex = index;
           }
           return equal;
         });
         if (selected) {
-          var cancelDate = currentDate.splice(selectedIndex_1, 1);
-          this.setData({ currentDate: currentDate });
+          // @ts-ignore
+          const cancelDate = currentDate.splice(selectedIndex, 1);
+          this.setData({ currentDate });
           this.unselect(cancelDate);
         } else {
-          this.select(__spreadArrays(currentDate, [date]));
+          // @ts-ignore
+          this.select([...currentDate, date]);
         }
       } else {
         this.select(date, true);
       }
     },
-    unselect: function (dateArray) {
-      var date = dateArray[0];
+    unselect(dateArray) {
+      const date = dateArray[0];
       if (date) {
-        this.$emit('unselect', utils_1.copyDates(date));
+        this.$emit('unselect', copyDates(date));
       }
     },
-    select: function (date, complete) {
+    select(date, complete) {
       if (complete && this.data.type === 'range') {
-        var valid = this.checkRange(date);
+        const valid = this.checkRange(date);
         if (!valid) {
           // auto selected to max range if showConfirm
           if (this.data.showConfirm) {
             this.emit([
               date[0],
-              utils_1.getDayByOffset(date[0], this.data.maxRange - 1),
+              getDayByOffset(date[0], this.data.maxRange - 1),
             ]);
           } else {
             this.emit(date);
@@ -276,42 +305,38 @@ component_1.VantComponent({
         this.onConfirm();
       }
     },
-    emit: function (date) {
-      var getTime = function (date) {
-        return date instanceof Date ? date.getTime() : date;
-      };
+    emit(date) {
+      const getTime = (date) => (date instanceof Date ? date.getTime() : date);
       this.setData({
         currentDate: Array.isArray(date) ? date.map(getTime) : getTime(date),
       });
-      this.$emit('select', utils_1.copyDates(date));
+      this.$emit('select', copyDates(date));
     },
-    checkRange: function (date) {
-      var _a = this.data,
-        maxRange = _a.maxRange,
-        rangePrompt = _a.rangePrompt;
-      if (maxRange && utils_1.calcDateNum(date) > maxRange) {
-        toast_1.default({
-          context: this,
-          message:
-            rangePrompt ||
-            '\u9009\u62E9\u5929\u6570\u4E0D\u80FD\u8D85\u8FC7 ' +
-              maxRange +
-              ' \u5929',
-        });
+    checkRange(date) {
+      const { maxRange, rangePrompt, showRangePrompt } = this.data;
+      if (maxRange && calcDateNum(date) > maxRange) {
+        if (showRangePrompt) {
+          Toast({
+            duration: 0,
+            context: this,
+            message: rangePrompt || `选择天数不能超过 ${maxRange} 天`,
+          });
+        }
+        this.$emit('over-range');
         return false;
       }
       return true;
     },
-    onConfirm: function () {
-      var _this = this;
+    onConfirm() {
       if (
         this.data.type === 'range' &&
         !this.checkRange(this.data.currentDate)
       ) {
         return;
       }
-      wx.nextTick(function () {
-        _this.$emit('confirm', utils_1.copyDates(_this.data.currentDate));
+      wx.nextTick(() => {
+        // @ts-ignore
+        this.$emit('confirm', copyDates(this.data.currentDate));
       });
     },
   },

@@ -9,7 +9,6 @@ function Tree_cloud(name, data) {
     })
     let promise = new Promise(function (resolve, reject) {
       resolve("1");
-
     })
     return promise
   } else {
@@ -25,7 +24,7 @@ function Tree_cloud(name, data) {
           wx.showToast({
             title: String(res),
             icon: 'none',
-            duration:3000
+            duration: 3000
           })
           reject(res.result);
         }
@@ -33,7 +32,6 @@ function Tree_cloud(name, data) {
     })
     return promise
   }
-
 }
 
 function Tree_get(data) {
@@ -43,45 +41,38 @@ function Tree_get(data) {
     })
     var str = "123";
     console.log(data)
-console.log(data.collectionName=="press");
-//  if()
+    console.log(data.collectionName == "press");
+    //  if()
     let promise = new Promise(function (resolve, reject) {
-
-
       wx.request({
         url: baseURL + url,
         method: method,
         data: method === POST ? JSON.stringify(data) : data,
         header: header,
         success(res) {
-      
         },
         fail(err) {
-            //请求失败
-            reject(err)
+          //请求失败
+          reject(err)
         }
+      })
     })
-
-    })
-
-   
   } else {
-
     let promise = new Promise(function (resolve, reject) {
-    data.get({
-      success: function (res) {
-        resolve(res.data);
-      },
-      fail: function (res) {
-        console.log(res)
-        wx.showToast({
-          title: String(res),
-          icon: 'none',
-          duration:3000
-        })
-        reject(res.result);
-      }
-    })
+      data.get({
+        success: function (res) {
+          resolve(res.data);
+        },
+        fail: function (res) {
+          console.log(res)
+          wx.showToast({
+            title: String(res),
+            icon: 'none',
+            duration: 3000
+          })
+          reject(res.result);
+        }
+      })
     })
     return promise
   }

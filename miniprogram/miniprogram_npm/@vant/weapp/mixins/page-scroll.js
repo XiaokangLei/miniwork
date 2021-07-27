@@ -1,23 +1,17 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
-exports.pageScrollMixin = void 0;
-function getCurrentPage() {
-  var pages = getCurrentPages();
-  return pages[pages.length - 1] || {};
-}
+import { getCurrentPage } from '../common/utils';
 function onPageScroll(event) {
-  var _a = getCurrentPage().vanPageScroller,
-    vanPageScroller = _a === void 0 ? [] : _a;
-  vanPageScroller.forEach(function (scroller) {
+  const { vanPageScroller = [] } = getCurrentPage();
+  vanPageScroller.forEach((scroller) => {
     if (typeof scroller === 'function') {
+      // @ts-ignore
       scroller(event);
     }
   });
 }
-exports.pageScrollMixin = function (scroller) {
-  return Behavior({
-    attached: function () {
-      var page = getCurrentPage();
+export const pageScrollMixin = (scroller) =>
+  Behavior({
+    attached() {
+      const page = getCurrentPage();
       if (Array.isArray(page.vanPageScroller)) {
         page.vanPageScroller.push(scroller.bind(this));
       } else {
@@ -28,13 +22,12 @@ exports.pageScrollMixin = function (scroller) {
       }
       page.onPageScroll = onPageScroll;
     },
-    detached: function () {
-      var page = getCurrentPage();
-      page.vanPageScroller = (page.vanPageScroller || []).filter(function (
-        item
-      ) {
-        return item !== scroller;
-      });
+    detached() {
+      var _a;
+      const page = getCurrentPage();
+      page.vanPageScroller =
+        ((_a = page.vanPageScroller) === null || _a === void 0
+          ? void 0
+          : _a.filter((item) => item !== scroller)) || [];
     },
   });
-};
