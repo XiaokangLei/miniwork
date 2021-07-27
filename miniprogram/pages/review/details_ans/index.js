@@ -81,7 +81,7 @@ Page({
     })
     db.collection('interview').where({
       select: true,
-      ly:this.data.type
+      kind:this.data.type
     }).count().then(res => {
       console.log(res.total)
       let cd_data = this.data.page / res.total
@@ -94,7 +94,7 @@ Page({
 
     db.collection('interview').where({
       select: true,
-      ly:this.data.type
+      kind:this.data.type
     }).orderBy('_createTime', 'asc').skip((this.data.page - 1) * 1).limit(1).get().then(res => {
       console.log(res.data[0])
       this.setData({

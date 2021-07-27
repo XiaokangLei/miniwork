@@ -2,7 +2,7 @@
   <view class="ans_bst">
     <view class="cu-bar bg-white solid-bottom">
       <view class="action sub-title">
-        <text class="text-xl text-bold  text-tree">笔试题 105题</text>
+        <text class="text-xl text-bold  text-tree">内推直招</text>
         <text class="bg-tree"></text>
       </view>
       <navigator class="ntp" url="/pages/answer/fl_problem/index">查看更多
@@ -14,27 +14,30 @@
         <navigator hover-class="item-hover" url="/pages/details/details_pro/index?id={{items._id}}" class="item_list"
           wx:for="{{ xw_list}}" wx:key="this" wx:for-item="items">
           <view class="item_list_ds">
-
             <view class="dis2">
               <view class="item_top_Wz">热</view>
               <view class="item_top_Wz2"> {{items.problem}}</view>
             </view>
-
-
           </view>
-
         </navigator>
-
-
       </scroll-view>
     </view>
+  </view>
+  
+  <!-- <view class="study_list">
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="action sub-title">
+        <text class="text-xl text-bold  text-tree">面试精讲</text>
+        <text class="bg-tree"></text>
+      </view>
+    </view>
+    <list list="{{  wz_list}}"></list>
   </view>
   <view class="ans_xzt">
     <view class="cu-bar bg-white solid-bottom">
       <view class="action sub-title">
         <text class="text-xl text-bold  text-tree">选择题</text>
         <text class="bg-tree"></text>
-        <!-- last-child选择器-->
       </view>
 
     </view>
@@ -108,23 +111,16 @@
         </navigator>
       </view>
     </view>
-  </view>
-  <view class="study_list">
-    <view class="cu-bar bg-white solid-bottom">
-      <view class="action sub-title">
-        <text class="text-xl text-bold  text-tree">面试精讲</text>
-        <text class="bg-tree"></text>
-        <!-- last-child选择器-->
-      </view>
+  </view> -->
 
-    </view>
-    <list list="{{  wz_list}}"></list>
+  <view style="margin-top: 20rpx;padding-top: 10rpx;margin-bottom: 120rpx;">
   </view>
+
 </view>
 <wxs module="m1">
   function format(ts) {
-  var d = getDate(ts)
-  return [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-')
+    var d = getDate(ts)
+    return [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-')
   }
   module.exports.format = format
 </wxs>

@@ -30,7 +30,7 @@ Page({
 
   initial: function (id) {
     var that = this
-    db.collection('history').doc(
+    db.collection('teachin').doc(
       id
     ).get().then(res => {
       let result = res.data.html
@@ -104,8 +104,8 @@ Page({
     console.log(this.data.xw_list.img)
     return {
       title: this.data.xw_list.tille,
-      path: '/pages/index/index?id=' + this.data.id+"&share=true",
-      imageUrl:this.data.xw_list.img||"",
+      path: '/pages/index/index?id=' + this.data.id + "&share=true",
+      imageUrl: this.data.xw_list.img || "",
       success: function (res) {
         console.log('成功', res)
       }
@@ -117,7 +117,7 @@ Page({
       console.log(res.target)
     }
     return {
-      title:"为美好世界而编程",
+      title: "为美好世界而编程",
       imageUrl: this.data.deta.preimage,
 
     }

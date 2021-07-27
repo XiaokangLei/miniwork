@@ -17,7 +17,7 @@ Component({
   data: {
     loading: true
   },
-  created(){
+  created() {
     this.post()
     wx.setNavigationBarTitle({
       title: "笔试面试"
@@ -35,26 +35,47 @@ Component({
       })
     },
     post() {
-      db.collection('press').where({Type:"ms"}).orderBy('_createTime','desc').limit(4).get().then(res => {
+      db.collection('press').where({
+        Type: "ms"
+      }).orderBy('_createTime', 'desc').limit(4).get().then(res => {
         console.log(res)
         this.setData({
           wz_list: res.data,
         })
-    })
-      db.collection('interview').orderBy('_createTime', 'asc').where({ select: false}).limit(4).get().then(res => {
-          this.setData({
-            xw_list: res.data,
-          })
-          console.log(this.data.xw_list)
       })
-      db.collection('interview').where({ select: true, ly:'Js' }).count().then(res => {
+      db.collection('interview').orderBy('_createTime', 'asc').where({
+        select: false,
+        kind:'inte'
+      }).limit(4).get().then(res => {
         this.setData({
-         js_L:res.total
+          xw_list: res.data,
+        })
+        console.log(this.data.xw_list)
+      })
+      db.collection('interview').orderBy('_createTime', 'asc').where({
+        select: true,
+        kind:'c++'
+      }).limit(4).get().then(res => {
+        this.setData({
+          c_list: res.data,
+        })
+        
+        console.log(this.data.c_list)
+      })
+      db.collection('interview').where({
+        select: true,
+        kind:'c++'
+      }).count().then(res => {
+        this.setData({
+          js_L: res.total
         })
       })
-      db.collection('interview').where({ select: true, ly:'CSS' }).count().then(res => {
+      db.collection('interview').where({
+        select: true,
+        ly: 'CSS'
+      }).count().then(res => {
         this.setData({
-         CS_L:res.total
+          CS_L: res.total
         })
       })
     },

@@ -2,16 +2,15 @@
   <view class="padding" wx:if="{{cd<=1}}">
     <view class="mainBox radius shadow-warp bg-white margin-top relative">
       <view>
-        <view class="animation-reverse shadow"  data-class="slide-rights">
+        <view class="animation-reverse shadow" data-class="slide-rights">
           <view class="mentalTitle text-xl text-black text-bold">
             <text>{{page || '' }}</text>
             <text>、</text>
-            <text>{{  xw_list.problem|| '' }}</text>
+            <text>{{ xw_list.problem|| '' }}</text>
           </view>
           <mp-html wx:if="{{xw_list.problem2!='<p>欢迎使用富文本编辑器</p>'}}" showLanguageName="{{true}}"
             content="{{xw_list.problem2}}" selectable="{{true}}" />
-          <view bindtap="xz" data-id="{{index}}" wx:for="{{xw_list.question}}" wx:for-index="index"
-          wx:key="index"
+          <view bindtap="xz" data-id="{{index}}" wx:for="{{xw_list.question}}" wx:for-index="index" wx:key="index"
             class="{{xz_color==index?xw_list.affirm!=xz_color?'red':'mentalListActive':''}} mentalList">
             <view class="indexBox text-shadow">{{index==0?"A":index==1?"B":index==2?"C":"D"}}</view>
             {{ item|| '' }}{{xw_list.affirm}}
@@ -25,7 +24,8 @@
       </view>
       <view wx:if="{{da_show}}">
         <view class=" text-bold text-black text-xxl margin-tb-xl">解析</view>
-        <mp-html wx:if="{{xw_list.problem!='<p>欢迎使用富文本编辑器</p>'}}"  showLanguageName="{{true}}" content="{{xw_list.answer}}" selectable="{{true}}" />
+        <mp-html wx:if="{{xw_list.problem!='<p>欢迎使用富文本编辑器</p>'}}" showLanguageName="{{true}}"
+          content="{{xw_list.answer}}" selectable="{{true}}" />
       </view>
     </view>
   </view>
@@ -37,7 +37,7 @@
       答题规则说明
     </view>
   </view> -->
- 
+
   <view class="db_but" bindtap="xz_post" wx:if="{{cd<=1}}">
     <view wx:if="{{cd<1}}">下一题</view>
     <view wx:if="{{cd==1}}">完成答题</view>

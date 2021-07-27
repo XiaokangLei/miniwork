@@ -102,7 +102,7 @@
 		<!-- 宣讲会 -->
 		<van-tab title="宣讲会">
 			<view class="cu-timeline">
-				<view class="cu-time">发展线</view>
+				<!-- <view class="cu-time">发展线</view> -->
 				<view class="cu-item text-blue" wx:for="{{ls_list}}" wx:key="this" wx:for-item="items">
 					<view class="content">
 						<view class="cu-capsule radius">

@@ -1,14 +1,14 @@
 <view class="main">
 	<view class="servic_top">
-		<view class="servic_top_Dl">
-			<view>
-				<view class="servic_top_Wz1">面试真题</view>
+		<!-- <view class="servic_top_Dl"> -->
+			<!-- <view>
+				<view class="servic_top_Wz1">面试题库</view>
 				<view class="servic_top_Wz2">为编程而编程，为进步而进步</view>
-			</view>
-			<view class="servic_top_Img">
+			</view> -->
+			<!-- <view class="servic_top_Img">
 				<image src="../../../images/zx_top.png"></image>
-			</view>
-		</view>
+			</view> -->
+		<!-- </view> -->
 
 		<view class="servic_top_Dl">
 			<view>
@@ -16,7 +16,7 @@
 				<view class="servic_top_tw2">题库总题数</view>
 			</view>
 			<view>
-				<view class="servic_top_tw3">您收藏0题</view>
+				<view class="servic_top_tw3">收藏0题</view>
 				<view class="servic_top_tw3">面试平均遇见4题</view>
 			</view>
 		</view>

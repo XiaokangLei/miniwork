@@ -60,7 +60,7 @@
 		<view bindtap="tab_tz" data-id="2" class="action jk text-gray {{id==2?'xzcg':''}}" hover-class="item-hover"
 			hover-stay-time="100">
 			<span class=" tab_icon iconfont  icon-ziliao "></span>
-			复习
+			题库
 		</view>
 		<view class="action  add-action  text-gray {{id==3?'xzcg':''}}" bindtap="tab_tz" data-id="3">
 			<view class="cu-btn cuIcon-shuye tab_color shadow">

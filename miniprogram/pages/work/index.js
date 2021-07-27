@@ -102,7 +102,7 @@ Component({
           rb_list: res
         })
       })
-      api.GET_history.then(res => {
+      api.GET_teachin.then(res => {
         this.setData({
           ls_list: res
         })

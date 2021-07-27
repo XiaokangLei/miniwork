@@ -1,7 +1,3 @@
-<cu-custom bgColor="bg-gradual-tree" isCustom="{{true}}" >
-	<view slot="backText">返回</view>
-	<view slot="content">文章</view>
-</cu-custom>
 <view class="loding_bg" wx:if="{{loding}}">
 	<view>
 		<image class="loding_img"
@@ -37,7 +33,7 @@
 				数据来源
 			</view>
 			<view class="cu-tag line-tree">
-				{{xw_list.ly||'掘金'}}
+				{{xw_list.ly||'应届生求职网'}}
 			</view>
 		</view>
 
