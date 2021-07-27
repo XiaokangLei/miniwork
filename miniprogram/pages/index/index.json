@@ -14,7 +14,7 @@
     "van-dialog": "@vant/weapp/dialog/index",
     "van-transition": "@vant/weapp/transition/index",
     "van-notify": "@vant/weapp/notify/index",
-    "home": "../home",
+    "news": "../news",
     "user": "../user",
     "review":"../review",
     "dictionaries":"../answer",

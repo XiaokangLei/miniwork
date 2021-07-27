@@ -62,40 +62,51 @@
 				<text class='cuIcon-writefill'></text>
 			</navigator>
 			<navigator hover-class='none' url="/pages/user/plan/index" class="nav-li bg_fe">
-				<view class="nav-title">学习计划</view>
-				<view class="nav-name">了解自我</view>
+				<view class="nav-title">校招日历</view>
+				<view class="nav-name">校招倒计时</view>
 				<text class='cuIcon-newshotfill'></text>
 			</navigator>
 		</view>
 
-		<view class="cu-list menu  ">
-			<view class="cu-item arrow">
+		<view class="cu-list menu">
+
+			<view class="cu-item">
 				<navigator class="content" url="/pages/user/about/about" hover-class="none">
-					<text class="cuIcon-infofill text-yellow text-lg"></text>
+					<text class="cuIcon-right text-lg"
+						style="padding-right: 0rpx; position: absolute;top: 0;right: 30rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
+					<text class="cuIcon-infofill text-yellow"></text>
 					<text class="footer-text text-lg">关于小贝</text>
 				</navigator>
 			</view>
 
-			<view class="cu-item arrow">
+			<view class="cu-item">
 				<button class='cu-btn content' open-type='contact'>
+					<text class="cuIcon-right text-lg"
+						style="padding-right: 0rpx; position: absolute;top: 0;right: 0rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
 					<text class='cuIcon-markfill text-green text-lg'></text>
 					<text class='footer-text text-lg'>联系客服</text>
 				</button>
 			</view>
-			<view class="cu-item arrow">
+			<view class="cu-item">
 				<button class='cu-btn content' open-type='feedback'>
+					<text class="cuIcon-right text-lg"
+						style="padding-right: 0rpx; position: absolute;top: 0;right: 0rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
 					<text class='cuIcon-writefill text-cyan text-lg'></text>
 					<text class='footer-text text-lg'>意见反馈</text>
 				</button>
 			</view>
-			<view class="cu-item arrow" bindtap="showQrcode">
+			<view class="cu-item" bindtap="showQrcode">
 				<view class='content'>
+					<text class="cuIcon-right text-lg"
+						style="padding-right: 0rpx; position: absolute;top: 0;right: 30rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
 					<text class='cuIcon-refund text-red text-lg'></text>
 					<text class='footer-text text-lg'>打赏支持</text>
 				</view>
 			</view>
-			<view class="cu-item arrow" bindtap="ql">
+			<view class="cu-item" bindtap="ql">
 				<view class="content" url="/pages/about/test/list" hover-class="none">
+					<text class="cuIcon-right text-lg"
+						style="padding-right: 0rpx; position: absolute;top: 0;right: 30rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
 					<text class="cuIcon-creativefill text-tree text-lg"></text>
 					<text class="footer-text text-lg">清理缓存</text>
 				</view>

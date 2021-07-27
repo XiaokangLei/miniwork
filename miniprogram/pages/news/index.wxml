@@ -1,27 +1,3 @@
-<!-- <view class="cu-custom" style="height:{{CustomBar}}px">
-	<view class="cu-bar fixed index_tb" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
-
-		<view class="action">
-			<navigator class="kl" url="/pages/user/sign/index" hover-class="none">
-				<text class=" iconfont  icon-qiandao" bindtap="BackPage"></text>
-			</navigator>
-		</view>
-
-		<view class="content" style="top:{{StatusBar}}px;{{('opacity:'+(1- popr)+';')}}" wx:if="{{popr<0.5}}">
-			校招资讯
-		</view>
-
-		<view class="content"
-			style="top:{{StatusBar}}px;width: calc(100% - 340rpx);margin-left: 40px; {{('opacity:'+  popr+';')}}">
-			<view class="search-form search-round search-index ">
-				<text class="cuIcon-search text-bold text-lg "> </text>
-				<input disabled="{{true}}" type="text" placeholder="搜索" confirm-type="search" placeholder-style="color:#000"
-					class="" />
-			</view>
-		</view>
-	</view>
-</view> -->
-<!-- <test_page></test_page> -->
 <view class="home">
 	<view class="home-top">
 	</view>
@@ -70,7 +46,7 @@
 
 	<view class='nav-list_df'>
 		<view class="nav-list-left">
-			<navigator hover-class='none' url="/pages/home/dictionaries/index" style="height:96%;" class="nav-li bg_kl">
+			<navigator hover-class='none' url="/pages/news/dictionaries/index" style="height:96%;" class="nav-li bg_kl">
 				<view class="nav-title">前端字典</view>
 				<view class="mt10 nav-name ">
 					千里之行<view>始于足下</view>
@@ -78,14 +54,14 @@
 			</navigator>
 		</view>
 		<view class="nav-list-right">
-			<navigator hover-class='none' url="/pages/home/servic/index" class="nav-li bg-cyan bg_kl2">
+			<navigator hover-class='none' url="/pages/news/servic/index" class="nav-li bg-cyan bg_kl2">
 				<view class="nav-title">大牛书籍</view>
 				<view class="nav-name">
 					天生我材必有用
 				</view>
 				<text class='cuIcon-newshotfill'></text>
 			</navigator>
-			<navigator hover-class='none' url="/pages/home/fl_answer/index" class="nav-li  bg_kl3">
+			<navigator hover-class='none' url="/pages/news/fl_answer/index" class="nav-li  bg_kl3">
 				<view class="nav-title">难点问答</view>
 				<view class="nav-name">
 					人事有代谢，往来成古今

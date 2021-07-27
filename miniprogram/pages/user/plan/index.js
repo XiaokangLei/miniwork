@@ -80,8 +80,6 @@ Component({
           dateArr: dateArr
         })
       })
-
-
     },
     // 日历
     dateInit: function (setYear, setMonth) {

@@ -1,4 +1,4 @@
-/* miniprogram/pages/home/history/index.wxss */
+/* miniprogram/pages/news/history/index.wxss */
 .study_tag2 {
   color: #d69c63;
   border: 1px solid #d69c63;

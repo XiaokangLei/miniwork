@@ -1433,7 +1433,7 @@ button.icon.lg {
 }
 
 .cu-list.menu>.cu-item .content {
-	font-size: 30rpx;
+	font-size: 40rpx;
 	line-height: 1.6em;
 	flex: 1
 }

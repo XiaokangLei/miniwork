@@ -1,5 +1,5 @@
 <view class="main">
-  <view class="sign_top" style="padding-top:{{StatusBar}}px">
+  <view class="sign_top" >
     <view class="contant">
       <!-- 日历年月 -->
       <view class='calendar_title layer_center'>

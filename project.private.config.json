@@ -91,8 +91,8 @@
           "scene": null
         },
         {
-          "name": "pages/home/ranking/index",
-          "pathName": "pages/home/ranking/index",
+          "name": "pages/news/ranking/index",
+          "pathName": "pages/news/ranking/index",
           "query": "id=b00064a76072ab7c0df82d355c97b187",
           "scene": null
         },
@@ -121,8 +121,8 @@
           "scene": null
         },
         {
-          "name": "pages/home/history/index",
-          "pathName": "pages/home/history/index",
+          "name": "pages/news/history/index",
+          "pathName": "pages/news/history/index",
           "query": "",
           "scene": null
         },
@@ -157,14 +157,14 @@
           "scene": null
         },
         {
-          "name": "pages/home/history/index",
-          "pathName": "pages/home/history/index",
+          "name": "pages/news/history/index",
+          "pathName": "pages/news/history/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/home/history/add/index",
-          "pathName": "pages/home/history/add/index",
+          "name": "pages/news/history/add/index",
+          "pathName": "pages/news/history/add/index",
           "query": "",
           "scene": null
         },
@@ -181,8 +181,8 @@
           "scene": null
         },
         {
-          "name": "pages/home/fl_answer/index",
-          "pathName": "pages/home/fl_answer/index",
+          "name": "pages/news/fl_answer/index",
+          "pathName": "pages/news/fl_answer/index",
           "query": "",
           "scene": null
         },

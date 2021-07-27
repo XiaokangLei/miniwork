@@ -43,7 +43,7 @@
 	<van-notify id="van-notify" top="{{180}}" />
 	<!-- 底部五个分类，资讯，笔试，校招，面试，我的，id分别为12345 -->
 	<view>
-		<home popr="{{ hd_op}}" wx:if="{{id==1}}" />
+		<news popr="{{ hd_op}}" wx:if="{{id==1}}" />
 		<review wx:if="{{id==2}}" />
 		<work wx:if="{{id==3}}" list="{{list}}" bind:tab_xz="post" loding="{{loding}}" />
 		<dictionaries wx:if="{{id==4}}" />
