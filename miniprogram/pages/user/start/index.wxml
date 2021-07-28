@@ -2,11 +2,12 @@
 	<van-dialog id="van-dialog" />
 	<van-tabs active="{{active}}" bind:change="onChange" color="#d69c63">
 		<van-tab title="{{items_tab}}" wx:for="{{tab}}" wx:key="this" wx:for-item="items_tab">
-			
+
 			<view wx:if="{{loding}}" class="loding">
 				<van-loading />
 				<view>正在加载，请耐心等待 </view>
 			</view>
+
 			<van-transition show="{{!loding }}" name="slide-left" custom-class="block">
 				<view class="home-jcly">
 					<van-empty image="search" wx:if="{{xw_list.length==0}}" description="暂无内容" />
@@ -68,9 +69,75 @@
 					</view>
 				</view>
 			</van-transition>
-
 		</van-tab>
 	</van-tabs>
+
+	<!-- <view wx:if="{{loding}}" class="loding">
+		<van-loading />
+		<view>正在加载，请耐心等待 </view>
+	</view>
+	<van-transition show="{{!loding }}" name="slide-left" custom-class="block">
+		<view class="home-jcly">
+			<van-empty image="search" wx:if="{{xw_list.length==0}}" description="暂无内容" />
+			<view class="home-list" wx:for="{{xw_list}}" wx:key="this" wx:for-item="items" data-id="{{items.press_id}}"
+				bindtap="tz" data-a="details/details_html/index">
+				<view wx:if="{{items.img}}" class="home-list-left">
+					<view>
+						<image src="{{items.img}}"></image>
+					</view>
+					<view>{{items.tille}}</view>
+				</view>
+				<view class="home-list-right" wx:if="{{items.img}}">
+					<view class="home-list-right_tille">
+						{{items.mec}}
+					</view>
+					<view class="home-list-bottom">
+						<view class="dis">
+							<view>
+								<van-icon name="good-job-o" />
+								<view class="icon_wz">{{items.statr}}</view>
+							</view>
+							<view>
+								<van-icon name="star-o" />
+								<view class="icon_wz">{{items.collect}}</view>
+							</view>
+							<view>
+								<van-icon name="clock-o" />
+								<view class="icon_wz">{{m1.format(items.add_time)}}</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="home-list-dlimg" wx:if="{{!items.img}}">
+					<view class="home-list-dlimg_tl">
+						{{items.tille}}
+					</view>
+					<view class="home-list-dlimg_mc">
+						{{items.mec}}
+					</view>
+					<view class="home-list-bottom">
+						<view class="dis">
+							<view>
+								<van-icon name="good-job-o" />
+								<view class="icon_wz">{{items.statr}}</view>
+							</view>
+							<view>
+								<van-icon name="star-o" />
+								<view class="icon_wz">{{items.collect}}</view>
+							</view>
+							<view>
+								<van-icon name="clock-o" />
+								<view class="icon_wz">{{m1.format(items.add_time)}}</view>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="home-list-type " wx:if="{{items.img}}">{{items.type}}</view>
+				<view class="home-list-type2 " wx:if="{{!items.img}}">{{items.type}}</view>
+			</view>
+		</view>
+	</van-transition> -->
+
 </view>
 <wxs module="m1">
 	function format(ts) {

@@ -27,36 +27,17 @@ Component({
   },
   methods: {
     initial() {
-      // api.GET_press.then(res => {
-      //   console.log(res)
-        
-      //   this.setData({
-      //     xw_list: res
-      //   })
-      // })
       api.GET_news.then(res => {
         console.log(res)
         this.setData({
           xw_list: res
         })
       })
-      // api.GET_press.then(res => {
-      //   console.log(res)
-      //   this.setData({
-      //     xw_list: res
-      //   })
-      // })
-      // api.GET_press_top.then(res => {
-      //   this.setData({
-      //     tz_list: res
-      //   })
-      // })
       api.GET_news_top.then(res => {
         this.setData({
           tz_list: res
         })
       })
-
       task.Tree_cloud('userlist').then(res => {
         this.setData({
           userlist: res.data

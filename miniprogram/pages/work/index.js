@@ -97,21 +97,24 @@ Component({
       this.triggerEvent('tab_xz', e.currentTarget.dataset.type)
     },
     list() {
+      // 按照浏览量获取数据
       api.GET_press_browse.then(res => {
         this.setData({
           rb_list: res
         })
       })
+      // 获取宣讲会数据
       api.GET_teachin.then(res => {
         this.setData({
           ls_list: res
         })
       })
-      api.GET_press_top.then(res => {
-        this.setData({
-          tz_list: res
-        })
-      })
+      // api.GET_press_top.then(res => {
+      //   this.setData({
+      //     tz_list: res
+      //   })
+      // })
+      // 获取首页顶部swiper数据
       api.GET_swiper.then(res => {
         this.setData({
           swiperList: res

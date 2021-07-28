@@ -13,6 +13,7 @@
     "pages/news/fl_basics/index",
     "pages/user/sign/index",
     "pages/user/collect/index",
+    "pages/user/start/index",
     "pages/news/dictionaries/index",
     "pages/details/details_ls/index",
     "pages/answer/index",

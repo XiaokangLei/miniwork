@@ -1,10 +1,8 @@
 <view class="main">
-	<!-- <view class="home-top">
-	</view> -->
 	<swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
 		duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
-		<swiper-item wx:for="{{swiperList}}" wx:key="ids" class="{{cardCur==index?'cur':''}}" id="{{item.goto}}"
-			bindtap="tz_swiper" data-url="{{item.navigateTo}}">
+		<swiper-item wx:for="{{swiperList}}" wx:key="ids" class="{{cardCur==index?'cur':''}}" bindtap="tz_swiper"
+			data-url="{{item.navigateTo}}">
 			<view class="swiper-item">
 				<image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
 				<video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"
@@ -12,28 +10,10 @@
 			</view>
 		</swiper-item>
 	</swiper>
-	<!-- <swiper class='home-gg' autoplay="true" vertical='true' circular='true' interval='8000'>
-		<block wx:for="{{tz_list}}" wx:key="this" wx:for-item="items">
-			<swiper-item class="home-gg2">
-				<view>
-					<view>公告</view>
-				</view>
-				<view data-id="{{items._id}}" bindtap="tz" data-a="details/press/index">{{items.tille}}</view>
-			</swiper-item>
-		</block>
-	</swiper> -->
-	<!-- 顶部图片 -->
-	<!-- <view class="servic_top">
-		<view>
-			<view class="servic_top_Wz1">前路无涯</view>
-			<view>路漫漫其修远兮，吾将上下而求索 </view>
-		</view>
-		<view class="servic_top_Img">
-			<image src="../../images/zx_top_new.png"></image>
-		</view>
-	</view> -->
+
 	<!-- 左右四栏，精选、热招、宣讲会、专栏 -->
-	<van-tabs active="{{active}}" animated swipeable sticky offset-top="{{CustomBar}}" color="#d69c63" bind:change="onClick" >
+	<van-tabs active="{{active}}" animated swipeable sticky offset-top="{{CustomBar}}" color="#d69c63"
+		bind:change="onClick">
 		<!-- 精选 -->
 		<van-tab title="精选" title-style="font-size: 16px;">
 			<!-- <van-sticky offset-top="{{ CustomBar+44 }}" wx:if="{{active==0}}">

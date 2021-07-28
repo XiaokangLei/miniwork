@@ -26,7 +26,7 @@ Component({
 
   methods: {
     post() {
-      db.collection('collect').where({
+      db.collection('statr').where({
         Type:this.data.db_value
       }).limit(10).orderBy('add_time', 'asc').get().then(res => {
         this.setData({
@@ -39,6 +39,7 @@ Component({
       this.setData({
         loding: true
       })
+      var db2
       if (event.detail.title == "资讯") {
         this.setData({
           db_value : 'news'
@@ -48,9 +49,8 @@ Component({
         this.setData({
           db_value : 'xz'
         })
-        
       }
-      db.collection('collect').where({
+      db.collection('statr').where({
         Type:this.data.db_value
       }).limit(10).orderBy('add_time', 'asc').get().then(res => {
         this.setData({
@@ -58,7 +58,6 @@ Component({
           loding: false
         })
       })
-
     },
     tz: function (e) {
       console.log(e.currentTarget.dataset.id)

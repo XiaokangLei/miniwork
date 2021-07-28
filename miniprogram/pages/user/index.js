@@ -25,14 +25,14 @@ Component({
       color: 'yellow',
       badge: 0,
       name: '我的收藏',
-      data_page: "user/collect/index?tabCur=0",
+      data_page: "user/collect/index",
       bindtap: "bindCollect"
     }, {
       icon: 'appreciatefill',
       color: 'red',
       badge: 0,
       name: '我的点赞',
-      data_page: "user/collect/index?tabCur=1",
+      data_page: "user/start/index",
       bindtap: "bindZan"
     }, {
       icon: 'noticefill',
