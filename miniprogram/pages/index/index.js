@@ -133,22 +133,22 @@ Page({
       }
     }
     if (this.data.id == 1) {
-      let that = this
-      Notify({
-        background: '#f4c998',
-        message: '到底啦，2秒后自动跳转学习页面',
-        top: app.globalData.CustomBar
-      });
-      setTimeout(funcName, 2000);
+      // let that = this
+      // Notify({
+      //   background: '#f4c998',
+      //   message: '到底啦，2秒后自动跳转学习页面',
+      //   top: app.globalData.CustomBar
+      // });
+      // setTimeout(funcName, 2000);
 
-      function funcName() {
-        that.setData({
-          id: 3
-        })
-        wx.pageScrollTo({
-          scrollTop: 0
-        })
-      }
+      // function funcName() {
+      //   that.setData({
+      //     id: 3
+      //   })
+      //   wx.pageScrollTo({
+      //     scrollTop: 0
+      //   })
+      // }
     }
   },
 

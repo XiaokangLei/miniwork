@@ -1,4 +1,5 @@
 <view class="main">
+	<van-empty image="search" wx:if="{{xw_list.length==0}}" description="暂无内容" />
 	<view class="pro_list" data-id="{{items.press_id}}" data-limt="{{index}}" wx:for="{{xw_list}}" wx:key="this"
 		wx:for-item="items" bindtap="tz" data-a="details/details_pro/index">
 		<view class="pro_list_wz">第{{index+1}}题</view>

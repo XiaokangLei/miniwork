@@ -15,10 +15,10 @@ exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   async function pota() {
     let collect = await db.collection('interview_collect').where({
- _id: event.id+wxContext.OPENID
+      _id: event.id + wxContext.OPENID
     }).get()
     let statr = await db.collection('interview_statr').where({
-      _id:event.id+wxContext.OPENID
+      _id: event.id + wxContext.OPENID
     }).get()
     return {
       collect: collect.data.length ? true : false,

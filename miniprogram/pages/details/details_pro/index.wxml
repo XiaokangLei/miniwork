@@ -57,7 +57,7 @@
 	</view>
 	<view bindtap="statr_sc" data-id="start" class=" dbu_lk {{dz_show?'cg_sp':''}}">
 		<van-icon name="good-job-o" size="20px" />
-		<view class="dbu_wz ">点赞 {{xw_list.statr}}</view>
+		<view class="dbu_wz ">推荐 {{xw_list.statr}}</view>
 	</view>
 
 </view>

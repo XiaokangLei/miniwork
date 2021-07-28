@@ -35,7 +35,7 @@ exports.main = async (event, context) => {
     await db.collection('interview_statr').add({
       data
     })
-    return "遇见此题"
+    return "推荐此题"
   } else {
     await db.collection('interview_statr').where({
       press_id: data._id,
@@ -46,7 +46,7 @@ exports.main = async (event, context) => {
         statr: _.inc(-1),
       },
     })
-    return "取消遇见"
+    return "取消推荐"
   }
 
 }

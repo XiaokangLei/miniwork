@@ -87,12 +87,14 @@ Page({
       })
       let data = this.data.xw_list
       data.press_id = data._id
+      console.log(e.currentTarget.dataset.id)
       wx.cloud.callFunction({
         name: e.currentTarget.dataset.id,
         data: {
           press: this.data.xw_list,
         },
       }).then(res => {
+        console.log(res.result)
         wx.showToast({
           title: res.result,
           duration: 1000,

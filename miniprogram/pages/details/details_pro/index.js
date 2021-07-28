@@ -47,11 +47,11 @@ Page({
       let data = this.data.xw_list
       data.type = e.currentTarget.dataset.id
       data.press_id = data._id
-      task.Tree_cloud("'pro_'+e.currentTarget.dataset.id", {
+      task.Tree_cloud('pro_'+e.currentTarget.dataset.id, {
         press: data
       }).then(res => {
         wx.showToast({
-          title: res.result,
+          title: res,
           duration: 1000,
           icon: 'none',
           mask: true
