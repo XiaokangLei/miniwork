@@ -42,6 +42,9 @@ Component({
   },
   created() {
     this.post()
+    wx.setNavigationBarTitle({
+      title: "复习书籍"
+    })
     wx.getSavedFileList({
       success(res) {
         console.log(res)

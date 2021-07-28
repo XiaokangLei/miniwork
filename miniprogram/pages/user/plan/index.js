@@ -21,6 +21,12 @@ Component({
     signinNow: false
   },
 
+  created(){
+    wx.setNavigationBarTitle({
+      title: "校招日历"
+    })
+  },
+
   lifetimes: {
     attached: function () {
       this.yesdate()

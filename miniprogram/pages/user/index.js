@@ -60,7 +60,7 @@ Component({
     this.sq()
     console.log(wx.getStorageSync('userid'))
     wx.setNavigationBarTitle({
-      title: "我的"
+      title: "个人中心"
     })
   },
   methods: {
@@ -224,8 +224,8 @@ Component({
     showQrcode(e) {
       console.log(e.currentTarget.dataset.id)
       wx.previewImage({
-        urls: ["https://7465-test-we0f3-1301386292.tcb.qcloud.la/img/zanshangma.png?sign=6f42bca422e3658c65c19a18fda67e7b&t=1595731597"],
-        current: "https://7465-test-we0f3-1301386292.tcb.qcloud.la/img/zanshangma.png?sign=6f42bca422e3658c65c19a18fda67e7b&t=1595731597"
+        urls: ["cloud://test-4gn9gu0ucc6657ba.7465-test-4gn9gu0ucc6657ba-1304273986/zanshangma.png"],
+        current: "cloud://test-4gn9gu0ucc6657ba.7465-test-4gn9gu0ucc6657ba-1304273986/zanshangma.png"
       })
     },
 

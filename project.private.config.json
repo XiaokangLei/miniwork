@@ -97,8 +97,8 @@
           "scene": null
         },
         {
-          "name": "pages/servic/index",
-          "pathName": "pages/servic/index",
+          "name": "pages/book/index",
+          "pathName": "pages/book/index",
           "query": "id=b00064a76072ab7c0df82d355c97b187",
           "scene": null
         },
@@ -176,7 +176,7 @@
         },
         {
           "name": "pages/s",
-          "pathName": "pages/servic/index",
+          "pathName": "pages/book/index",
           "query": "",
           "scene": null
         },

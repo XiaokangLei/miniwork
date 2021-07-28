@@ -9,6 +9,9 @@ Page({
   },
   onLoad: function (e) {
     this.post()
+    wx.setNavigationBarTitle({
+      title: "我的题库"
+    })
   },
   onReachBottom: function () {
     if (this.data.pro_length >= this.data.page * 10) {

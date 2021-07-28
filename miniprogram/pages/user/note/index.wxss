@@ -41,7 +41,7 @@
 }
 
 .note_add {
-  background: linear-gradient(to top, #1D4259, #3963BC);
+  background: linear-gradient(to top, #548db1, #3963BC);
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;

@@ -21,7 +21,8 @@ Component({
     tz: function (e) {
       console.log(e.currentTarget.dataset.id)
       wx.navigateTo({
-        url: "../../../pages/" + e.currentTarget.dataset.url + "?id=" + e.currentTarget.dataset.id
+        // url: "../../../pages/" + e.currentTarget.dataset.url + "?id=" + e.currentTarget.dataset.id
+        url: "../../../pages/" + e.currentTarget.dataset.url
       })
     },
     Load_list() {

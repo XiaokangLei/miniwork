@@ -56,9 +56,9 @@
 			</view>
 		</view> -->
 		<view class="user_jx">
-			<navigator hover-class='none' url="/pages/user/note/add/index" class="nav-li bg_te">
-				<view class="nav-title">笔记温习</view>
-				<view class="nav-name">温故而知新</view>
+			<navigator hover-class='none' url="/pages/user/book/index" class="nav-li bg_te">
+				<view class="nav-title">复习书籍</view>
+				<view class="nav-name">天生我材必有用</view>
 				<text class='cuIcon-writefill'></text>
 			</navigator>
 			<navigator hover-class='none' url="/pages/user/plan/index" class="nav-li bg_fe">

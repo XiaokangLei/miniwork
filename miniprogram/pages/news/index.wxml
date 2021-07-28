@@ -54,7 +54,7 @@
 			</navigator>
 		</view>
 		<view class="nav-list-right">
-			<navigator hover-class='none' url="/pages/news/servic/index" class="nav-li bg-cyan bg_kl2">
+			<navigator hover-class='none' url="/pages/news/book/index" class="nav-li bg-cyan bg_kl2">
 				<view class="nav-title">大牛书籍</view>
 				<view class="nav-name">
 					天生我材必有用
