@@ -2,7 +2,7 @@
   <!-- {{loding}}
   <view wx:if="{{loding}}" class="loding">
     <van-loading />
-    <view>树树正在加急，请耐心等待 </view>
+    <view>小贝正在加急，请耐心等待 </view>
   </view> -->
   <view class="pd" wx:if="{{loding}}">
     <van-skeleton title row="3" wx:for="{{3}}" wx:key="this" />

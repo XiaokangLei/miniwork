@@ -51,7 +51,7 @@
             <view class="user_img">
               <image src="{{item.avatarUrl}}"></image>
             </view>
-            <view>{{item.nickName=="粟军"?'树海无涯':item.nickName=="汪杨"?"羊咪咪":item.nickName}}</view>
+            <view>{{item.nickName}}</view>
           </view>
           <view>签到{{item.sign||0}}天</view>
         </view>

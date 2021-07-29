@@ -25,9 +25,6 @@ Page({
     })
   },
 
-
-
-
   initial: function (id) {
     var that = this
     db.collection('teachin').doc(
@@ -75,11 +72,8 @@ Page({
           })
         },
       })
-
-
     })
   },
-
 
   tz: function (e) {
     console.log(e.currentTarget.dataset.id)
@@ -88,11 +82,13 @@ Page({
     })
   },
 
-
   onLoad: function (options) {
     console.log(app.globalData.openid)
     this.setData({
       id: options.id
+    })
+    wx.setNavigationBarTitle({
+      title: "宣讲会"
     })
     this.initial(options.id)
     wx.showShareMenu({
@@ -119,7 +115,6 @@ Page({
     return {
       title: "为美好世界而编程",
       imageUrl: this.data.deta.preimage,
-
     }
   },
   /**

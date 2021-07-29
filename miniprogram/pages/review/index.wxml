@@ -11,7 +11,7 @@
     </view>
     <view class="scroll_box">
       <scroll-view scroll-x>
-        <navigator hover-class="item-hover" url="/pages/details/details_pro/index?id={{items._id}}" class="item_list"
+        <navigator hover-class="item-hover" url="/pages/review/details_pro/index?id={{items._id}}" class="item_list"
           wx:for="{{xw_list}}" wx:key="this" wx:for-item="items">
           <view class="item_list_ds">
             <view class="dis2">

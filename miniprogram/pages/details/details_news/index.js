@@ -80,7 +80,7 @@ Page({
     if (openid) {
       let that = this
       wx.showToast({
-        title: "树树加载中",
+        title: "小贝加载中",
         icon: 'loading',
         mask: true,
         duration: 2000

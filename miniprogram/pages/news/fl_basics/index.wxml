@@ -6,7 +6,7 @@
 
   <view wx:if="{{loding}}" class="loding">
     <van-loading />
-    <view>树树正在加急，请耐心等待 </view>
+    <view>小贝正在加急，请耐心等待 </view>
   </view>
   <van-transition show="{{!loding }}" name="slide-left" custom-class="block">
 

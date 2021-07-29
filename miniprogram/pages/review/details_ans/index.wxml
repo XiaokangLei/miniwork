@@ -42,11 +42,12 @@
     <view wx:if="{{cd<1}}">下一题</view>
     <view wx:if="{{cd==1}}">完成答题</view>
   </view>
-  
+
   <view class="warp" wx:if="{{cd>1}}">
     <view class="rect">
       <view class="closeImg  ">
-        <image mode="aspectFit" src="cloud://test-4gn9gu0ucc6657ba.7465-test-4gn9gu0ucc6657ba-1304273986/img/answerTrophy.png" />
+        <image mode="aspectFit"
+          src="cloud://test-4gn9gu0ucc6657ba.7465-test-4gn9gu0ucc6657ba-1304273986/img/answerTrophy.png" />
       </view>
       <view class="text-black text-bold text-center">恭喜您！完成答题！</view>
       <view class="text-center margin-tb-lg text-gray">您答对了{{da_zq}}题</view>

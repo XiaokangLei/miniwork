@@ -36,7 +36,7 @@
 			</view>
 			<view class="bg-grey padding-sm radius margin-top-sm  text-sm">
 				<view class="flex">
-					<view>树树：</view>
+					<view>小贝：</view>
 					<view class="flex-sub">{{items.reply}}</view>
 				</view>
 			</view>

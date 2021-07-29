@@ -77,11 +77,11 @@
 
 		<!-- 宣讲会 -->
 		<van-tab title="宣讲会" title-style="font-size: 16px;">
-			<view class="cu-timeline">
-				<view class="cu-item text-blue" wx:for="{{ls_list}}" wx:key="this" wx:for-item="items">
-					<view class="content">
+			<view class="cu-timeline" >
+				<view class="cu-item text-blue "  wx:for="{{ls_list}}" wx:key="this" wx:for-item="items">
+					<view class="content shadow-blur">
 						<view class="cu-capsule radius">
-							<view class="cu-tag bg-gradual-tree ">{{items.tille}}</view>
+							<view class="cu-tag bg-blue ">{{items.tille}}</view>
 							<view class="cu-tag study_tag2">{{items.time}}</view>
 						</view>
 						<view class="margin-top">{{items.mc}}
@@ -89,7 +89,7 @@
 						<view>
 						</view>
 						<view class="ls_but">
-							<view class="bg-gradual-tree" data-id="{{items._id}}" bindtap="tz" data-url="details/details_teachin/index"
+							<view class="bg-gradual-blue" data-id="{{items._id}}" bindtap="tz" data-url="details/details_teachin/index"
 								type="primary" size="small">了解详情</view>
 						</view>
 					</view>
