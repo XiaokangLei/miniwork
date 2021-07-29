@@ -413,7 +413,8 @@ background-color: #fff;
   background: linear-gradient(to top right, #f4c998, #d69c63);
 }
 .bj{
-  background: linear-gradient(to top, #1D4259, #3961c7);
+  /* background: linear-gradient(to top, #1D4259, #3961c7); */
+  background: linear-gradient(to top, #75b7e0, #3961c7);
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;

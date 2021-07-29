@@ -17,7 +17,7 @@
     "news": "../news",
     "user": "../user",
     "review":"../review",
-    "dictionaries":"../answer",
+    "dictionaries":"../referral",
     "work":"../work"
   }
 }

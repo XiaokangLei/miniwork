@@ -1,4 +1,4 @@
-// pages/answer/index.js
+// pages/referral/index.js
 const db = wx.cloud.database({
   env: "test-4gn9gu0ucc6657ba"
 })

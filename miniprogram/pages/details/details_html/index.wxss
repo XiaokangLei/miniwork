@@ -137,7 +137,7 @@ image {
   padding-top: 1px;
   padding-left: 10rpx;
   color: rgba(153, 153, 153, 1);
-  font-size: 25rpx;
+  font-size: 24rpx;
   padding-top: 22rpx;
 }
 
@@ -432,6 +432,7 @@ image {
 .bj {
   /* background: linear-gradient(to top, #f4c998, #d69c63); */
   /* background: linear-gradient(to top, #1D4259, #3961c7); */
+  background: linear-gradient(to top, #75b7e0, #3961c7);
   /* background: #cfc7c7; */
   width: 80rpx;
   height: 80rpx;

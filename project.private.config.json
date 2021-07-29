@@ -193,14 +193,14 @@
           "scene": null
         },
         {
-          "name": "pages/answer/index",
-          "pathName": "pages/answer/index",
+          "name": "pages/referral/index",
+          "pathName": "pages/referral/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/answer/details_ans/index",
-          "pathName": "pages/answer/details_ans/index",
+          "name": "pages/referral/details_ans/index",
+          "pathName": "pages/referral/details_ans/index",
           "query": "",
           "scene": null
         },
@@ -217,8 +217,8 @@
           "scene": null
         },
         {
-          "name": "pages/answer/fl_problem/index",
-          "pathName": "pages/answer/fl_problem/index",
+          "name": "pages/referral/fl_problem/index",
+          "pathName": "pages/referral/fl_problem/index",
           "query": "",
           "scene": null
         }

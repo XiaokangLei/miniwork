@@ -55,15 +55,15 @@
 		</view>
 		<view bindtap="statr_sc" data-id="collect" class=" {{sc_show?'cg_sp':''}}">
 			<!-- <van-icon name="star-o" size="20px" /> -->
-			<van-icon name="star-o" size="26px" />
+			<van-icon name="star-o" size="20px" />
 			<view class="dbu_wz ">{{xw_list.collect}}</view>
 		</view>
 		<view bindtap="statr_sc" data-id="statr" class=" {{dz_show?'cg_sp':''}}">
-			<van-icon name="good-job-o" size="26px" />
+			<van-icon name="good-job-o" size="20px" />
 			<view class="dbu_wz ">{{xw_list.statr}}</view>
 		</view>
 		<view bindtap="statr_sc" data-id="statr" class=" cg_sp">
-			<van-icon name="fire" size="26px" />
+			<van-icon name="fire" size="20px" />
 			<view class="dbu_wz ">{{xw_list.browse}}</view>
 		</view>
 	</view>

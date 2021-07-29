@@ -5,7 +5,7 @@
         <text class="text-xl text-bold  text-tree">内推直招</text>
         <text class="bg-tree"></text>
       </view>
-      <navigator class="ntp" url="/pages/answer/fl_problem/index">查看更多
+      <navigator class="ntp" url="/pages/referral/fl_problem/index">查看更多
         <van-icon name="arrow" />
       </navigator>
     </view>
@@ -71,7 +71,7 @@
         <view>
           <text class="text-tree">题库题目{{ js_L}}道</text>
         </view>
-        <navigator class="btnBox" url="/pages/answer/details_ans/index?id=Js">
+        <navigator class="btnBox" url="/pages/referral/details_ans/index?id=Js">
           <view bindtap="goClass" class="evaluate btn">开始答题</view>
         </navigator>
       </view>
@@ -106,7 +106,7 @@
         <view>
           <text class="text-tree">题库题目{{ CS_L}}道</text>
         </view>
-        <navigator class="btnBox" url="/pages/answer/details_ans/index?id=CSS">
+        <navigator class="btnBox" url="/pages/referral/details_ans/index?id=CSS">
           <view bindtap="goClass" class="evaluate btn">开始答题</view>
         </navigator>
       </view>

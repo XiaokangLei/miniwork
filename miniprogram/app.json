@@ -9,14 +9,14 @@
     "pages/work/index",
     "pages/news/index",
     "pages/user/index",
-    "pages/answer/fl_problem/index",
+    "pages/referral/fl_problem/index",
     "pages/news/fl_basics/index",
     "pages/user/sign/index",
     "pages/user/collect/index",
     "pages/user/start/index",
-    "pages/details/details_ls/index",
-    "pages/answer/index",
-    "pages/answer/details_ans/index"
+    "pages/details/details_teachin/index",
+    "pages/referral/index",
+    "pages/referral/details_ans/index"
   ],
   "window": {
     "backgroundColor": "#f7f7f7",
