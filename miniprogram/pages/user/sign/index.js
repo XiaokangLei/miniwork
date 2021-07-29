@@ -254,31 +254,31 @@ Page({
   //     },
   //   })
   // },
-  getWeather(location) {
-    wx.request({
-      url: `${app.globalData.requestUrl.weather}`,
-      data: {
-        location,
-        key,
-      },
-      success: (res) => {
-        console.log(res)
-        if (res.statusCode === 200) {
-          let data = res.data.HeWeather6[0];
-          console.log(data);
-          if (data.status === 'ok') {
-            this.success(data, location)
-          }
-        }
-      },
-      fail: () => {
-        wx.showToast({
-          title: '查询失败',
-          icon: 'none',
-        })
-      },
-    })
-  },
+  // getWeather(location) {
+  //   wx.request({
+  //     url: `${app.globalData.requestUrl.weather}`,
+  //     data: {
+  //       location,
+  //       key,
+  //     },
+  //     success: (res) => {
+  //       console.log(res)
+  //       if (res.statusCode === 200) {
+  //         let data = res.data.HeWeather6[0];
+  //         console.log(data);
+  //         if (data.status === 'ok') {
+  //           this.success(data, location)
+  //         }
+  //       }
+  //     },
+  //     fail: () => {
+  //       wx.showToast({
+  //         title: '查询失败',
+  //         icon: 'none',
+  //       })
+  //     },
+  //   })
+  // },
   success(data, location) {
     this.setData({
       openSettingButtonShow: false,
@@ -288,9 +288,9 @@ Page({
     let now = new Date()
     data.updateTime = now.getTime()
     data.updateTimeFormat = util.formatDate(now, "MM-dd hh:mm")
-    this.setData({
-      cityDatas: data,
-    })
+    // this.setData({
+    //   cityDatas: data,
+    // })
   },
 
   time_get() {

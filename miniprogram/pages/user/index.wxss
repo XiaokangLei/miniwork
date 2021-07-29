@@ -108,8 +108,8 @@ button {
   background-size: cover;
   background-position: center center;
   /* background-image: url('cloud://test-4gn9gu0ucc6657ba.7465-test-4gn9gu0ucc6657ba-1304273986/img/index_bg.png'); */
-  /* background-color: #3963BC */
-  /* background-color: #3963BC */
+  /* background-color: #3961c7 */
+  /* background-color: #3961c7 */
   background-color: #f8f8f8;
 }
 
@@ -213,7 +213,7 @@ button {
 }
 
 .vip-card-box .tit .yticon {
-  color: #3963BC;
+  color: #3961c7;
   margin-right: 16rpx;
 }
 

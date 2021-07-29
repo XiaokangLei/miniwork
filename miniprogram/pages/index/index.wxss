@@ -19,8 +19,8 @@
 }
 
 .index_tb {
-  /* background-color: #3963BC; */
-  background-color: #3963BC;
+  /* background-color: #3961c7; */
+  background-color: #3961c7;
   color: white;
 }
 

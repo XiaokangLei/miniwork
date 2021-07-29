@@ -58,7 +58,7 @@ image {
   display: flex;
   color: #fff;
   padding: 5px 0px;
-  background: #3963BC;
+  background: #3961c7;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
 
   z-index: 100;
@@ -397,7 +397,7 @@ image {
 }
 
 .loding_bg {
-  background: #3963BC;
+  background: #3961c7;
   display: flex;
   justify-content: center;
   color: #fff
@@ -431,7 +431,7 @@ image {
 }
 
 .bj {
-  /* background: linear-gradient(to top, #1D4259, #3963BC); */
+  /* background: linear-gradient(to top, #1D4259, #3961c7); */
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;

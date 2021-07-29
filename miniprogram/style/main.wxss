@@ -31,7 +31,7 @@ page {
 	--gray: #aaaaaa;
 	--ghostWhite: #f1f1f1;
 	--white: #ffffff;
-	--tree: #3963BC;
+	--tree: #3961c7;
 	/* 浅色 */
 	--redLight: #fadbd9;
 	--orangeLight: #fde6d2;
@@ -51,7 +51,7 @@ page {
 	--gradualGreen: linear-gradient(45deg, #39b54a, #8dc63f);
 	--gradualPurple: linear-gradient(45deg, #9000ff, #5e00ff);
 	--gradualPink: linear-gradient(45deg, #ec008c, #6739b6);
-	--gradualtree: linear-gradient(45deg,  #1D4259, #3963BC);
+	--gradualtree: linear-gradient(45deg,  #1D4259, #3961c7);
 	--gradualBlue: linear-gradient(45deg, #0081ff, #1cbbb4);
 	/* 阴影透明色 */
 	--ShadowSize: 6rpx 6rpx 8rpx;
@@ -86,7 +86,7 @@ image {
 	box-sizing: border-box;
 }
 .se{
-	background: #3963BC;
+	background: #3961c7;
 	color:white
 }
 .round {
@@ -3486,6 +3486,11 @@ scroll-view.cu-steps .cu-item {
 
 .bg-blue {
 	background-color: var(--blue);
+	color: var(--white);
+}
+
+.bg-self {
+	background-color: #3961c7;
 	color: var(--white);
 }
 

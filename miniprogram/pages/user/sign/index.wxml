@@ -5,14 +5,6 @@
       <text class="sign_wz2">{{week}}</text>
     </view>
     <view class="sign_wz3">{{wh_tl}}</view>
-    <!-- <view class='sign_wz4'>{{cityDatas.basic.location || '您未开启定位'}}</view>
-    <view class="dis">
-      <view class='sign_wz5' decode='true'>{{cityDatas.now.tmp || '-'}}<text style=''>℃</text></view>
-      <view class='sign_wz5'>{{cityDatas.now.cond_txt || '--'}}</view>
-      <view class='sign_wz5'>
-        <text>能见度 {{cityDatas.now.vis}}</text>
-      </view>
-    </view> -->
   </view>
   <view class="contant" wx:if="{{!signinNow}}">
     <!-- 日历年月 -->
@@ -65,6 +57,7 @@
         </view>
       </van-cell>
     </van-cell-group>
+
   </view>
   <view class="flex_center">
     <!-- <view class="center_text font32"   wx:if="{{signinNow}}">完成签到</view> -->

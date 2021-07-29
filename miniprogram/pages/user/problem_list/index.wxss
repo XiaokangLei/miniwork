@@ -91,7 +91,7 @@
 
 .servic_top {
   padding-top: 14px;
-  background: linear-gradient(to top, #1D4259, #3963BC);
+  background: linear-gradient(to top, #1D4259, #3961c7);
   color: #Fff;
   padding: 15px 15px;
   padding-top: 10px;

@@ -9,13 +9,15 @@
 }
 
 .flex_center {
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  padding-bottom: 30rpx;
+  margin-top: 10px;
 }
 
 .iconfont {
   position: absolute;
   margin: 0 auto;
-  color: #3963BC;
+  color: #3961c7;
   font-size: 30px;
   left: 20rpx;
   animation: rubberBand 1s;
@@ -37,7 +39,7 @@
   background-position: center;
   position: relative;
   animation: fadeIn .8s;
-  background-color: #3963BC
+  background-color: #3961c7
 }
 
 .sign_wz {
@@ -168,7 +170,7 @@
   border-radius: 50%;
   text-align: center;
   color: #fff;
-  background: linear-gradient(to top, #1D4259, #3963BC);
+  background: linear-gradient(to top, #1D4259, #3961c7);
   margin: 0 auto;
 }
 
@@ -216,7 +218,7 @@
   border-radius: 50%;
   text-align: center;
   color: #fff;
-  background: linear-gradient(to top, #1D4259, #3963BC);
+  background: linear-gradient(to top, #1D4259, #3961c7);
   margin: 0 auto;
 }
 

@@ -31,7 +31,7 @@
   top: 0px;
   width: 100%;
   z-index: 10;
-  background: linear-gradient(to top, #1D4259, #3963BC);
+  background: linear-gradient(to top, #1D4259, #3961c7);
 }
 
 .note_ly {
@@ -41,7 +41,7 @@
 }
 
 .note_add {
-  background: linear-gradient(to top, #548db1, #3963BC);
+  background: linear-gradient(to top, #548db1, #3961c7);
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;

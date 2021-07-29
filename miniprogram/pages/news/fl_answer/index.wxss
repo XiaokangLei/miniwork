@@ -2,7 +2,7 @@
 .study_tag2 {
   color: #d69c63;
   border: 1px solid #d69c63;
-  border-left-color: #3963BC;
+  border-left-color: #3961c7;
 }
 
 .ls_but {
@@ -37,7 +37,7 @@ display: flex;
   overflow: hidden;
 }
 .text_lk{
-  background-image:linear-gradient(45deg,  #1D4259, #3963BC);
+  background-image:linear-gradient(45deg,  #1D4259, #3961c7);
   font-size: 12px;
   position: absolute;
   color:#fff;
@@ -134,7 +134,7 @@ display: flex;
   margin: 10px;
 justify-content: space-between;
 }.tex{
-  background-image:linear-gradient(45deg,  #1D4259, #3963BC);
+  background-image:linear-gradient(45deg,  #1D4259, #3961c7);
   position: relative;
 text-align: center;
 padding: 4px ;
