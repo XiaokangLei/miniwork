@@ -22,6 +22,9 @@ Component({
   },
   created() {
     this.post()
+    wx.setNavigationBarTitle({
+      title: "我的点赞"
+    })
   },
 
   methods: {

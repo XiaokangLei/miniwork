@@ -58,7 +58,7 @@ Component({
       console.log(this.data.swiperList)
       console.log(e.currentTarget.dataset.url)
       wx.navigateTo({
-        url: "../../pages/details/details_news/index?id=" + e.currentTarget.dataset.url
+        url: "../../pages/news/details_news/index?id=" + e.currentTarget.dataset.url
       })
     },
     // cardSwiper
