@@ -2,9 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/user/problem_list/index",
-    "pages/details/details_html/index",
+    "pages/work/details_work/index",
     "pages/news/details_news/index",
-    "pages/details/details_pro/index",
     "pages/news/fl_answer/index",
     "pages/work/index",
     "pages/news/index",
@@ -14,7 +13,7 @@
     "pages/user/sign/index",
     "pages/user/collect/index",
     "pages/user/start/index",
-    "pages/details/details_teachin/index",
+    "pages/work/details_teachin/index",
     "pages/referral/index",
     "pages/referral/details_ans/index"
   ],

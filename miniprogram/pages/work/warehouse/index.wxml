@@ -19,14 +19,13 @@
     </swiper>
   </view>
 
-
   <block >
     <view class="ex-mall-panel column">
       <view class="{{['ex-mall-panel-content',$root.m12]}}">
         <scroll-view scroll-x="{{true}}">
           <view class="column-list">
-            <block wx:for="{{columns}}"   wx:for-item="xx" wx:for-index="xxi" wx:key="xxi">
-              <view  class="item"    data-id="{{xx._id}}" bindtap="tz"   	data-a="details/details_html/index" >
+            <block wx:for="{{columns}}" wx:for-item="xx" wx:for-index="xxi" wx:key="xxi">
+              <view  class="item" data-id="{{xx._id}}" bindtap="tz" data-a="work/details_work/index" >
                 <view class="thumbnail">
                   <image class="img" src="{{xx.img}}" mode="aspectFill"></image>
                   <view class="btn favorite">

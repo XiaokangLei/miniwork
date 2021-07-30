@@ -9,7 +9,7 @@
   </view>
 
   <view class="home-list" wx:if="{{!loding}}" wx:for="{{list}}" wx:key="this" wx:index="index" wx:for-item="items"
-    data-id="{{items._id}}" bindtap="tz" data-url="details/details_html/index" hover-class="item-hover"
+    data-id="{{items._id}}" bindtap="tz" data-url="work/details_work/index" hover-class="item-hover"
     hover-stay-time="100">
     <view class="home-list_df" wx:if="{{items.img}}">
       <view class="home-list-right">

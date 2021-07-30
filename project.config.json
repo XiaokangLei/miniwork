@@ -68,8 +68,8 @@
           "scene": null
         },
         {
-          "name": "pages/details/details_html/index",
-          "pathName": "pages/details/details_html/index",
+          "name": "pages/work/details_work/index",
+          "pathName": "pages/work/details_work/index",
           "query": "id=79550af260753e820e3471d230ad3485",
           "scene": null
         },

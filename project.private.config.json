@@ -19,8 +19,8 @@
           "query": ""
         },
         {
-          "name": "pages/details/details_html/index",
-          "pathName": "pages/details/details_html/index",
+          "name": "pages/work/details_work/index",
+          "pathName": "pages/work/details_work/index",
           "query": "id=b00064a76072ab7c0df82d355c97b187",
           "scene": null
         },

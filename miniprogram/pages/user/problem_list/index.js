@@ -49,6 +49,8 @@ Page({
 
   tz: function (e) {
     console.log(e.currentTarget.dataset.id)
+    console.log(e.currentTarget.dataset.a)
+    console.log(e.currentTarget.dataset.limt)
     wx.navigateTo({
       url: "../../../pages/" + e.currentTarget.dataset.a + "?id=" + e.currentTarget.dataset.id + "&limt=" + e.currentTarget.dataset.limt
     })

@@ -11,7 +11,7 @@
 				<view class="home-jcly">
 					<van-empty image="search" wx:if="{{xw_list.length==0}}" description="暂无内容" />
 					<view class="home-list" wx:for="{{xw_list}}" wx:key="this" wx:for-item="items" data-id="{{items.press_id}}"
-						bindtap="tz" data-a="{{items_tab == '校招' ? 'details/details_html/index' : 'details/details_news/index'}}">
+						bindtap="tz" data-a="{{items_tab == '校招' ? 'work/details_work/index' : 'details/details_news/index'}}">
 						<view wx:if="{{items.img}}" class="home-list-left">
 							<view>
 								<image src="{{items.img}}"></image>

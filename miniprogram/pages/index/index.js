@@ -84,7 +84,7 @@ Page({
   index_initial(options) {
     if (options.id) {
       wx.navigateTo({
-        url: "../../pages/details/details_html/index?id=" + options.id
+        url: "../../pages/work/details_work/index?id=" + options.id
       })
     }
     if (options.sign) {

@@ -37,7 +37,7 @@ Page({
   },
   onClickIcon() {
     wx.navigateTo({
-      url: "../../../pages/details/details_html/index" + "?id=" + this.data.press_id
+      url: "../../../pages/work/details_work/index" + "?id=" + this.data.press_id
     })
   },
   initial(id) {
