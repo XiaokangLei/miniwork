@@ -14,7 +14,6 @@
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-icon": "@vant/weapp/icon/index",
     "van-field": "@vant/weapp/field/index",
-    "CardSwiper": "/components/card/index",
     "van-skeleton": "@vant/weapp/skeleton/index",
     "van-calendar": "@vant/weapp/calendar/index",
     "val": "./warehouse/index",
