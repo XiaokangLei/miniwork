@@ -1,10 +1,11 @@
 //app.js
 var util = require('/utils/time.js');
+import envId from "/utils/config.js"
 App({
   onLaunch: function () {
     if (wx.cloud) {
       wx.cloud.init({
-        env: "test-4gn9gu0ucc6657ba",
+        env: envId.envId
       })
     }
     wx.getSystemInfo({
@@ -70,7 +71,7 @@ App({
   },
   userInfo: function () {
     const db = wx.cloud.database({
-      env: "test-4gn9gu0ucc6657ba"
+      env: envId.envId
     })
     db.collection('user').get({
     success: function (res) {

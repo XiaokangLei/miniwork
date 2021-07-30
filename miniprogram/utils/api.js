@@ -1,7 +1,8 @@
 var task = require("./request.js")
+import envId from "./config.js"
 const app = getApp()
 const db = wx.cloud.database({
-  env: "test-4gn9gu0ucc6657ba"
+  env: envId.envId
 })
 const _ = db.command
 
