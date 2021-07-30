@@ -1,6 +1,7 @@
 // miniprogram/pages/details/index.js
+import envId from "../../../utils/config.js"
 const db = wx.cloud.database({
-  env: "test-4gn9gu0ucc6657ba"
+  env: envId.envId
 })
 const _ = db.command
 const app = getApp()
