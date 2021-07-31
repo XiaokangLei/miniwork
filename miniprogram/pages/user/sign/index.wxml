@@ -1,13 +1,13 @@
 <!--pages/signin/signin.wxml-->
 <view class="main2" style="  height:100vh">
-  <view class="sign_top" wx:if="{{!signinNow}}">
+  <view class="sign_top" >
     <view class="sign_wz">{{time}}
       <text class="sign_wz2">{{week}}</text>
     </view>
     <view class="sign_wz3">{{wh_tl}}</view>
   </view>
 
-  <view class="contant" wx:if="{{!signinNow}}">
+  <view class="contant" >
     <!-- 日历年月 -->
     <view class='calendar_title layer_center'>
       <view bindtap='lastMonth'>
@@ -39,7 +39,14 @@
     </view>
   </view>
 
-  <view class="user_phb" wx:if="{{signinNow}}">
+  <view class="flex_center_rank" bindtap="activeSign" wx:if="{{!signinNow}}">
+    <van-button type="primary">立即签到</van-button>
+  </view>
+  <view class="flex_center_rank" wx:else>
+    <van-button disabled type="primary">今日已签到</van-button>
+  </view>
+
+  <view class="user_phb" >
     <!-- <view class="sign_wz5">您已经签到{{userlist.length}}天</view> -->
     <view class="tille-1">
       签到排行榜
@@ -60,13 +67,5 @@
     </van-cell-group>
 
   </view>
-  
-  <view class="flex_center">
-    <view class="center_text font32" bindtap="activeSign" wx:if="{{!signinNow}}">立即签到</view>
-  </view>
-  
-  <view class="flex_center">
-    <view class="center_text font32" bindtap="activeSign" wx:if="{{!signinNow}}">立即签到</view>
-  </view>
-  
+
 </view>

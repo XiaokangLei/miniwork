@@ -32,20 +32,5 @@
       </view>
     </view>
   </view>
-  <!-- <view class="cu-list">
-    <view class="cu-item show">
-      <view class="content">
-        <view class="text-grey">学习vue</view>
-        <view class="text-gray text-sm flex">
-          <text class="text-cut">
-            <text class="cuIcon-infofill text-red  margin-right-xs"></text> 学习vue底层原理，架构和函数方法
-          </text>
-        </view>
-      </view>
-      <view class="action">
-        <view class="text-grey text-xs">22:20</view>
-        <view class="cu-tag round bg-grey sm">5</view>
-      </view>
-    </view>
-  </view> -->
+  <van-empty image="search" description="暂无内容" />
 </view>

@@ -9,9 +9,12 @@
 }
 
 .flex_center {
-  /* margin: 0 auto; */
-  padding-bottom: 30rpx;
-  margin-top: 10px;
+  margin: 0 auto;
+}
+
+.flex_center_rank {
+  margin: 0 auto;
+  text-align: center
 }
 
 .iconfont {

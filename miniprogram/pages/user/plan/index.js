@@ -22,7 +22,7 @@ Component({
     signinNow: false
   },
 
-  created(){
+  created() {
     wx.setNavigationBarTitle({
       title: "校招日历"
     })

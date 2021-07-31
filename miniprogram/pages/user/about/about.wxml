@@ -12,8 +12,8 @@
 <view class='margin-xl bg-white padding-xl radius shadow-lg'>
 	<view class='text-center margin-bottom text-xl  text-green'>感谢</view>
 	<view class='text-content'>
-		<view>ColorUI：https://github.com/weilanwl/ColorUI</view>
-		<view>Vant：https://github.com/youzan/vant-weapp</view>
-		<view>treeworld_Applets：https://gitee.com/KyotoKing_tree/treeworld_Applets</view>
+		<view class='text-center'>ColorUI</view>
+		<view class='text-center'>Vant</view>
+		<view class='text-center'>treeworld_Applets</view>
 	</view>
 </view>
