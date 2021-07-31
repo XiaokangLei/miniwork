@@ -74,8 +74,8 @@
 	<view class="main_title">
 		<view class="min_height cu-bar">
 			<view class="action sub-title">
-				<text class="text-xl text-bold text-tree">精选Top </text>
-				<text class="text-ABC text-tree">Boutique </text>
+				<text class="text-xl text-bold text-tree">资讯Top </text>
+				<text class="text-ABC text-tree">NewsTop </text>
 			</view>
 		</view>
 		<view>
@@ -83,7 +83,7 @@
 	</view>
 	<!-- 资讯列表 -->
 	<view class="home-jcly">
-		<list list="{{xw_list}}"></list>
+		<list list="{{latest_list}}"></list>
 	</view>
 	<!-- 底部提示&Action -->
 	<view style="padding-bottom: calc(env(safe-area-inset-bottom)/2);">

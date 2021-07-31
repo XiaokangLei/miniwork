@@ -8,7 +8,6 @@
     "list":"/components/news_list/index",
     "van-divider": "@vant/weapp/divider/index",
     "van-search": "@vant/weapp/search/index",
-    "tree_swiper":"/components/swiper/swiper",
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-tag": "@vant/weapp/tag/index"

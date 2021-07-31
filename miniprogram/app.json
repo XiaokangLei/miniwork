@@ -22,11 +22,9 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3961c7",
     "navigationBarTitleText": "小贝校招",
- 
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {
-    "cu-custom": "/components/cu-custom/index"
   },
   "permission": {
     "scope.userLocation": {

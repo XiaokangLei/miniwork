@@ -53,7 +53,7 @@ Page({
       }
     }
     let data = {
-      size: 10,
+      size: 4,
       page: this.data.page,
       Type: e ? e.detail : "",
       database: "press"
@@ -124,7 +124,7 @@ Page({
     if (this.data.id == 3) {
       console.log(this.data.page)
       if (app.globalData.type == 0) {
-        if (this.data.count >= this.data.page * 10) {
+        if (this.data.count >= this.data.page * 4) {
           this.setData({
             page: this.data.page + 1,
           })

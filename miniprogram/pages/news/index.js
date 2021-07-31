@@ -14,7 +14,7 @@ Component({
   },
   data: {
     cardCur: 0,
-    tz_list: [],
+    latest_list: [],
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
@@ -28,15 +28,15 @@ Component({
   },
   methods: {
     initial() {
-      api.GET_news.then(res => {
+      api.GET_news_top.then(res => {
         console.log(res)
         this.setData({
           xw_list: res
         })
       })
-      api.GET_news_top.then(res => {
+      api.GET_news.then(res => {
         this.setData({
-          tz_list: res
+          latest_list: res
         })
       })
       task.Tree_cloud('userlist').then(res => {

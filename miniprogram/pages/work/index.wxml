@@ -77,8 +77,8 @@
 
 		<!-- 宣讲会 -->
 		<van-tab title="宣讲会" title-style="font-size: 16px;">
-			<view class="cu-timeline" >
-				<view class="cu-item text-blue "  wx:for="{{ls_list}}" wx:key="this" wx:for-item="items">
+			<view class="cu-timeline">
+				<view class="cu-item text-blue " wx:for="{{ls_list}}" wx:key="this" wx:for-item="items">
 					<view class="content shadow-blur">
 						<view class="cu-capsule radius">
 							<view class="cu-tag bg-blue ">{{items.tille}}</view>

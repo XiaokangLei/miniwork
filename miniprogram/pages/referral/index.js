@@ -36,14 +36,6 @@ Component({
       })
     },
     post() {
-      db.collection('press').where({
-        Type: "ms"
-      }).orderBy('_createTime', 'desc').limit(4).get().then(res => {
-        console.log(res)
-        this.setData({
-          wz_list: res.data,
-        })
-      })
       db.collection('interview').orderBy('_createTime', 'asc').where({
         kind:'teach'
       }).limit(4).get().then(res => {
@@ -52,21 +44,11 @@ Component({
         })
         console.log(this.data.xw_list)
       })
-      db.collection('interview').where({
-        select: true,
-        ly: 'Js'
-      }).count().then(res => {
+      db.collection('salary').orderBy('_createTime', 'asc').limit(4).get().then(res => {
         this.setData({
-          js_L: res.total
+          salary_list: res.data,
         })
-      })
-      db.collection('interview').where({
-        select: true,
-        ly: 'CSS'
-      }).count().then(res => {
-        this.setData({
-          CS_L: res.total
-        })
+        console.log(this.data.salary_list)
       })
     },
   }
