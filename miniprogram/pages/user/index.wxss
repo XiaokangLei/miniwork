@@ -324,7 +324,7 @@ font-weight: 400!important;
   text-align: center;
 }
 
-/* .bd_user {
+.bd_user {
   position: fixed;
   right: 0px;
   padding: 3px 10px;
@@ -333,7 +333,7 @@ font-weight: 400!important;
   font-size: 12px;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
-} */
+}
 
 .dlo {
   color: #fff;

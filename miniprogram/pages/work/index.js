@@ -97,11 +97,11 @@ Component({
       this.triggerEvent('tab_xz', e.currentTarget.dataset.type)
     },
     list() {
-      // api.GET_press.then(res => {
-      //   this.setData({
-      //     latest_list: res
-      //   })
-      // })
+      api.GET_press_cutdown.then(res => {
+        this.setData({
+          cutdown_list: res
+        })
+      })
       // 按照浏览量获取数据
       api.GET_press_browse.then(res => {
         this.setData({

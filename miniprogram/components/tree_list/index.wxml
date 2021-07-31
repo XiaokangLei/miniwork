@@ -1,9 +1,9 @@
 <view>
   <!-- {{loding}} -->
-  <!-- <view wx:if="{{loding}}" class="loding">
+  <view wx:if="{{loding}}" class="loding">
     <van-loading />
-    <view>正在加急，请耐心等待 </view>
-  </view> -->
+    <view>加载中...</view>
+  </view>
   <view class="pd" wx:if="{{loding}}">
     <van-skeleton title row="3" wx:for="{{3}}" wx:key="this" />
   </view>
@@ -11,6 +11,7 @@
   <view class="home-list" wx:if="{{!loding}}" wx:for="{{list}}" wx:key="this" wx:index="index" wx:for-item="items"
     data-id="{{items._id}}" bindtap="tz" data-url="work/details_work/index" hover-class="item-hover"
     hover-stay-time="100">
+    <!-- 有图片则显示图片 -->
     <view class="home-list_df" wx:if="{{items.img}}">
       <view class="home-list-right">
         <view class="home-list-right_tille">{{items.tille}}</view>
@@ -18,14 +19,13 @@
           {{items.mec}}
         </view>
       </view>
-
       <view class="home-list-left shadow">
         <view class="">
           <image src="{{items.img}}"></image>
         </view>
-        <!-- <view>{{items.type}}</view> -->
       </view>
     </view>
+    <!-- 无图片，按照此格式 -->
     <view class="home-list-dlimg" wx:if="{{!items.img}}">
       <view class="home-list-dlimg_tl">
         {{items.tille}}
@@ -34,6 +34,7 @@
         {{items.mec}}
       </view>
     </view>
+
     <view class="home-list-bottom">
       <view class="dis">
         <view class="home-list-type2" wx:if="{{phb}}">第{{index+1}}位</view>

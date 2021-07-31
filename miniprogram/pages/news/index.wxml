@@ -13,16 +13,16 @@
 		</swiper-item>
 	</swiper>
 	<!-- <tree_swiper></tree_swiper> -->
-	<!-- <swiper class='home-gg' autoplay="true" vertical='true' circular='true' interval='8000'>
-		<block wx:for="{{tz_list}}" wx:key="this" wx:for-item="items">
+	<swiper class='home-gg' autoplay="true" vertical='true' circular='true' interval='8000'>
+		<block wx:for="{{xw_list}}" wx:key="this" wx:for-item="items">
 			<swiper-item class="home-gg2">
 				<view>
-					<view>公告</view>
+					<view>热门</view>
 				</view>
-				<view data-id="{{items._id}}" bindtap="tz" data-a="details/press/index">{{items.tille}}</view>
+				<view data-id="{{items._id}}" bindtap="tz" data-a="news/details_news/index">{{items.tille}}</view>
 			</swiper-item>
 		</block>
-	</swiper> -->
+	</swiper>
 
 	<view class="home_sign">
 		<van-cell url="/pages/user/sign/index">
@@ -32,15 +32,12 @@
 						<view class="cu-avatar round " wx:for="{{userlist}}" wx:if="{{index<4}}" wx:key="this" wx:index="index"
 							wx:for-item="items" style="background-image:url({{items.avatarUrl}});">
 						</view>
-
 					</view>
 					<view class="text_r">等 <text class="text-yellow"> {{t_data_rs}}</text> 名用户今天活跃
 						<van-icon name="arrow" />
 					</view>
 				</view>
-
 			</view>
-
 		</van-cell>
 	</view>
 

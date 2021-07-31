@@ -44,6 +44,7 @@ Page({
         loding: true
       })
     }
+    console.log(e)
     if (e) {
       this.setData({
         page: 1
@@ -53,7 +54,7 @@ Page({
       }
     }
     let data = {
-      size: 4,
+      size: 10,
       page: this.data.page,
       Type: e ? e.detail : "",
       database: "press"
@@ -117,14 +118,16 @@ Page({
   },
 
   onShow: function () {
+    this.setData({
+      page: 1
+    })
     this.initial()
   },
 
   onReachBottom: function () {
     if (this.data.id == 3) {
-      console.log(this.data.page)
       if (app.globalData.type == 0) {
-        if (this.data.count >= this.data.page * 4) {
+        if (this.data.count >= this.data.page * 10) {
           this.setData({
             page: this.data.page + 1,
           })
