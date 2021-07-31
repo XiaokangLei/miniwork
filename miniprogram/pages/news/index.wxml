@@ -24,7 +24,7 @@
 		</block>
 	</swiper>
 
-	<view class="home_sign">
+	<!-- <view class="home_sign">
 		<van-cell url="/pages/user/sign/index">
 			<view slot="title">
 				<view class="dis_fl">
@@ -39,7 +39,7 @@
 				</view>
 			</view>
 		</van-cell>
-	</view>
+	</view> -->
 
 	<!-- <view class='nav-list_df'>
 		<view class="nav-list-left">
