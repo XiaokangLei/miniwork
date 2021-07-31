@@ -14,9 +14,17 @@
 		<view>
 			<view class="detail-sj">
 				<view>时间：{{xw_list.add_time}}</view>
-				<view>{{xw_list.type}}</view>
+				<!-- <view>{{xw_list.type}}</view> -->
 			</view>
 		</view>
+	</view>
+	<view class='text-gray text-lg text-right '>
+		<van-icon name="good-job" size="20px" />
+		<text decode>{{xw_list.statr}}&nbsp;&nbsp;</text>
+		<van-icon name="star" size="20px" />
+		<text decode>{{xw_list.collect}}&nbsp;&nbsp;</text>
+		<van-icon name="fire" size="20px" />
+		<text decode>{{xw_list.browse}}&nbsp;&nbsp;</text>
 	</view>
 
 	<view class="home-jcly">
@@ -40,18 +48,17 @@
 			<input disabled="{{true}}" type="text" placeholder="添加笔记" confirm-type="search" placeholder-style="color:#000"
 				class="" />
 		</view>
-		<view bindtap="statr_sc" data-id="collect" class=" {{sc_show?'cg_sp':''}}">
-			<!-- <van-icon name="star-o" size="20px" /> -->
-			<van-icon name="star-o" size="20px" />
-			<view class="dbu_wz ">{{xw_list.collect}}</view>
+		<view bindtap="statr_sc" data-id="collect" wx:if="{{sc_show}}">
+			<van-icon name="star" size="28px" color="orange" />
 		</view>
-		<view bindtap="statr_sc" data-id="statr" class=" {{dz_show?'cg_sp':''}}">
-			<van-icon name="good-job-o" size="20px" />
-			<view class="dbu_wz ">{{xw_list.statr}}</view>
+		<view bindtap="statr_sc" data-id="collect" wx:else>
+			<van-icon name="star-o" size="28px" />
 		</view>
-		<view bindtap="statr_sc" data-id="statr" class=" cg_sp">
-			<van-icon name="fire" size="20px" />
-			<view class="dbu_wz ">{{xw_list.browse}}</view>
+		<view bindtap="statr_sc" data-id="statr" wx:if="{{dz_show}}">
+			<van-icon name="good-job" size="28px" color="orange" />
+		</view>
+		<view bindtap="statr_sc" data-id="statr" wx:else>
+			<van-icon name="good-job-o" size="28px" />
 		</view>
 	</view>
 	<view class="bj">

@@ -6,6 +6,7 @@
     </view>
     <view class="sign_wz3">{{wh_tl}}</view>
   </view>
+
   <view class="contant" wx:if="{{!signinNow}}">
     <!-- 日历年月 -->
     <view class='calendar_title layer_center'>
@@ -59,8 +60,13 @@
     </van-cell-group>
 
   </view>
+  
   <view class="flex_center">
-    <!-- <view class="center_text font32"   wx:if="{{signinNow}}">完成签到</view> -->
     <view class="center_text font32" bindtap="activeSign" wx:if="{{!signinNow}}">立即签到</view>
   </view>
+  
+  <view class="flex_center">
+    <view class="center_text font32" bindtap="activeSign" wx:if="{{!signinNow}}">立即签到</view>
+  </view>
+  
 </view>

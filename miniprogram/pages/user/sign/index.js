@@ -43,9 +43,9 @@ Page({
     let dateArr = t.data.dateArr;
     let yesDate = t.data.yesDate;
 
-    wx.requestSubscribeMessage({
-      tmplIds: ['K7WmbKR5PRE_8c8Rv674eHXGayNyC4DHi1GrAs4exp4'],
-      success(res) {
+    // wx.requestSubscribeMessage({
+      // tmplIds: ['K7WmbKR5PRE_8c8Rv674eHXGayNyC4DHi1GrAs4exp4'],
+      // success(res) {
         for (var i = 0; i < dateArr.length; i++) {
           console.log(nowdate)
           if (Number(dateArr[i].isToday) == Number(nowdate)) {
@@ -108,8 +108,8 @@ Page({
         t.setData({
           dateArr: dateArr
         })
-      }
-    })
+      // }
+    // })
   },
   // 签到过
 
