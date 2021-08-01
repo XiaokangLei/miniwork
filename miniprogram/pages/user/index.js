@@ -33,7 +33,7 @@ Component({
       color: 'red',
       badge: 0,
       name: '我的点赞',
-      data_page: "user/start/index",
+      data_page: "user/star/index",
       bindtap: "bindZan"
     }, {
       icon: 'noticefill',

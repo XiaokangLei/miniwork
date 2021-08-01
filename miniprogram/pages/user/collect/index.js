@@ -52,7 +52,7 @@ Component({
         this.setData({
           db_value : 'xz'
         })
-        
+    
       }
       db.collection('collect').where({
         Type:this.data.db_value
@@ -62,7 +62,6 @@ Component({
           loding: false
         })
       })
-
     },
     tz: function (e) {
       console.log(e.currentTarget.dataset.id)
@@ -70,7 +69,5 @@ Component({
         url: "../../../pages/" + e.currentTarget.dataset.a + "?id=" + e.currentTarget.dataset.id
       })
     },
-
-
   }
 })
