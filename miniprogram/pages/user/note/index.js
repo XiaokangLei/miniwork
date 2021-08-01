@@ -13,14 +13,13 @@ Component({
 
   },
   created() {
-    this.Load_list()
+    // this.Load_list()
     wx.setNavigationBarTitle({
       title: "我的笔记"
     })
   },
   pageLifetimes:{
     show: function(){
-      console.log('------------------------')
       this.Load_list()
     }
   },
@@ -28,7 +27,6 @@ Component({
     tz: function (e) {
       console.log(e.currentTarget.dataset.id)
       wx.navigateTo({
-        // url: "../../../pages/" + e.currentTarget.dataset.url + "?id=" + e.currentTarget.dataset.id
         url: "../../../pages/" + e.currentTarget.dataset.url
       })
     },

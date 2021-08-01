@@ -1,4 +1,4 @@
-// miniprogram/pages/note/add/index.js
+// miniprogram/pages/note/add_note/index.js
 import time from "../../../../utils/time.js"
 import Notify from '/@vant/weapp/notify/notify';
 import envId from "../../../../utils/config.js"

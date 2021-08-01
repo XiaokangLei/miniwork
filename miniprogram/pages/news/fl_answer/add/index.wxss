@@ -1,4 +1,4 @@
-/* miniprogram/pages/note/add/index.wxss */
+/* miniprogram/pages/note/add_note/index.wxss */
 .main{
   padding: 10px;
 }

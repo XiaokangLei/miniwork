@@ -32,7 +32,7 @@
 				<view class="text_lk ">
 						{{items.reply?"以回答":"未回答"}}
 					</view>
-					<!-- <navigator hover-class='none' url="/pages/news/history/add/index?id={{items._id}}"  wx:if="{{!items.reply}}" class="tex">回答问题</navigator> -->
+					<!-- <navigator hover-class='none' url="/pages/news/history/add_note/index?id={{items._id}}"  wx:if="{{!items.reply}}" class="tex">回答问题</navigator> -->
 			</view>
 			<view class="bg-grey padding-sm radius margin-top-sm  text-sm">
 				<view class="flex">

@@ -49,8 +49,8 @@
           "scene": null
         },
         {
-          "name": "pages/note/add/index",
-          "pathName": "pages/note/add/index",
+          "name": "pages/note/recommended/index",
+          "pathName": "pages/note/add_note/index",
           "query": "",
           "scene": null
         },
@@ -163,8 +163,8 @@
           "scene": null
         },
         {
-          "name": "pages/news/history/add/index",
-          "pathName": "pages/news/history/add/index",
+          "name": "pages/news/history/add_note/index",
+          "pathName": "pages/news/history/add_note/index",
           "query": "",
           "scene": null
         },
