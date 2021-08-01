@@ -1,4 +1,5 @@
 <view class="user">
+
 	<view class="cu-modal show" wx:if="{{show}}">
 		<view class="cu-dialog">
 			<view class="cu-bar bg-white justify-end">
@@ -39,6 +40,7 @@
 
 		</view>
 	</view>
+
 	<view class="cu-list grid col-4 margin-xs no-border" style="background-color: #f8f8f8;">
 		<view class="cu-item" wx:for="{{iconList}}" wx:key="idx">
 			<view bindtap="tz" data-a="{{item.data_page}}">
@@ -51,7 +53,8 @@
 			</view>
 		</view>
 	</view>
-	<view class="cu-list menu card-menu_new margin-top-sm shadow-lg radius">
+
+	<view class="cu-list menu">
 		<!-- <view class="min_height cu-bar">
 			<view class="action sub-title">
 				<text class="text-xl text-bold text-tree">小贝助手</text>
@@ -79,7 +82,7 @@
 
 	</view>
 
-	<view class="cu-list menu">
+	<view class="cu-list menu card-menu margin-top-sm shadow-lg radius">
 		<view class="cu-item">
 			<navigator class="content " url="/pages/user/about/about" hover-class="none">
 				<text class="cuIcon-right "
@@ -113,5 +116,6 @@
 			</view>
 		</view>
 	</view>
+	
 
 </view>

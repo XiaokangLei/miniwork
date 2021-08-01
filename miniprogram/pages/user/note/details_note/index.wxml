@@ -1,0 +1,29 @@
+<!--miniprogram/pages/user/plan/details_plan/index.wxml-->
+<view class="de-main">
+  <view class="home-jcly">
+    <view class="cu-item grayscale">
+      <view class="cu-avatar radius ">
+        <text>内</text>
+      </view>
+      <view class="content2">
+        <view>
+          <text class="text-cut text-lg">笔记详情</text>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut"></text>
+        </view>
+      </view>
+    </view>
+    <view class="detail-tl">
+      {{ xw_list.title}}
+    </view>
+  </view>
+  <view class="m3">
+    <view class="tille-1">
+      笔记内容
+    </view>
+    <view class="detil">
+      <rich-text nodes="{{xw_list.html}}"></rich-text>
+    </view>
+  </view>
+</view>

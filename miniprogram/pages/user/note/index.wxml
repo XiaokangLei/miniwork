@@ -1,8 +1,8 @@
 <view class=" main">
-  <view class="note_list" wx:for="{{note_list}}" wx:key="this" wx:for-item="items" bindtap="tz"
-    data-url="user/note/add/index" data-id="{{items._id}}">
+  <view class="note_list" wx:for="{{note_list}}" wx:key="this" wx:for-item="items" bindtap="jump_details_note"
+    data-url="user/note/details_note/index" data-id="{{items._id}}">
     <view class="note_time">{{items.time}}</view>
-    <view class="note_tille">{{items.tille}}</view>
+    <view class="note_tille">{{items.title}}</view>
     <view class="note_ly">来自于:{{items.ly?items.ly:'用户添加'}}</view>
   </view>
   <view class="note_add" bindtap="tz" data-url="user/note/add/index">

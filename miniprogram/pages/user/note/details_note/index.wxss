@@ -1,8 +1,9 @@
-/* miniprogram/pages/details/index.wxss */
+/* miniprogram/pages/user/plan/details_plan/index.wxss */
 .detail-tl {
   font-size: 40rpx;
   font-family: PingFang;
   margin-top: 10px;
+  margin-left: 10px;
   margin-bottom: 10px;
   font-weight: 600;
   color: rgba(51, 51, 51, 1);

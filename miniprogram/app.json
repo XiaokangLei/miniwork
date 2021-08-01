@@ -15,7 +15,8 @@
     "pages/user/star/index",
     "pages/work/details_teachin/index",
     "pages/recommended/index",
-    "pages/recommended/details_ans/index"
+    "pages/recommended/details_ans/index",
+    "pages/user/note/details_note/index"
   ],
   "window": {
     "backgroundColor": "#f7f7f7",
@@ -24,8 +25,7 @@
     "navigationBarTitleText": "小贝校招",
     "navigationBarTextStyle": "white"
   },
-  "usingComponents": {
-  },
+  "usingComponents": {},
   "permission": {
     "scope.userLocation": {
       "desc": "定位以获取当前位置天气信息"

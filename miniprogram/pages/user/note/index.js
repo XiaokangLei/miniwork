@@ -18,12 +18,24 @@ Component({
       title: "我的笔记"
     })
   },
+  pageLifetimes:{
+    show: function(){
+      console.log('------------------------')
+      this.Load_list()
+    }
+  },
   methods: {
     tz: function (e) {
       console.log(e.currentTarget.dataset.id)
       wx.navigateTo({
         // url: "../../../pages/" + e.currentTarget.dataset.url + "?id=" + e.currentTarget.dataset.id
         url: "../../../pages/" + e.currentTarget.dataset.url
+      })
+    },
+    jump_details_note: function (e) {
+      console.log(e.currentTarget.dataset.id)
+      wx.navigateTo({
+        url: "./details_note/index?id=" + e.currentTarget.dataset.id
       })
     },
     Load_list() {

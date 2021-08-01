@@ -19,7 +19,7 @@ Page({
       data: {
         time: this.data.time,
         html: this.data.html,
-        tille: this.data.tille,
+        title: this.data.tille,
         press_id: this.data.press_id || null,
         ly: this.data.ly || null
       },
