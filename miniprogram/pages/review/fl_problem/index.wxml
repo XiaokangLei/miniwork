@@ -1,14 +1,5 @@
 <view class="main">
 	<view class="servic_top">
-		<!-- <view class="servic_top_Dl"> -->
-			<!-- <view>
-				<view class="servic_top_Wz1">面试题库</view>
-				<view class="servic_top_Wz2">为编程而编程，为进步而进步</view>
-			</view> -->
-			<!-- <view class="servic_top_Img">
-				<image src="../../../images/zx_top.png"></image>
-			</view> -->
-		<!-- </view> -->
 
 		<view class="servic_top_Dl">
 			<view>
@@ -23,7 +14,7 @@
 	</view>
 
 	<view class="pro_list" data-id="{{items._id}}" data-limt="{{index}}" wx:for="{{xw_list}}" wx:key="this"
-		wx:for-item="items" bindtap="tz" data-a="details/details_pro/index">
+		wx:for-item="items" bindtap="tz" data-a="review/details_pro/index">
 		<view class="pro_list_wz">第{{index+1}}题</view>
 		<view class="pro_list_wz_mc">{{items.problem}}</view>
 		<view class="pro_list_wz_rs">

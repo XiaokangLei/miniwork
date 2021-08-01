@@ -3832,6 +3832,10 @@ scroll-view.cu-steps .cu-item {
 	font-size: 32rpx;
 }
 
+.text-user {
+	font-size: 34rpx;
+}
+
 .text-xl {
 	font-size: 36rpx;
 }

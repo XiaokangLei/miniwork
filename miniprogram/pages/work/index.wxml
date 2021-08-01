@@ -72,7 +72,6 @@
 			</view>
 		</van-tab>
 		<van-tab title="倒计时" title-style="font-size: 16px;">
-			<!-- <val></val> -->
 			<view class="study_list">
 				<list list="{{cutdown_list}}" loding="{{loding}}"></list>
 			</view>

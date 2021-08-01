@@ -27,7 +27,7 @@ exports.main = async (event, context) => {
             "value": '欢迎使用小贝校招，明天也记得签到哦！'
           }
         },
-        "templateId": 'bRnTQ46RrclaDPUWMWcuViqJmO3vfaolXzT9JVhUGJc',
+        "templateId": 'K7WmbKR5PRE_8c8Rv674eHXGayNyC4DHi1GrAs4exp4',
         "miniprogramState": 'developer'
       })
     return result

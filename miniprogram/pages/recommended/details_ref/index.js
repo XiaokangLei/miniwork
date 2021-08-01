@@ -48,6 +48,8 @@ Page({
       let data = this.data.xw_list
       data.type = e.currentTarget.dataset.id
       data.press_id = data._id
+      data.kind = e.currentTarget.dataset.kind
+      console.log(e.currentTarget.dataset.kind)
       task.Tree_cloud('pro_'+e.currentTarget.dataset.id, {
         press: data
       }).then(res => {
@@ -70,7 +72,7 @@ Page({
   },
   xq: function (id) {
     var that = this
-    db.collection('interview').where({
+    db.collection('recommended').where({
       _id: id
     }).get().then(res => {
       let result = res.data[0].html

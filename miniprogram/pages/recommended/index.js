@@ -36,9 +36,7 @@ Component({
       })
     },
     post() {
-      db.collection('interview').orderBy('_createTime', 'asc').where({
-        kind:'teach'
-      }).limit(4).get().then(res => {
+      db.collection('recommended').orderBy('_createTime', 'asc').limit(4).get().then(res => {
         this.setData({
           xw_list: res.data,
         })

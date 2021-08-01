@@ -19,13 +19,13 @@ exports.main = async (event, context) => {
   }).get()
   if (statr_data.data.length == 0) {
     if (event.press.collect != null) {
-      await db.collection('interview').doc(event.press._id).update({
+      await db.collection(data.kind).doc(event.press._id).update({
         data: {
           statr: _.inc(1),
         },
       })
     } else {
-      await db.collection('interview').doc(event.press._id).update({
+      await db.collection(data.kind).doc(event.press._id).update({
         data: {
           statr: 1,
         }
@@ -41,7 +41,7 @@ exports.main = async (event, context) => {
       press_id: data._id,
       _openid: wxContext.OPENID
     }).remove()
-    await db.collection('interview').doc(data._id).update({
+    await db.collection(data.kind).doc(data._id).update({
       data: {
         statr: _.inc(-1),
       },

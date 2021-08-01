@@ -24,12 +24,9 @@ Page({
   },
 
   post() {
-    db.collection('interview').count().then(res => {
-      this.setData({
-        pro_length: res.total,
-      })
-    })
-    db.collection('interview_collect').orderBy('_createTime', 'asc').skip((this.data.page - 1) * 10).limit(10).get().then(res => {
+    db.collection('interview_collect').where({
+      kind:'interview'
+    }).orderBy('_createTime', 'asc').skip((this.data.page - 1) * 10).limit(10).get().then(res => {
       if (this.data.page > 1) {
         let data = this.data.xw_list
         res.data.forEach(res2 => {

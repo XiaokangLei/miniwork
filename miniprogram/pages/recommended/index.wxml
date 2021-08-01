@@ -15,8 +15,8 @@
           wx:for="{{ xw_list}}" wx:key="this" wx:for-item="items">
           <view class="item_list_ds">
             <view class="dis2">
-              <view class="item_top_Wz">热</view>
-              <view class="item_top_Wz2"> {{items.problem}}</view>
+              <view class="item_top_Wz">新</view>
+              <view class="item_top_Wz2"> {{items.title}}</view>
             </view>
           </view>
         </navigator>

@@ -28,9 +28,7 @@ Page({
         pro_length: res.total,
       })
     })
-    db.collection('interview').where({
-      kind:'teach'
-    }).orderBy('_createTime', 'asc').skip((this.data.page-1)*10).limit(10).get().then(res => {
+    db.collection('recommended').orderBy('_createTime', 'asc').skip((this.data.page-1)*10).limit(10).get().then(res => {
       if(this.data.page>1){
         let data=this.data.xw_list
         res.data.forEach(res2=>{

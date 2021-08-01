@@ -17,7 +17,7 @@
 		</view>
 
 		<view class="detail-tl">
-			{{ xw_list.problem}}
+			{{ xw_list.title}}
 		</view>
 		<!-- <view class="padding">
 			<view class="cu-avatar-group">
@@ -39,7 +39,7 @@
 			内推详细信息
 		</view>
 		<view class="detil">
-			<rich-text nodes="{{xw_list.answer}}"></rich-text>
+			<rich-text nodes="{{xw_list.content}}"></rich-text>
 		</view>
 	</view>
 </view>
@@ -51,11 +51,11 @@
 		下一道题
 	</view> -->
 
-	<view bindtap="statr_sc" data-id="collect" class="dbu_lk {{sc_show?'cg_sp':''}}">
+	<view bindtap="statr_sc" data-id="collect" data-kind="recommended" class="dbu_lk {{sc_show?'cg_sp':''}}">
 		<van-icon name="star-o" size="20px" />
 		<view class="dbu_wz ">收藏 {{xw_list.collect||0}}</view>
 	</view>
-	<view bindtap="statr_sc" data-id="start" class=" dbu_lk {{dz_show?'cg_sp':''}}">
+	<view bindtap="statr_sc" data-id="start" data-kind="recommended" class=" dbu_lk {{dz_show?'cg_sp':''}}">
 		<van-icon name="good-job-o" size="20px" />
 		<view class="dbu_wz ">推荐 {{xw_list.statr}}</view>
 	</view>

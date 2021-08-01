@@ -16,7 +16,6 @@
     "van-field": "@vant/weapp/field/index",
     "van-skeleton": "@vant/weapp/skeleton/index",
     "van-calendar": "@vant/weapp/calendar/index",
-    "val": "./warehouse/index",
     "van-steps": "@vant/weapp/steps/index"
   }
 }

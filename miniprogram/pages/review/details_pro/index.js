@@ -48,6 +48,8 @@ Page({
       let data = this.data.xw_list
       data.type = e.currentTarget.dataset.id
       data.press_id = data._id
+      data.kind = e.currentTarget.dataset.kind
+      console.log(e.currentTarget.dataset.kind)
       task.Tree_cloud('pro_'+e.currentTarget.dataset.id, {
         press: data
       }).then(res => {

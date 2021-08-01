@@ -71,14 +71,6 @@ Component({
       })
 
     },
-    ql() {
-      wx.showToast({
-        title: '清理缓存成功',
-        icon: 'none',
-      })
-      wx.clearStorage()
-    },
-
     sq2() {
       var user = app.globalData.user
       this.data.setData({

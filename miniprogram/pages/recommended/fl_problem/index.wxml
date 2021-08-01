@@ -1,14 +1,5 @@
 <view class="main">
 	<view class="servic_top">
-		<!-- <view class="servic_top_Dl">
-			<view>
-				<view class="servic_top_Wz1">面试真题</view>
-				<view class="servic_top_Wz2">为编程而编程，为进步而进步</view>
-			</view>
-			<view class="servic_top_Img">
-				<image src="../../../images/zx_top.png"></image>
-			</view>
-		</view> -->
 		<view class="servic_top_Dl">
 			<view>
 				<view class="servic_top_tw">{{pro_length}}</view>
@@ -16,15 +7,14 @@
 			</view>
 			<view>
 				<view class="servic_top_tw3">收藏0个内推</view>
-				<!-- <view class="servic_top_tw3">面试平均遇见4题</view> -->
 			</view>
 		</view>
 	</view>
 
 	<view class="pro_list" data-id="{{items._id}}" data-limt="{{index}}" wx:for="{{xw_list}}" wx:key="this"
-		wx:for-item="items" bindtap="tz" data-a="details/details_pro/index">
+		wx:for-item="items" bindtap="tz" data-a="recommended/details_ref/index">
 		<view class="pro_list_wz">内 推</view>
-		<view class="pro_list_wz_mc">{{items.problem}}</view>
+		<view class="pro_list_wz_mc">{{items.title}}</view>
 		<view class="pro_list_wz_rs">
 			{{items.statr||m1.format()}}人推荐
 		</view>

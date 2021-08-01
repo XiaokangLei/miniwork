@@ -35,7 +35,7 @@
 				<view class="username2">愿有一天 你能把优秀发挥到极致</view>
 			</view>
 
-			<view class="bd_user"  bindtap="tz" data-a="user/sign/index">签到</view>
+			<view class="bd_user" bindtap="tz" data-a="user/sign/index">签到</view>
 
 		</view>
 	</view>
@@ -71,48 +71,45 @@
 			</navigator>
 		</view>
 
-		<view class="cu-list menu">
+		<!-- <van-cell-group inset>
+			<van-cell icon="info-o" size="large" title="关于小贝" is-link link-type="navigateTo" url="/pages/user/about/about" />
+			<van-cell icon="gold-coin-o" size="large" title="打赏支持" is-link bindtap="showQrcode" />
+		</van-cell-group> -->
 
-			<view class="cu-item">
-				<navigator class="content" url="/pages/user/about/about" hover-class="none">
-					<text class="cuIcon-right text-lg"
-						style="padding-right: 0rpx; position: absolute;top: 0;right: 30rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
-					<text class="cuIcon-infofill text-yellow"></text>
-					<text class="footer-text text-lg">关于小贝</text>
-				</navigator>
-			</view>
 
-			<view class="cu-item">
-				<button class='cu-btn content' open-type='contact'>
-					<text class="cuIcon-right text-lg"
-						style="padding-right: 0rpx; position: absolute;top: 0;right: 0rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
-					<text class='cuIcon-markfill text-green text-lg'></text>
-					<text class='footer-text text-lg'>联系客服</text>
-				</button>
-			</view>
-			<view class="cu-item">
-				<button class='cu-btn content' open-type='feedback'>
-					<text class="cuIcon-right text-lg"
-						style="padding-right: 0rpx; position: absolute;top: 0;right: 0rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
-					<text class='cuIcon-writefill text-cyan text-lg'></text>
-					<text class='footer-text text-lg'>意见反馈</text>
-				</button>
-			</view>
-			<view class="cu-item" bindtap="showQrcode">
-				<view class='content'>
-					<text class="cuIcon-right text-lg"
-						style="padding-right: 0rpx; position: absolute;top: 0;right: 30rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
-					<text class='cuIcon-refund text-red text-lg'></text>
-					<text class='footer-text text-lg'>打赏支持</text>
-				</view>
-			</view>
-			<view class="cu-item" bindtap="ql">
-				<view class="content" url="/pages/about/test/list" hover-class="none">
-					<text class="cuIcon-right text-lg"
-						style="padding-right: 0rpx; position: absolute;top: 0;right: 30rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
-					<text class="cuIcon-creativefill text-tree text-lg"></text>
-					<text class="footer-text text-lg">清理缓存</text>
-				</view>
+	</view>
+
+	<view class="cu-list menu">
+		<view class="cu-item">
+			<navigator class="content " url="/pages/user/about/about" hover-class="none">
+				<text class="cuIcon-right "
+					style="padding-right: 0rpx; position: absolute;top: 0;right: 30rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
+				<text class="cuIcon-infofill text-yellow text-user"></text>
+				<text class="footer-text text-user">关于小贝</text>
+			</navigator>
+		</view>
+		<view class="cu-item">
+			<button class='cu-btn content' open-type='contact'>
+				<text class="cuIcon-right text-lg"
+					style="padding-right: 0rpx; position: absolute;top: 0;right: 0rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
+				<text class='cuIcon-markfill text-green text-user'></text>
+				<text class='footer-text text-user'>联系客服</text>
+			</button>
+		</view>
+		<view class="cu-item">
+			<button class='cu-btn content' open-type='feedback'>
+				<text class="cuIcon-right text-lg"
+					style="padding-right: 0rpx; position: absolute;top: 0;right: 0rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
+				<text class='cuIcon-writefill text-cyan text-user'></text>
+				<text class='footer-text text-user'>意见反馈</text>
+			</button>
+		</view>
+		<view class="cu-item" bindtap="showQrcode">
+			<view class='content'>
+				<text class="cuIcon-right text-lg"
+					style="padding-right: 0rpx; position: absolute;top: 0;right: 30rpx;bottom: 0;display: block;margin: auto;width: 40rpx;height: 40rpx;color: var(--grey);"></text>
+				<text class='cuIcon-refund text-red text-user'></text>
+				<text class='footer-text text-user'>打赏支持</text>
 			</view>
 		</view>
 	</view>
