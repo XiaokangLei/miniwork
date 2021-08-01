@@ -5,13 +5,13 @@
         <text class="text-xl text-bold  text-tree">内推直招</text>
         <text class="bg-tree"></text>
       </view>
-      <navigator class="ntp" url="/pages/referral/fl_problem/index">查看更多
+      <navigator class="ntp" url="/pages/recommended/fl_problem/index">查看更多
         <van-icon name="arrow" />
       </navigator>
     </view>
     <view class="scroll_box">
       <scroll-view scroll-x>
-        <navigator hover-class="item-hover" url="/pages/referral/details_ref/index?id={{items._id}}" class="item_list"
+        <navigator hover-class="item-hover" url="/pages/recommended/details_ref/index?id={{items._id}}" class="item_list"
           wx:for="{{ xw_list}}" wx:key="this" wx:for-item="items">
           <view class="item_list_ds">
             <view class="dis2">

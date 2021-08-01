@@ -46,8 +46,7 @@
 		<news popr="{{ hd_op}}" wx:if="{{id==1}}" />
 		<review wx:if="{{id==2}}" />
 		<work wx:if="{{id==3}}" list="{{list}}" bind:tab_xz="post" loding="{{loding}}" />
-		<!-- <work wx:if="{{id==3}}" /> -->
-		<dictionaries wx:if="{{id==4}}" />
+		<recommended wx:if="{{id==4}}" />
 		<user wx:if="{{id==5}}" />
 	</view>
 

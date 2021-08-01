@@ -1,4 +1,4 @@
-// pages/referral/index.js
+// pages/recommended/index.js
 import envId from "../../utils/config.js"
 const db = wx.cloud.database({
   env: envId.envId

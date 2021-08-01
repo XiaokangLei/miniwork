@@ -193,14 +193,14 @@
           "scene": null
         },
         {
-          "name": "pages/referral/index",
-          "pathName": "pages/referral/index",
+          "name": "pages/recommended/index",
+          "pathName": "pages/recommended/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/referral/details_ans/index",
-          "pathName": "pages/referral/details_ans/index",
+          "name": "pages/recommended/details_ans/index",
+          "pathName": "pages/recommended/details_ans/index",
           "query": "",
           "scene": null
         },
@@ -217,8 +217,8 @@
           "scene": null
         },
         {
-          "name": "pages/referral/fl_problem/index",
-          "pathName": "pages/referral/fl_problem/index",
+          "name": "pages/recommended/fl_problem/index",
+          "pathName": "pages/recommended/fl_problem/index",
           "query": "",
           "scene": null
         }
