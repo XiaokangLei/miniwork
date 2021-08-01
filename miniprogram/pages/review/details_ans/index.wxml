@@ -1,6 +1,6 @@
 <view class="contaier">
   <view class="padding" wx:if="{{cd<=1}}">
-    <view class="mainBox radius shadow-warp bg-white margin-top relative">
+    <view class="mainBox radius shadow-warp bg-white margin-top margin-bottom-xxl relative">
       <view>
         <view class="animation-reverse shadow" data-class="slide-rights">
           <view class="mentalTitle text-xl text-black text-bold">
@@ -38,9 +38,9 @@
     </view>
   </view> -->
 
-  <view class="db_but" bindtap="xz_post" wx:if="{{cd<=1}}">
-    <view wx:if="{{cd<1}}">下一题</view>
-    <view wx:if="{{cd==1}}">完成答题</view>
+  <view class="flex_center_rank" bindtap="xz_post" wx:if="{{cd<=1}}">
+    <view class="cu-btn round bg-blue shadow" style="width:32%;" wx:if="{{cd<1}}">下一题</view>
+    <view class="cu-btn round bg-blue shadow" style="width:32%;" wx:if="{{cd==1}}">完成答题</view>
   </view>
 
   <view class="warp" wx:if="{{cd>1}}">

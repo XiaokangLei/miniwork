@@ -1,4 +1,3 @@
-import Dialog from '@vant/weapp/dialog/dialog';
 import envId from "../../../utils/config.js"
 const db = wx.cloud.database({
   env: envId.envId
@@ -52,7 +51,6 @@ Component({
         this.setData({
           db_value : 'xz'
         })
-    
       }
       db.collection('collect').where({
         Type:this.data.db_value
