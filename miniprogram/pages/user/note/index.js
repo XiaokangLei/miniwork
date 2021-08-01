@@ -24,7 +24,7 @@ Component({
     }
   },
   methods: {
-    tz: function (e) {
+    jump_add_note: function (e) {
       console.log(e.currentTarget.dataset.id)
       wx.navigateTo({
         url: "../../../pages/" + e.currentTarget.dataset.url

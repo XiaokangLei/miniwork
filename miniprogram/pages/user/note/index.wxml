@@ -1,11 +1,12 @@
 <view class=" main">
+  <van-empty image="search" wx:if="{{note_list.length == 0}}" description="暂无内容" />
   <view class="note_list" wx:for="{{note_list}}" wx:key="this" wx:for-item="items" bindtap="jump_details_note"
     data-url="user/note/details_note/index" data-id="{{items._id}}">
     <view class="note_time">{{items.time}}</view>
     <view class="note_tille">{{items.title}}</view>
     <view class="note_ly">来自于:{{items.ly?items.ly:'用户添加'}}</view>
   </view>
-  <view class="note_add" bindtap="tz" data-url="user/note/add_note/index">
+  <view class="note_add" bindtap="jump_add_note" data-url="user/note/add_note/index">
     <van-icon name="plus" />
   </view>
 </view>
