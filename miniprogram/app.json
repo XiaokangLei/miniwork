@@ -1,22 +1,24 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/user/problem_list/index",
-    "pages/work/details_work/index",
-    "pages/news/details_news/index",
-    "pages/news/fl_answer/index",
-    "pages/work/index",
-    "pages/news/index",
     "pages/user/index",
-    "pages/recommended/fl_problem/index",
-    "pages/news/fl_basics/index",
+    "pages/user/problem_list/index",
     "pages/user/sign/index",
     "pages/user/collect/index",
     "pages/user/star/index",
+    "pages/user/note/details_note/index",
+    "pages/news/index",
+    "pages/news/details_news/index",
+    "pages/news/fl_answer/index",
+    "pages/news/fl_basics/index",
+    "pages/work/index",
+    "pages/work/details_work/index",
     "pages/work/details_teachin/index",
     "pages/recommended/index",
+    "pages/recommended/fl_problem/index",
     "pages/recommended/details_ans/index",
-    "pages/user/note/details_note/index"
+    "pages/recommended/resume/index"
+    
   ],
   "window": {
     "backgroundColor": "#f7f7f7",

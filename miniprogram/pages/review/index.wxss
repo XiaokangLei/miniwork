@@ -58,7 +58,7 @@
 
 .order .item .left image {
   width: 260rpx;
-  height: 130rpx;
+  height: 140rpx;
   border-radius: 10rpx;
 
 }
@@ -70,7 +70,7 @@
 
 .order .item .content .type {
   margin: 6rpx 0;
-  font-size: 24rpx;
+  font-size: 28rpx;
   color: #909399;
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
@@ -121,7 +121,7 @@
 
 .order .bottom .btnBox .evaluate {
   color: #fff;
-  background-color: #1D4259;
+  background-color: #3963BC;
 }
 
 .fgx {

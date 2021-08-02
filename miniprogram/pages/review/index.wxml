@@ -101,7 +101,7 @@
         </navigator>
       </view>
     </view>
-    <view class="order">
+    <!-- <view class="order">
       <view class="top">
         <view class="left">
           <view class="cuIcon-titles text-blue"></view>
@@ -109,11 +109,11 @@
         </view>
         <view class="right">
           <text class="text-blue"></text>
-          <!-- <view class="progressBox">
+          <view class="progressBox">
             <view class="cu-progress radius striped active">
               <view class="bg-tree" style="width:{{loading?'30%':''}};">30%</view>
             </view>
-          </view> -->
+          </view>
         </view>
       </view>
       <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
@@ -135,7 +135,7 @@
           <view bindtap="goClass" class="evaluate btn">开始答题</view>
         </navigator>
       </view>
-    </view>
+    </view> -->
   </view>
    <view style="margin-top: 20rpx;padding-top: 10rpx;margin-bottom: 120rpx;">
   </view>

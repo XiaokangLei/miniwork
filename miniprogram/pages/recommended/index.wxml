@@ -11,8 +11,8 @@
     </view>
     <view class="scroll_box">
       <scroll-view scroll-x>
-        <navigator hover-class="item-hover" url="/pages/recommended/details_ref/index?id={{items._id}}" class="item_list"
-          wx:for="{{ xw_list}}" wx:key="this" wx:for-item="items">
+        <navigator hover-class="item-hover" url="/pages/recommended/details_ref/index?id={{items._id}}"
+          class="item_list" wx:for="{{ xw_list}}" wx:key="this" wx:for-item="items">
           <view class="item_list_ds">
             <view class="dis2">
               <view class="item_top_Wz">新</view>
@@ -23,6 +23,46 @@
       </scroll-view>
     </view>
   </view>
+
+  <!-- 简历模板 -->
+  <view class="ans_bst">
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="action sub-title">
+        <text class="text-xl text-bold  text-tree">简历模板</text>
+        <text class="bg-tree"></text>
+      </view>
+      <navigator class="ntp" url="/pages/recommended/resume/index">查看更多
+        <van-icon name="arrow" />
+      </navigator>
+    </view>
+    <!-- <view class="scroll_box">
+      <scroll-view scroll-x>
+        <navigator hover-class="item-hover" url="" class="item_list" wx:for="{{ xw_list}}" wx:key="this"
+          wx:for-item="items">
+          <view class="item_list_ds">
+            <view class="dis2">
+              <view class="item_top_Wz">热</view>
+              <view class="item_top_Wz2"> {{items.problem}}</view>
+            </view>
+          </view>
+        </navigator>
+      </scroll-view>
+    </view> -->
+    <view class="order">
+      <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
+        <view class="left">
+          <image
+            src="https://7465-test-4gn9gu0ucc6657ba-1304273986.tcb.qcloud.la/resume/jianli.jpg?sign=4d145a70e6ae48cf918a2eab2772e195&t=1627917849"
+            mode="aspectFill"></image>
+        </view>
+        <view class="content">
+          <view class="type">个人简历在求职的过程中起到“敲门砖”的作用,是一个企业了解求职者的重要渠道。</view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+
   <!-- 薪资待遇 -->
   <view class="ans_bst">
     <view class="cu-bar bg-white solid-bottom">
@@ -36,8 +76,8 @@
     </view>
     <view class="scroll_box">
       <scroll-view scroll-x>
-        <navigator hover-class="item-hover" url="" class="item_list"
-          wx:for="{{ salary_list}}" wx:key="this" wx:for-item="items">
+        <navigator hover-class="item-hover" url="" class="item_list" wx:for="{{ salary_list}}" wx:key="this"
+          wx:for-item="items">
           <view class="item_list_ds">
             <view class="dis2">
               <view class="item_top_Wz">热</view>
@@ -48,31 +88,7 @@
       </scroll-view>
     </view>
   </view>
-  <!-- 简历模板 -->
-  <!-- <view class="ans_bst">
-    <view class="cu-bar bg-white solid-bottom">
-      <view class="action sub-title">
-        <text class="text-xl text-bold  text-tree">内推直招</text>
-        <text class="bg-tree"></text>
-      </view>
-      <navigator class="ntp" url="">查看更多
-        <van-icon name="arrow" />
-      </navigator>
-    </view>
-    <view class="scroll_box">
-      <scroll-view scroll-x>
-        <navigator hover-class="item-hover" url="" class="item_list"
-          wx:for="{{ xw_list}}" wx:key="this" wx:for-item="items">
-          <view class="item_list_ds">
-            <view class="dis2">
-              <view class="item_top_Wz">热</view>
-              <view class="item_top_Wz2"> {{items.problem}}</view>
-            </view>
-          </view>
-        </navigator>
-      </scroll-view>
-    </view>
-  </view> -->
+
   <view style="margin-top: 20rpx;padding-top: 10rpx;margin-bottom: 120rpx;">
   </view>
 </view>

@@ -18,6 +18,7 @@ module.exports = {
   GET_swiper: task.Tree_get(db.collection('mini_swiperList')),
   GET_news_swiper: task.Tree_get(db.collection('news_swiperList')),
   GET_Book: task.Tree_get(db.collection('Book')),
+  GET_Resume: task.Tree_get(db.collection('Resume')),
   GET_teachin: task.Tree_get(db.collection('teachin').orderBy('_createTime', 'desc')),
   GET_press_browse: task.Tree_get(db.collection('press').limit(20).orderBy('browse', 'desc')),
   GET_press_cutdown: task.Tree_get(db.collection('press').limit(20).where({
