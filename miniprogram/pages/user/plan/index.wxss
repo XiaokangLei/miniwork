@@ -22,7 +22,7 @@
 .sign_top {
   height: 300px;
   color: white;
-  background: linear-gradient(to top, #1D4259, #3961c7);
+  background: linear-gradient(to top, #1D4259, #3963BC);
 }
 
 .sign_wz {

@@ -9,7 +9,8 @@ Page({
     show: false,
     da_show: false,
     page: 1,
-    da_zq: 0
+    da_zq: 0,
+    num:2
   },
   onLoad: function (e) {
     this.setData({
@@ -45,6 +46,7 @@ Page({
         xz_color: id,
         da_show: true
       })
+      console.log("id:"+id)
       if (this.data.xw_list.affirm == id) {
         let data = this.data.da_zq + 1
         console.log(data)
@@ -58,12 +60,20 @@ Page({
   xz_post() {
     if (this.data.xz_color || this.data.xz_color == 0) {
       let page = this.data.page + 1
+      let tmp = this.data.xw_list_all
+      console.log("//////////////////////////////////"+page)
       this.setData({
         page,
         xz_color: null,
-        da_show: false
+        da_show: false,
+        xw_list: tmp[page - 1]
       })
-      this.post()
+      let cd_data = this.data.page / this.data.num
+      this.setData({
+        cd: Number(cd_data.toFixed(2))
+      })
+      console.log(cd_data * 100)
+      // this.post()
     } else {
       wx.showToast({
         title: '您未选择答案',
@@ -80,24 +90,40 @@ Page({
       select: true,
       kind: this.data.type
     }).count().then(res => {
-      console.log(res.total)
-      let cd_data = this.data.page / res.total
+      let cd_data = this.data.page / this.data.num
       this.setData({
         cd: Number(cd_data.toFixed(2))
       })
       console.log(cd_data * 100)
     })
 
-    db.collection('interview').where({
+    db.collection('interview').aggregate().match({
       select: true,
       kind: this.data.type
-    }).orderBy('_createTime', 'asc').skip((this.data.page - 1) * 1).limit(1).get().then(res => {
-      console.log(res.data[0])
+    }).sample({
+      size: 2
+    }).end().then(res => {
+      console.log('***************************');
+      console.log(res.list[0].concent);
+      console.log(res.list);
       this.setData({
-        xw_list: res.data[0],
+        xw_list: res.list[0],
+        xw_list_all:res.list,
         show: true
       })
     })
+
+    // db.collection('interview').where({
+    //   select: true,
+    //   kind: this.data.type
+    // }).orderBy('_createTime', 'asc').skip((this.data.page - 1) * 1).limit(1).get().then(res => {
+    //   console.log(res.data[0])
+    //   console.log('***************************');
+    //   this.setData({
+    //     xw_list: res.data[0],
+    //     show: true
+    //   })
+    // })
   },
 
   tz: function (e) {

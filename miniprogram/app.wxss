@@ -144,12 +144,12 @@ view {
   vertical-align: middle;
   padding: 0px 10rpx;
   font-size: 14px;
-  color: #3961c7;
+  color: #3963BC;
 }
 
 .cuIcon-lock {
   font-size: 20px;
-  color: #3961c7;
+  color: #3963BC;
 }
 
 .project_counts .iconfont::before {

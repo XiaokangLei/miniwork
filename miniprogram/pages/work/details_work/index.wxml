@@ -19,11 +19,11 @@
 
 	</view>
 	<view class='text-gray text-lg text-right '>
-		<van-icon name="good-job" size="20px" />
+		<van-icon name="good-job" size="18px" />
 		<text decode>{{xw_list.statr}}&nbsp;&nbsp;</text>
-		<van-icon name="star" size="20px" />
+		<van-icon name="star" size="18px" />
 		<text decode>{{xw_list.collect}}&nbsp;&nbsp;</text>
-		<van-icon name="fire" size="20px" />
+		<van-icon name="fire" size="18px" />
 		<text decode>{{xw_list.browse}}&nbsp;&nbsp;</text>
 	</view>
 	<view class="home-jcly">

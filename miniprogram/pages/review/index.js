@@ -36,36 +36,45 @@ Component({
       })
     },
     post() {
-      db.collection('press').where({
-        Type: "ms"
-      }).orderBy('_createTime', 'desc').limit(4).get().then(res => {
-        console.log(res)
-        this.setData({
-          wz_list: res.data,
-        })
-      })
+      // db.collection('press').where({
+      //   Type: "ms"
+      // }).orderBy('_createTime', 'desc').limit(4).get().then(res => {
+      //   console.log(res)
+      //   this.setData({
+      //     wz_list: res.data,
+      //   })
+      // })
+      // db.collection('interview').aggregate().sample({
+      //   size: 2
+      // }).end().then(res => {
+      //   console.log('***************************');
+      //   console.log(res.list[0].concent);
+      //   console.log(res.list);
+      //   this.setData({
+      //     xw_list: res.list,
+      //   })
+      // })
       db.collection('interview').orderBy('_createTime', 'asc').where({
         select: false,
-        kind:'inte'
+        kind: 'inte'
       }).limit(4).get().then(res => {
         this.setData({
           xw_list: res.data,
         })
         console.log(this.data.xw_list)
       })
-      db.collection('interview').orderBy('_createTime', 'asc').where({
-        select: true,
-        kind:'c++'
-      }).limit(4).get().then(res => {
-        this.setData({
-          c_list: res.data,
-        })
-        
-        console.log(this.data.c_list)
-      })
+      // db.collection('interview').orderBy('_createTime', 'asc').where({
+      //   select: true,
+      //   kind: 'c++'
+      // }).limit(4).get().then(res => {
+      //   this.setData({
+      //     c_list: res.data,
+      //   })
+      //   console.log(this.data.c_list)
+      // })
       db.collection('interview').where({
         select: true,
-        kind:'c++'
+        kind: 'c++'
       }).count().then(res => {
         this.setData({
           js_L: res.total

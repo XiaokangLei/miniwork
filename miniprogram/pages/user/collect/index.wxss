@@ -8,7 +8,7 @@
 .servic_top{
 
   padding-top: 14px;
-  background: linear-gradient(to top, #1D4259, #3961c7);
+  background: linear-gradient(to top, #1D4259, #3963BC);
 
 
   display: flex;

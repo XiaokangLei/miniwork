@@ -42,7 +42,7 @@
 .study_tag2 {
   color: #d69c63;
   border: 1px solid #d69c63;
-  border-left-color: #3961c7;
+  border-left-color: #3963BC;
 }
 
 .as_list>view:nth-child(2) {
@@ -117,7 +117,7 @@
 }
 
 .se {
-  background: #3961c7
+  background: #3963BC
 }
 
 .home-gg {
@@ -164,7 +164,7 @@
 
 .servic_top {
   padding-top: 14px;
-  background: linear-gradient(to top, #1e4761, #3961c7);
+  background: linear-gradient(to top, #1e4761, #3963BC);
   display: flex;
   color: #Fff;
   padding: 15px 15px;

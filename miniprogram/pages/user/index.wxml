@@ -1,4 +1,7 @@
+
 <view class="user">
+
+	
 
 	<view class="cu-modal show" wx:if="{{show}}">
 		<view class="cu-dialog">
