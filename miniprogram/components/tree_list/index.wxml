@@ -1,32 +1,41 @@
-<view class="cu-card article " wx:if="{{!loding}}" wx:for="{{list}}" wx:key="this" wx:index="index" wx:for-item="items"
-  data-id="{{items._id}}" bindtap="tz" data-url="work/details_work/index" hover-class="item-hover"
-  hover-stay-time="100">
-  <view class="cu-item shadow ">
-    <view class="title">
-    {{items.tille}} 
-    <view class="cu-tag bg-red light sm radius"> 秋招</view>
-    <view class="cu-tag bg-green light sm radius">内推</view>
-      <!-- <view class="text-cut"></view> -->
-    </view>
-    <view class="content">
-      <image src="{{items.img}}" mode="aspectFill"></image>
-      <view class="desc">
-        <view class="text-content"> {{items.mec}}</view>
-        <view class="text-gray text-sm text-right ">
-          <van-icon name="fire"/>10
-			<!-- <text class="cuIcon-attentionfill margin-lr-xs"></text>  -->
-			<text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
-			<text class="cuIcon-messagefill margin-lr-xs"></text> 30
-		</view>
-        <!-- <view>
-          <view class="cu-tag bg-red light sm round">正义天使</view>
-          <view class="cu-tag bg-green light sm round">史诗</view>
-        </view> -->
+<view>
+  <view wx:if="{{loding}}" class="loding">
+    <van-loading />
+    <view>小贝正在加急，请耐心等待 </view>
+  </view>
+  <view class="pd" wx:if="{{loding}}">
+    <van-skeleton title row="3" wx:for="{{3}}" wx:key="this" />
+  </view>
+  <view class="cu-card article " wx:if="{{!loding}}" wx:for="{{list}}" wx:key="this" wx:index="index"
+    wx:for-item="items" data-id="{{items._id}}" bindtap="tz" data-url="work/details_work/index" hover-class="item-hover"
+    hover-stay-time="100">
+    <view class="cu-item shadow ">
+      <view class="title">
+        {{items.tille}}
+        <view class="cu-tag bg-orange light sm radius" wx:if="{{items.fall}}">秋招</view>
+        <view class="cu-tag bg-green light sm radius" wx:if="{{items.spring}}">春招</view>
+        <view class="cu-tag bg-blue light sm radius" wx:if="{{items.forward}}">提前批</view>
+        <view class="cu-tag bg-mauve light sm radius text-right" wx:if="{{m2.format(items.end)}}">
+          {{m2.format(items.end)}}天截止</view>
+        <view class="cu-tag bg-red light sm radius text-right" wx:else>
+          已截止</view>
+      </view>
+      <view class="content">
+        <image src="{{items.img}}" mode="aspectFill"></image>
+        <view class="desc">
+          <view class="text-content"> {{items.mec}}</view>
+          <view class="text-gray text-sm text-right ">
+            <van-icon name="clock" />{{m1.format(items.add_time)}}<text decode="{{true}}">&nbsp;&nbsp;&nbsp;</text>
+            <van-icon name="star" />{{items.collect||0}}<text decode="{{true}}">&nbsp;&nbsp;&nbsp;</text>
+            <van-icon name="good-job" />{{items.statr||0}}<text decode="{{true}}">&nbsp;&nbsp;&nbsp;</text>
+            <van-icon name="fire" />{{items.browse||0}}<text decode="{{true}}">&nbsp;&nbsp;&nbsp;</text>
+          </view>
+
+        </view>
       </view>
     </view>
   </view>
 </view>
-
 
 <!-- <view class="cu-card article ">
   <view class="cu-item shadow">
@@ -63,7 +72,32 @@
 <wxs module="m1">
   function format(ts) {
     var d = getDate(ts)
+    var myDate = getDate();
     return [d.getFullYear(), d.getMonth() + 1, d.getDate()].join('-')
+  }
+  module.exports.format = format
+</wxs>
+
+<wxs module="m2">
+  function format(ts) {
+    var d = getDate(ts)
+    var myDate = getDate();
+    var theTime = d - myDate
+    var minute = 0; // 分
+    var hour = 0;//小时
+    var day = 0
+    if (theTime > 60) {
+      minute = parseInt(theTime / 60 / 1000);
+      theTime = parseInt(theTime % 60);
+      if (minute > 60) {
+        hour = parseInt(minute / 60);
+      }
+      if (hour > 24) {
+        day = parseInt(hour / 24);
+      }
+    }
+    console.log(day)
+    return day
   }
   module.exports.format = format
 </wxs>
