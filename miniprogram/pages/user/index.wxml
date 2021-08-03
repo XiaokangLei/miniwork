@@ -29,7 +29,7 @@
 		</view>
 	</view>
 
-	<view class="user-section" style="padding-top:20px;">
+	<view class="user-section " style="padding-top:20px;">
 		<view class="user-info-box">
 			<view class="portrait-box">
 				<image class="portrait" src="{{avatarUrl}}"></image>

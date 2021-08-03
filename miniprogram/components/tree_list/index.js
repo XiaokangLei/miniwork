@@ -40,6 +40,11 @@ Component({
   },
 
   methods: {
+    isCard(e) {
+      this.setData({
+        isCard: e.detail.value
+      })
+    },
     tz(e) {
       console.log("../../pages/" + e.currentTarget.dataset.url + "?id=" + e.currentTarget.dataset.id)
       wx.navigateTo({
