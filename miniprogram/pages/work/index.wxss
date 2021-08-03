@@ -188,13 +188,13 @@
   margin-top: 20rpx;
   border-radius: 6px;
   padding-top: 10rpx;
-  background-color: #fff;
+  background-color: rgb(216, 215, 215);
   margin-bottom: 120rpx;
 }
 
 .main2 {
   min-height: auto;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .dis2 {

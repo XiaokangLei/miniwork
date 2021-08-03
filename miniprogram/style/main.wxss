@@ -2235,12 +2235,20 @@ button.icon.lg {
 	overflow: hidden;
 }
 
-.cu-card>.cu-item {
+/* .cu-card>.cu-item {
 	display: block;
 	background-color: var(--white);
 	overflow: hidden;
 	border-radius: 10rpx;
 	margin: 30rpx;
+} */
+
+.cu-card>.cu-item {
+	display: block;
+	background-color: var(--white);
+	overflow: hidden;
+	border-radius: 20rpx;
+	margin: 12rpx 20rpx;
 }
 
 .cu-card>.cu-item.shadow-blur {
@@ -2323,10 +2331,10 @@ button.icon.lg {
 }
 
 .cu-card.article>.cu-item .title {
-	font-size: 30rpx;
-	font-weight: 900;
+	font-size: 32rpx;
+	font-weight: 800;
 	color: var(--black);
-	line-height: 100rpx;
+	line-height: 80rpx;
 	padding: 0 30rpx;
 }
 
@@ -2339,7 +2347,7 @@ button.icon.lg {
 	width: 240rpx;
 	height: 6.4em;
 	margin-right: 20rpx;
-	border-radius: 6rpx;
+	border-radius: 8rpx;
 }
 
 .cu-card.article>.cu-item .content .desc {

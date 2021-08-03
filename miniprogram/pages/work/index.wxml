@@ -11,7 +11,7 @@
 </scroll-view> -->
 
 
-<view class="main">
+<view class="main bg-white">
 	<swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
 		duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
 		<swiper-item wx:for="{{swiperList}}" wx:key="ids" class="{{cardCur==index?'cur':''}}" bindtap="tz_swiper"
@@ -74,20 +74,22 @@
 					</navigator>
 				</scroll-view>
 			</view> -->
-			<view class="study_list">
+			<!-- <view class="study_list"> -->
 				<list list="{{list}}" loding="{{loding}}"></list>
-			</view>
+			<!-- </view> -->
+			
+			
 		</van-tab>
 		<!-- 热招 -->
 		<van-tab title="热招" title-style="font-size: 16px;">
-			<view class="study_list">
+			<!-- <view class="study_list"> -->
 				<list list="{{rb_list}}" phb="{{true}}" loding="{{loding}}"></list>
-			</view>
+			<!-- </view> -->
 		</van-tab>
 		<van-tab title="倒计时" title-style="font-size: 16px;">
-			<view class="study_list">
+			<!-- <view class="study_list"> -->
 				<list list="{{cutdown_list}}" loding="{{loding}}"></list>
-			</view>
+			<!-- </view> -->
 		</van-tab>
 
 		<!-- 宣讲会 -->
