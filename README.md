@@ -41,7 +41,7 @@
 
 ### 说明
 
-- 若无法查看图片，请移步至gitee或者博客：
+- 若无法查看图片，请移步至gitee或者博客：https://gitee.com/lxk2020/miniwork
 
 ### 1、下载导入
 
