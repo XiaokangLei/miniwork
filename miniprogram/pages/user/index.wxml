@@ -1,12 +1,9 @@
 
 <view class="user">
-
-	
-
 	<view class="cu-modal show" wx:if="{{show}}">
 		<view class="cu-dialog">
 			<view class="cu-bar bg-white justify-end">
-				<view class="content">微信登录</view>
+				<view class="content">授权访问</view>
 				<view class="action" bindtap="hideModal">
 					<text class="cuIcon-close text-red"></text>
 				</view>
@@ -22,8 +19,8 @@
 			</view>
 			<view class="cu-bar bg-white ">
 				<view class="actic">
-					<button class="cu-btn bg_kl3" bindtap="hideModal">取消</button>
-					<button bindtap="getUserProfile" size="default" class="cu-btn b_kl4">确定</button>
+					<button class="cu-btn bg-grey" bindtap="hideModal">取消</button>
+					<button bindtap="getUserProfile" size="default" class="cu-btn bg-blue">确定</button>
 				</view>
 			</view>
 		</view>

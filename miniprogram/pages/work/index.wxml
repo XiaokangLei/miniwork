@@ -115,7 +115,7 @@
 		</van-tab>
 	</van-tabs>
 	<!-- 底部提示&Action -->
-	<view style="padding-bottom: calc(env(safe-area-inset-bottom)/2);">
+	<view style="padding-bottom: calc(env(safe-area-inset-bottom)/2);" wx:if="{{!loding}}">
 		<van-divider contentPosition="center">到底啦，更多数据请查看其他模块</van-divider>
 	</view>
 </view>
