@@ -36,7 +36,7 @@
     "minifyWXSS": true,
     "showES6CompileOption": false
   },
-  "appid": "wx7de5936e7a323506",
+  "appid": "wx6526ac9f2471a0b9",
   "projectname": "miniwork",
   "libVersion": "2.18.1",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",

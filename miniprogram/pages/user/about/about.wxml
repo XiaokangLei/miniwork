@@ -10,6 +10,16 @@
 </view>
 
 <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+	<view class='text-center margin-bottom text-xl  text-green'>后续更新计划</view>
+	<view class='text-content'>
+		<view>1、8月份上线评论、搜索、薪资待遇和历史版本模块；</view>
+		<view>2、改造刷题模块，改造[我的]UI；</view>
+		<view>3、数据更新，每日更新校招内容，每周更新笔试题目和面试经验。</view>
+		<view>4、9月份代码规范，云函数整合，完善部署文档。</view>
+	</view>
+</view>
+
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
 	<view class='text-center margin-bottom text-xl  text-green'>感谢</view>
 	<view class='text-content'>
 		<view class='text-center'>ColorUI</view>
