@@ -13,9 +13,9 @@
   position: relative;
   display: block;
   height: auto;
-  margin: 0 auto 10rpx;
+  margin: 0 auto 6rpx;
   text-align: center;
-  font-size: 40rpx;
+  font-size: 50rpx;
 }
 
 .index_tb {
@@ -41,7 +41,8 @@
 }
 
 .xzcg {
-  color: #d69c63
+  /* color: #d69c63 */
+  color: #3963BC
 }
 
 .wz1 {
@@ -49,7 +50,25 @@
 }
 
 .tab_color {
-  background: linear-gradient(to top right, #f4c998, #d69c63);
+  /* background: linear-gradient(to top right, #f4c998, #d69c63); */
+  background: linear-gradient(to top right, #5f85ee, #497ceb);
+  color: #fff;
+  width: 100rpx;
+  position: absolute;
+  display: block;
+  height: auto;
+  margin: 0 auto 10rpx;
+  text-align: center;
+  font-size: 40rpx;
+  top: -35rpx;
+  z-index: 1;
+  left: 0;
+  right: 0;
+}
+
+.tab_color_light {
+  /* background: linear-gradient(to top right, #f4c998, #d69c63); */
+  background: linear-gradient(to top right, #aabcf0, #94b2f3);
   color: #fff;
   width: 100rpx;
   position: absolute;
