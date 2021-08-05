@@ -114,17 +114,18 @@ Component({
           ls_list: res
         })
       })
-      // api.GET_press_top.then(res => {
-      //   this.setData({
-      //     tz_list: res
-      //   })
-      // })
       // 获取首页顶部swiper数据
       api.GET_swiper.then(res => {
         this.setData({
           swiperList: res
         })
       })
+      // 获取置顶，占坑，待开发
+      // api.GET_press_top.then(res => {
+      //   this.setData({
+      //     top_list: res
+      //   })
+      // })
     },
     tz_swiper(e) {
       console.log(this.data.swiperList)
