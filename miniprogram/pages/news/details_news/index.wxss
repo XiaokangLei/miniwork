@@ -34,10 +34,7 @@ code {
   position: fixed;
   bottom: 0px;
   width: 100%;
-
   background-color: red;
-
-
 }
 
 .de_Img {
@@ -58,9 +55,8 @@ image {
   display: flex;
   color: #fff;
   padding: 5px 0px;
-  background: #3963BC;
+  /* background: #3963BC; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
-
   z-index: 100;
 }
 
@@ -103,7 +99,6 @@ image {
 }
 
 .search-index {
-
   opacity: .5;
 }
 
@@ -129,7 +124,6 @@ image {
   width: 15%;
   display: flex;
   /* border-left: 1px solid red; */
-
   text-align: center;
 }
 
@@ -143,7 +137,6 @@ image {
 
 .btn1 {
   font-size: 50rpx;
-
   background: transparent;
   color: #d69c63;
   padding: 0px;
@@ -183,7 +176,6 @@ image {
 }
 
 .fenweix button {
-
   width: auto !important;
   height: auto;
   background: transparent;
@@ -230,12 +222,10 @@ image {
   font-family: PingFang;
   padding-bottom: 60px;
   padding-top: 0px;
-
 }
 
 .home-ggtp {
   height: 81px;
-
   margin: 0px 10px;
   border-radius: 6px;
   margin-bottom: 15px;
@@ -254,7 +244,6 @@ image {
 .home-list-bottom>view:nth-child(2) {
   width: 55px;
   height: 21px;
-
   background: rgb(246 150 4);
   border: 1px solid rgb(246 150 4);
   border-radius: 13px;
@@ -262,11 +251,9 @@ image {
   text-align: center;
   margin: 5px;
   margin-top: 7px;
-
 }
 
 .home-list-bottom>view:nth-child(1) {
-
   height: 26px;
   display: flex;
   color: #999999;
@@ -275,8 +262,6 @@ image {
   margin: 6px;
   padding-top: 2.5px;
   font-family: PingFang;
-
-
 }
 
 .home-list-bottom>view:nth-child(1)>view:nth-child(1) {
@@ -299,8 +284,6 @@ image {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-
-
 }
 
 .home-list {
@@ -309,10 +292,7 @@ image {
   margin-top: 14px;
   padding-bottom: 9px;
   border-bottom: 1px solid rgba(230, 230, 230, 1);
-
 }
-
-
 
 .home-list-left {
   position: relative;
@@ -341,7 +321,6 @@ image {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
 }
 
 .m2 {
@@ -355,8 +334,6 @@ image {
 .home-jcly {
   background-color: #fff;
   padding-bottom: 30rpx;
-
-
 }
 
 .line-tree {
@@ -384,7 +361,6 @@ image {
   line-height: initial;
   font-size: .85rem;
   color: rgba(153, 153, 153, 1);
-
 }
 
 .language-css {
@@ -421,7 +397,6 @@ image {
 
 .tille-1 {
   font-size: 14px;
-
   display: inline-block;
   padding-left: 10px;
   color: #ffffff;
@@ -439,5 +414,4 @@ image {
   right: 20px;
   bottom: 90px;
   color: #fff;
-
 }

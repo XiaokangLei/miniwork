@@ -42,7 +42,7 @@
 		<mp-html showLanguageName="{{true}}" content="{{html}}" selectable="{{true}}" />
 	</view>
 	<view class="dbu">
-		<view class="search-form search-round search-index " bindtap="tz" data-id="{{xw_list._id}}"
+		<view class="search-form search-round search-index bg-grey light" bindtap="tz" data-id="{{xw_list._id}}"
 			data-url="user/note/add_note/index">
 			<text class="cuIcon-write text-bold text-lg "> </text>
 			<input disabled="{{true}}" type="text" placeholder="添加笔记" confirm-type="search" placeholder-style="color:#000"
@@ -52,13 +52,13 @@
 			<van-icon name="star" size="28px" color="orange" />
 		</view>
 		<view bindtap="statr_sc" data-id="collect" wx:else>
-			<van-icon name="star-o" size="28px" />
+			<van-icon name="star-o" size="28px" color="grey" />
 		</view>
 		<view bindtap="statr_sc" data-id="statr" wx:if="{{dz_show}}">
 			<van-icon name="good-job" size="28px" color="orange" />
 		</view>
 		<view bindtap="statr_sc" data-id="statr" wx:else>
-			<van-icon name="good-job-o" size="28px" />
+			<van-icon name="good-job-o" size="28px" color="grey" />
 		</view>
 	</view>
 	<view class="bj">
