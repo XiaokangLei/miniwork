@@ -122,7 +122,7 @@ image {
 }
 
 .dbu>view {
-  width: 15%;
+  width: 10%;
   display: flex;
   /* border-left: 1px solid red; */
   text-align: center;
@@ -137,13 +137,14 @@ image {
 }
 
 .btn1 {
+  margin:0rpx 6rpx -2rpx -8rpx;
   font-size: 50rpx;
   background: transparent;
   color: #d69c63;
-  padding: 0px;
-  padding-top: 4px;
+  padding: 0rpx;
+  padding-top: 0rpx;
   width: 100% !important;
-  border-radius: 98rpx;
+  /* border-radius: 98rpx; */
 }
 
 .fenweix>view:nth-child(2) {
@@ -409,7 +410,7 @@ image {
 .bj {
   /* background: linear-gradient(to top, #f4c998, #d69c63); */
   /* background: linear-gradient(to top, #1D4259, #3963BC); */
-  background: linear-gradient(to top, #0081ff, #1cbbb4);
+  /* background: linear-gradient(to top, #0081ff, #1cbbb4); */
   /* background: #cfc7c7; */
   width: 80rpx;
   height: 80rpx;

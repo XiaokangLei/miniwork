@@ -1,5 +1,6 @@
 // miniprogram/pages/details/index.js
 import envId from "../../../utils/config.js"
+const api = require('../../../utils/api.js');
 const db = wx.cloud.database({
   env: envId.envId
 })
@@ -18,13 +19,28 @@ Page({
     html: "",
     sc_show: false,
     dz_show: false,
-    fx_show: true
+    fx_show: true,
+    commentContent: "",
+    commentPage: 1,
+    commentList: [],
+    placeholder: "评论/内推...",
+    focus: false,
+    commentId: "",
+    isFocus: false,
   },
   top() {
     wx.pageScrollTo({
       scrollTop: 0,
       duration: 300
     })
+  },
+  // input聚焦时
+  onInputFocus() {
+    this.setData({
+      isFocus: true
+    });
+    console.log("9-9-9-9-9-9-9-9-9-9-9-9-")
+    console.log(this.data.isFocus)
   },
 
   initial: function (id) {
@@ -75,8 +91,18 @@ Page({
       url: "../../../pages/" + e.currentTarget.dataset.url + "?wzid=" + e.currentTarget.dataset.id
     })
   },
+  showModal(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
+  },
+  hideModal(e) {
+    this.setData({
+      modalName: null
+    })
+  },
   statr_sc(e) {
-    
+
     let openid = wx.getStorageSync("openid")
     if (openid) {
       let that = this
@@ -168,7 +194,7 @@ Page({
 
     return {
       title: this.data.xw_list.tille,
-   
+
       imageUrl: this.data.xw_list.img
     }
   },
@@ -208,15 +234,211 @@ Page({
    */
   onPullDownRefresh: function () {
 
+
+
+  },
+
+  
+
+  commentInput: function (e) {
+    this.setData({
+      commentContent: e.detail.value
+    })
+  },
+
+    /**
+   * 评论 new
+   */
+  submitCommend: async function (e) {
+    if(this.data.showLogin){
+      wx.showLoading({
+        title: '请先授权...',
+      })
+      setTimeout(() => {
+        wx.hideLoading();
+     }, 1500);
+    }
+    else{
+      let that = this
+      let commentPage = 1
+      let content = that.data.commentContent;
+      if (content == undefined || content.length == 0) {
+        wx.showToast({
+          title: '请输入内容',
+          icon: 'none',
+          duration: 1500
+        })
+        return
+      }
+      // 提交评论的提示
+      wx.showToast({
+        title: '提交评论~',
+        icon: 'loading',
+        duration: 3000,
+        success: async function(){
+          let checkResult = await api.checkPostComment(content)
+          if (!checkResult.result) {
+            wx.showToast({
+              title: '评论内容存在敏感信息',
+              icon: 'none',
+              duration: 2000
+            })
+            return
+          }
+          //验证是否是VIP
+          let isVip = false
+          if (that.data.commentId === "") {
+            // let res = await api.getMemberInfo(app.globalData.openid)
+            // if (res.data.length > 0) {
+            //   isVip = res.data[0].level == 5
+            // }
+            var data = {
+              postId: that.data.xw_list._id,
+              // cNickName: that.data.userInfo.nickName,
+              // cAvatarUrl: that.data.userInfo.avatarUrl,
+              cOpenId: app.globalData.openid,
+              timestamp: new Date().getTime(),
+              // createDate: util.formatTime(new Date()),
+              comment: content,
+              childComment: [],
+              flag: 1,
+              // isVip: isVip
+            }
+            await api.addPostComment(data, '')
+          } else {
+            // let res = await api.getMemberInfo(app.globalData.openid)
+            // if (res.data.length > 0) {
+            //   isVip = res.data[0].level == 5
+            // }
+            var childData = [{
+              cOpenId: app.globalData.openid,
+              // cNickName: that.data.userInfo.nickName,
+              // cAvatarUrl: that.data.userInfo.avatarUrl,
+              timestamp: new Date().getTime(), //new Date(),
+              // createDate: util.formatTime(new Date()),
+              comment: content,
+              // tNickName: that.data.toName,
+              // tOpenId: that.data.toOpenId,
+              flag: 1,
+              // isVip: isVip
+            }]
+            await api.addPostChildComment(that.data.commentId, that.data.xw_list._id, childData, '')
+          }
+      
+          let commentList = await api.getPostComments(commentPage, that.data.xw_list._id)
+          console.log('_________________________________________________________')
+          console(commentList)
+          if (commentList.data.length === 0) {
+            that.setData({
+              nomore: true
+            })
+            if (commentPage === 1) {
+              that.setData({
+                nodata: true
+              })
+            }
+          } else {
+            let xw_list = that.data.xw_list;
+            xw_list.totalComments = xw_list.totalComments + 1
+            that.setData({
+              isFocus:false,
+              commentPage: commentPage + 1,
+              commentList: commentList.data,
+              commentContent: "",
+              nomore: false,
+              nodata: false,
+              xw_list: xw_list,
+              commentId: "",
+              placeholder: "评论/内推...",
+              focus: false,
+              toName: "",
+              toOpenId: ""
+            })
+          }
+      
+          wx.showToast({
+            title: '评论成功',
+            icon: 'success',
+            duration: 500
+          })
+        }
+      })
+     
+    }
+
+  },
+
+    /**
+   * 失去焦点时
+   * @param {*} e 
+   */
+  onReplyBlur: function (e) {
+    let that = this;
+    const text = e.detail.value.trim();
+    if (text === '') {
+      that.setData({
+        isFocus: false,
+        commentId: "",
+        placeholder: "评论/内推...",
+        toName: ""
+      });
+    }
+  },
+
+  /**
+   * 点击评论内容回复
+   */
+  focusComment: function (e) {
+    let that = this;
+    let name = e.currentTarget.dataset.name;
+    let commentId = e.currentTarget.dataset.id;
+    let openId = e.currentTarget.dataset.openid;
+
+    that.setData({
+      commentId: commentId,
+      placeholder: "回复" + name + ":",
+      focus: true,
+      toName: name,
+      toOpenId: openId
+    });
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: async function () {
+    wx.showLoading({
+      title: '加载中...',
+    })
+    try {
+      let that = this;
+      if (that.data.nomore === true)
+        return;
 
+      let page = that.data.commentPage;
+      console.log('-----------------' + page)
+      let commentList = await api.getPostComments(page, that.data.xw_list._id)
+      console.log(commentList.data)
+      if (commentList.data.length === 0) {
+        that.setData({
+          nomore: true
+        })
+        if (page === 1) {
+          that.setData({
+            nodata: true
+          })
+        }
+      } else {
+        that.setData({
+          commentPage: page + 1,
+          commentList: that.data.commentList.concat(commentList.data),
+        })
+      }
+    } catch (err) {
+      console.info(err)
+    } finally {
+      wx.hideLoading()
+    }
   },
-
-
 
 })
