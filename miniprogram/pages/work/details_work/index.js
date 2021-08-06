@@ -336,7 +336,6 @@ Page({
               comment: content,
               childComment: [],
               flag: 1,
-              // isVip: isVip
             }
             await api.addPostComment(data, '')
           } else {
@@ -346,19 +345,18 @@ Page({
             // }
             var childData = [{
               cOpenId: app.globalData.openid,
-              // cNickName: that.data.userInfo.nickName,
-              // cAvatarUrl: that.data.userInfo.avatarUrl,
+              cNickName: that.data.nickName,
+              cAvatarUrl: that.data.avatarUrl,
               timestamp: new Date().getTime(), //new Date(),
-              // createDate: util.formatTime(new Date()),
+              createDate: time.formatTime(new Date()),
               comment: content,
-              // tNickName: that.data.toName,
-              // tOpenId: that.data.toOpenId,
+              tNickName: that.data.toName,
+              tOpenId: that.data.toOpenId,
               flag: 1,
               // isVip: isVip
             }]
             await api.addPostChildComment(that.data.commentId, that.data.xw_list._id, childData, '')
           }
-
           let commentList = await api.getPostComments(commentPage, that.data.xw_list._id)
           if (commentList.data.length === 0) {
             that.setData({
