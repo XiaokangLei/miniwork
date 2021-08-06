@@ -1,48 +1,44 @@
+<!-- 顶部 加载中  -->
 <view class="cu-load bg-self {{!isLoad?'loading':'over'}}" wx:if="{{loding}}"></view>
 
+<!-- 文本加载中 骨架样式 -->
 <view style="background-color: #fff;padding: 20px;" wx:if="{{loding}}">
 	<van-skeleton title row="3" wx:if="{{loding}}" wx:for="{{5}}" wx:key="this" />
 </view>
 
 <view class="de-main" wx:if="{{!loding}}">
+	<!-- 标题 -->
 	<view class="detail_bg">
 		<view class="detail-tl">
 			{{ xw_list.tille}}
 		</view>
-
+		<!-- 副标题-时间 -->
 		<view>
 			<view class="detail-sj">
 				<view>时间：{{xw_list.add_time}}</view>
-				<!-- <view>{{xw_list.type}}</view> -->
 			</view>
 		</view>
-
+		<!-- 点赞、收藏和浏览 -->
 	</view>
 	<view class='text-gray text-lg text-right '>
-		<van-icon name="good-job" size="18px" />
+		<van-icon name="good-job" size="18px" color="pink" />
 		<text decode>{{xw_list.statr}}&nbsp;&nbsp;</text>
-		<van-icon name="star" size="18px" />
+		<van-icon name="star" size="18px" color="orange" />
 		<text decode>{{xw_list.collect}}&nbsp;&nbsp;</text>
-		<van-icon name="fire" size="18px" />
+		<van-icon name="fire" size="18px" color="red" />
 		<text decode>{{xw_list.browse}}&nbsp;&nbsp;</text>
 	</view>
+	<!-- 胶囊式展示数据来源 -->
 	<view class="home-jcly">
 		<view class="cu-capsule">
-			<view class="cu-tag bg-gradual-tree">
-				数据来源
-			</view>
-			<view class="cu-tag line-tree">
-				{{xw_list.ly||'其他'}}
-			</view>
+			<view class="cu-tag bg-gradual-blue">数据来源</view>
+			<view class="cu-tag line-blue">{{xw_list.ly||'网络'}}</view>
 		</view>
-
-
 	</view>
-
+	<!-- 展示html格式的校招内容 -->
 	<view class="detil">
 		<mp-html showLanguageName="{{true}}" content="{{html}}" selectable="{{true}}" />
 	</view>
-
 	<view class="dbu">
 		<!-- 评论 -->
 		<view class="search-form search-round search-index " maxlength="300" cursor-spacing="10" data-id="{{xw_list._id}}"
@@ -52,12 +48,10 @@
 				value="{{commentContent}}" placeholder-style="color:#39b54a" placeholder="{{placeholder}}" focus="{{focus}}"
 				bindblur="onReplyBlur" />
 		</view>
-
 		<!-- 笔记 -->
 		<view bindtap="tz" data-id="{{xw_list._id}}" data-url="user/note/add_note/index" wx:if="{{!isFocus}}">
 			<van-icon name="edit" size="28px" color="grey" />
 		</view>
-
 		<!-- 收藏/取消 -->
 		<view bindtap="statr_sc" data-id="collect" wx:if="{{sc_show}}">
 			<van-icon name="star" size="28px" color="orange" />
@@ -72,11 +66,9 @@
 		<view bindtap="statr_sc" data-id="statr" wx:else>
 			<van-icon name="good-job-o" size="28px" color="grey" />
 		</view>
-
 		<!-- 发送评论 -->
 		<button class='cu-btn bg-green shadow-blur' style="height:8vw;width: 16vw;margin-right: 8rpx;"
 			bindtap="submitCommend" wx:if="{{isFocus}}">发送</button>
-
 	</view>
 
 	<!-- 评论列表 -->
@@ -138,6 +130,6 @@
 <view class="bj">
 	<!-- 分享 -->
 	<button class="btn1" open-type="share" data-index="1" catchtap="share">
-		<van-icon name="share-o" size="28px" color="grey" open-type="share" data-index="1"> </van-icon>
+		<van-icon name="share-o" size="30px" color="orange" open-type="share" data-index="1"> </van-icon>
 	</button>
 </view>
