@@ -58,9 +58,8 @@ function checkPostComment(content) {
 function getMemberInfo(openId) {
   return db.collection('user')
     .where({
-      openId: openId
+      _openId: openId
     })
-    .limit(1)
     .get()
 }
 

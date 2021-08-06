@@ -136,6 +136,10 @@ image {
   padding-top: 22rpx;
 }
 
+.actic button {
+  width: 40%;
+}
+
 .btn1 {
   margin:0rpx 6rpx -2rpx -8rpx;
   font-size: 50rpx;

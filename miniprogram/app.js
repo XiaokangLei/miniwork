@@ -107,6 +107,7 @@ App({
     db.collection('user').get({
     success: function (res) {
       if (res.data.length > 0) {
+        console.log('*************************************')
         console.log(res.data)
         wx.setStorageSync('userid', res.data[0]._id)
         wx.setStorageSync('openid', res.data[0]._openid)
@@ -115,9 +116,10 @@ App({
             endtime: util.getCurrentTime()
           }
         })
-        wx.setStorageSync('access_token', res.data[0].gitee_token);
+        // wx.setStorageSync('access_token', res.data[0].gitee_token);
         // wx.setStorageSync('access_token', res.data[0].gitee_token);
       } else {
+        console.log('##############################################')
         db.collection('user').add({
           data: {
             addtime: util.getCurrentTime()

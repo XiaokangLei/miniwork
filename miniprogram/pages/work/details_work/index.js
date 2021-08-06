@@ -1,6 +1,7 @@
 // miniprogram/pages/details/index.js
 import envId from "../../../utils/config.js"
 const api = require('../../../utils/api.js');
+const time = require('../../../utils/time.js')
 const db = wx.cloud.database({
   env: envId.envId
 })
@@ -27,6 +28,17 @@ Page({
     focus: false,
     commentId: "",
     isFocus: false,
+    // 用户头像，默认为改图片
+    avatarUrl: "https://s1.ax1x.com/2020/07/28/aAdel6.jpg",
+    nickName: "匿名用户",
+    // 是否授权
+    isLogin: false,
+    show: false,
+  },
+  pageLifetimes: {
+    show: function () {
+      this.sq()
+    },
   },
   top() {
     wx.pageScrollTo({
@@ -39,8 +51,6 @@ Page({
     this.setData({
       isFocus: true
     });
-    console.log("9-9-9-9-9-9-9-9-9-9-9-9-")
-    console.log(this.data.isFocus)
   },
 
   initial: function (id) {
@@ -114,14 +124,12 @@ Page({
       })
       let data = this.data.xw_list
       data.press_id = data._id
-      console.log(e.currentTarget.dataset.id)
       wx.cloud.callFunction({
         name: e.currentTarget.dataset.id,
         data: {
           press: this.data.xw_list,
         },
       }).then(res => {
-        console.log(res.result)
         wx.showToast({
           title: res.result,
           duration: 1000,
@@ -148,12 +156,10 @@ Page({
         statr: 10
       }
     }).then(res => {
-      console.log(res)
       this.initial(this.data.id)
     })
   },
   onLoad: function (options) {
-    console.log(options.id)
     this.setData({
       id: options.id
     })
@@ -173,11 +179,8 @@ Page({
         dz_show: res.result.statr
       })
     })
-
-
   },
   onShareAppMessage: function (res) {
-    console.log(this.data.xw_list.img)
     this.setData({
       fx_show: false
     })
@@ -185,16 +188,12 @@ Page({
       title: this.data.xw_list.tille,
       path: '/pages/index/index?id=' + this.data.id + "&share=true",
       imageUrl: this.data.xw_list.img || "",
-
     }
   },
 
   onShareTimeline: function (res) {
-    console.log(res)
-
     return {
       title: this.data.xw_list.tille,
-
       imageUrl: this.data.xw_list.img
     }
   },
@@ -212,6 +211,7 @@ Page({
     this.setData({
       fx_show: true
     })
+    this.sq()
   },
 
   /**
@@ -234,31 +234,65 @@ Page({
    */
   onPullDownRefresh: function () {
 
-
-
   },
-
-  
 
   commentInput: function (e) {
     this.setData({
       commentContent: e.detail.value
     })
   },
+  // 获取用户信息
+  getUserProfile() {
+    var that = this
+    let userid = wx.getStorageSync('userid')
+    let openid = wx.getStorageSync('openid')
 
-    /**
+    app.userInfo()
+    wx.getUserProfile({
+      desc: '展示用户信息',
+      success: (res) => {
+        db.collection('user').doc(userid).update({
+          data: {
+            avatarUrl: res.userInfo.avatarUrl,
+            nickName: res.userInfo.nickName,
+          }
+        }).then(res => {
+          this.setData({
+            show: false
+          })
+        })
+      }
+    })
+  },
+  hideModal() {
+    this.setData({
+      show: false
+    })
+  },
+  sq() {
+    let that = this
+    db.collection('user').get().then(res => {
+      if (res.data[0].avatarUrl) {
+        that.setData({
+          avatarUrl: res.data[0].avatarUrl,
+          nickName: res.data[0].nickName,
+          userin: res.data[0],
+        })
+      } else {
+        this.setData({
+          show: true
+        })
+      }
+    })
+  },
+  /**
    * 评论 new
    */
   submitCommend: async function (e) {
-    if(this.data.showLogin){
-      wx.showLoading({
-        title: '请先授权...',
-      })
-      setTimeout(() => {
-        wx.hideLoading();
-     }, 1500);
-    }
-    else{
+    await this.sq()
+    if (this.data.show) {
+      await this.getUserProfile();
+    } else {
       let that = this
       let commentPage = 1
       let content = that.data.commentContent;
@@ -275,7 +309,7 @@ Page({
         title: '提交评论~',
         icon: 'loading',
         duration: 3000,
-        success: async function(){
+        success: async function () {
           let checkResult = await api.checkPostComment(content)
           if (!checkResult.result) {
             wx.showToast({
@@ -294,11 +328,11 @@ Page({
             // }
             var data = {
               postId: that.data.xw_list._id,
-              // cNickName: that.data.userInfo.nickName,
-              // cAvatarUrl: that.data.userInfo.avatarUrl,
+              cNickName: that.data.nickName,
+              cAvatarUrl: that.data.avatarUrl,
               cOpenId: app.globalData.openid,
               timestamp: new Date().getTime(),
-              // createDate: util.formatTime(new Date()),
+              createDate: time.formatTime(new Date()),
               comment: content,
               childComment: [],
               flag: 1,
@@ -324,10 +358,8 @@ Page({
             }]
             await api.addPostChildComment(that.data.commentId, that.data.xw_list._id, childData, '')
           }
-      
+
           let commentList = await api.getPostComments(commentPage, that.data.xw_list._id)
-          console.log('_________________________________________________________')
-          console(commentList)
           if (commentList.data.length === 0) {
             that.setData({
               nomore: true
@@ -341,7 +373,7 @@ Page({
             let xw_list = that.data.xw_list;
             xw_list.totalComments = xw_list.totalComments + 1
             that.setData({
-              isFocus:false,
+              isFocus: false,
               commentPage: commentPage + 1,
               commentList: commentList.data,
               commentContent: "",
@@ -355,7 +387,6 @@ Page({
               toOpenId: ""
             })
           }
-      
           wx.showToast({
             title: '评论成功',
             icon: 'success',
@@ -363,12 +394,9 @@ Page({
           })
         }
       })
-     
     }
-
   },
-
-    /**
+  /**
    * 失去焦点时
    * @param {*} e 
    */
@@ -384,7 +412,6 @@ Page({
       });
     }
   },
-
   /**
    * 点击评论内容回复
    */
@@ -393,7 +420,6 @@ Page({
     let name = e.currentTarget.dataset.name;
     let commentId = e.currentTarget.dataset.id;
     let openId = e.currentTarget.dataset.openid;
-
     that.setData({
       commentId: commentId,
       placeholder: "回复" + name + ":",
@@ -414,11 +440,8 @@ Page({
       let that = this;
       if (that.data.nomore === true)
         return;
-
       let page = that.data.commentPage;
-      console.log('-----------------' + page)
       let commentList = await api.getPostComments(page, that.data.xw_list._id)
-      console.log(commentList.data)
       if (commentList.data.length === 0) {
         that.setData({
           nomore: true

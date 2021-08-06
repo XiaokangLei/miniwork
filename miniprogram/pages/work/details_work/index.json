@@ -12,6 +12,7 @@
     "van-col": "@vant/weapp/col/index",
     "van-button": "@vant/weapp/button/index",
     "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-empty": "@vant/weapp/empty/index",
     "van-uploader": "@vant/weapp/uploader/index"
   }
 

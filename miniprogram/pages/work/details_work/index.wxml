@@ -45,11 +45,12 @@
 
 	<view class="dbu">
 		<!-- 评论 -->
-		<view class="search-form search-round search-index " maxlength="300" cursor-spacing="10"
-			data-id="{{xw_list._id}}" data-url="user/note/add_note/index">
+		<view class="search-form search-round search-index " maxlength="300" cursor-spacing="10" data-id="{{xw_list._id}}"
+			data-url="user/note/add_note/index">
 			<text class="cuIcon-write text-bold text-lg bg-grey light"> </text>
 			<input bindinput='commentInput' confirm-type="send" bindfocus="onInputFocus" name="inputComment"
-				value="{{commentContent}}" placeholder-style="color:#39b54a" placeholder="{{placeholder}}" focus="{{focus}}" bindblur="onReplyBlur" />
+				value="{{commentContent}}" placeholder-style="color:#39b54a" placeholder="{{placeholder}}" focus="{{focus}}"
+				bindblur="onReplyBlur" />
 		</view>
 
 		<!-- 笔记 -->
@@ -80,7 +81,7 @@
 
 	<!-- 评论列表 -->
 	<view class="bg-white margin-top-xs" id="the_id">
-	<!-- 评论数 -->
+		<!-- 评论数 -->
 		<view class="cu-bar bg-white">
 			<view class='action'>
 				<text class='cuIcon-titles text-orange '></text>
@@ -88,6 +89,7 @@
 			</view>
 		</view>
 		<!-- 评论内容 -->
+		<van-empty image="search" wx:if="{{commentList.length==0}}" description="抢占沙发" />
 		<view class="cu-list menu menu-avatar comment solids-top">
 			<view class="cu-item" wx:for="{{commentList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item"
 				data-idx="{{idx}}" data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}"
@@ -130,7 +132,6 @@
 
 	<!-- 弹出层：授权 -->
 	<!-- <template is="login" data="{{showLogin: showLogin}}"></template> -->
-
 
 </view>
 
