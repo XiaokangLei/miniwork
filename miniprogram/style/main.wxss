@@ -2643,7 +2643,7 @@ swiper.round-dot .wx-swiper-dot.wx-swiper-dot-active {
 }
 
 .card-swiper {
-	height: 360rpx !important;
+	height: 320rpx !important;
 }
 
 .card-swiper swiper-item {

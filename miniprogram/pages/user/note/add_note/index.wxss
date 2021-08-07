@@ -9,7 +9,7 @@
   height: 300px !important;
 }
 .ck_buttom {
-  background: linear-gradient(to top left, #f7ce9e, #d69c63);
+  background: linear-gradient(to top left, #2047b3, #3963BC);
   height: 40px;
   text-align: center;
   line-height: 40px;

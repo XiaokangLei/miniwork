@@ -1,12 +1,15 @@
 <view>
+<!-- loading -->
   <view wx:if="{{loding}}" class="loding">
     <van-loading />
     <view>小贝正在加急，请耐心等待 </view>
   </view>
+  <!-- 骨架屏加载动画 -->
   <view class="pd" wx:if="{{loding}}">
-    <van-skeleton title row="3" wx:for="{{3}}" wx:key="this" />
+    <van-skeleton title row="4" wx:for="{{3}}" wx:key="this" />
   </view>
-  <view class="cu-card article " wx:if="{{!loding}}" wx:for="{{list}}" wx:key="this" wx:index="index"
+  <!-- 卡片式展示 -->
+  <view class="cu-card article" wx:if="{{!loding}}" wx:for="{{list}}" wx:key="this" wx:index="index"
     wx:for-item="items" data-id="{{items._id}}" bindtap="tz" data-url="work/details_work/index" hover-class="item-hover"
     hover-stay-time="100">
     <view class="cu-item shadow ">

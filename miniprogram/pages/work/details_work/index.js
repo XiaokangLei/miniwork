@@ -319,13 +319,8 @@ Page({
             })
             return
           }
-          //验证是否是VIP
-          let isVip = false
+          // 评论文章
           if (that.data.commentId === "") {
-            // let res = await api.getMemberInfo(app.globalData.openid)
-            // if (res.data.length > 0) {
-            //   isVip = res.data[0].level == 5
-            // }
             var data = {
               postId: that.data.xw_list._id,
               cNickName: that.data.nickName,
@@ -338,11 +333,9 @@ Page({
               flag: 1,
             }
             await api.addPostComment(data, '')
-          } else {
-            // let res = await api.getMemberInfo(app.globalData.openid)
-            // if (res.data.length > 0) {
-            //   isVip = res.data[0].level == 5
-            // }
+          }
+          // 评论别人的评论（子评论） 
+          else {
             var childData = [{
               cOpenId: app.globalData.openid,
               cNickName: that.data.nickName,
@@ -353,7 +346,6 @@ Page({
               tNickName: that.data.toName,
               tOpenId: that.data.toOpenId,
               flag: 1,
-              // isVip: isVip
             }]
             await api.addPostChildComment(that.data.commentId, that.data.xw_list._id, childData, '')
           }
@@ -431,8 +423,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: async function () {
+    // 触底加载评论
     wx.showLoading({
-      title: '加载中...',
+      title: '加载评论...',
     })
     try {
       let that = this;

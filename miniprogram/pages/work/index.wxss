@@ -42,7 +42,7 @@
 .study_tag2 {
   color: #d69c63;
   border: 1px solid #d69c63;
-  border-left-color: #3963BC;
+  border-left-color: #6e95eb;
 }
 
 .as_list>view:nth-child(2) {

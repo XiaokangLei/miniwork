@@ -46,7 +46,7 @@
     <van-button disabled type="primary" color="linear-gradient(to top right, #f4c998 ,  #d69c63);">今日已签到</van-button>
   </view>
 
-  <view class="user_phb">
+  <view class="user_phb" wx:if="{{singDone||signinNow}}">
     <!-- <view class="sign_wz5">您已经签到{{userlist.length}}天</view> -->
     <view class="tille-1">
       签到排行榜

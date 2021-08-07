@@ -29,7 +29,8 @@ Page({
     // 当前精度
     longitude: "",
     yesDate: [], //此处应该是接口返回的数据，先模拟了一个
-    signinNow: false
+    signinNow: false,
+    singDone: false
   },
   // 签到
 
@@ -59,7 +60,10 @@ Page({
                 },
                 success: function (res) {
                   t.yesdate()
-                  console.log("")
+                  console.log("--------------------------")
+                  t.setData({
+                    singDone: true
+                  })
                   wx.showToast({
                     title: '签到成功',
                     icon: 'none',
