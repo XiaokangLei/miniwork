@@ -1,5 +1,6 @@
 // pages/work/search/index.js
 import envId from "../../../utils/config.js"
+import Dialog from '../../../miniprogram_npm/@vant/weapp/dialog/dialog';
 
 const db = wx.cloud.database({
   env: envId.envId
@@ -13,7 +14,8 @@ Page({
    */
   data: {
     searchContent: "",
-    lists: []
+    lists: [],
+    showTips: true
   },
 
   /**
@@ -87,23 +89,46 @@ Page({
     wx.showLoading({
       title: '搜索中...',
     })
-    let where = {}
-    where.mec = db.RegExp({
-      regexp: '.*' + that.data.searchContent,
-      options: 'i',
-    })
-    // 正则表达式搜索
-    db.collection('press')
-      .where(where)
-      .get({
-        success: res => {
-          that.setData({
-            lists: res.data
-          })
-        },
-        fail: err => {
-          console.log(err)
-        }
+    try {
+      let where = {}
+      where.mec = db.RegExp({
+        regexp: '.*' + that.data.searchContent,
+        options: 'i',
       })
+      // 正则表达式搜索
+      db.collection('press')
+        .where(where)
+        .get({
+          success: res => {
+            if (res.data.length > 0) {
+              that.setData({
+                lists: res.data,
+              })
+            } else {
+              that.setData({
+                lists:[],
+              })
+              Dialog.alert({
+                title: '温馨提示',
+                message: '未搜索到相关校招 请尝试其他关键词搜索',
+                theme: 'round-button',
+              }).then(() => {
+                // on close
+              });
+            }
+            that.setData({
+              showTips: false,
+            })
+          },
+          fail: err => {
+            console.log(err)
+          }
+        })
+    } catch (err) {
+      console.info(err)
+    } finally {
+      wx.hideLoading()
+    }
+
   }
 })
