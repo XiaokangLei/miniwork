@@ -68,6 +68,13 @@ Component({
     },
   },
   methods: {
+     // 跳转到搜索页面
+     jump_to_search: function (e) {
+      console.log(e.currentTarget.dataset.id)
+      wx.navigateTo({
+        url: "../work/" + e.currentTarget.dataset.url
+      })
+    },
     show_xl() {
       if (this.data.height == "auto") {
         this.setData({

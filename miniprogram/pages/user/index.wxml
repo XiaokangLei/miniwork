@@ -41,7 +41,7 @@
 		</view>
 	</view>
 
-	<view class="cu-list grid col-4 margin-xs no-border" style="background-color: #f8f8f8;">
+	<view class="cu-list grid col-4 margin-xs  sm-border" style="background-color: #f8f8f8;">
 		<view class="cu-item" wx:for="{{iconList}}" wx:key="idx">
 			<view bindtap="tz" data-a="{{item.data_page}}">
 				<view class="cuIcon-{{item.icon}} text-{{item.color}}">

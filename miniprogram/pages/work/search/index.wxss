@@ -1,0 +1,8 @@
+/* pages/work/search/index.wxss */
+.box {  
+  margin: 0rpx 0; 
+}
+
+.box view.cu-bar {
+  margin-top: 0rpx; 
+}

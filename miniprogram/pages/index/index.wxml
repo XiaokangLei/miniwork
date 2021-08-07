@@ -53,11 +53,12 @@
 	<view class="cu-bar tabbar bg-white shadow foot">
 		<view bindtap="tab_tz" data-id="1" class="action jk  text-gray {{id==1?'xzcg ':''}} " >
 			<view class="">
-				<span class="tab_icon iconfont icon-shangpin shadow" style="font-weight: 600;"></span>
+				<view class="cuIcon-discover" style="font-weight: 600;"></view>
 			</view> 资讯
 		</view>
 		<view bindtap="tab_tz" data-id="2" class="action jk text-gray {{id==2?'xzcg':''}}" >
-			<span class=" tab_icon iconfont  icon-ziliao "></span>
+			<!-- <span class=" tab_icon iconfont  icon-ziliao "></span> -->
+			<view class="cuIcon-form" style="font-weight: 600;"></view>
 			题库
 		</view>
 		<view bindtap="tab_tz" data-id="3" class="action add-action text-gray {{id==3?'xzcg':''}}" >
@@ -66,12 +67,12 @@
 			校招
 		</view>
 		<view class="action text-gray jk {{id==4?'xzcg':''}}" bindtap="tab_tz" data-id="4" >
-			<span class="tab_icon iconfont  icon-yunchucun"></span>
+			<!-- <span class="tab_icon iconfont  icon-yunchucun"></span> -->
+			<view class="cuIcon-circle" style="font-weight: 600;"></view>
 			内推
 		</view>
 		<view class="action text-gray jk {{id==5?'xzcg':''}}" bindtap="tab_tz" data-id="5" >
-			<view class="cuIcon-my" style="font-weight: 600;">
-			</view>
+			<view class="cuIcon-my" style="font-weight: 600;"></view>
 			我的
 		</view>
 	</view>

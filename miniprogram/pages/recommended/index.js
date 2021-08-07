@@ -16,7 +16,36 @@ Component({
    * 组件的初始数据
    */
   data: {
-    loading: true
+    loading: true,
+    iconList: [{
+      icon: 'favorfill',
+      color: 'yellow',
+      badge: 0,
+      name: '我的收藏',
+      data_page: "user/collect/index",
+      bindtap: "bindCollect"
+    }, {
+      icon: 'appreciatefill',
+      color: 'red',
+      badge: 0,
+      name: '我的点赞',
+      data_page: "user/star/index",
+      bindtap: "bindZan"
+    }, {
+      icon: 'noticefill',
+      color: 'orange',
+      badge: 0,
+      name: '我的题库',
+      data_page: "user/problem_list/index",
+      bindtap: "bindNotice"
+    }, {
+      icon: 'goodsfavor',
+      color: 'green',
+      badge: 0,
+      name: '我的笔记',
+      data_page: "user/note/index",
+      bindtap: "bindPoint"
+    }]
   },
   created() {
     this.post()

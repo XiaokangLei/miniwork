@@ -1,5 +1,7 @@
 
 <view class="main bg-white">
+	<view class="home-top">
+	</view>
 	<swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
 		duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
 		<swiper-item wx:for="{{swiperList}}" wx:key="ids" class="{{cardCur==index?'cur':''}}" bindtap="tz_swiper"
@@ -106,6 +108,10 @@
 	<view style="padding-bottom: calc(env(safe-area-inset-bottom)/2);" wx:if="{{!loding}}">
 		<van-divider contentPosition="center">到底啦，更多数据请查看其他模块</van-divider>
 	</view>
+
+	<view class="search bg-blue light" bindtap="jump_to_search" data-url="search/index">
+    <van-icon name="search" />
+  </view>
 </view>
 
 <wxs module="m1">

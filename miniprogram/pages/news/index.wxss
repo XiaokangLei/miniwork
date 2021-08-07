@@ -46,7 +46,7 @@
 .home-top {
   height: 135px;
   padding-top: 14px;
-  background: linear-gradient(to top, #2047b3, #3963BC);
+  background: linear-gradient(to top, #f7f7f7, #3963BC);
   width: 100%;
   position: absolute;
 }

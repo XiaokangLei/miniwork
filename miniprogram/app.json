@@ -17,8 +17,8 @@
     "pages/recommended/index",
     "pages/recommended/fl_problem/index",
     "pages/recommended/details_ans/index",
-    "pages/recommended/resume/index"
-    
+    "pages/recommended/resume/index",
+    "pages/work/search/index"
   ],
   "window": {
     "backgroundColor": "#f7f7f7",

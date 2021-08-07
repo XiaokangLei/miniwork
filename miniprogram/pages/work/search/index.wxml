@@ -1,0 +1,14 @@
+<!--pages/work/search/index.wxml-->
+<view class="box">
+  <!-- 搜索框和按钮 -->
+  <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input bindinput='searchInput' confirm-type="search" value="{{searchContent}}" type="text" placeholder="搜索图片、文章、视频" ></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-green light shadow-blur round" catchtap="submitSearch" style="width:100%;">搜索</button>
+    </view>
+  </view>
+
+</view>

@@ -65,6 +65,12 @@ Component({
     })
   },
   methods: {
+    jump_add_note: function (e) {
+      console.log(e.currentTarget.dataset.id)
+      wx.navigateTo({
+        url: "../../../pages/" + e.currentTarget.dataset.url
+      })
+    },
     sz() {
       wx.openSetting({
         success: function (res) {}

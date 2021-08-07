@@ -39,6 +39,29 @@
   overflow: hidden;
 }
 
+.search {
+  /* background: linear-gradient(to top, #75b7e0, #4e83f3); */
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  position: fixed;
+  right: 40rpx;
+  bottom: 150rpx;
+  color: #fff;
+  z-index: 100;
+  padding-left: 16rpx;
+  padding-top: 13rpx;
+  font-size: 25px;
+}
+
+.home-top {
+  height: 135px;
+  padding-top: 14px;
+  background: linear-gradient(to top, #f7f7f7, #3963BC);
+  width: 100%;
+  position: absolute;
+}
+
 .study_tag2 {
   color: #d69c63;
   border: 1px solid #d69c63;
