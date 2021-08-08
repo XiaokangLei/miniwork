@@ -6,7 +6,7 @@
     <view class="note_tille">{{items.title}}</view>
     <view class="note_ly">来自于:{{items.ly?items.ly:'用户添加'}}</view>
   </view>
-  <view class="note_add" bindtap="jump_add_note" data-url="user/note/add_note/index">
+  <!-- <view class="note_add" bindtap="jump_add_note" data-url="user/note/add_note/index">
     <van-icon name="plus" />
-  </view>
+  </view> -->
 </view>

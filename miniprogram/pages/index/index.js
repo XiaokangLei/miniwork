@@ -162,11 +162,12 @@ Page({
     if (this.data.id == 2) {
       return {
         path: '/pages/index/index?id_index=' + this.data.id,
-        imageUrl: "cloud://test-4gn9gu0ucc6657ba.7472-test-4gn9gu0ucc6657ba-1259429368/fenxiang.png",
+        imageUrl: "https://7465-test-4gn9gu0ucc6657ba-1304273986.tcb.qcloud.la/img/share_def.webp",
       }
     } else {
       return {
-        imageUrl: "cloud://test-4gn9gu0ucc6657ba.7472-test-4gn9gu0ucc6657ba-1259429368/fenxiang.png",
+        title:'获取校招资讯、内推，简历模板、在线刷题等',
+        imageUrl: "../../images/logo.jpg",
       }
     }
   }

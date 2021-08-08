@@ -60,7 +60,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: "添加笔记"
+      title: "笔记"
     })
     if (options.id) {
       this.initial(options.id)

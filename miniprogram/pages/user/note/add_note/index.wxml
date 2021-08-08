@@ -6,5 +6,5 @@
     <van-field wx:if="{{press_id}}" model:value="{{ly}}" label="来源" type="textarea" icon="share" autosize
       bind:click-icon="onClickIcon" />
   </van-cell-group>
-  <view class="ck_buttom" bindtap="add">添加笔记 </view>
+  <view class="ck_buttom" bindtap="add">确定 </view>
 </view>

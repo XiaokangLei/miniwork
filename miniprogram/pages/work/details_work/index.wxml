@@ -53,9 +53,9 @@
 				bindblur="onReplyBlur" />
 		</view>
 		<!-- 笔记 -->
-		<view bindtap="tz" data-id="{{xw_list._id}}" data-url="user/note/add_note/index" wx:if="{{!isFocus}}">
+		<!-- <view bindtap="tz" data-id="{{xw_list._id}}" data-url="user/note/add_note/index" wx:if="{{!isFocus}}">
 			<van-icon name="edit" size="28px" color="grey" />
-		</view>
+		</view> -->
 		<!-- 收藏/取消 -->
 		<view bindtap="statr_sc" data-id="collect" wx:if="{{sc_show}}">
 			<van-icon name="star" size="28px" color="orange" />
