@@ -7,7 +7,7 @@
 .user {
   background: #f8f8f8;
   width: 100%;
-  animation: fadeIn .9s;
+  animation: fadeIn .5s;
 }
 
 .header {
@@ -339,7 +339,7 @@ font-weight: 400!important;
 .dlo {
   color: #fff;
   background: linear-gradient(to top left, #f7ce9e, #d69c63);
-  animation: 1s fadeInLeft;
+  animation: 0.5s fadeInLeft;
   padding: 0px;
   height: auto;
   padding: 2px 20px;

@@ -174,7 +174,7 @@
   background: #f8f8f8;
   height: 99.5%;
   width: 100%;
-  animation: fadeIn .6s;
+  animation: fadeIn .5s;
   min-height: 99.5vh;
 }
 

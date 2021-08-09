@@ -17,7 +17,7 @@
 }
 
 .page-box {
-  animation: fadeIn .9s;
+  animation: fadeIn .5s;
 }
 
 .order .top .left {

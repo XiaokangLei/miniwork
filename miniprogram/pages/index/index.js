@@ -162,7 +162,7 @@ Page({
     if (this.data.id == 2) {
       return {
         path: '/pages/index/index?id_index=' + this.data.id,
-        imageUrl: "https://7465-test-4gn9gu0ucc6657ba-1304273986.tcb.qcloud.la/img/share_def.webp",
+        imageUrl: "../../images/logo.jpg",
       }
     } else {
       return {

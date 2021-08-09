@@ -87,7 +87,7 @@
 .study_bg {
   background-color: #d69c63;
   color: #fff;
-  animation: fadeIn 1s;
+  animation: fadeIn 0.5s;
 }
 
 .xl_show {
@@ -135,7 +135,7 @@
   background: #f8f8f8;
   height: 99.5%;
   width: 100%;
-  animation: fadeIn 1s;
+  animation: fadeIn 0.5s;
   min-height: 99.5vh;
 }
 
