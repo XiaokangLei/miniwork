@@ -1,8 +1,7 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
-// cloud.init({ env: process.env.Env })
 cloud.init({
-  env: 'product-2gy06ytxb826f95d'
+  env: process.env.Env
 })
 const Towxml = require('towxml');
 const db = cloud.database()
@@ -39,10 +38,11 @@ exports.main = async (event, context) => {
     case 'checkPostComment': {
       return checkPostComment(event)
     }
-    case 'addViewNum':{
+    case 'addViewNum': {
       return addViewNum()
     }
-    default: break
+    default:
+      break
   }
 }
 
@@ -87,7 +87,7 @@ async function addPostQrCode(event) {
 async function checkPostComment(event) {
 
   try {
-    console.log('待检测文本:'+event.content);
+    console.log('待检测文本:' + event.content);
     let result = await cloud.openapi.security.msgSecCheck({
       content: event.content
     })
@@ -167,7 +167,7 @@ async function addPostChildComment(event) {
   });
 
   if (process.env.author == event.comments[0].cOpenId) {
-    event.comments[0].cNickName = "楼主"
+    event.comments[0].cNickName = "小贝"
   }
 
   event.comments[0].flag = 0

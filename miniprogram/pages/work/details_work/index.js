@@ -319,13 +319,15 @@ Page({
             })
             return
           }
+          console.log('-------------------------------------')
+          console.log(that.data)
           // 评论文章
           if (that.data.commentId === "") {
             var data = {
               postId: that.data.xw_list._id,
               cNickName: that.data.nickName,
               cAvatarUrl: that.data.avatarUrl,
-              cOpenId: app.globalData.openid,
+              cOpenId: that.data.userin._openid,
               timestamp: new Date().getTime(),
               createDate: time.formatTime(new Date()),
               comment: content,
@@ -337,7 +339,7 @@ Page({
           // 评论别人的评论（子评论） 
           else {
             var childData = [{
-              cOpenId: app.globalData.openid,
+              cOpenId: that.data.userin._openid,
               cNickName: that.data.nickName,
               cAvatarUrl: that.data.avatarUrl,
               timestamp: new Date().getTime(), //new Date(),
