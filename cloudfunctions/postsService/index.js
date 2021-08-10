@@ -2,7 +2,7 @@
 const cloud = require('wx-server-sdk')
 // cloud.init({ env: process.env.Env })
 cloud.init({
-  env: 'test-4gn9gu0ucc6657ba'
+  env: 'product-2gy06ytxb826f95d'
 })
 const Towxml = require('towxml');
 const db = cloud.database()
@@ -110,9 +110,9 @@ async function addPostComment(event) {
 
   console.info("处理addPostComment")
   console.info(process.env.author)
-  if (process.env.author == event.commentContent.cOpenId) {
-    event.commentContent.cNickName = "作者"
-  }
+  // if (process.env.author == event.commentContent.cOpenId) {
+  //   event.commentContent.cNickName = "L."
+  // }
 
   // let task = db.collection('mini_posts').doc(event.commentContent.postId).update({
   //   data: {
@@ -167,7 +167,7 @@ async function addPostChildComment(event) {
   });
 
   if (process.env.author == event.comments[0].cOpenId) {
-    event.comments[0].cNickName = "作者"
+    event.comments[0].cNickName = "楼主"
   }
 
   event.comments[0].flag = 0
