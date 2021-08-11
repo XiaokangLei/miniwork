@@ -27,6 +27,48 @@
   margin-top: 22rpx;
 }
 
+.mentalList {
+  width: 100%;
+  height: 78rpx;
+  line-height: 78rpx;
+  padding-right: 20rpx;
+  border-radius: 12rpx;
+  margin: 30rpx 0;
+  overflow: hidden;
+  border: 1px solid #dddddd;
+}
+
+.mentalList .indexBox {
+  width: 70rpx;
+  height: 78rpx;
+  text-align: center;
+  line-height: 78rpx;
+  float: left;
+  background-color: #dddddd;
+  margin-right: 15rpx;
+}
+
+.mentalListActive {
+  width: 100%;
+  height: 78rpx;
+  line-height: 78rpx;
+  padding-right: 20rpx;
+  border-radius: 12rpx;
+  margin: 30rpx 0;
+  overflow: hidden;
+  border: 1px solid #0081ff;
+  color: #0081ff;
+}
+
+.mentalListActive .indexBox {
+  background-color: #0081ff;
+  color: #ffffff;
+  width: 70rpx;
+  height: 78rpx;
+  text-align: center;
+  line-height: 78rpx;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -39,12 +81,13 @@
   margin-left: -300rpx;
   margin-top: 200rpx;
   background: #f8f8f8;
+  text-align: center;
 }
 
 .question {
   font-size: 36rpx;
   letter-spacing: 1px;
-  text-align: justify;
+  text-align: center;
 }
 
 .ans-sheet {

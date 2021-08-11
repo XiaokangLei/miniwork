@@ -112,8 +112,8 @@ Page({
     wx.setStorageSync('S', rSN)
     wx.setStorageSync('T', rTF)
     wx.setStorageSync('J', rJP)
-    wx.switchTab({
-      url: '/pages/result/result'
+    wx.navigateTo({
+      url: '/pages/review/mbti/result/result'
     })
   },
 
