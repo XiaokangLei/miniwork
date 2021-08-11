@@ -1,0 +1,63 @@
+<!--pages/result/result.wxml-->
+<view style="display:flex;flex-direction:column;align-items:flex-end;background:#f8f8f8;" wx:if="{{isDone}}">
+  <text style="line-hight:26rpx;font-size:22rpx;color:red;margin-right:20rpx;">
+    {{red_str}}</text>
+</view>
+
+<view class="contain1" wx:if="{{isDone}}">
+  <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+
+  <canvas class="table" canvas-id="Canvas1"></canvas>
+
+  <text class="en">{{mbtiEN[id]}}</text>
+  <text class="cn">{{mbtiCN[id]}}</text>
+  <text class="mbti">{{mbtiRes}}</text>
+</view>
+
+<view class="contain4" wx:if="{{isDone}}">
+  <view>
+    <text class="easy-des1" user-select="true">主导功能：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[0]}}</text>
+  </view>
+  <view>
+    <text class="easy-des1" user-select="true">辅助功能：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[1]}}</text>
+  </view>
+  <view>
+    <text class="easy-des1" user-select="true">优点特长：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[2]}}</text>
+  </view>
+  <view>
+    <text class="easy-des1" user-select="true">缺点短板：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[3]}}</text>
+  </view>
+  <view>
+    <text class="easy-des1" user-select="true">常见职业：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[4]}}</text>
+  </view>
+  <view>
+    <text class="easy-des1" user-select="true">代表人物：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[5]}}</text>
+  </view>
+</view>
+
+<view class="contain3" wx:if="{{isDone}}">
+  <text wx:for="{{mbtiDesArr[id]}}" wx:key="key" class="des" user-select="true">{{item}}</text>
+</view>
+<view class="contain5" wx:if="{{isDone}}">
+  <view class="contain2">
+    <view class="button">
+      <text bindtap="goToMore">更多MBTI相关知识</text>
+    </view>
+    <!-- <view class="button">
+      <text bindtap="goToIntr">查看好友们的类型</text>
+    </view>  -->
+  </view>
+</view>
+<view class="contain5" wx:if="{{!isDone}}">
+  <text
+    style="line-hight:100rpx;font-size:30rpx;color:#aaa;margin-top:300rpx;margin-bottom:200rpx;">你还没有进行测试，这里没有结果可以显示。</text>
+  <button class="button" type="primary" bindtap="goToTest" plain="true" size="default">开始测试</button>
+</view>
+<ad unit-id="adunit-fc53288104595d2f"></ad>

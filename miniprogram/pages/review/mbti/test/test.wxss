@@ -1,0 +1,68 @@
+/* pages/test/test.wxss */
+
+.skip-return {
+  font-size: 24rpx;
+  color: #aaa;
+  line-height: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quit{
+  padding: 22rpx;
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.blank{
+  margin-top: 968rpx;
+}
+
+.return {
+  margin-top: 22rpx;
+}
+
+.skip {
+  margin-top: 22rpx;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-sizing: border-box;
+  width: 600rpx;
+  height: 700rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -300rpx;
+  margin-top: 200rpx;
+  background: #f8f8f8;
+}
+
+.question {
+  font-size: 36rpx;
+  letter-spacing: 1px;
+  text-align: justify;
+}
+
+.ans-sheet {
+  font-size: 28rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 580rpx;
+  line-height: 80rpx;
+}
+
+.ans1 {
+  background: #fff;
+  height: 80rpx;
+}
+
+.ans2 {
+  background: #fff;
+  margin-top: 40rpx;
+  height: 80rpx;
+}

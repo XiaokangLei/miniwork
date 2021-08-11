@@ -1,0 +1,117 @@
+/* pages/result/result.wxss */
+
+.userinfo-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 8rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  font-size: 24rpx;
+}
+
+.contain1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*水平居中*/
+  width: 700rpx;
+  margin-left: 15rpx;
+  margin-top: 0rpx;
+  background: #f8f8f8;
+  padding: 10rpx;
+}
+
+.en {
+  line-height: 50rpx;
+  font-family: "Times New Roman";
+  font-size: 36rpx;
+  margin-top: 5px;
+}
+
+.cn {
+  line-height: 80rpx;
+  font-family: "黑体";
+  font-size: 78rpx;
+  font-weight: bold;
+}
+
+.mbti {
+  line-height: 100rpx;
+  font-family: "Times New Roman";
+  font-size: 100rpx;
+}
+
+.table {
+  margin: 5px auto;
+  background-color: #f8f8f8;
+  width: 300px;
+  height: 200px;
+}
+
+.contain4 {
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  left: 50%;
+  margin-left: 15rpx;
+  margin-top: 0rpx;
+  background: #f8f8f8;
+  padding: 10rpx;
+}
+
+.easy-des1 {
+  font-size: 30rpx;
+  font-weight: bold;
+  width: 150rpx;
+}
+
+.easy-des2 {
+  font-size: 30rpx;
+  align-items: flex-start;
+}
+
+.contain2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  font-size: 22rpx;
+  padding: 15rpx;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: #808080;
+  margin: 25rpx;
+  width: 200rpx;
+  text-align: center;
+}
+
+.contain3 {
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  margin-left: 15rpx;
+  margin-top: 0rpx;
+  padding: 10rpx;
+  background: #f8f8f8;
+}
+
+.des {
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  align-items: flex-start;
+}
+
+.contain5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*水平居中*/
+  width: 700rpx;
+  left: 50%;
+  margin-left: 15rpx;
+  margin-top: 0rpx;
+  padding: 10rpx;
+}

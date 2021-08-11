@@ -1,0 +1,58 @@
+/**index.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+} 
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.userinfo-button{
+  margin-top: 40rpx; 
+}
+
+.usermotto {
+  margin-top: 160rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.user-motto1 {
+  letter-spacing: 5px;
+  font-size: 50px;
+  font-family: 'Times New Roman';
+  font-weight: bold;
+}
+
+.user-motto2 {
+  letter-spacing: -1px;
+  font-size: 21px;
+  font-family: '宋体';
+  font-weight: bold;
+}
+
+.user-motto3 {
+  line-height: 80px;
+  font-size: 10px;
+  color: #aaa;
+}

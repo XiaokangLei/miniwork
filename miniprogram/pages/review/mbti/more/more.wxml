@@ -1,0 +1,54 @@
+<!--pages/more/more.wxml-->
+
+<view class="contain1">
+  <view class="contain2">
+    <image class="img" mode="widthFix" src="{{img}}" bindtap='onTapImg'/>
+    <picker-view class="picker" indicator-class="picker-indicator" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{eis}}" wx:key="" class="picker-item">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{sns}}" wx:key="" class="picker-item">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{tfs}}" wx:key="" class="picker-item">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{jps}}" wx:key="" class="picker-item">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  <text class="cn">{{mbtiCN[id]}}</text>
+  <text class="en">{{mbtiEN[id]}}</text>
+</view>
+
+<view class="contain4">
+  <view>
+    <text class="easy-des1" user-select="true">主导功能：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][0]}}</text>
+  </view>
+  <view>
+    <text class="easy-des1" user-select="true">辅助功能：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][1]}}</text>
+  </view>
+  <view>
+    <text class="easy-des1" user-select="true">优点特长：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][2]}}</text>
+  </view>
+  <view>
+    <text class="easy-des1" user-select="true">缺点短板：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][3]}}</text>
+  </view>
+  <view>
+    <text class="easy-des1" user-select="true">常见职业：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][4]}}</text>
+  </view>
+  <view>
+    <text class="easy-des1" user-select="true">代表人物：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][5]}}</text>
+  </view>
+</view>
+
+<view class="contain3">
+  <text wx:for="{{mbtiDesArr[id]}}" wx:key="key" class="des" user-select="true">{{item}}</text>
+</view>

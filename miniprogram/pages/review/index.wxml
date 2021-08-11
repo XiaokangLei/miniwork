@@ -137,6 +137,72 @@
       </view>
     </view> -->
   </view>
+
+  <view class="ans_xzt">
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="action sub-title">
+        <text class="text-xl text-bold  text-tree">MBTI职场性格测试</text>
+        <text class="bg-tree"></text>
+      </view>
+    </view>
+    <view class="order">
+      <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
+        <view class="left">
+          <image
+            src="https://7465-test-4gn9gu0ucc6657ba-1304273986.tcb.qcloud.la/img/OIP-C1.png?sign=0e96ff1708cb4854148e6fcd7f111c40&t=1627366980"
+            mode="aspectFill"></image>
+        </view>
+        <view class="content">
+          <view class="type">“我性格内向/外向，适合什么工作？” “哪些职业正好匹配我的性格？” “以我的个性从事什么行业好？”“我性格中的优势和劣势是什么？”“我是不是该继续现在从事的职业？” 不论是正待走进职场的毕业生，还是工作了一段时间的人，面对这类问题都会感到困惑——性格因素和职业选择之间到底存在什么样的关联呢？</view>
+        </view>
+      </view>
+      <view class="fgx" color="#f1f1f1" margin="24rpx 0 15rpx 0"></view>
+      <view class="bottom">
+        <view>
+          <text class="text-tree">题目84道</text>
+        </view>
+        <navigator class="btnBox" url="/pages/review/mbti/index/index">
+          <view bindtap="goClass" class="evaluate btn">开始测试</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- <view class="order">
+      <view class="top">
+        <view class="left">
+          <view class="cuIcon-titles text-blue"></view>
+          <view class="store">NLP</view>
+        </view>
+        <view class="right">
+          <text class="text-blue"></text>
+          <view class="progressBox">
+            <view class="cu-progress radius striped active">
+              <view class="bg-tree" style="width:{{loading?'30%':''}};">30%</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
+        <view class="left">
+          <image
+            src="https://7465-test-4gn9gu0ucc6657ba-1304273986.tcb.qcloud.la/img/OIP-C.png?sign=23c9c591cc2beb02bb4a27369de4cee8&t=1627366966"
+            mode="aspectFill"></image>
+        </view>
+        <view class="content">
+          <view class="type">NLP是数据科学领域的一个重要的分支，它包含了以一种高效的方式去分析，理解和从文本里提取信息等重要过程。通过利用NLP及其组件，可以组织大量的文本数据，执行大量的自动化任务，并解决各种问题，比如自动摘要，机器翻译，命名实体识别，关系提取，情感分析，语音识别和主题分割等。</view>
+        </view>
+      </view>
+      <view class="fgx" color="#f1f1f1" margin="24rpx 0 15rpx 0"></view>
+      <view class="bottom">
+        <view>
+          <text class="text-tree">题库题目{{ CS_L}}道</text>
+        </view>
+        <navigator class="btnBox" url="/pages/review/details_ans/index?id=CSS">
+          <view bindtap="goClass" class="evaluate btn">开始答题</view>
+        </navigator>
+      </view>
+    </view> -->
+  </view>
+
    <view style="margin-top: 20rpx;padding-top: 10rpx;margin-bottom: 120rpx;">
   </view>
 </view>

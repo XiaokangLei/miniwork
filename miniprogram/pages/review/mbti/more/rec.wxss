@@ -1,0 +1,16 @@
+/* pages/more/rec.wxss */
+
+.texts {
+  padding: 10rpx;
+  margin: 10rpx;
+  background: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+margin-top: 200rpx;
+}
+
+.text {
+  font-size: 26rpx;
+  font-family: "宋体";
+  line-height: 36rpx;
+}

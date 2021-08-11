@@ -1,0 +1,34 @@
+<!--pages/introduction/intr2.wxml-->
+<view class="container">
+
+  <text class="title" user-select="true">MBTI简介</text>
+  <text class="main-text" user-select="true">美国的心理学家凯恩琳·布里格斯，和她的女儿伊莎贝尔·布里格斯·迈尔斯一起，将荣格8维加以发展，抽象为4个问题。</text>
+  <text class="main-text" user-select="true">第一个问题：假定人的心理活动需要能量支撑，如何获取和发泄能量？</text>
+  <text class="main-text" user-select="true">●  有的人独处感觉不自在，和别人聚在一起感觉爽，我们管这种人叫做外向型性格，他们 向外获取能量，向内消耗能量，这种人我们简称为 E.</text>
+  <text class="main-text" user-select="true">●  有的人一个人呆着的时候心平气和，与社会交往的时候会感觉累，所谓的心累，这种人 向内获取能量，向外消耗能量，就是内向型性格，简称 I.</text>
+  <image mode="widthFix" src="http://m.qpic.cn/psb?/V11Tp57c2B9kPO/L8V*dmK3VNPOWTeFXbjdZKcSCLpjR7k0kYmfPnWPDK4!/b/dPQAAAAAAAAA&bo=JQPjAAAAAAADB.c!&rf=viewer_4" />
+  <text class="main-text" user-select="true">第二个问题：认识世界的两个角度。这个问题问的是人们认识世界的非理性方法，即外界知觉，所说的是人们如何处理感知到的资料。</text>
+  <text class="main-text" user-select="true">●  有的人相信眼见为实，用自己的五官和身体来认识这个世界， 根据眼前事物得出结论，这种人我们叫做 感觉型性格，简称 S.</text>
+  <text class="main-text" user-select="true">●  以 直觉主导的性格类型我们简称 N 型。N 型的人在感受世界的时候会把眼前的世界置于时间和空间的维度上，通过对未来的预感和对其他事物的联系来认识世界。他们并不完全相信眼前事物，而是通过着眼于事物变化发展的直觉来认识世界。</text>
+  <image mode="widthFix" src="http://m.qpic.cn/psb?/V11Tp57c2B9kPO/8xh539RbP8siKBaih22FA1KmqFQuYRMazADPZqDN61w!/b/dD0BAAAAAAAA&bo=JQPjAAAAAAADN9c!&rf=viewer_4" />
+  <text class="main-text" user-select="true">第三个问题：面临抉择的时候你会服从于理性还是情感？</text>
+  <text class="main-text" user-select="true">●  服从于理性性格叫做思维主导型，简称为 T，这种人侧重于客观的逻辑思考，注重事物的变化发展。</text>
+  <text class="main-text" user-select="true">●  服从于情感的性格类型简称为 F，他们侧重于主观评价与价值观，注重人际关系的稳定与和谐。</text>
+  <text class="main-text" user-select="true">其实有时候 T 和 F 不冲突，可以相互转化，也可以同时存在并且甚至倾向都很高。</text>
+  <image mode="widthFix" src="http://m.qpic.cn/psb?/V11Tp57c2B9kPO/*apKyvKvFV9*UyVP2bA9xVHGj4W7nI9G.gS*WFV28MM!/b/dDwBAAAAAAAA&bo=JQPjAAAAAAADN9c!&rf=viewer_4" />
+  <text class="main-text" user-select="true">当我们分别面对自己的内心世界，以及面对外部的现实世界时，会分别偏好使用两个不同的功能。有的人习惯运用理性功能面对外部世界，运用非理性功能面对内心世界，有的人反之。所以，迈尔斯和布里格斯在三种问题上又增加了一个问题：我们平时如何使用四种功能？</text>
+  <text class="main-text" user-select="true">●  一种类型我们叫做判断型，简称为 J.这种人在平时的生活中倾向于判断一件事物，他们运用理性功能（思维或情感）面对外部现实世界；用非理性功能（感觉或直觉）面对内心世界，表现为倾向于井然有序安定的生活。</text>
+  <text class="main-text" user-select="true">●  另一种人我们叫做理解型，简称为 P.这种人偏好于理解周围的一切，他们用非理性功能（实感或直觉）面对外部现实世界；用理性功能（逻辑或情感）面对内心世界，表现为自然随意而开放的生活。</text>
+  <image mode="widthFix" src="http://m.qpic.cn/psb?/V11Tp57c2B9kPO/z8qBJ.VEw.gTpKHzBRKJzYqiXFWaz3DotJgZCeLS.o4!/b/dOIAAAAAAAAA&bo=IwPhAAAAAAADN9M!&rf=viewer_4" />
+  <text class="main-text" user-select="true">根据这4个问题，她们研制了迈尔斯－布里格斯类型指标（简称MBTI），包含4个维度，即</text>
+  <text class="main-text" user-select="true">内倾I-E外倾</text>
+  <text class="main-text" user-select="true">感觉S-N直觉</text>
+  <text class="main-text" user-select="true">思维T-F情感</text>
+  <text class="main-text" user-select="true">判断J-P理解</text>
+  <text class="main-text" user-select="true">四个维度如同四把标尺，每个人的性格都会落在标尺的某个点上，这个点靠近那个端点，就意味着个体就有哪方面的偏好。如在第一维度上，个体的性格靠近外倾这一端，就偏外倾，而且越接近端点，偏好越强。四个维度、八个端点可组合成16种性格类型：</text>
+  <!-- <text class="main-text">ISTJ, ISFJ, INFJ, INTJ, </text>
+  <text class="main-text">ISTP, ISFP, INFP, INTP,</text>
+  <text class="main-text">ESTP, ESFP, ENFP, ENTP,</text>
+  <text class="main-text">ESTJ, ESFJ, ENFJ, ENTJ.</text> -->
+  <image mode="widthFix" bindtap="on_mbtiTable" src="http://m.qpic.cn/psb?/V11Tp57c2B9kPO/8fA.3tFXb0EUdbg1dSrxr.o.nYVAiJvfCpeWM8lUxUw!/b/dPQAAAAAAAAA&bo=1QIDAQAAAAADB*c!&rf=viewer_4" />
+</view>

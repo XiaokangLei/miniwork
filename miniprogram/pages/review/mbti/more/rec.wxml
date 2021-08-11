@@ -1,0 +1,10 @@
+<!--pages/more/rec.wxml-->
+<view class="texts">
+  <text class="text" selectable="true">MBTI职业倾向测试在线测试地址有哪些？https://www.zhihu.com/question/19901116</text>
+  <text class="text" selectable="true">MBTI测试，从头到脚不靠谱？ https://www.guokr.com/article/440219/?page=5MBTI</text>
+  <text class="text" selectable="true">荣格八维测试（才储） http://www.apesk.com/mbti2/rongge</text>
+  <text class="text" selectable="true">荣格心理类型认知功能测试 http://types.yuzeli.com/survey/cognitive</text>
+  <text class="text" selectable="true">荣格八维解析 http://www.360doc.com/content/16/1211/01/38956764_613685045.shtml</text>
+  <text class="text" selectable="true">书籍推荐：《荣格：心理类型学》、《天资差异》、《请理解我》、《以“我的青春恋爱喜剧果然搞错了”为对象的分析心理学研究——兼论INTJ型精神病的预防与治疗》</text>
+  <text class="text" selectable="true">索要书籍可找本小程序作者，邮箱445395697@qq.com</text>
+</view>

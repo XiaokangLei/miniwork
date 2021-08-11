@@ -166,9 +166,9 @@ async function addPostChildComment(event) {
     }
   });
 
-  if (process.env.author == event.comments[0].cOpenId) {
-    event.comments[0].cNickName = "小贝"
-  }
+  // if (process.env.author == event.comments[0].cOpenId) {
+  //   event.comments[0].cNickName = "小贝"
+  // }
 
   event.comments[0].flag = 0
 

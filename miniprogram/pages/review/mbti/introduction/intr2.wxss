@@ -1,0 +1,20 @@
+/* pages/introduction/intr2.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 10rpx;
+}
+
+.title{
+  line-height:100rpx;
+  font-family: "宋体";
+  font-weight: bold;
+}
+
+.main-text{
+  margin-top: 14rpx;
+  font-size: 28rpx;
+  text-align: justify;
+}

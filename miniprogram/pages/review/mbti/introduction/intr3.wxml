@@ -1,0 +1,28 @@
+<!--pages/introduction/intr3.wxml-->
+<view class="container">
+  <text class="title" user-select="true">荣格8维简介</text>
+  <text class="main-text" user-select="true">人虽然有千万种性格，但是大体可以分为外向型和内向型。在分析心理学中，称之为外倾性格和内倾性格。
+我们假设人的心理活动依靠一种能量的流动作用，把这种能量叫做 心理能量。</text>
+  <text class="main-text" user-select="true">●  内倾型人的心理能量指向内部，易产生内心体验和幻想，这种人远离外部世界，对事物的本质和活动的结果感兴趣。</text>
+  <text class="main-text" user-select="true">●  外倾型人的心理能量指向外部，易倾向客观事物，这种人喜欢社交、对外部世界的各种具体事物感兴趣。</text>
+  <text class="main-text" user-select="true">内倾与外倾的关系就像太极图，你中有我，我中有你，相互对立又互相包容，构成一个整体。</text>
+  <text class="main-text" user-select="true">除了倾向，荣格还认为，人拥有四种心理功能类型，即 思维、情感、感觉和直觉。</text>
+  <text class="main-text" user-select="true">● 思维是对事物作出判断和推理；</text>
+  <text class="main-text" user-select="true">● 情感是对事物的好恶倾向；</text>
+  <text class="main-text" user-select="true">● 感觉是用感官觉察事物是否存在；</text>
+  <text class="main-text" user-select="true">● 直觉是对事物的变化发展的预感，无需解释和推论。</text>
+  <text class="main-text" user-select="true">荣格认为人们在判断思维和情感时要运用理性判断，所以它们属于 理性功能；而在辨别感觉和直觉时没有运用理性判断，所以它们 属于非理性功能。在这基础上，荣格把两种态度和四种机功能类型组合起来，构成了八种维度。</text>
+  <text class="main-text" user-select="true">外倾思维型    内倾思维型</text>
+  <text class="main-text" user-select="true">外倾情感型    内倾情感型</text>
+  <text class="main-text" user-select="true">外倾感觉型    内倾感觉型</text>
+  <text class="main-text" user-select="true">外倾直觉型    内倾直觉型</text>
+  <text class="main-text" user-select="true">外倾思维型 Te。这种人按固定的规则生活，客观、冷静，善于思考但固执己见。他们通常压抑天性中感性的一面，因而显得缺乏鲜明的个性，甚至冷漠无情。如果压抑过分，则会变得专制、自负、迷信，拒绝接受任何批评。以外向思维作为主要功能的性格是是 ESTJ 和 ENTJ 两种性格，这两种性格都是典型的管理者性格。</text>
+  <text class="main-text" user-select="true">内倾思维型 Ti。这种人喜欢离群索居，由于判断力贫乏而不愿社交。他们极端聪明却又不顾实际。发展过度就会变得顽固执拗，刚愎自用，不体谅别人，骄傲自大，拒人于千里之外。</text>
+  <text class="main-text" user-select="true">外向情感型 Fe。这种类型的人理智屈从于情感，往往表现为反复无常，朝秦暮楚，多愁善感，浮夸卖弄，过分殷勤，强烈地依恋他人但情感并不执著。</text>
+  <text class="main-text" user-select="true">内倾情感型 Fi。这种人文静多思，敏感忧郁，沉默寡言，难以捉摸，然而有时又表现得恬淡宁静、怡然自得，给人以莫测高深之感。</text>
+  <text class="main-text" user-select="true">外倾感觉型 Se。这种人追求欢乐、善于社交、不断寻求新的刺激，他们头脑清醒但对事物浅尝辄止，他们情感浅薄经常沉溺于各种嗜好，具有恋态行为和强迫行为。</text>
+  <text class="main-text" user-select="true">内倾感觉型简称 Si。这种人爱好艺术，沉浸在自我主观感觉中，与自己的内心世界相比，他们觉得外部世界索然乏味。这种类型的大多数人表现得较为沉静、随和，有一定的自制力，但思维和情感大都不够深沉。</text>
+  <text class="main-text" user-select="true">外倾直觉型 Ne。这种人异想天开，喜怒无常，见异思迁，好高鹜远，一个问题没解决又忙于解决另一个问题，不能持之以恒，由于情感转移快，难得知己。</text>
+  <text class="main-text" user-select="true">内倾直觉型 Ni。这种人往往是能产生一些新奇观念的梦想家，别人看他们不可思议，而他们自己却自视甚高，自以为是不被理解的天才。Ni 是原始意象的内在联系，它使得主体通过直觉获得了事物的本质认识，从而能够还原过去和预测将来的变化。他们可以在封闭的环境中、在仅获得少量情报的情况下顿悟出事物的答案，并且对未来即将发生的变化而感到兴奋。</text>
+  <ad unit-id="adunit-6922803f9903a168" style="margin-top:10rpx;"></ad>
+</view>

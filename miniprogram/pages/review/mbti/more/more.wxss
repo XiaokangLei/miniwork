@@ -1,0 +1,95 @@
+/* pages/more/more.wxss */
+
+.contain1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*水平居中*/
+  width: 700rpx;
+  margin-left: 15rpx;
+  margin-top: 0rpx;
+  /* background: #f8f8f8; */
+  padding: 10rpx;
+}
+
+.contain2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /*垂直居中*/
+  width: 100%;
+  margin: 0rpx;
+}
+
+.img {
+  width: 66%;
+  margin-right: 1%;
+}
+
+.en {
+  line-height: 25rpx;
+  font-family: "Times New Roman";
+  font-size: 30rpx;
+  margin-top: 5px;
+}
+
+.cn {
+  margin-top: 12px;
+  line-height: 50rpx;
+  font-family: "黑体";
+  font-size: 48rpx;
+  font-weight: bold;
+}
+
+.picker {
+  width: 33%;
+  height: 220rpx;
+  font-family: "Times New Roman";
+}
+
+.picker-item {
+  line-height: 60rpx;
+  font-size: 60rpx;
+}
+
+/* 选中框样式 */
+
+picker-indicator {
+  height: 180rpx;
+}
+
+.contain4 {
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  left: 50%;
+  margin-left: 15rpx;
+  margin-top: 20rpx;
+  background: #f8f8f8;
+  padding: 10rpx;
+}
+
+.easy-des1 {
+  font-size: 28rpx;
+  font-weight: bold;
+  width: 150rpx;
+}
+
+.easy-des2 {
+  font-size: 28rpx;
+  align-items: flex-start;
+}
+
+.contain3 {
+  display: flex;
+  flex-direction: column;
+  width: 700rpx;
+  margin-left: 15rpx;
+  margin-top: 0rpx;
+  padding: 10rpx;
+  background: #f8f8f8;
+}
+
+.des {
+  margin-bottom: 10rpx;
+  font-size: 26rpx;
+  align-items: flex-start;
+}

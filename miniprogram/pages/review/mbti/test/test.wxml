@@ -1,0 +1,18 @@
+<!--pages/test/test.wxml-->
+<progress percent="{{(id+1)*100/numOfAll}}" stroke-width="12" color="black" />
+
+<view bindtap='quit' class='quit'>暂时退出（保留测试进度）</view>
+
+<view class="container">
+  <text wx:if="{{id < numOfAll}}" class="question">{{question[qid]}}</text>
+  <view class="ans-sheet">
+    <text wx:if="{{id < numOfAll}}" class="ans1" bindtap="on_ans" data-id="{{id}}" data-bool="{{true}}">{{ans[id].ans1}}</text>
+    <text wx:if="{{id < numOfAll}}" class="ans2" bindtap="on_ans" data-id="{{id}}" data-bool="{{false}}">{{ans[id].ans2}}</text>
+  </view>
+</view>
+
+<view class="skip-return">
+  <view class="blank"></view>
+  <text hidden="{{!boolReturn}}" class="return" catchtap="on_return" data-id='{{id}}'>重做上一题</text>
+  <text hidden="{{!boolSkip}}" class="skip" catchtap="on_skip" data-id="{{id}}">跳过本题</text>
+</view>
