@@ -179,7 +179,7 @@ Page({
 
   onLoad: function (options) {
     var mbtiRes = ""
-    var red_str = "点击右上角三个点，可以分享到朋友圈了~"
+    var red_str = "点击右上角三个点，分享好友或者朋友圈~"
     // 如果是朋友圈转发的带参数的页面
     if (options.E) {
       red_str = "↓↓↓这是你好友的MBTI测试结果"

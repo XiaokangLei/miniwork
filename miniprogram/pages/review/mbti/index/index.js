@@ -31,7 +31,7 @@ Page({
   xz_post(){
     // wx.setStorageSync('gotUserInfo',true);
     wx.navigateTo({
-      url: '/pages/review/mbti/test/test'
+      url: '/pages/review/mbti/result/result'
     })
   },
 

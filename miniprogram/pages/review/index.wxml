@@ -149,7 +149,7 @@
       <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
         <view class="left">
           <image
-            src="https://7465-test-4gn9gu0ucc6657ba-1304273986.tcb.qcloud.la/img/OIP-C1.png?sign=0e96ff1708cb4854148e6fcd7f111c40&t=1627366980"
+            src="https://7465-test-4gn9gu0ucc6657ba-1304273986.tcb.qcloud.la/mbti.jpg?sign=cafa5b4aa7270b852adff65d19084937&t=1628777655"
             mode="aspectFill"></image>
         </view>
         <view class="content">
