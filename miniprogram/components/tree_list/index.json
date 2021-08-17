@@ -4,6 +4,7 @@
     "van-loading": "@vant/weapp/loading/index",
     "van-icon": "@vant/weapp/icon/index",
     "van-skeleton": "@vant/weapp/skeleton/index",
-    "van-transition": "@vant/weapp/transition/index"
+    "van-transition": "@vant/weapp/transition/index",
+    "van-divider": "@vant/weapp/divider/index"
   }
 }

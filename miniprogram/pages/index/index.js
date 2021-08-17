@@ -7,14 +7,21 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 默认主页面id为3
     id: 3,
     list: [],
     page: 1,
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
+    // 初始页面是否有“添加到我的小程序”提示页面
     isTiptrue: false,
+    // 每次拉取eachData条数据
+    eachData: 4,
   },
+  /**
+   * 页面滚动事件
+   */
   onPageScroll(e) {
     let op
     op = e.scrollTop / 200
@@ -22,13 +29,19 @@ Page({
       hd_op: op
     })
   },
+  /**
+   * 关闭提示页面
+   */
   closeThis() {
     wx.setStorageSync("loadOpen", true)
     this.setData({
       isTiptrue: false,
     })
   },
-  tab_tz: function (e) {
+  /**
+   * 主页底部tab事件，id由前端wxml传回
+   */
+  changeTab: function (e) {
     var id = e.currentTarget.dataset.id
     wx.pageScrollTo({
       scrollTop: 0
@@ -38,7 +51,31 @@ Page({
     })
   },
 
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({
+      page: 1
+    })
+    this.initial()
+    this.index_initial(options)
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    // this.setData({
+    //   page: 1
+    // })
+    // this.initial()
+  },
+
+  /**
+   * 初始化页面
+   */
   initial(e) {
+    // 加载中 标志
     if (this.data.page == 1) {
       this.setData({
         loding: true
@@ -53,13 +90,14 @@ Page({
         e.detail = ""
       }
     }
+    // 从press拉取数据，一次拉取eachData条
     let data = {
-      size: 10,
+      size: this.data.eachData,
       page: this.data.page,
       Type: e ? e.detail : "",
       database: "press"
     }
-    console.log(task)
+    // 调用云函数，获取eachData条press数据
     task.Tree_cloud("list", data).then(res => {
       let data = res.data.data
       let list = this.data.list
@@ -113,21 +151,14 @@ Page({
       menus: ['shareAppMessage', 'shareTimeline']
     });
   },
-  onLoad: function (options) {
-    this.index_initial(options)
-  },
 
-  onShow: function () {
-    this.setData({
-      page: 1
-    })
-    this.initial()
-  },
-
+  /**
+   * 页面上拉触底事件的处理函数
+   */
   onReachBottom: function () {
     if (this.data.id == 3) {
       if (app.globalData.type == 0) {
-        if (this.data.count >= this.data.page * 10) {
+        if (this.data.count >= this.data.page * this.data.eachData) {
           this.setData({
             page: this.data.page + 1,
           })
@@ -166,7 +197,7 @@ Page({
       }
     } else {
       return {
-        title:'获取校招资讯、内推，简历模板、在线刷题等',
+        title: '获取校招资讯、内推，简历模板、在线刷题等',
         imageUrl: "../../images/logo.jpg",
       }
     }

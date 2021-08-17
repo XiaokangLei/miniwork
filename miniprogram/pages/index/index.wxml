@@ -51,27 +51,27 @@
 	</view>
 
 	<view class="cu-bar tabbar bg-white shadow foot">
-		<view bindtap="tab_tz" data-id="1" class="action jk  text-gray {{id==1?'xzcg ':''}} " >
+		<view bindtap="changeTab" data-id="1" class="action jk  text-gray {{id==1?'xzcg ':''}} " >
 			<view class="">
 				<view class="cuIcon-discover" style="font-weight: 600;"></view>
 			</view> 资讯
 		</view>
-		<view bindtap="tab_tz" data-id="2" class="action jk text-gray {{id==2?'xzcg':''}}" >
+		<view bindtap="changeTab" data-id="2" class="action jk text-gray {{id==2?'xzcg':''}}" >
 			<!-- <span class=" tab_icon iconfont  icon-ziliao "></span> -->
 			<view class="cuIcon-form" style="font-weight: 600;"></view>
 			题库
 		</view>
-		<view bindtap="tab_tz" data-id="3" class="action add-action text-gray {{id==3?'xzcg':''}}" >
+		<view bindtap="changeTab" data-id="3" class="action add-action text-gray {{id==3?'xzcg':''}}" >
 			<view class="cu-btn cuIcon-shuye  {{id==3?'tab_color':'tab_color_light'}} shadow">
 			</view>
 			校招
 		</view>
-		<view class="action text-gray jk {{id==4?'xzcg':''}}" bindtap="tab_tz" data-id="4" >
+		<view class="action text-gray jk {{id==4?'xzcg':''}}" bindtap="changeTab" data-id="4" >
 			<!-- <span class="tab_icon iconfont  icon-yunchucun"></span> -->
 			<view class="cuIcon-circle" style="font-weight: 600;"></view>
 			内推
 		</view>
-		<view class="action text-gray jk {{id==5?'xzcg':''}}" bindtap="tab_tz" data-id="5" >
+		<view class="action text-gray jk {{id==5?'xzcg':''}}" bindtap="changeTab" data-id="5" >
 			<view class="cuIcon-my" style="font-weight: 600;"></view>
 			我的
 		</view>

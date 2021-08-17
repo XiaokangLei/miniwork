@@ -36,6 +36,11 @@
       </view>
     </view>
   </view>
+
+  <view style="padding-bottom: calc(env(safe-area-inset-bottom)/2);">
+		<van-divider contentPosition="center">到底啦，更多数据请查看其他模块</van-divider>
+	</view>
+
 </view>
 
 <!-- <view class="cu-card article ">
@@ -94,7 +99,10 @@
         hour = parseInt(minute / 60);
       }
       if (hour > 24) {
-        day = parseInt(hour / 24);
+        day = parseInt(hour / 24 + 1);
+      }
+      else if (hour > 0) {
+        day = 1
       }
     }
     console.log(day)
