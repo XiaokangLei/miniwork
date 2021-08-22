@@ -55,12 +55,6 @@
 	</view>
 
 	<view class="cu-list menu">
-		<!-- <view class="min_height cu-bar">
-			<view class="action sub-title">
-				<text class="text-xl text-bold text-tree">小贝助手</text>
-				<text class="text-ABC text-tree">Boutique </text>
-			</view>
-		</view> -->
 		<view class="user_jx">
 			<navigator hover-class='none' url="/pages/user/book/index" class="nav-li bg_te">
 				<view class="nav-title">复习书籍</view>
@@ -73,12 +67,6 @@
 				<text class='cuIcon-newshotfill'></text>
 			</navigator>
 		</view>
-
-		<!-- <van-cell-group inset>
-			<van-cell icon="info-o" size="large" title="关于小贝" is-link link-type="navigateTo" url="/pages/user/about/about" />
-			<van-cell icon="gold-coin-o" size="large" title="打赏支持" is-link bindtap="showQrcode" />
-		</van-cell-group> -->
-
 
 	</view>
 

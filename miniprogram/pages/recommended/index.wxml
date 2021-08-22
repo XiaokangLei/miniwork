@@ -36,19 +36,7 @@
         <van-icon name="arrow" />
       </navigator>
     </view>
-    <!-- <view class="scroll_box">
-      <scroll-view scroll-x>
-        <navigator hover-class="item-hover" url="" class="item_list" wx:for="{{ xw_list}}" wx:key="this"
-          wx:for-item="items">
-          <view class="item_list_ds">
-            <view class="dis2">
-              <view class="item_top_Wz">热</view>
-              <view class="item_top_Wz2"> {{items.problem}}</view>
-            </view>
-          </view>
-        </navigator>
-      </scroll-view>
-    </view> -->
+
     <view class="order">
       <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
         <view class="left">

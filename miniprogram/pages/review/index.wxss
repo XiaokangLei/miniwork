@@ -240,6 +240,5 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
   background: linear-gradient(0deg, rgba(120, 255, 224, 1) 0%, rgba(255, 255, 255, 1) 100%);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
