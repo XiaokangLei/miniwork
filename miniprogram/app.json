@@ -9,8 +9,6 @@
     "pages/user/note/details_note/index",
     "pages/news/index",
     "pages/news/details_news/index",
-    "pages/news/fl_answer/index",
-    "pages/news/fl_basics/index",
     "pages/work/index",
     "pages/work/details_work/index",
     "pages/work/details_teachin/index",

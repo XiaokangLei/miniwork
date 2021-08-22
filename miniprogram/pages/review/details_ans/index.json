@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "mp-html": "mp-weixin",
-    "van-transition": "@vant/weapp/transition/index"
+    "mp-html": "mp-weixin"
   }
 }

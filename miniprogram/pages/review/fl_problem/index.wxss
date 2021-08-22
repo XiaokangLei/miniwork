@@ -1,32 +1,3 @@
-.problem_list {
-  background-color: #fff;
-  border-radius: 12px;
-  margin: 5px;
-  padding: 10px 13px;
-}
-
-.pro_wz1 {
-  font-size: 20px;
-}
-
-.tille-1 {
-  font-size: 18px;
-  font-family: PingFang;
-  font-weight: bold;
-  margin-bottom: 15px;
-  padding-left: 10px;
-  color: rgba(51, 51, 51, 1);
-  border-left: 2px solid rgb(246 150 4);
-}
-
-.pro_mec {
-  display: flex;
-}
-
-.pro_mec_tl {
-  color: #909399;
-}
-
 .pro_list {
   padding: 10px;
   padding-top: 0px;
@@ -44,7 +15,6 @@
   padding-left: 10px;
   font-size: 12px;
   padding: 0px 5px;
-  /* border-top-right-radius: 12px; */
   border-bottom-right-radius: 6px;
 }
 
@@ -63,31 +33,6 @@
   clear: both;
 }
 
-.home-wntj {
-  margin: 10px;
-  padding: 10px;
-  background: #fff;
-  border-radius: 6px;
-}
-
-.home-wntj>view:nth-child(2) {
-  display: flex;
-  justify-content: space-between;
-}
-
-.home-fl {
-  width: 48%;
-  font-family: PingFang;
-  line-height: 26px;
-  text-align: center;
-  color: rgba(51, 51, 51, 1);
-}
-
-.home-fl>view:nth-child(1) {
-  height: 93px;
-  border-radius: 3px;
-}
-
 .servic_top {
   padding-top: 14px;
   background: linear-gradient(to top, #1D4259, #3963BC);
@@ -95,7 +40,6 @@
   padding: 15px 15px;
   padding-top: 10px;
   border-radius: 0px 0px 10px 10px;
-
 }
 
 .servic_top_Img {

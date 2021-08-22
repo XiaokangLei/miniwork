@@ -1,8 +1,5 @@
 <view class="cu-load bg-self {{!isLoad?'loading':'over'}}" wx:if="{{loding}}"></view>
-<!-- <view wx:if="{{loding}}" class="loding">
-				<van-loading />
-				<view>正在加载，请耐心等待 </view>
-			</view> -->
+
 <view style="background-color: #fff;padding: 20px;" wx:if="{{loding}}">
 	<van-skeleton title row="3" wx:if="{{loding}}" wx:for="{{5}}" wx:key="this" />
 </view>

@@ -1,11 +1,3 @@
-.gif-black {
-  mix-blend-mode: screen;
-}
-
-.gif-white {
-  mix-blend-mode: multiply;
-}
-
 .bg-tree {
   background-color: #f4c998;
 }
@@ -50,10 +42,6 @@
   height: 200rpx;
 }
 
-.cu-bar .cu-avatar :first-child {
-  margin-left: -11px;
-}
-
 .mainBox {
   padding: 60rpx 40rpx 20rpx 40rpx;
 }
@@ -64,13 +52,6 @@
   font-size: 24rpx;
   color: #999999;
   margin-top: 30rpx;
-}
-
-.userHeard {
-  position: absolute;
-  left: 50%;
-  top: -50rpx;
-  margin-left: -50rpx;
 }
 
 .mentalTitle {
@@ -101,19 +82,6 @@
 .red {
   color: red;
   border: 1px solid red;
-}
-
-.db_but {
-  position: fixed;
-  height: 40px;
-  width: 100%;
-  bottom: 0px;
-  background: linear-gradient(to top right, #f4c998, #d69c63);
-  color: #fff;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .red .indexBox {

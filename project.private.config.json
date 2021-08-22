@@ -55,12 +55,6 @@
           "scene": null
         },
         {
-          "name": "pages/work/fl_basics/index",
-          "pathName": "pages/work/fl_basics/index",
-          "query": "id=79550af2606be2880d7ea0ba76e30e0a",
-          "scene": null
-        },
-        {
           "name": "pages/work/fl_css/index",
           "pathName": "pages/work/fl_css/index",
           "query": "id=79550af2606be2880d7ea0ba76e30e0a",
@@ -177,12 +171,6 @@
         {
           "name": "pages/s",
           "pathName": "pages/book/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/news/fl_answer/index",
-          "pathName": "pages/news/fl_answer/index",
           "query": "",
           "scene": null
         },
