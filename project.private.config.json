@@ -157,8 +157,8 @@
           "scene": null
         },
         {
-          "name": "pages/news/history/index",
-          "pathName": "pages/news/history/index",
+          "name": "pages/news/index",
+          "pathName": "pages/news/index",
           "query": "",
           "scene": null
         },

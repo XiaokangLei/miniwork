@@ -24,41 +24,6 @@
     </view>
   </view>
 
-  <!-- <view class="ans_bst">
-    <view class="cu-bar bg-white solid-bottom">
-      <view class="action sub-title">
-        <text class="text-xl text-bold  text-tree">笔试资料</text>
-        <text class="bg-tree"></text>
-      </view>
-      <navigator class="ntp" url="/pages/review/fl_problem/index">查看更多
-        <van-icon name="arrow" />
-      </navigator>
-    </view>
-    <view class="scroll_box">
-      <scroll-view scroll-x>
-        <navigator hover-class="item-hover" url="/pages/details/details_pro/index?id={{items._id}}" class="item_list"
-          wx:for="{{xw_list}}" wx:key="this" wx:for-item="items">
-          <view class="item_list_ds">
-            <view class="dis2">
-              <view class="item_top_Wz">热</view>
-              <view class="item_top_Wz2"> {{items.problem}}</view>
-            </view>
-          </view>
-        </navigator>
-      </scroll-view>
-    </view>
-  </view> -->
-
-  <!-- <view class="study_list">
-    <view class="cu-bar bg-white solid-bottom">
-      <view class="action sub-title">
-        <text class="text-xl text-bold  text-tree">笔试资料</text>
-        <text class="bg-tree"></text>
-      </view>
-    </view>
-    <list list="{{wz_list}}"></list>
-  </view> -->
-
   <view class="ans_xzt">
     <view class="cu-bar bg-white solid-bottom">
       <view class="action sub-title">
@@ -74,11 +39,6 @@
         </view>
         <view class="right">
           <text class="text-blue"></text>
-          <!-- <view class="progressBox">
-            <view class="cu-progress radius striped active">
-              <view class="bg-tree" style="width:{{loading?'25%':''}};">25%</view>
-            </view>
-          </view> -->
         </view>
       </view>
       <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
@@ -101,41 +61,6 @@
         </navigator>
       </view>
     </view>
-    <!-- <view class="order">
-      <view class="top">
-        <view class="left">
-          <view class="cuIcon-titles text-blue"></view>
-          <view class="store">NLP</view>
-        </view>
-        <view class="right">
-          <text class="text-blue"></text>
-          <view class="progressBox">
-            <view class="cu-progress radius striped active">
-              <view class="bg-tree" style="width:{{loading?'30%':''}};">30%</view>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
-        <view class="left">
-          <image
-            src="https://7465-test-4gn9gu0ucc6657ba-1304273986.tcb.qcloud.la/img/OIP-C.png?sign=23c9c591cc2beb02bb4a27369de4cee8&t=1627366966"
-            mode="aspectFill"></image>
-        </view>
-        <view class="content">
-          <view class="type">NLP是数据科学领域的一个重要的分支，它包含了以一种高效的方式去分析，理解和从文本里提取信息等重要过程。通过利用NLP及其组件，可以组织大量的文本数据，执行大量的自动化任务，并解决各种问题，比如自动摘要，机器翻译，命名实体识别，关系提取，情感分析，语音识别和主题分割等。</view>
-        </view>
-      </view>
-      <view class="fgx" color="#f1f1f1" margin="24rpx 0 15rpx 0"></view>
-      <view class="bottom">
-        <view>
-          <text class="text-tree">题库题目{{ CS_L}}道</text>
-        </view>
-        <navigator class="btnBox" url="/pages/review/details_ans/index?id=CSS">
-          <view bindtap="goClass" class="evaluate btn">开始答题</view>
-        </navigator>
-      </view>
-    </view> -->
   </view>
 
   <view class="ans_xzt">
@@ -166,79 +91,12 @@
         </navigator>
       </view>
     </view>
-    <!-- <view class="order">
-      <view class="top">
-        <view class="left">
-          <view class="cuIcon-titles text-blue"></view>
-          <view class="store">NLP</view>
-        </view>
-        <view class="right">
-          <text class="text-blue"></text>
-          <view class="progressBox">
-            <view class="cu-progress radius striped active">
-              <view class="bg-tree" style="width:{{loading?'30%':''}};">30%</view>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="item" wx-for="{{dataList.goodsList}}" :key="index">
-        <view class="left">
-          <image
-            src="https://7465-test-4gn9gu0ucc6657ba-1304273986.tcb.qcloud.la/img/OIP-C.png?sign=23c9c591cc2beb02bb4a27369de4cee8&t=1627366966"
-            mode="aspectFill"></image>
-        </view>
-        <view class="content">
-          <view class="type">NLP是数据科学领域的一个重要的分支，它包含了以一种高效的方式去分析，理解和从文本里提取信息等重要过程。通过利用NLP及其组件，可以组织大量的文本数据，执行大量的自动化任务，并解决各种问题，比如自动摘要，机器翻译，命名实体识别，关系提取，情感分析，语音识别和主题分割等。</view>
-        </view>
-      </view>
-      <view class="fgx" color="#f1f1f1" margin="24rpx 0 15rpx 0"></view>
-      <view class="bottom">
-        <view>
-          <text class="text-tree">题库题目{{ CS_L}}道</text>
-        </view>
-        <navigator class="btnBox" url="/pages/review/details_ans/index?id=CSS">
-          <view bindtap="goClass" class="evaluate btn">开始答题</view>
-        </navigator>
-      </view>
-    </view> -->
+    
   </view>
 
    <view style="margin-top: 20rpx;padding-top: 10rpx;margin-bottom: 120rpx;">
   </view>
 </view>
-<!-- 
-<view class="cu-card article bg-blue light">
-  <view class="cu-item shadow ">
-    <view class="title">
-      <view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view>
-    </view>
-    <view class="content">
-      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
-      <view class="desc">
-        <view class="text-content"> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
-        <view>
-          <view class="cu-tag bg-red light sm round">正义天使</view>
-          <view class="cu-tag bg-green light sm round">史诗</view>
-        </view>
-      </view>
-    </view>
-  </view>
-  <view class="cu-item shadow">
-    <view class="title">
-      <view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view>
-    </view>
-    <view class="content">
-      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
-      <view class="desc">
-        <view class="text-content"> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
-        <view>
-          <view class="cu-tag bg-red light sm round">正义天使</view>
-          <view class="cu-tag bg-green light sm round">史诗</view>
-        </view>
-      </view>
-    </view>
-  </view>
-</view> -->
 
 <wxs module="m1">
   function format(ts) {

@@ -13,7 +13,7 @@
 			</view>
 		</swiper-item>
 	</swiper>
-	<!-- <tree_swiper></tree_swiper> -->
+
 	<swiper class='home-gg' autoplay="true" vertical='true' circular='true' interval='8000'>
 		<block wx:for="{{xw_list}}" wx:key="this" wx:for-item="items">
 			<swiper-item class="home-gg2">
@@ -25,49 +25,6 @@
 		</block>
 	</swiper>
 
-	<!-- <view class="home_sign">
-		<van-cell url="/pages/user/sign/index">
-			<view slot="title">
-				<view class="dis_fl">
-					<view class="cu-avatar-group">
-						<view class="cu-avatar round " wx:for="{{userlist}}" wx:if="{{index<4}}" wx:key="this" wx:index="index"
-							wx:for-item="items" style="background-image:url({{items.avatarUrl}});">
-						</view>
-					</view>
-					<view class="text_r">等 <text class="text-yellow"> {{t_data_rs}}</text> 名用户今天活跃
-						<van-icon name="arrow" />
-					</view>
-				</view>
-			</view>
-		</van-cell>
-	</view> -->
-
-	<!-- <view class='nav-list_df'>
-		<view class="nav-list-left">
-			<navigator hover-class='none' url="/pages/news/dictionaries/index" style="height:96%;" class="nav-li bg_kl">
-				<view class="nav-title">前端字典</view>
-				<view class="mt10 nav-name ">
-					千里之行<view>始于足下</view>
-				</view>
-			</navigator>
-		</view>
-		<view class="nav-list-right">
-			<navigator hover-class='none' url="/pages/news/book/index" class="nav-li bg-cyan bg_kl2">
-				<view class="nav-title">大牛书籍</view>
-				<view class="nav-name">
-					天生我材必有用
-				</view>
-				<text class='cuIcon-newshotfill'></text>
-			</navigator>
-			<navigator hover-class='none' url="/pages/news/fl_answer/index" class="nav-li  bg_kl3">
-				<view class="nav-title">难点问答</view>
-				<view class="nav-name">
-					人事有代谢，往来成古今
-				</view>
-				<text class='cuIcon-{{item.icon}}'></text>
-			</navigator>
-		</view>
-	</view> -->
 	<!-- 精选Top -->
 	<view class="main_title">
 		<view class="min_height cu-bar">
@@ -75,8 +32,6 @@
 				<text class="text-xl text-bold text-tree">资讯Top </text>
 				<text class="text-ABC text-tree">NewsTop </text>
 			</view>
-		</view>
-		<view>
 		</view>
 	</view>
 	<!-- 资讯列表 -->

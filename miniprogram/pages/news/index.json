@@ -3,13 +3,7 @@
   "navigationBarTextStyle": "white",
   "backgroundColor": "#fff",
   "usingComponents": {
-    "van-icon": "@vant/weapp/icon/index",
-    "van-transition": "@vant/weapp/transition/index",
     "list":"/components/news_list/index",
-    "van-divider": "@vant/weapp/divider/index",
-    "van-search": "@vant/weapp/search/index",
-    "van-cell": "@vant/weapp/cell/index",
-    "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-tag": "@vant/weapp/tag/index"
+    "van-divider": "@vant/weapp/divider/index"
   }
 }

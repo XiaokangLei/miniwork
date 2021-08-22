@@ -20,7 +20,6 @@ Component({
     Custom: app.globalData.Custom,
   },
   created() {
-    console.log(api)
     this.initial()
     wx.setNavigationBarTitle({
       title: "校招资讯"
@@ -29,7 +28,6 @@ Component({
   methods: {
     initial() {
       api.GET_news_top.then(res => {
-        console.log(res)
         this.setData({
           xw_list: res
         })
@@ -56,8 +54,6 @@ Component({
       })
     },
     tz_swiper(e) {
-      console.log(this.data.swiperList)
-      console.log(e.currentTarget.dataset.url)
       wx.navigateTo({
         url: "../../pages/news/details_news/index?id=" + e.currentTarget.dataset.url
       })
