@@ -1,5 +1,3 @@
-/* miniprogram/pages/detection/index.wxss */
-/* miniprogram/pages/detection/index.wxss */
 .detection-main {
   background: rgba(255, 255, 255, 1);
   border-radius: 6px;
