@@ -7,32 +7,16 @@
 			<view class="content2">
 				<view>
 					<text class="text-cut text-lg">内推直招</text>
-					<!-- <view class="cu-tag round bg-orange sm">问答率43%</view> -->
 				</view>
 				<view class="text-gray text-sm flex">
 					<text class="text-cut"></text>
 				</view>
 			</view>
-
 		</view>
 
 		<view class="detail-tl">
 			{{ xw_list.title}}
 		</view>
-		<!-- <view class="padding">
-			<view class="cu-avatar-group">
-				<view class="cu-avatar round " wx:for="{{4}}" wx:key
-					style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big1000{{index+1}}.jpg);">
-				</view>
-			</view>
-			等用户碰见此题
-		</view> -->
-		<!-- <van-count-down use-slot time="{{ time }}" bind:change="onChange">
-			<view class="dl">
-				<text class="item">{{ timeData.minutes }}分</text>
-				<text class="item">{{ timeData.seconds }}秒</text>
-			</view>
-		</van-count-down> -->
 	</view>
 	<view class="m3">
 		<view class="tille-1">
@@ -46,10 +30,6 @@
 
 
 <view class="dbu">
-
-	<!-- <view class="but_" bindtap="fy">
-		下一道题
-	</view> -->
 
 	<view bindtap="statr_sc" data-id="collect" data-kind="recommended" class="dbu_lk {{sc_show?'cg_sp':''}}">
 		<van-icon name="star-o" size="20px" />

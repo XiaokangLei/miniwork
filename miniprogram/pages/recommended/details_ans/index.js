@@ -67,13 +67,7 @@ Page({
         title: '您未选择答案',
         icon: "none"
       })
-
     }
-
-
-
-
-
   },
 
   post() {
@@ -88,7 +82,6 @@ Page({
       let cd_data = this.data.page / res.total
       this.setData({
         cd: Number(cd_data.toFixed(2))
-
       })
       console.log(cd_data * 100)
     })
@@ -112,7 +105,6 @@ Page({
     })
   },
   onShareAppMessage: function (res) {
-
     return {
       title: '我答对了'+this.data.da_zq+"题",
       path: '/pages/index/index?id_index=' + this.data.id ,

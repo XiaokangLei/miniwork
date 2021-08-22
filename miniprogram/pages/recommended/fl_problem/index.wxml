@@ -23,6 +23,7 @@
 	<view>
 	</view>
 </view>
+
 <wxs module="m1">
 	function format(ts) {
 		return Math.floor((Math.random() * 100))

@@ -32,14 +32,6 @@
     </view>
   </view>
 
-  <!-- <view class="explain     ">
-    <view class="integral     ">{{"您当前积分："+currentPoints+"分"}}</view>
-    <view data-event-opts="{{[['tap',[['goExplain',['$event']]]]]}}" bindtap="__e" class="    ">
-      <u-icon vue-id="489f0c5a-3" name="question-circle-fill" size="30" class="    " bind:__l="__l"></u-icon>
-      答题规则说明
-    </view>
-  </view> -->
-
   <view class="db_but" bindtap="xz_post" wx:if="{{cd<=1}}">
     <view wx:if="{{cd<1}}">下一题</view>
     <view wx:if="{{cd==1}}">完成答题</view>

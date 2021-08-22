@@ -1,79 +1,68 @@
-
-
-.gif-black    {  
-  mix-blend-mode: screen;
-}
-.gif-white    {  
-  mix-blend-mode: multiply;
-}
-.bg-tree{
-  background-color: #f4c998;
+.bg-tree {
+  background-color: #98f498;
 }
 
-
-.warp     {
+.warp {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-          align-items: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-          justify-content: center;
+  justify-content: center;
   height: 100%;
 }
-.dis_but{
+
+.dis_but {
   display: flex;
   width: 80%;
   margin: 0 auto;
   justify-content: space-between;
 }
-.rect     {
-width: 100%;
 
-height: 100vh;
+.rect {
+  width: 100%;
+  height: 100vh;
   border-radius: 20rpx;
   padding: 25rpx 25rpx 80rpx 25rpx;
   padding-top: 20vh;
   box-sizing: border-box;
   background-color: #fff;
 }
-.closeImg     {
+
+.closeImg {
   width: 100%;
   height: 200rpx;
   margin: 10rpx auto 30rpx;
 }
-.closeImg image     {
+
+.closeImg image {
   height: 200rpx;
 }
-.cu-bar .cu-avatar    :first-child {
+
+.cu-bar .cu-avatar :first-child {
   margin-left: -11px;
 }
 
-.mainBox     {
+.mainBox {
   padding: 60rpx 40rpx 20rpx 40rpx;
 }
-.explainMain     {
+
+.explainMain {
   width: 100%;
   text-align: left;
   font-size: 24rpx;
-
   color: #999999;
   margin-top: 30rpx;
 }
-.userHeard     {
-  position: absolute;
-  left: 50%;
-  top: -50rpx;
-  margin-left: -50rpx;
-}
-.mentalTitle     {
-  margin: 0 0 30rpx 0;
 
-  
+.mentalTitle {
+  margin: 0 0 30rpx 0;
 }
-.mentalList     {
+
+.mentalList {
   width: 100%;
   height: 78rpx;
   line-height: 78rpx;
@@ -83,7 +72,8 @@ height: 100vh;
   overflow: hidden;
   border: 1px solid #dddddd;
 }
-.mentalList .indexBox     {
+
+.mentalList .indexBox {
   width: 70rpx;
   height: 78rpx;
   text-align: center;
@@ -92,29 +82,31 @@ height: 100vh;
   background-color: #dddddd;
   margin-right: 15rpx;
 }
-.red{
-color: red;
-border: 1px solid red;
+
+.red {
+  color: red;
+  border: 1px solid red;
 }
-.db_but{
+
+.red .indexBox {
+  background-color: red;
+  color: #fff
+}
+
+.db_but {
   position: fixed;
   height: 40px;
   width: 100%;
   bottom: 0px;
-  background: linear-gradient(to top right, #f4c998 ,  #d69c63);
-  color:#fff;
+  background: linear-gradient(to top right, #f4c998, #d69c63);
+  color: #fff;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.red  .indexBox     {
-  background-color: red;
-  color:#fff
-}
-.mentalListActive     {
 
+.mentalListActive {
   width: 100%;
   height: 78rpx;
   line-height: 78rpx;
@@ -123,11 +115,10 @@ border: 1px solid red;
   margin: 30rpx 0;
   overflow: hidden;
   border: 1px solid #0081ff;
-
   color: #0081ff;
-
 }
-.mentalListActive .indexBox     {
+
+.mentalListActive .indexBox {
   background-color: #0081ff;
   color: #ffffff;
   width: 70rpx;
@@ -135,16 +126,20 @@ border: 1px solid red;
   text-align: center;
   line-height: 78rpx;
 }
-.contaier     {
+
+.contaier {
   background-color: #f2f2f2;
 }
-.contaier .bannerBox     {
+
+.contaier .bannerBox {
   width: 750rpx;
 }
-.contaier .bannerBox image     {
+
+.contaier .bannerBox image {
   width: 750rpx;
 }
-.contaier .explain     {
+
+.contaier .explain {
   width: 750rpx;
   bottom: 40rpx;
   font-size: 24rpx;
@@ -152,9 +147,9 @@ border: 1px solid red;
   text-align: center;
   color: #999999;
 }
-.contaier .explain .integral     {
+
+.contaier .explain .integral {
   font-size: 30rpx;
   margin-bottom: 15rpx;
   color: #333333;
 }
-
