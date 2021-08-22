@@ -10,38 +10,7 @@ Component({
     height: "40px",
     loding: true,
     type: "全部",
-    active: 0,
-    tab: [{
-      name: "全部",
-      id: "全部"
-    }, {
-      name: "杂谈",
-      id: "zt"
-    }, {
-      name: "Vue.js",
-      id: "Vue"
-    }, {
-      name: "Css",
-      id: "Css"
-    }, {
-      name: "面试",
-      id: "ms"
-    }, {
-      name: "小程序",
-      id: "xcx"
-    }, {
-      name: "JavaScript",
-      id: "Js"
-    }, {
-      name: "后台框架",
-      id: "ht"
-    }, {
-      name: "基础",
-      id: "Jc"
-    }, {
-      name: "网络安全",
-      id: "Wl"
-    }]
+    active: 0
   },
   created() {
     this.list()

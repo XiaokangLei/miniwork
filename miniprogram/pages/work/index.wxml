@@ -1,5 +1,5 @@
-
 <view class="main bg-white">
+	<!-- 顶部渐变色 -->
 	<view class="home-top">
 	</view>
 	<swiper class="card-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
@@ -14,74 +14,20 @@
 		</swiper-item>
 	</swiper>
 
-	<!-- 左右四栏，精选、热招、宣讲会、专栏 -->
+	<!-- 四栏，精选、热招、宣讲会、专栏 -->
 	<van-tabs active="{{active}}" animated swipeable sticky offset-top="{{0}}" color="#d69c63" bind:change="onClick">
 		<!-- 精选 -->
 		<van-tab title="精选" title-style="font-size: 16px;">
-			<!-- <van-sticky offset-top="{{ CustomBar+44 }}" wx:if="{{active==0}}">
-				<view class="tab_list shadow">
-					<view class="tab_list_view" style="height:{{  height}}">
-						<view class="padding-xs" wx:for="{{tab}}" wx:key="index" wx:for-item="items" bindtap="onChange"
-							data-type="{{items.id}}">
-							<view class="cu-tag line-{{item.name}}     {{type==items.id?' study_bg':' study_tag' }} ">{{items.name}}
-							</view>
-						</view>
-					</view>
-					<view bindtap="show_xl" class="xl_show">
-						<van-icon name="wap-nav" />
-					</view>
-				</view>
-			</van-sticky> -->
-			<!-- <view class="scroll_box">
-				<scroll-view scroll-x>
-					<navigator hover-class="item-hover" url="/pages/work/details_work/index?id={{items._id}}" class="item_list"
-						wx:for="{{tz_list}}" wx:key="this" wx:for-item="items">
-						<view class="item_list_ds">
-							<view>
-								<view class="dis2">
-									<view class="item_top_Wz">荐</view>
-									<view class="item_top_Wz2"> {{items.tille}}</view>
-								</view>
-								<view class="home-list-bottom">
-									<view class="dis">
-										<view>
-											<van-icon name="clock-o" />
-											<view class="icon_wz">{{m1.format(items.add_time)}}</view>
-										</view>
-										<view>
-											<van-icon name="fire" />
-											<view class="icon_wz">{{items.browse||0}}</view>
-										</view>
-
-									</view>
-								</view>
-							</view>
-							<view class="ikl">
-
-								<image mode='scaleToFill' src="{{items.img}}"></image>
-							</view>
-						</view>
-					</navigator>
-				</scroll-view>
-			</view> -->
-			<!-- <view class="study_list"> -->
-				<list list="{{list}}" loding="{{loding}}"></list>
-			<!-- </view> -->
-			
-			
+			<list list="{{list}}" loding="{{loding}}"></list>
 		</van-tab>
 		<!-- 热招 -->
 		<van-tab title="热招" title-style="font-size: 16px;">
-			<!-- <view class="study_list"> -->
-				<list list="{{rb_list}}" phb="{{true}}" loding="{{loding}}"></list>
-			<!-- </view> -->
+			<list list="{{rb_list}}" phb="{{true}}" loding="{{loding}}"></list>
 		</van-tab>
+		<!-- 倒计时 -->
 		<van-tab title="倒计时" title-style="font-size: 16px;">
-			<!-- <view class="study_list"> -->
-				<list list="{{cutdown_list}}" loding="{{loding}}"></list>
-			<!-- </view> -->
+			<list list="{{cutdown_list}}" loding="{{loding}}"></list>
 		</van-tab>
-
 		<!-- 宣讲会 -->
 		<van-tab title="宣讲会" title-style="font-size: 16px;">
 			<view class="cu-timeline">
@@ -89,15 +35,15 @@
 					<view class="content shadow-blur">
 						<view class="cu-capsule radius">
 							<view class="cu-tag bg-blue light">{{items.tille}}</view>
-							<view class="cu-tag study_tag2">{{items.time}}</view>
+							<view class="cu-tag time_tag">{{items.time}}</view>
 						</view>
 						<view class="margin-top">{{items.mc}}
 						</view>
 						<view>
 						</view>
 						<view class="ls_but">
-							<view class="bg-gradual-pink shadow-blur" data-id="{{items._id}}" bindtap="tz" data-url="work/details_teachin/index"
-								type="primary" size="small">了解详情</view>
+							<view class="bg-gradual-pink shadow-blur" data-id="{{items._id}}" bindtap="tz"
+								data-url="work/details_teachin/index" type="primary" size="small">了解详情</view>
 						</view>
 					</view>
 				</view>
@@ -108,10 +54,10 @@
 	<view style="padding-bottom: calc(env(safe-area-inset-bottom)/2);" wx:if="{{!loding}}">
 		<van-divider contentPosition="center">到底啦，更多数据请查看其他模块</van-divider>
 	</view>
-
+	<!-- 悬浮搜索 -->
 	<view class="search bg-blue light" bindtap="jump_to_search" data-url="search/index">
-    <van-icon name="search" />
-  </view>
+		<van-icon name="search" />
+	</view>
 </view>
 
 <wxs module="m1">

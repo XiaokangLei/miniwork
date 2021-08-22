@@ -1,7 +1,7 @@
 // miniprogram/pages/index/index.js
-import Notify from '/@vant/weapp/notify/notify';
 import task from "../../utils/request.js"
 const app = getApp()
+
 Page({
   /**
    * 页面的初始数据
@@ -14,8 +14,6 @@ Page({
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
-    // 初始页面是否有“添加到我的小程序”提示页面
-    isTiptrue: false,
     // 每次拉取eachData条数据
     eachData: 4,
   },
@@ -27,15 +25,6 @@ Page({
     op = e.scrollTop / 200
     this.setData({
       hd_op: op
-    })
-  },
-  /**
-   * 关闭提示页面
-   */
-  closeThis() {
-    wx.setStorageSync("loadOpen", true)
-    this.setData({
-      isTiptrue: false,
     })
   },
   /**
@@ -59,16 +48,11 @@ Page({
       page: 1
     })
     this.initial()
-    this.index_initial(options)
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // this.setData({
-    //   page: 1
-    // })
-    // this.initial()
   },
 
   /**
@@ -136,16 +120,6 @@ Page({
         id: 2
       })
     }
-    let firstOpen = wx.getStorageSync("loadOpen")
-    if (firstOpen == undefined || firstOpen == '') { //根据缓存周期决定是否显示新手引导
-      this.setData({
-        isTiptrue: true,
-      })
-    } else {
-      this.setData({
-        isTiptrue: false,
-      })
-    }
     wx.showShareMenu({
       withShareTicket: true,
       menus: ['shareAppMessage', 'shareTimeline']
@@ -165,24 +139,6 @@ Page({
           this.initial()
         }
       }
-    }
-    if (this.data.id == 1) {
-      // let that = this
-      // Notify({
-      //   background: '#f4c998',
-      //   message: '到底啦，2秒后自动跳转学习页面',
-      //   top: app.globalData.CustomBar
-      // });
-      // setTimeout(funcName, 2000);
-
-      // function funcName() {
-      //   that.setData({
-      //     id: 3
-      //   })
-      //   wx.pageScrollTo({
-      //     scrollTop: 0
-      //   })
-      // }
     }
   },
 

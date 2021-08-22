@@ -11,28 +11,28 @@ Component({
    * 组件的初始数据
    */
   data: {
-
-
+    // 是否还有数据
+    nodata: true
   },
   properties: {
-   list: {
-    type: Object,
+    list: {
+      type: Object,
       default: ''
-    }, 
+    },
     loding: {
-      type:Boolean,
-        default: true
-      }, 
-     phb: {
-        type:Boolean,
-          default: false
-        }, 
+      type: Boolean,
+      default: true
+    },
+    phb: {
+      type: Boolean,
+      default: false
+    },
   },
   observers: {
     'list': function (list) {
-      if(list){
+      if (list) {
         this.setData({
-          loding:false
+          loding: false
         })
       }
     }

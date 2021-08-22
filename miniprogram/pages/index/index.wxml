@@ -1,46 +1,5 @@
 <view class="main">
 
-	<!-- <view class='page-cont' wx:if="{{isTiptrue}}">
-		<view class='top'>
-			<image src='../../images/jt.png'></image>
-			<view class='p_one'>添加小贝校招，随时获取校招资讯</view>
-		</view>
-		<view class='cont'>
-			<view class='cont-p'>
-				<view class='text'><text>1</text></view>
-				<view>点击右上角</view>
-				<image src='../../images/dian.png'></image>
-			</view>
-			<view class='cont-p'>
-				<view class='text'><text>2</text></view>
-				<view>点击“添加我的小程序”</view>
-			</view>
-			<view class='cont-p'>
-				<view class='text'><text>3</text></view>
-				<view>回到微信首页下拉聊天列表，</view>
-			</view>
-			<view class='cont-p-lib'>
-				<view class='text' style='opacity:0;'><text>3</text></view>
-				<view>从“我的小程序”里打开“小贝校招”</view>
-			</view>
-			<view class='cont-p-three'>
-				<view class='right'>
-					<view class='left-p'>
-						<view class='title'>我的小程序</view>
-						小贝校招
-					</view>
-					<view class='left-p'>
-						<view class='title' style='opacity:0;'>我的小程序</view>
-						<view
-							style='color:#4C4C4E;width:27px;height:27px; margin-top: 5px; margin-bottom: 5px;border-radius:50%;background:#4C4C4E;'>
-						</view>小程序
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class='bottom' bindtap='closeThis'>记住了 我去试试</view>
-	</view> -->
-	<van-notify id="van-notify" top="{{180}}" />
 	<!-- 底部五个分类，资讯，笔试，校招，面试，我的，id分别为12345 -->
 	<view>
 		<news popr="{{ hd_op}}" wx:if="{{id==1}}" />
@@ -49,29 +8,27 @@
 		<recommended wx:if="{{id==4}}" />
 		<user wx:if="{{id==5}}" />
 	</view>
-
+	<!-- 底部五个模块：资讯、题库、校招、内推、我的 -->
 	<view class="cu-bar tabbar bg-white shadow foot">
-		<view bindtap="changeTab" data-id="1" class="action jk  text-gray {{id==1?'xzcg ':''}} " >
+		<view bindtap="changeTab" data-id="1" class="action jk text-gray {{id==1?'xzcg ':''}} ">
 			<view class="">
 				<view class="cuIcon-discover" style="font-weight: 600;"></view>
 			</view> 资讯
 		</view>
-		<view bindtap="changeTab" data-id="2" class="action jk text-gray {{id==2?'xzcg':''}}" >
-			<!-- <span class=" tab_icon iconfont  icon-ziliao "></span> -->
+		<view bindtap="changeTab" data-id="2" class="action jk text-gray {{id==2?'xzcg':''}}">
 			<view class="cuIcon-form" style="font-weight: 600;"></view>
 			题库
 		</view>
-		<view bindtap="changeTab" data-id="3" class="action add-action text-gray {{id==3?'xzcg':''}}" >
+		<view bindtap="changeTab" data-id="3" class="action add-action text-gray {{id==3?'xzcg':''}}">
 			<view class="cu-btn cuIcon-shuye  {{id==3?'tab_color':'tab_color_light'}} shadow">
 			</view>
 			校招
 		</view>
-		<view class="action text-gray jk {{id==4?'xzcg':''}}" bindtap="changeTab" data-id="4" >
-			<!-- <span class="tab_icon iconfont  icon-yunchucun"></span> -->
+		<view class="action text-gray jk {{id==4?'xzcg':''}}" bindtap="changeTab" data-id="4">
 			<view class="cuIcon-circle" style="font-weight: 600;"></view>
 			内推
 		</view>
-		<view class="action text-gray jk {{id==5?'xzcg':''}}" bindtap="changeTab" data-id="5" >
+		<view class="action text-gray jk {{id==5?'xzcg':''}}" bindtap="changeTab" data-id="5">
 			<view class="cuIcon-my" style="font-weight: 600;"></view>
 			我的
 		</view>

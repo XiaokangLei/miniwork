@@ -38,7 +38,7 @@
   </view>
 
   <view style="padding-bottom: calc(env(safe-area-inset-bottom)/2);">
-		<van-divider contentPosition="center">到底啦，更多数据请查看其他模块</van-divider>
+		<van-divider contentPosition="center">^ _ ^</van-divider>
 	</view>
 
 </view>
