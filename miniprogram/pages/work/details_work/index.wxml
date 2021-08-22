@@ -136,9 +136,3 @@
 	<!-- <template is="login" data="{{showLogin: showLogin}}"></template> -->
 
 </view>
-<!-- 分享悬浮 -->
-<!-- <view class="bj" wx:if="{{!loding}}">
-	<button class="btn1" open-type="share" data-index="1" catchtap="share">
-		<van-icon name="share-o" size="30px" color="orange" data-index="1"> </van-icon>
-	</button>
-</view> -->
