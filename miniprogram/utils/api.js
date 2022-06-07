@@ -13,12 +13,12 @@ const _ = db.command
  */
 function addPostComment(commentContent, accept) {
   return wx.cloud.callFunction({
-      name: 'postsService',
-      data: {
-          action: "addPostComment",
-          commentContent: commentContent,
-          accept: accept
-      }
+    name: 'postsService',
+    data: {
+      action: "addPostComment",
+      commentContent: commentContent,
+      accept: accept
+    }
   })
 }
 
@@ -100,5 +100,5 @@ module.exports = {
   checkPostComment: checkPostComment,
   getMemberInfo: getMemberInfo,
   addPostChildComment: addPostChildComment,
-  addPostComment:addPostComment,
+  addPostComment: addPostComment,
 }

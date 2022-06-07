@@ -20,7 +20,7 @@ Component({
       wx.downloadFile({
         url: e.currentTarget.dataset.url,
         filePath: `${wx.env.USER_DATA_PATH}/` + e.currentTarget.dataset.tille + '.docx',
-        
+
         success: function (res) {
           const filePath = res.filePath
           console.log(filePath)
@@ -29,7 +29,7 @@ Component({
             showMenu: true,
             success: function (res) {
               console.log(filePath),
-              console.log('打开成功')
+                console.log('打开成功')
             }
           })
         }

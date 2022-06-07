@@ -16,7 +16,11 @@
     "pages/recommended/fl_problem/index",
     "pages/recommended/details_ans/index",
     "pages/recommended/resume/index",
-    "pages/work/search/index"
+    "pages/work/search/index",
+    "pages/review/details_ans/index",
+    "pages/review/mbti/index/index",
+    "pages/review/details_pro/index",
+    "pages/review/fl_problem/index"
   ],
   "window": {
     "backgroundColor": "#f7f7f7",
